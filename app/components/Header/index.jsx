@@ -1,13 +1,12 @@
-'use client';
-import { AnimatePresence } from 'framer-motion';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { usePathname } from 'next/navigation';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import Magnetic from '../../common/Magnetic';
-import Rounded from '../../common/RoundedButton';
-import Nav from './nav';
-import styles from './style.module.scss';
+"use client";
+import { AnimatePresence } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import Rounded from "../../common/RoundedButton";
+import Nav from "./nav";
+import styles from "./style.module.scss";
 
 export default function Index() {
   const header = useRef(null);
@@ -30,52 +29,53 @@ export default function Index() {
           gsap.to(button.current, {
             scale: 1,
             duration: 0.25,
-            ease: 'power1.out'
+            ease: "power1.out",
           });
         },
         onEnterBack: () => {
           gsap.to(
             button.current,
-            { scale: 0, duration: 0.25, ease: 'power1.out' },
-            setIsActive(false)
+            { scale: 0, duration: 0.25, ease: "power1.out" },
+            setIsActive(false),
           );
-        }
-      }
+        },
+      },
     });
   }, []);
 
   return (
-    <section className='md:hidden' >
-      <div ref={header} className={styles.header}>
-        <div className={styles.logo}>
-          <p className={styles.copyright}>©</p>
-          <div className={styles.name}>
-            <p className={styles.codeBy}>Code by</p>
-            <p className={styles.dennis}>Hurley</p>
-            {/* <p className={styles.snellenberg}>Snellenberg</p> */}
-          </div>
-        </div>
-        <div className={styles.nav}>
-          <Magnetic>
-            <div className={styles.el}>
-              <a>Work</a>
-              <div className={styles.indicator}></div>
+    <section className="md:hidden">
+      {/* <div ref={header} className={styles.header}>
+            <div className={styles.logo}>
+                <p className={styles.copyright}>©</p>
+                <div className={styles.name}>
+                    <p className={styles.codeBy}>Code by</p>
+                    <p className={styles.dennis}>Dennis</p>
+                    <p className={styles.snellenberg}>Snellenberg</p>
+                </div>
             </div>
-          </Magnetic>
-          <Magnetic>
-            <div className={styles.el}>
-              <a>About</a>
-              <div className={styles.indicator}></div>
+            <div className={styles.nav}>
+                <Magnetic>
+                    <div className={styles.el}>
+                        <a>Work</a>
+                        <div className={styles.indicator}></div>
+                    </div>
+                </Magnetic>
+                <Magnetic>
+                    <div className={styles.el}>
+                        <a>About</a>
+                        <div className={styles.indicator}></div>
+                    </div>
+                </Magnetic>
+                <Magnetic>
+                    <div className={styles.el}>
+                        <a>Contact</a>
+                        <div className={styles.indicator}></div>
+                    </div>
+                </Magnetic>
             </div>
-          </Magnetic>
-          <Magnetic>
-            <div className={styles.el}>
-              <a>Contact</a>
-              <div className={styles.indicator}></div>
-            </div>
-          </Magnetic>
-        </div>
-      </div>
+        </div> */}
+
       <div ref={button} className={styles.headerButtonContainer}>
         <Rounded
           onClick={() => {
@@ -85,12 +85,12 @@ export default function Index() {
         >
           <div
             className={`${styles.burger} ${
-              isActive ? styles.burgerActive : ''
+              isActive ? styles.burgerActive : ""
             }`}
           ></div>
         </Rounded>
       </div>
-      <AnimatePresence mode='wait'>{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </section>
   );
 }

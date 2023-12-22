@@ -1,42 +1,51 @@
-import Image from 'next/image';
-import { Socials } from './constants';
+"use client";
+import Image from "next/image";
+import { useContext } from "react";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { Socials } from "./constants";
+
+import ThemeContext from "@/context/themeContext";
 
 const Navbar = () => {
+  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
   return (
-    <div className='hidden w-full h-[65px] md:block fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-sm z-50 px-10'>
-      <div className='w-full h-full flex flex-row items-center justify-between m-auto px-[10px]'>
+    <div className="fixed top-0 z-50 hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block">
+      <div className="m-auto flex h-full w-full flex-row items-center justify-between px-[10px]">
         <a
-          href='#about-me'
-          className='h-auto w-auto flex flex-row items-center'
+          href="#home"
+          className="flex h-auto w-auto flex-row items-center text-tertiary-dark "
         >
           <Image
-            src='/NavLogo.png'
-            alt='logo'
+            src="/NavLogo.png"
+            alt="logo"
             width={70}
             height={70}
-            className='cursor-pointer hover:animate-slowspin'
+            className="cursor-pointer transition-all duration-100 hover:scale-105"
           />
 
-          <span className='font-bold ml-[10px] hidden md:block text-gray-300'>
+          <span className="ml-[10px] hidden font-bold md:block ">
             TrungNghia
           </span>
         </a>
 
-        <div className='w-[500px] h-full flex flex-row items-center justify-between md:mr-20'>
-          <div className='flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200'>
-            <a href='#about-me' className='cursor-pointer'>
+        <div className="flex h-full w-[400px] flex-row items-center justify-between md:mr-20">
+          <div className="mr-[15px] flex h-auto w-full items-center justify-between rounded-full border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] text-gray-200">
+            <a href="#home" className="cursor-pointer">
+              Home
+            </a>
+            <a href="#villa" className="cursor-pointer">
               Villa
             </a>
-            <a href='#skills' className='cursor-pointer'>
-              Dich Vu
+            <a href="#services" className="cursor-pointer">
+              Dich vu
             </a>
-            <a href='#projects' className='cursor-pointer'>
-              Projects
+            <a href="#booking" className="cursor-pointer">
+              Dat Phong
             </a>
           </div>
         </div>
 
-        <div className='flex flex-row gap-5'>
+        <div className="flex flex-row gap-5">
           {Socials.map((social) => (
             <Image
               src={social.src}
@@ -46,6 +55,26 @@ const Navbar = () => {
               height={24}
             />
           ))}
+          {/* Items theme */}
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-500">
+            {darkTheme ? (
+              <MdOutlineLightMode
+                className="cursor-pointer"
+                onClick={() => {
+                  setDarkTheme(false);
+                  localStorage.removeItem("hotel-theme");
+                }}
+              />
+            ) : (
+              <MdDarkMode
+                className="cursor-pointer"
+                onClick={() => {
+                  setDarkTheme(true);
+                  localStorage.setItem("hotel-theme", "true");
+                }}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

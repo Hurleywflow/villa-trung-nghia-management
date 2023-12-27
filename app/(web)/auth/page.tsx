@@ -19,7 +19,7 @@ const Auth = () => {
 
   const inputStyles =
     'border border-gray-300 sm:text-sm text-black rounded-lg block w-full p-2.5 focus:outline-none';
-
+  // TODO: get input data
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -28,13 +28,16 @@ const Auth = () => {
   const { data: session } = useSession();
   const router = useRouter();
 
+  // TODO: Add a sign out handler
   useEffect(() => {
     if (session) router.push('/');
   }, [router, session]);
 
+  // TODO: Add a sign in handler
   const loginHandler = async () => {
     try {
       await signIn();
+      toast.success("You are Successfully Signed In");
       router.push('/');
     } catch (error) {
       console.log(error);
@@ -42,13 +45,13 @@ const Auth = () => {
     }
   };
 
+  // TODO: Add a sign up handler
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     try {
       const user = await signUp(formData);
       if (user) {
-        toast.success('Success. Please sign in');
+        toast.success('Successful. Please sign in');
       }
     } catch (error) {
       console.log(error);

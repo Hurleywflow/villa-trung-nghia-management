@@ -10,9 +10,15 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 // import './index.css';
-import { useRef } from "react";
+import { FC, useRef } from "react";
+import CountUpNumber from "../CountUpNumber/CountUpNumber";
 
-function ScrollThroughWindow() {
+type Props = {
+  heading1: React.ReactNode;
+};
+const ScrollThroughWindow: FC<Props> = (props) => {
+  // render heading1 under server component is optional for SEO
+  const { heading1 } = props;
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -34,22 +40,28 @@ function ScrollThroughWindow() {
           className="hero-background sticky left-0 top-0 grid h-screen origin-[50%_70%] gap-2 p-6 pt-12 [grid-template-rows:4fr_1fr] md:origin-[90%_40%] md:pt-20"
         >
           <div className="window-mask flex flex-col rounded-3xl bg-white p-12 md:flex-row md:p-14">
-            <div className="flex h-full flex-col">
-              <h1 className="mb-5 max-w-[12ch] text-5xl font-bold leading-[0.85] md:my-auto md:text-[80px] xl:text-[128px]">
-                Welcome to Villa Trung Nghia Dalat.
-              </h1>
-              <p className="text-lg md:text-3xl">
-                This animation is inspired by the Runway.com homepage. <br />
-                Recreated by Hurley Nguyen.
-              </p>
-            </div>
+            {heading1}
             <div className="mx-auto -mb-7 mt-4 box-content aspect-[5/8] w-[150px] min-w-[150px] rounded-full border-[4px] border-gray-300 md:my-auto md:-mr-1 md:ml-auto md:w-[300px] md:min-w-[300px]" />
           </div>
-          <div className="grid grid-flow-row grid-cols-3 gap-2">
+          {/* <div className="grid grid-flow-row grid-cols-3 gap-2">
             <div className="col-span-2 rounded-3xl border border-white" />
             <a className="flex items-center justify-center rounded-3xl bg-orange-400 text-center text-lg font-bold text-slate-900 md:text-5xl">
               Early Access
             </a>
+          </div> */}
+          <div className="mt-12 flex justify-between">
+            <div className="flex flex-col items-center justify-center gap-3">
+              <p className="text-center text-xs lg:text-xl">Basic Room</p>
+              <CountUpNumber duration={5000} endValue={50} />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-3">
+              <p className="text-center text-xs lg:text-xl">Luxury Room</p>
+              <CountUpNumber duration={5000} endValue={120} />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-3">
+              <p className="text-center text-xs lg:text-xl">Suite</p>
+              <CountUpNumber duration={5000} endValue={60} />
+            </div>
           </div>
         </motion.div>
       </div>
@@ -65,6 +77,6 @@ function ScrollThroughWindow() {
       </div>
     </section>
   );
-}
+};
 
 export default ScrollThroughWindow;

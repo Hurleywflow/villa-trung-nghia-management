@@ -16,12 +16,12 @@ const roomTypes = [
   { title: "Room14", value: "14" },
   { title: "Room15", value: "15" },
 ];
-const bedTypes = [
-  { title: "Single", value: "1" },
-  { title: "Double", value: "2" },
-  { title: "Triple", value: "3" },
-  { title: "Quad", value: "4" },
-]
+// const bedTypes = [
+//   { title: "Single", value: "1" },
+//   { title: "Double", value: "2" },
+//   { title: "Triple", value: "3" },
+//   { title: "Quad", value: "4" },
+// ]
 
 const hotelRoom = {
   name: "hotelRoom",
@@ -40,7 +40,6 @@ const hotelRoom = {
       title: "Code",
       type: "string",
       description: "Code of the villa",
-
     }),
     defineField({
       name: "slug",
@@ -61,8 +60,8 @@ const hotelRoom = {
       name: "price",
       title: "Price",
       type: "number",
-      validation: (Rule) =>
-        Rule.required().min(50).error("Minimum 50 Characters"),
+      // validation: (Rule) =>
+      //   Rule.required().min(50).error("Minimum 50 Characters"),
     }),
     defineField({
       name: "discount",
@@ -77,24 +76,18 @@ const hotelRoom = {
       type: "array",
       of: [
         {
-          type: "object",
-          fields: [
-            { name: "url", type: "url", title: "URL" },
-            { name: "file", type: "file", title: "File" },
-          ],
+          type: "image",
+          options: { hotspot: true },
         },
       ],
+
       validation: (Rule) =>
         Rule.required().min(2).error("Minimum of 2 images required"),
     }),
     defineField({
       name: "coverImage",
       title: "Cover Image",
-      type: "object",
-      fields: [
-        { name: "url", type: "url", title: "URL" },
-        { name: "file", type: "file", title: "File" },
-      ],
+      type: "image",
       validation: (Rule) => Rule.required().error("Cover Image is required"),
     }),
     defineField({
@@ -107,16 +100,16 @@ const hotelRoom = {
       validation: (Rule) => Rule.required(),
       initialValue: "mini",
     }),
-    defineField({
-      name: "bed",
-      title: "Bed Type",
-      type: "string",
-      options: {
-        list: bedTypes,
-      },
-      validation: (Rule) => Rule.required(),
-      initialValue: "single",
-    }),
+    // defineField({
+    //   name: "bed",
+    //   title: "Bed Type",
+    //   type: "string",
+    //   options: {
+    //     list: bedTypes,
+    //   },
+    //   validation: (Rule) => Rule.required(),
+    //   initialValue: "single",
+    // }),
     defineField({
       name: "specialNote",
       title: "Special Note",

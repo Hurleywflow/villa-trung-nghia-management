@@ -4,6 +4,8 @@ import Navbar from "../components/Header/Navbar";
 import ThemeProvider from "../components/ThemeProvider/ThemeProvider";
 import Header from "../components/header";
 import "./globals.css";
+import { NextAuthProvider } from '../components/AuthProvider/AuthProvider';
+import Toast from '../components/Toast/Toast';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
-          <Navbar />
-          <Header />
-          {children}
-        </ThemeProvider>
+        <NextAuthProvider>
+          <ThemeProvider>
+            <Navbar />
+            <Header />
+            <Toast />
+            {children}
+          </ThemeProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

@@ -4,8 +4,9 @@ type CoverImage = {
 
 export type Image = {
   _key: string;
-  url: string;
+  _type: string;
 };
+
 
 type Amenity = {
   _key: string;
@@ -20,6 +21,7 @@ type Slug = {
 
 export type Room = {
   _id: string;
+  code: string;
   coverImage: CoverImage;
   description: string;
   dimension: string;

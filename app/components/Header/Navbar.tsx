@@ -3,11 +3,15 @@ import Image from "next/image";
 import { useContext } from "react";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { Socials } from "./constants";
+import { useSession } from "next-auth/react";
+import { FaUserCircle } from "react-icons/fa";
 
 import ThemeContext from "@/context/themeContext";
+import Link from 'next/link';
 
 const Navbar = () => {
   const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+    const { data: session } = useSession();
   return (
     <div className="fixed top-0 z-50 hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block">
       <div className="m-auto flex h-full w-full flex-row items-center justify-between px-[10px]">
@@ -55,6 +59,30 @@ const Navbar = () => {
               height={24}
             />
           ))}
+          {/* auth */}
+          <li className="flex items-center">
+            {session?.user ? (
+              <Link href={`/users/${session.user.id}`}>
+                {session.user.image ? (
+                  <div className="h-10 w-10 overflow-hidden rounded-full">
+                    <Image
+                      src={session.user.image}
+                      alt={session.user.name!}
+                      width={40}
+                      height={40}
+                      className="scale-animation img"
+                    />
+                  </div>
+                ) : (
+                  <FaUserCircle className="cursor-pointer" />
+                )}
+              </Link>
+            ) : (
+              <Link href="/auth">
+                <FaUserCircle className="cursor-pointer" />
+              </Link>
+            )}
+          </li>
           {/* Items theme */}
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-500">
             {darkTheme ? (

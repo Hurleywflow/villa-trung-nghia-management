@@ -13,7 +13,7 @@ export const getFeaturedRoomQuery = groq`*[_type == "hotelRoom" && isFeatured ==
 }`;
 
 export const getRoomsQuery = groq`*[_type == "hotelRoom"] {
-    _id, 
+    _id,
     coverImage,
     description,
     dimension,

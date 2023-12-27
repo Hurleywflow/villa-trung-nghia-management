@@ -50,7 +50,7 @@ const user = {
     defineField({
       name: "about",
       title: "About",
-      // longer string
+      // For longer string
       type: "text",
       description: "A brief description about the user",
     }),

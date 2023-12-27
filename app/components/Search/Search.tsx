@@ -43,8 +43,8 @@ const Search: FC<Props> = ({
               onChange={handleRoomTypeChange}
               className='w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none'
             >
-              <option value='All'>All</option>
-              <option value='Mini'>Mini</option>
+              <option value='all'>All</option>
+              <option value='mini'>Mini</option>
               <option value='3'>3</option>
               <option value='4'>4</option>
               <option value='5'>5</option>

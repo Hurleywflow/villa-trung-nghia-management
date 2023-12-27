@@ -8,6 +8,8 @@ import * as queries from "./sanityQueries";
 // import { UpdateReviewDto } from "@/models/review";
 // import next from 'next';
 
+
+// room detail
 export async function getFeaturedRoom() {
   const result = await sanityClient.fetch<Room>(
     queries.getFeaturedRoomQuery,
@@ -20,6 +22,8 @@ export async function getFeaturedRoom() {
 
   return result;
 }
+
+// list of the rooms
 export async function getRooms() {
   const result = await sanityClient.fetch<Room[]>(
     queries.getRoomsQuery,

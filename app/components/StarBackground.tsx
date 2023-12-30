@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { PointMaterial, Points } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { PointMaterial, Points } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Suspense, useRef, useState } from 'react';
 // @ts-ignore
-import * as random from "maath/random/dist/maath-random.esm";
+import * as random from 'maath/random/dist/maath-random.esm';
 
 const StarBackground = (props: any) => {
   const ref: any = useRef();
@@ -22,7 +22,7 @@ const StarBackground = (props: any) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="$fff"
+          color='$fff'
           size={0.002}
           sizeAttenuation={true}
           dethWrite={false}
@@ -33,7 +33,7 @@ const StarBackground = (props: any) => {
 };
 
 const StarsCanvas = () => (
-  <div className="fixed inset-0 z-[20] h-auto w-full">
+  <div className='fixed inset-0 z-[20] h-auto w-full'>
     <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
         <StarBackground />

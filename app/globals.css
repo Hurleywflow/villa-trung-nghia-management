@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 24.6 95% 53.1%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 20.5 90.2% 48.2%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 20.5 90.2% 48.2%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+}
+
+
+.hero-background {
+  background: linear-gradient(
+      to bottom,
+      theme('colors.slate.900') 100px,
+      transparent 100px,
+      transparent calc(80vh - 40px),
+      theme('colors.slate.900') calc(80vh - 40px)
+    ),
+    linear-gradient(
+      to right,
+      theme('colors.slate.900') 24px,
+      transparent 24px,
+      transparent calc(100% - 24px),
+      theme('colors.slate.900') calc(100% - 24px)
+    );
+}
+
+.window-mask {
+  mask-image: linear-gradient(black, black), url('/window.svg');
+  mask-composite: exclude;
+  mask-repeat: no-repeat;
+  /* mask-size: auto, 300px auto; */
+  mask-size:
+    auto,
+    400px auto;
+  mask-position:
+    center center,
+    center right 3rem;
+}
+
+@media (max-width: theme('screens.md')) {
+  .window-mask {
+    mask-size:
+      auto,
+      150px auto;
+    /* mask-size:
+      auto,
+      250px auto; */
+    mask-position:
+      center center,
+      center bottom 1.5rem;
+  }
+}
+
+.img {
+  @apply h-full w-full object-cover;
+}
+
+.scale-animation {
+  @apply transition-all duration-700 hover:scale-125;
+}
+.scale-animation-small {
+  @apply transition-all duration-300 hover:scale-110;
+}
+
+.btn-primary {
+  @apply rounded-lg bg-primary px-6 py-2 text-base font-bold text-white shadow-sm shadow-primary transition-all duration-300 hover:scale-110 md:rounded-2xl md:px-[50px] md:py-5 md:text-xl lg:px-[72px];
+}
+
+
+
+.font-heading {
+  @apply text-3xl font-medium md:text-6xl md:font-semibold;
+}
+
+.font-normal {
+  @apply text-sm md:text-base;
+}

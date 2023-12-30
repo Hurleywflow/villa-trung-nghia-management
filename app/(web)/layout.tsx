@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navbar from "../components/Header/Navbar";
-import ThemeProvider from "../components/ThemeProvider/ThemeProvider";
-import Header from "../components/header";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Navbar from '../components/Header/Navbar';
+import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
+import Header from '../components/header';
+import '../globals.css';
 import { NextAuthProvider } from '../components/AuthProvider/AuthProvider';
 import Toast from '../components/Toast/Toast';
+import { Toaster } from '@/components/ui/toaster';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Villa Trung Nghia | Dalat",
-  description: "Create by Hurley Nguyen",
+  title: 'Villa Trung Nghia | Dalat',
+  description: 'Create by Hurley Nguyen',
 };
 
 export default function RootLayout({
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>
         <NextAuthProvider>
           <ThemeProvider>
@@ -30,6 +31,7 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </NextAuthProvider>
+        <Toaster />
       </body>
     </html>
   );

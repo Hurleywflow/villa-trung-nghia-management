@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import ThemeContext from "@/context/themeContext";
+import ThemeContext from '@/context/themeContext';
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const themeFromStorage: boolean =
-    typeof localStorage !== "undefined" && localStorage.getItem("hotel-theme")
-      ? JSON.parse(localStorage.getItem("hotel-theme")!)
+    typeof localStorage !== 'undefined' && localStorage.getItem('hotel-theme')
+      ? JSON.parse(localStorage.getItem('hotel-theme')!)
       : false;
 
   const [darkTheme, setDarkTheme] = useState<boolean>(themeFromStorage);
@@ -21,8 +21,8 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
-      <div className={`${darkTheme ? "dark" : ""} min-h-screen`}>
-        <div className="text-zinc-900 dark:bg-gradient-radial dark:text-zinc-200">
+      <div className={`${darkTheme ? 'dark' : ''} min-h-screen`}>
+        <div className='text-zinc-900 dark:bg-gradient-radial dark:text-zinc-200'>
           {children}
         </div>
       </div>

@@ -65,7 +65,7 @@ export async function POST(req: Request, res: Response) {
             currency: 'usd',
             product_data: {
               name: room.name,
-              images: room.images.map(image => image.url),
+              images: room.images.map((image) => image.url),
             },
             unit_amount: parseInt((totalPrice * 100).toString()),
           },
@@ -82,8 +82,8 @@ export async function POST(req: Request, res: Response) {
         numberOfDays,
         user: userId,
         discount: room.discount,
-        totalPrice
-      }
+        totalPrice,
+      },
     });
 
     return NextResponse.json(stripeSession, {

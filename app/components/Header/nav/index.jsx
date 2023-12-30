@@ -1,28 +1,28 @@
-import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { menuSlide } from "../animation";
-import Curve from "./Curve";
-import Footer from "./Footer";
-import Link from "./Link";
-import styles from "./style.module.scss";
+import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { menuSlide } from '../animation';
+import Curve from './Curve';
+import Footer from './Footer';
+import Link from './Link';
+import styles from './style.module.scss';
 
 const navItems = [
   {
-    title: "Home",
-    href: "/",
+    title: 'Home',
+    href: '/',
   },
   {
-    title: "Villa",
-    href: "/#villa",
+    title: 'Villa',
+    href: '/#villa',
   },
   {
-    title: "Dich Vu",
-    href: "/#services",
+    title: 'Dich Vu',
+    href: '/#services',
   },
   {
-    title: "Dat Phong",
-    href: "/#booking",
+    title: 'Dat Phong',
+    href: '/#booking',
   },
 ];
 
@@ -33,9 +33,9 @@ export default function Index() {
   return (
     <motion.div
       variants={menuSlide}
-      initial="initial"
-      animate="enter"
-      exit="exit"
+      initial='initial'
+      animate='enter'
+      exit='exit'
       className={styles.menu}
     >
       <div className={styles.body}>

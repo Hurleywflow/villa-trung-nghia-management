@@ -1,16 +1,16 @@
-"use client";
-import styles from "./cardStackScroll.module.scss";
-import { projects } from "./data";
-import Card from "./Card";
-import { useScroll } from "framer-motion";
-import { useEffect, useRef } from "react";
-import Lenis from "@studio-freight/lenis";
+'use client';
+import styles from './cardStackScroll.module.scss';
+import { projects } from './data';
+import Card from './Card';
+import { useScroll } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import Lenis from '@studio-freight/lenis';
 
 export default function CardStackScroll() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start start", "end end"],
+    offset: ['start start', 'end end'],
   });
 
   useEffect(() => {

@@ -1,12 +1,12 @@
-"use client";
-import { AnimatePresence } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Rounded from "../../common/RoundedButton";
-import Nav from "./nav";
-import styles from "./style.module.scss";
+'use client';
+import { AnimatePresence } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePathname } from 'next/navigation';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import Rounded from '../../common/RoundedButton';
+import Nav from './nav';
+import styles from './style.module.scss';
 
 export default function Index() {
   const header = useRef(null);
@@ -29,13 +29,13 @@ export default function Index() {
           gsap.to(button.current, {
             scale: 1,
             duration: 0.25,
-            ease: "power1.out",
+            ease: 'power1.out',
           });
         },
         onEnterBack: () => {
           gsap.to(
             button.current,
-            { scale: 0, duration: 0.25, ease: "power1.out" },
+            { scale: 0, duration: 0.25, ease: 'power1.out' },
             setIsActive(false),
           );
         },
@@ -44,7 +44,7 @@ export default function Index() {
   }, []);
 
   return (
-    <section className="md:hidden">
+    <section className='md:hidden'>
       {/* <div ref={header} className={styles.header}>
             <div className={styles.logo}>
                 <p className={styles.copyright}>©</p>
@@ -85,12 +85,12 @@ export default function Index() {
         >
           <div
             className={`${styles.burger} ${
-              isActive ? styles.burgerActive : ""
+              isActive ? styles.burgerActive : ''
             }`}
           ></div>
         </Rounded>
       </div>
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode='wait'>{isActive && <Nav />}</AnimatePresence>
     </section>
   );
 }

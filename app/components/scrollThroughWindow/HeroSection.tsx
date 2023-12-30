@@ -1,6 +1,6 @@
-import ScrollThroughWindow from "./scrollThroughWindow";
+import ScrollThroughWindow from './scrollThroughWindow';
 
-import { heading1 } from "./ServerComponent";
+import { heading1 } from './ServerComponent';
 
 const HeroSection = () => {
   return <ScrollThroughWindow heading1={heading1} />;

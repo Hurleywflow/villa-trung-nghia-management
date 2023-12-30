@@ -1,15 +1,15 @@
-import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useRef } from "react";
-import styles from "./style.module.scss";
+import { useScroll, useTransform, motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import styles from './style.module.scss';
 
 export default function Paragraph({ paragraph }) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start 0.9", "start 0.25"],
+    offset: ['start 0.9', 'start 0.25'],
   });
 
-  const words = paragraph.split(" ");
+  const words = paragraph.split(' ');
   return (
     <p ref={container} className={styles.paragraph}>
       {words.map((word, i) => {
@@ -30,7 +30,7 @@ const Word = ({ children, progress, range }) => {
   const step = amount / children.length;
   return (
     <span className={styles.word}>
-      {children.split("").map((char, i) => {
+      {children.split('').map((char, i) => {
         const start = range[0] + i * step;
         const end = range[0] + (i + 1) * step;
         return (

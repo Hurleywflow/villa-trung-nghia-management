@@ -1,7 +1,7 @@
-import { createClient } from "next-sanity";
-import ImageUrlBuilder from "@sanity/image-url";
+import { createClient } from 'next-sanity';
+import ImageUrlBuilder from '@sanity/image-url';
 import { Image } from '@/models/room';
-import imageURL from "@sanity/image-url";
+import imageURL from '@sanity/image-url';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -16,10 +16,9 @@ export const client = createClient({
 
 const builder = ImageUrlBuilder(client);
 
-export const urlFor = (source:any) => {
+export const urlFor = (source: any) => {
   return builder.image(source);
 };
-
 
 export const imgURL = (source: Image) => {
   return imageURL({

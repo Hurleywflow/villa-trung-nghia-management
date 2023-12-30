@@ -1,5 +1,8 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, FC } from 'react';
 
@@ -31,19 +34,20 @@ const Search: FC<Props> = ({
   };
 
   return (
-    <section className='bg-tertiary-light px-4 py-6 rounded-lg'>
-      <div className='container mx-auto flex gap-4 flex-wrap justify-between items-center'>
-        <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
-          <label className='block text-sm font-medium mb-2 text-black'>
-            Room Type
-          </label>
+    <section className='rounded-lg bg-purple-200 px-4 py-6'>
+      <div className='container mx-auto flex flex-wrap items-center justify-evenly gap-2'>
+        <div className='mb-4 w-full md:w-1/4'>
+          <Label>Room Type</Label>
           <div className='relative'>
             <select
               value={roomTypeFilter}
               onChange={handleRoomTypeChange}
-              className='w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none'
+              className='w-full rounded px-4 py-2 capitalize leading-tight focus:outline-none dark:bg-black'
             >
-              <option value='all'>All</option>
+              {/* set default value to all */}
+              <option value='all' selected>
+                All
+              </option>
               <option value='mini'>Mini</option>
               <option value='3'>3</option>
               <option value='4'>4</option>
@@ -62,27 +66,27 @@ const Search: FC<Props> = ({
           </div>
         </div>
 
-        <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
-          <label className='block text-sm font-medium mb-2 text-black'>
-            Search
-          </label>
-          <input
+        <div className='mb-4 w-full md:w-1/4'>
+          <Label className=''>Search</Label>
+          <Input
             type='search'
             id='search'
             placeholder='Search...'
-            className='w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
+            className='w-full rounded px-4 py-3 leading-tight placeholder:text-black focus:outline-none dark:bg-black dark:placeholder:text-white'
             value={searchQuery}
             onChange={handleSearchQueryChange}
           />
         </div>
-
-        <button
-          className='btn-primary'
-          type='button'
-          onClick={handleFilterClick}
-        >
-          Search
-        </button>
+        <div className='mb-4 w-full md:w-1/4 md:mt-6'>
+          <Button
+            size={'sm'}
+            type='button'
+            onClick={handleFilterClick}
+            className='mx-auto w-full'
+          >
+            Search
+          </Button>
+        </div>
       </div>
     </section>
   );

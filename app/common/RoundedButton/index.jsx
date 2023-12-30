@@ -1,11 +1,11 @@
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
-import Magnetic from "../Magnetic";
-import styles from "./style.module.scss";
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+import Magnetic from '../Magnetic';
+import styles from './style.module.scss';
 
 export default function Index({
   children,
-  backgroundColor = "#455CE9",
+  backgroundColor = '#455CE9',
   ...attributes
 }) {
   const circle = useRef(null);
@@ -16,19 +16,19 @@ export default function Index({
     timeline.current
       .to(
         circle.current,
-        { top: "-25%", width: "150%", duration: 0.4, ease: "power3.in" },
-        "enter",
+        { top: '-25%', width: '150%', duration: 0.4, ease: 'power3.in' },
+        'enter',
       )
       .to(
         circle.current,
-        { top: "-150%", width: "125%", duration: 0.25 },
-        "exit",
+        { top: '-150%', width: '125%', duration: 0.25 },
+        'exit',
       );
   }, []);
 
   const manageMouseEnter = () => {
     if (timeoutId) clearTimeout(timeoutId);
-    timeline.current.tweenFromTo("enter", "exit");
+    timeline.current.tweenFromTo('enter', 'exit');
   };
 
   const manageMouseLeave = () => {
@@ -41,7 +41,7 @@ export default function Index({
     <Magnetic>
       <div
         className={styles.roundedButton}
-        style={{ overflow: "hidden" }}
+        style={{ overflow: 'hidden' }}
         onMouseEnter={() => {
           manageMouseEnter();
         }}

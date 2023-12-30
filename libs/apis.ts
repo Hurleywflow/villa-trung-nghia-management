@@ -1,13 +1,12 @@
 // import { CreateReviewDto, Review } from "./../models/review";
-import axios from "axios";
+import axios from 'axios';
 
-import { CreateBookingDto, Room } from "@/models/room";
-import sanityClient from "./sanity";
-import * as queries from "./sanityQueries";
+import { CreateBookingDto, Room } from '@/models/room';
+import sanityClient from './sanity';
+import * as queries from './sanityQueries';
 // import { Booking } from "@/models/booking";
 // import { UpdateReviewDto } from "@/models/review";
 // import next from 'next';
-
 
 // room detail
 export async function getFeaturedRoom() {
@@ -64,9 +63,9 @@ export const createBooking = async ({
     mutations: [
       {
         create: {
-          _type: "booking",
-          user: { _type: "reference", _ref: user },
-          hotelRoom: { _type: "reference", _ref: hotelRoom },
+          _type: 'booking',
+          user: { _type: 'reference', _ref: user },
+          hotelRoom: { _type: 'reference', _ref: hotelRoom },
           checkinDate,
           checkoutDate,
           numberOfDays,
@@ -117,7 +116,7 @@ export async function getUserBookings(userId: string) {
     {
       userId,
     },
-    { cache: "no-cache" },
+    { cache: 'no-cache' },
   );
 
   return result;
@@ -127,7 +126,7 @@ export async function getUserData(userId: string) {
   const result = await sanityClient.fetch(
     queries.getUserDataQuery,
     { userId },
-    { cache: "no-cache" },
+    { cache: 'no-cache' },
   );
 
   return result;
@@ -189,13 +188,13 @@ export const createReview = async ({
     mutations: [
       {
         create: {
-          _type: "review",
+          _type: 'review',
           user: {
-            _type: "reference",
+            _type: 'reference',
             _ref: userId,
           },
           hotelRoom: {
-            _type: "reference",
+            _type: 'reference',
             _ref: hotelRoomId,
           },
           userRating,
@@ -220,7 +219,7 @@ export async function getRoomReviews(roomId: string) {
     {
       roomId,
     },
-    { cache: "no-cache" },
+    { cache: 'no-cache' },
   );
 
   return result;

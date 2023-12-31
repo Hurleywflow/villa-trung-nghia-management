@@ -49,7 +49,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
               Early Access
             </a>
           </div> */}
-          <div className='mt-12 flex justify-between'>
+          <div className='mt-12 flex justify-evenly'>
             <div className='flex flex-col items-center justify-center gap-3'>
               <p className='text-center text-xs lg:text-xl'>Basic Room</p>
               <CountUpNumber duration={5000} endValue={50} />

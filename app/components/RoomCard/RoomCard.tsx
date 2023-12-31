@@ -34,7 +34,7 @@ type Props = {
 
 const RoomCard: FC<Props> = (props) => {
   const {
-    room: { coverImage, name, code, price, type, description, slug, isBooked },
+    room: { coverImage, name, code, type, description, slug, isBooked },
   } = props;
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');

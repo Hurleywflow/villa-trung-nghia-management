@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-types */
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FC, useRef } from 'react';
-import styles from './style.module.css';
 
 type Props = {};
 
@@ -12,16 +12,15 @@ const Testimonials: FC<Props> = () => {
     offset: ['start end', 'end start'],
   });
 
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, 250]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, -250]);
   return (
     <section ref={container}>
       <motion.div
         style={{ x: x1 }}
         className='grid gap-6 text-center md:grid-cols-3 lg:gap-12'
       >
-        <div className='mb-6 w-full rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
+        <div className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
           <div className='flex items-start text-left'>
             <div className='flex-shrink-0'>
               <div className='relative inline-block'>
@@ -112,7 +111,7 @@ const Testimonials: FC<Props> = () => {
             </div>
           </div>
         </div>
-        <div className='mb-6 w-full rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
+        <div className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
           <div className='flex items-start text-left'>
             <div className='flex-shrink-0'>
               <div className='relative inline-block'>
@@ -203,7 +202,7 @@ const Testimonials: FC<Props> = () => {
             </div>
           </div>
         </div>
-        <div className='mb-6 w-full rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:hidden md:inline-block'>
+        <div className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
           <div className='flex items-start text-left'>
             <div className='flex-shrink-0'>
               <div className='relative inline-block'>
@@ -299,7 +298,7 @@ const Testimonials: FC<Props> = () => {
         style={{ x: x2 }}
         className=' grid gap-6 text-center md:grid-cols-3 lg:gap-12'
       >
-        <div className='mb-6 w-full rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
+        <div className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
           <div className='flex items-start text-left'>
             <div className='flex-shrink-0'>
               <div className='relative inline-block'>
@@ -390,7 +389,7 @@ const Testimonials: FC<Props> = () => {
             </div>
           </div>
         </div>
-        <div className='mb-6 w-full rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
+        <div className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
           <div className='flex items-start text-left'>
             <div className='flex-shrink-0'>
               <div className='relative inline-block'>
@@ -481,7 +480,7 @@ const Testimonials: FC<Props> = () => {
             </div>
           </div>
         </div>
-        <div className='mb-6 w-full rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:hidden md:inline-block'>
+        <div className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'>
           <div className='flex items-start text-left'>
             <div className='flex-shrink-0'>
               <div className='relative inline-block'>
@@ -572,9 +571,6 @@ const Testimonials: FC<Props> = () => {
             </div>
           </div>
         </div>
-      </motion.div>
-      <motion.div style={{ height }} className={styles.circleContainer}>
-        <div className={styles.circle}></div>
       </motion.div>
     </section>
   );

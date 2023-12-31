@@ -1,10 +1,10 @@
+/* eslint-disable no-undef */
 'use client';
-import styles from './cardStackScroll.module.scss';
-import { projects } from './data';
-import Card from './Card';
+import Lenis from '@studio-freight/lenis';
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import Lenis from '@studio-freight/lenis';
+import Card from './Card';
+import { projects } from './data';
 
 export default function CardStackScroll() {
   const container = useRef(null);
@@ -25,7 +25,7 @@ export default function CardStackScroll() {
   });
 
   return (
-    <main ref={container} className={styles.main}>
+    <section ref={container} className='relative '>
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
         return (
@@ -39,6 +39,6 @@ export default function CardStackScroll() {
           />
         );
       })}
-    </main>
+    </section>
   );
 }

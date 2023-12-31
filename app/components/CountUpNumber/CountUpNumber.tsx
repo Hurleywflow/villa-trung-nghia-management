@@ -30,7 +30,7 @@ const CountUpNumber: FC<Props> = ({ endValue, duration }) => {
   }, [endValue, duration]);
 
   return (
-    <p className='text-lg font-medium md:font-bold xl:text-5xl'>
+    <p className='text-3xl font-medium md:font-bold xl:text-5xl'>
       {Math.round(count)}
     </p>
   );

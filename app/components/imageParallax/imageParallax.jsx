@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use client';
 import Lenis from '@studio-freight/lenis';
 import { motion, useScroll, useTransform } from 'framer-motion';

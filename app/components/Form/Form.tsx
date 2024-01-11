@@ -26,16 +26,19 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { ToastAction } from '@/components/ui/toast';
 import { toast } from '@/components/ui/use-toast';
+import { useRouter } from 'next/navigation';
+// import { sendEmail } from '@/actions/sendEmail';
 
-// regex to validation phone number
-const phoneRegex = /^[0-9]{10,12}$/;
+// write a regex to validation the phone number
+const phoneRegex = /^\d{10,13}$/;
 
 const FormSchema = z.object({
   code: z.string().min(1, {
-    message: 'Room code must be at least 1 characters.',
+    message: 'Room code must be at least 1 character.',
   }),
-  vilaname: z.string().min(2, {
+  villaname: z.string().min(2, {
     message: 'Vila name must be at least 2 characters.',
   }),
   guest: z.string().min(1, {
@@ -48,7 +51,7 @@ const FormSchema = z.object({
     message: 'Invalid email address.',
   }),
   phone: z.string().refine((value) => phoneRegex.test(value), {
-    message: 'Phone number must be at least 10 digits.',
+    message: 'Phone number is not valid.',
   }),
   checkin: z.date({
     required_error: 'A date of check in is required.',
@@ -66,18 +69,89 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       code: '',
-      vilaname: '',
+      villaname: '',
       guest: '',
       username: '',
       email: '',
       phone: '',
-      // checkin: new Date(),
-      // checkout: new Date(),
+      checkin: new Date(),
+      checkout: new Date(),
       note: '',
     },
   });
+  const router = useRouter();
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    console.log({ data });
+
+    // const calcMinCheckoutDate = () => {
+    //   if (data.checkin) {
+    //     const nextDay = new Date(data.checkin);
+    //     nextDay.setDate(nextDay.getDate() + 1);
+    //     return nextDay;
+    //   }
+    //   return null;
+    // };
+
+    // const handleBookNowClick = async () => {
+    //   if (!data.checkin || !data.checkout) return;
+    //   toast({
+    //     variant: 'destructive',
+    //     title: 'Uh oh! Something went wrong.',
+    //     description: 'Please provide checkin / checkout date.',
+    //     action: <ToastAction altText='Try again'>Try again</ToastAction>,
+    //   });
+
+    //   if (data.checkin > data.checkout)
+    //     return toast({
+    //       variant: 'destructive',
+    //       title: 'Uh oh! Something went wrong.',
+    //       description: 'Please choose a valid checkin period',
+    //       action: <ToastAction altText='Try again'>Try again</ToastAction>,
+    //     });
+
+    //   const calcNumDays = () => {
+    //     if (!data.checkin || !data.checkout) return;
+    //     const timeDiff = data.checkout.getTime() - data.checkin.getTime();
+    //     const noOfDays = Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
+    //     return noOfDays;
+    //   };
+
+    //   const numberOfDays = calcNumDays();
+
+    //   // const hotelRoomSlug = room.slug.current;
+    // };
+    if (!data.checkin || !data.checkout) return;
+    toast({
+      variant: 'destructive',
+      title: 'Uh oh! Something went wrong.',
+      description: 'Please provide checkin | checkout date.',
+      action: <ToastAction altText='Try again'>Try again</ToastAction>,
+    });
+
+    if (data.checkin > data.checkout)
+      return toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: 'Please choose a valid checkin period',
+        action: <ToastAction altText='Try again'>Try again</ToastAction>,
+      });
+
+    await fetch('/api/email', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+
+    // const calcNumDays = () => {
+    //   if (!data.checkin || !data.checkout) return;
+    //   const timeDiff = data.checkout.getTime() - data.checkin.getTime();
+    //   const noOfDays = Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
+    //   return noOfDays;
+    // };
+
+    // const numberOfDays = calcNumDays();
+    // console.log({ numberOfDays });
+
     toast({
       title: 'You submitted the following values:',
       description: (
@@ -86,6 +160,9 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
         </pre>
       ),
     });
+
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    router.push('/');
   }
 
   return (
@@ -96,12 +173,12 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
       >
         <FormField
           control={form.control}
-          name='code'
+          name='villaname'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Code</FormLabel>
+              <FormLabel>Vila Name</FormLabel>
               <FormControl>
-                <Input placeholder='3-room' {...field} defaultValue={''} />
+                <Input placeholder='Vila DaLat' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -109,12 +186,12 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
         />
         <FormField
           control={form.control}
-          name='vilaname'
+          name='code'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Vila Name</FormLabel>
+              <FormLabel>Code</FormLabel>
               <FormControl>
-                <Input placeholder='Vila DaLat' {...field} defaultValue={''} />
+                <Input placeholder='5.1' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -127,7 +204,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
             <FormItem>
               <FormLabel>Guest</FormLabel>
               <FormControl>
-                <Input placeholder='Vila DaLat' {...field} defaultValue={''} />
+                <Input placeholder='Vila DaLat' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -140,11 +217,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
             <FormItem>
               <FormLabel>User Name</FormLabel>
               <FormControl>
-                <Input
-                  placeholder='Hurley Nguyen'
-                  {...field}
-                  defaultValue={''}
-                />
+                <Input placeholder='Hurley Nguyen' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -157,11 +230,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input
-                  placeholder='hurley@example.com'
-                  {...field}
-                  defaultValue={''}
-                />
+                <Input placeholder='hurley@example.com' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -174,7 +243,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
             <FormItem>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input placeholder='1234567890' {...field} defaultValue={''} />
+                <Input placeholder='1234567890' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -210,9 +279,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
                     mode='single'
                     selected={field.value}
                     onSelect={field.onChange}
-                    disabled={(date) =>
-                      date > new Date() || date < new Date('1900-01-01')
-                    }
+                    disabled={(date) => date < new Date()}
                     initialFocus
                   />
                 </PopoverContent>
@@ -251,9 +318,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
                     mode='single'
                     selected={field.value}
                     onSelect={field.onChange}
-                    disabled={(date) =>
-                      date > new Date() || date < new Date('1900-01-01')
-                    }
+                    disabled={(date) => date < new Date()}
                     initialFocus
                   />
                 </PopoverContent>

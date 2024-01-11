@@ -1,12 +1,53 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
+  reactStrictMode: true,
+
   images: {
-    domains: [
-      'lh3.googleusercontent.com',
-      'images.unsplash.com',
-      'cdn.sanity.io',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
 
-module.exports = nextConfig;
+const withVideos = require('next-videos');
+
+module.exports = withVideos(nextConfig);
+// const nextConfig = {
+//   reactStrictMode: true,
+//   experimental: {
+//     appDir: true,
+//   },
+
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: 'https',
+//         hostname: 'cdn.sanity.io',
+//         port: '',
+//         pathname: '/**',
+//       },
+//     ],
+//   },
+//   // images: {
+//   //   domains: ['lh3.googleusercontent.com', 'images.unsplash.com'],
+//   //   remotePatterns: [
+//   //     {
+//   //       protocol: 'https',
+//   //       hostname: 'cdn.sanity.io',
+//   //     },
+//   //   ],
+//   // },
+// };
+
+// // module.exports = nextConfig;
+
+// const withVideos = require('next-videos');
+
+// module.exports = withVideos(nextConfig);

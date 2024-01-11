@@ -4,6 +4,7 @@ import Lenis from '@studio-freight/lenis';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import SectionHeading from '../SectionHeading/SectionHeading';
 import styles from './ImageParallax.module.scss';
 
 const images = [
@@ -57,7 +58,8 @@ export default function ImageParallax() {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <section className={styles.main}>
+      <SectionHeading> Guest Images </SectionHeading>
       <div className={styles.spacer}></div>
       <div ref={gallery} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
@@ -66,7 +68,7 @@ export default function ImageParallax() {
         <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
       <div className={styles.spacer}></div>
-    </main>
+    </section>
   );
 }
 

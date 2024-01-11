@@ -12,7 +12,11 @@ export default function Paragraph({ paragraph }) {
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <motion.p ref={container} className={styles.paragraph} style={{ opacity }}>
+    <motion.p
+      ref={container}
+      className='flex max-w-screen-xl flex-wrap p-10 text-[32px] leading-none text-[purple]'
+      style={{ opacity }}
+    >
       {paragraph}
     </motion.p>
   );

@@ -1,10 +1,11 @@
 'use client';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useContext } from 'react';
+import { FaUserCircle } from 'react-icons/fa';
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
 import { Socials } from './constants';
-import { useSession } from 'next-auth/react';
-import { FaUserCircle } from 'react-icons/fa';
 
 import ThemeContext from '@/context/themeContext';
 import Link from 'next/link';
@@ -16,7 +17,10 @@ const Navbar = () => {
     <div className='fixed top-0 z-50 hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block'>
       <div className='m-auto flex h-full w-full flex-row items-center justify-between px-[10px]'>
         <a
-          href='#home'
+          onClick={() => {
+            const el = document.getElementById('Home');
+            el?.scrollIntoView({ behavior: 'smooth' });
+          }}
           className='flex h-auto w-auto flex-row items-center text-tertiary-dark '
         >
           <Image
@@ -24,40 +28,73 @@ const Navbar = () => {
             alt='logo'
             width={70}
             height={70}
-            className='cursor-pointer transition-all duration-100 hover:scale-105'
+            className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4'
           />
 
-          <span className='ml-[10px] hidden font-bold md:block '>
+          <span className='ml-[10px] hidden cursor-pointer font-bold transition-all duration-100 hover:scale-105 md:block '>
             TrungNghia
           </span>
         </a>
 
         <div className='flex h-full w-[400px] flex-row items-center justify-between md:mr-20'>
           <div className='mr-[15px] flex h-auto w-full items-center justify-between rounded-full border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] text-gray-200'>
-            <a href='#home' className='cursor-pointer'>
+            <a
+              // href='/'
+              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4'
+              onClick={() => {
+                const el = document.getElementById('Home');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Home
             </a>
-            <a href='#villa' className='cursor-pointer'>
+            <a
+              // href='#Villa'
+              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4'
+              onClick={() => {
+                const el = document.getElementById('Villa');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Villa
             </a>
-            <a href='#services' className='cursor-pointer'>
-              Dich vu
+            <a
+              // href='#Services'
+              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4'
+              onClick={() => {
+                const el = document.getElementById('Services');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Services
             </a>
-            <a href='#booking' className='cursor-pointer'>
-              Dat Phong
+            <a
+              // href='#Contact'
+              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4'
+              onClick={() => {
+                const el = document.getElementById('Contact');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Contact
             </a>
           </div>
         </div>
 
         <div className='flex flex-row gap-5'>
           {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
-              key={social.name}
-              width={24}
-              height={24}
-            />
+            <Avatar>
+              <AvatarImage src={social.src} />
+              <AvatarFallback>SM</AvatarFallback>
+            </Avatar>
+
+            // <Image
+            //   src={social.src}
+            //   alt={social.name}
+            //   key={social.name}
+            //   width={24}
+            //   height={24}
+            // />
           ))}
           {/* auth */}
           <li className='flex items-center'>

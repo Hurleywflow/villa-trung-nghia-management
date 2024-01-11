@@ -7,7 +7,7 @@ export type Image = {
   _type: string;
 };
 
-type Amenity = {
+export type Amenity = {
   _key: string;
   amenity: string;
   icon: string;

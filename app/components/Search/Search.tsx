@@ -77,7 +77,7 @@ const Search: FC<Props> = ({
             onChange={handleSearchQueryChange}
           />
         </div>
-        <div className='mb-4 w-full md:w-1/4 md:mt-6'>
+        <div className='mb-4 w-full md:mt-6 md:w-1/4'>
           <Button
             size={'sm'}
             type='button'

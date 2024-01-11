@@ -40,18 +40,18 @@ const RoomCard: FC<Props> = (props) => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
     return (
-      <section className='body-font w-80 text-gray-600'>
+      <section className='body-font w-80'>
         {!isBooked ? (
-          <div className='w-ful relative m-5 h-full rounded-lg border-2 border-gray-200 border-opacity-60'>
+          <div className='w-ful relative m-5 h-full rounded-lg border-2 border-gray-300 border-opacity-60 bg-gray-50'>
             {/* <!-- Top Right --> */}
             {/* <!-- if want to move ribbon to center or move to edge, just change  w-36 --> */}
 
             <div className='absolute -right-2 -top-2 z-50 aspect-square w-20 overflow-hidden rounded-sm'>
-              <div className='absolute left-0 top-0 h-2 w-2 bg-amber-500'></div>
-              <div className='absolute bottom-0 right-0 h-2 w-2 bg-amber-500'></div>
+              <div className='absolute left-0 top-0 h-2 w-2 bg-green-500'></div>
+              <div className='absolute bottom-0 right-0 h-2 w-2 bg-green-500'></div>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
-                  <div className='absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 cursor-pointer bg-amber-300 py-1.5  text-center text-xs font-semibold uppercase tracking-wider text-amber-800 shadow-sm hover:bg-yellow-300'>
+                  <div className='absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 cursor-pointer bg-green-300 py-1.5  text-center text-xs font-semibold uppercase tracking-wider text-black shadow-sm hover:bg-teal-300'>
                     {isBooked ? 'Booked' : 'Book Now'}
                   </div>
                 </DialogTrigger>
@@ -78,7 +78,7 @@ const RoomCard: FC<Props> = (props) => {
                 sizes='(max-width: 400px) 100vw, 50vw'
                 objectFit='cover'
                 objectPosition='center'
-                className='img scale-animation'
+                className='img scale-animation rounded-sm'
               />
             </div>
             <div className='p-6'>
@@ -222,12 +222,14 @@ const RoomCard: FC<Props> = (props) => {
               src={urlFor(coverImage).url()}
               // width={500}
               // height={500}
-              layout='fill'
-              sizes='(max-width: 400px) 100vw, 50vw'
+              fill
+              sizes='(max-width: 300px) 100vw, 50vw'
+              // placeholder='blur'
               objectFit='cover'
               objectPosition='center'
               className='img scale-animation'
             />
+            {/* <DynamicBlur src={urlFor(coverImage).url()} /> */}
           </div>
           <div className='p-6'>
             <h1 className='title-font mb-3 text-lg font-medium text-gray-900'>

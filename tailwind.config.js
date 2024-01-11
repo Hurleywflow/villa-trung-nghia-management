@@ -15,6 +15,9 @@ module.exports = {
     hoverOnlyWhenSupported: true,
   },
   theme: {
+    fontFamily: {
+      sans: '"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+    },
     container: {
       center: true,
       padding: '2rem',
@@ -26,15 +29,14 @@ module.exports = {
       width: {
         'square-diagonal': (Math.sqrt(2) * 100).toFixed(2) + '%',
       },
-      // colors: {
-      //   primary: '#038C7F',
-      //   secondary: '#F2C641',
-      //   tertiary: {
-      //     dark: '#F27405',
-      //     light: '#F2C641',
-      //   },
-      // },
       colors: {
+        backgroundHTML: '#0C1015',
+        tertiary: {
+          dark: '#F27405',
+          light: '#F2C641',
+          primary: '#038C7F',
+          secondary: '#F2C641',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

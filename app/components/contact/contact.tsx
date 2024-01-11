@@ -69,7 +69,7 @@ const Contact: FC<Props> = () => {
     },
   ];
   return (
-    <section className='mt-[800px] py-14'>
+    <section className='mt-[800px] py-14' id='Contact'>
       <div className='mx-auto max-w-screen-xl px-4 text-gray-600 md:px-8'>
         <div className='mx-auto max-w-lg justify-between gap-12 lg:flex lg:max-w-none'>
           <div className='max-w-lg space-y-3'>

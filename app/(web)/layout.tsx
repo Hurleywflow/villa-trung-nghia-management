@@ -1,18 +1,15 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Navbar from '../components/Header/Navbar';
-import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
-import Header from '../components/header';
-import '../globals.css';
-import { NextAuthProvider } from '../components/AuthProvider/AuthProvider';
-import Toast from '../components/Toast/Toast';
 import { Toaster } from '@/components/ui/toaster';
-
-const inter = Inter({ subsets: ['latin'] });
+import type { Metadata } from 'next';
+import { NextAuthProvider } from '../components/AuthProvider/AuthProvider';
+import Navbar from '../components/Header/Navbar';
+import Sidebar from '../components/Header/nav/sideBar/sidebar';
+import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
+import Toast from '../components/Toast/Toast';
+import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Villa Trung Nghia | Dalat',
-  description: 'Create by Hurley Nguyen',
+  title: 'Villa Dalat | Trung Nghia | Villa Đà Lạt',
+  description: 'Cho thuê Villa Đà Lạt.',
 };
 
 export default function RootLayout({
@@ -21,14 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
+    <html
+      lang='en'
+      className='bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400'
+    >
+      <body className='!scroll-smooth  bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400'>
         <NextAuthProvider>
           <ThemeProvider>
             <Navbar />
-            <Header />
-            <Toast />
+            <Sidebar />
+            {/* <Header /> */}
             {children}
+            <Toast />
           </ThemeProvider>
         </NextAuthProvider>
         <Toaster />

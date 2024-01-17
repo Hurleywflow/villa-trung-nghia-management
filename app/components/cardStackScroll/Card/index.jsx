@@ -30,18 +30,18 @@ const Card = ({ i, src, title, color, progress, range, targetScale }) => {
         }}
         className='-top-1/4; relative flex h-[70%] w-[80%] origin-top flex-col rounded-xl shadow-2xl'
       >
-        <motion.div
+        <div
           className='h-full  items-center justify-center gap-5'
-          initial={{
-            opacity: 0.3,
-          }}
-          whileInView={{
-            opacity: 1,
-            transition: {
-              duration: 0.3,
-              delay: 0.1 + i * 0.1,
-            },
-          }}
+          // initial={{
+          //   opacity: 0.3,
+          // }}
+          // whileInView={{
+          //   opacity: 1,
+          //   transition: {
+          //     duration: 0.3,
+          //     delay: 0.1 + i * 0.1,
+          //   },
+          // }}
         >
           <div className='relative h-full w-full overflow-hidden rounded-xl shadow-2xl'>
             <Image
@@ -51,7 +51,7 @@ const Card = ({ i, src, title, color, progress, range, targetScale }) => {
               sizes='(max-width: 400px) 100vw, 50vw'
             />
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </div>
   );

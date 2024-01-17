@@ -110,14 +110,24 @@ const ScrollThroughWindow: FC<Props> = (props) => {
                 sizes='(max-width: 100px) 100vw, 50vw'
               />
             </div>
-            <div className='absolute -top-28 left-0 z-[1] h-full w-full'>
+            <motion.div
+              className='absolute -top-28 left-0 z-[1] h-full w-full'
+              initial={{ opacity: 0, y: '30%', x: '20%' }}
+              whileInView={{ opacity: 1, y: '-40%', x: '-20%' }}
+              transition={{
+                duration: 25,
+                ease: 'easeInOut',
+                repeatType: 'loop',
+                repeat: Infinity,
+              }}
+            >
               <Image
                 src='/images/parallax/planets.png'
                 alt='stars'
                 fill
                 sizes='(max-width: 100px) 100vw, 50vw'
               />
-            </div>
+            </motion.div>
             <motion.span
               className='absolute bottom-0 right-0 z-40 h-full w-full'
               initial={{ opacity: 0, y: '-50%', x: '-100%' }}

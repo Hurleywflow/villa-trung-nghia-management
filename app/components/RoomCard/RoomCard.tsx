@@ -40,7 +40,7 @@ const RoomCard: FC<Props> = (props) => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
     return (
-      <section className='body-font w-80'>
+      <section className='body-font w-80 transition-all duration-100 hover:scale-[1.01]'>
         {!isBooked ? (
           <div className='group mx-5 my-10 gap-5 rounded-[calc(1rem-1px)] bg-gradient-to-b from-blue-300 to-pink-300 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-orange-400 hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 '>
             <div className='w-ful relative h-full rounded-lg bg-gray-50'>
@@ -178,7 +178,7 @@ const RoomCard: FC<Props> = (props) => {
     );
   }
   return (
-    <section className='body-font w-80 text-gray-600'>
+    <section className='body-font w-80 text-gray-600 transition-all duration-100 hover:scale-[1.01]'>
       {!isBooked ? (
         <div className=' mx-5 my-10 gap-5 rounded-[calc(1rem-1px)] bg-gradient-to-b from-blue-300 to-pink-300 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-teal-400 hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 '>
           <div className='w-ful relative h-full rounded-lg bg-gray-50'>

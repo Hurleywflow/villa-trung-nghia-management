@@ -118,7 +118,7 @@ const Rooms = () => {
                 }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
-                className='cursor-pointer hover:!blur-none group-hover:blur-sm'
+                className=' hover:!blur-none group-hover:blur-[0.2px]'
               >
                 <RoomCard room={room} />
               </motion.div>

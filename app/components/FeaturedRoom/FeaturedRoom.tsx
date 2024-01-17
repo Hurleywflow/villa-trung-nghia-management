@@ -39,9 +39,7 @@
 //                   src={urlFor(featuredRoom.coverImage).url()}
 //                   // width={500}
 //                   // height={500}
-//                   layout="fill"
-//                   objectFit="cover"
-//                   objectPosition="center"
+//                fill
 //                   className="img scale-animation"
 //                 />
 //               </div>

@@ -1,7 +1,11 @@
-import { createClient } from 'next-sanity';
-import ImageUrlBuilder from '@sanity/image-url';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Image } from '@/models/room';
-import imageURL from '@sanity/image-url';
+import {
+  default as ImageUrlBuilder,
+  default as imageURL,
+} from '@sanity/image-url';
+import { createClient } from 'next-sanity';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;

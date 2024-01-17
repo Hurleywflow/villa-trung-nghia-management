@@ -1,12 +1,13 @@
-import Image from 'next/image';
+/* eslint-disable @typescript-eslint/ban-types */
 import { FC } from 'react';
+import SectionHeading from '../TextSectionHeading/SectionHeading';
 
 type Props = {};
 
 const Contact: FC<Props> = () => {
   const contactMethods = [
     {
-      icon: (
+      iconEmail: (
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
@@ -22,10 +23,10 @@ const Contact: FC<Props> = () => {
           />
         </svg>
       ),
-      contact: 'Support@example.com',
+      email: 'trung@villadalattrungnghia.com',
     },
     {
-      icon: (
+      iconPhone: (
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
@@ -41,7 +42,7 @@ const Contact: FC<Props> = () => {
           />
         </svg>
       ),
-      contact: '+1 (555) 000-000',
+      phone: '0937655411',
     },
     {
       icon: (
@@ -65,45 +66,73 @@ const Contact: FC<Props> = () => {
           />
         </svg>
       ),
-      contact: 'Mountain View, California, United State.',
+      contact: 'Dalat, Lam Dong, Vietnam',
     },
   ];
   return (
-    <section className='mt-[800px] py-14' id='Contact'>
-      <div className='mx-auto max-w-screen-xl px-4 text-gray-600 md:px-8'>
-        <div className='mx-auto max-w-lg justify-between gap-12 lg:flex lg:max-w-none'>
-          <div className='max-w-lg space-y-3'>
-            <h3 className='font-semibold text-indigo-600'>Contact</h3>
-            <p className='text-3xl font-semibold text-gray-800 sm:text-4xl'>
-              Let us know how we can help
-            </p>
+    <section className='mt-[20dvh] py-14' id='Contact'>
+      <SectionHeading> Liên hệ</SectionHeading>
+      <div className='max-w-screen mx-auto px-4'>
+        <div className='mx-auto flex max-w-lg flex-col items-center justify-between gap-5 md:max-w-none md:flex-row'>
+          <div className='w-full space-y-3 md:w-1/2'>
+            <h3 className='text-3xl font-semibold sm:text-4xl'>
+              Hãy cho chúng tôi biết chúng tôi có thể giúp gì được cho bạn.
+            </h3>
             <p>
-              We’re here to help and answer any question you might have, We look
-              forward to hearing from you! Please fill out the form, or us the
-              contact information bellow .
+              Chúng tôi ở đây để trợ giúp và trả lời bất kỳ câu hỏi nào bạn có
+              thể có. Chúng tôi rất mong nhận được phản hồi từ bạn! Thông tin
+              liên hệ của chúng tôi dưới đây.
             </p>
             <div>
               <ul className='mt-6 flex flex-wrap items-center gap-x-10 gap-y-6'>
                 {contactMethods.map((item, idx) => (
-                  <li key={idx} className='flex items-center gap-x-3'>
-                    <div className='flex-none text-gray-400'>{item.icon}</div>
-                    <p>{item.contact}</p>
+                  <li
+                    key={idx}
+                    className='flex items-center gap-x-3 hover:text-pink-500'
+                  >
+                    <i className='flex-none text-gray-400'>{item.iconEmail}</i>
+                    <a href='mailto:trung@villadalattrungnghia.com'>
+                      {item.email}
+                    </a>
+                  </li>
+                ))}
+                {contactMethods.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className='flex items-center gap-x-3 hover:text-pink-500'
+                  >
+                    <i className='flex-none text-gray-400'>{item.iconPhone}</i>
+                    <a href='tel:0937655411'>{item.phone}</a>
+                  </li>
+                ))}
+                {contactMethods.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className='flex items-center gap-x-3 hover:text-pink-500'
+                  >
+                    <i className='flex-none text-gray-400'>{item.icon}</i>
+                    <a href='https://maps.app.goo.gl/Q6JMVjAGm1PkB46d9'>
+                      {item.contact}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <div className='mt-12 flex-1 sm:max-w-lg lg:max-w-md'>
+          <div className='h-60 w-full md:w-1/2'>
             {/* add Map to this section  */}
-            <div className='relative mx-auto h-full w-full'>
-              <Image
-                alt='pizza'
-                src='/images/1.jpg'
-                // width={500}
-                // height={500}
-                layout='fill'
-                objectFit='cover'
-                objectPosition='center'
+            <div className='h-full w-full overflow-hidden rounded-lg'>
+              <iframe
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10603.108133844817!2d108.4364131272505!3d11.943559923882278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112df8d23d02f%3A0x4658191097c20334!2sXuan%20Huong%20Lake!5e0!3m2!1sen!2sau!4v1705224701683!5m2!1sen!2sau'
+                width='100%'
+                height='100%'
+                style={{ border: 0 }}
+                // allowFullScreen=''
+                loading='lazy'
+                referrerPolicy='no-referrer-when-downgrade'
+                sandbox='allow-forms allow-popups allow-same-origin allow-scripts'
+                title='map'
+                aria-hidden='false'
               />
             </div>
             {/* <iframe

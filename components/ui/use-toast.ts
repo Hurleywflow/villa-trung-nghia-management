@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 // Inspired by react-hot-toast library
 import * as React from 'react';
 

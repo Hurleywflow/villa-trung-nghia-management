@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 const LoadingSpinner = () => (
   <div className='flex h-screen w-screen items-center justify-center bg-[#131313]'>
     <div className='grid gap-6'>

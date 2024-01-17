@@ -28,7 +28,6 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
             src={urlFor(active).url()}
             alt=''
             fill
-            objectFit='cover'
             sizes='(max-width: 300px) 100vw, 50vw'
           />
         </div>
@@ -56,7 +55,6 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
                           src={urlFor(photo).url()}
                           alt={photo._key}
                           fill
-                          objectFit='cover'
                           sizes='(max-width: 50px) 100vw, 50vw'
                           onClick={() => {
                             setActive(photo);

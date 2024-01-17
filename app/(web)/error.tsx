@@ -1,5 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 'use client';
 
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function Error({
@@ -53,10 +57,12 @@ export default function Error({
           </div>
         </div>
         <div className='relative mt-12 w-full lg:mt-0 lg:w-1/2'>
-          <img
+          <Image
             className='w-full max-w-lg lg:mx-auto'
             src='/images/components/illustration.svg'
             alt=''
+            fill
+            sizes='(max-width: 200px) 100vw, 50vw'
           />
         </div>
       </div>

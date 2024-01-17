@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useRouter } from 'next/navigation';
+
 import { ChangeEvent, FC } from 'react';
 
 type Props = {
@@ -18,7 +19,7 @@ const Search: FC<Props> = ({
   searchQuery,
   setRoomTypeFilter,
   setSearchQuery,
-}) => {
+}): JSX.Element => {
   const router = useRouter();
 
   const handleRoomTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -30,19 +31,25 @@ const Search: FC<Props> = ({
   };
 
   const handleFilterClick = () => {
-    router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
+    // router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
+
+    // automatic clear search query when user click search button
+    // if (event.target.value.length === 0) {
+    //   setSearchQuery('');
+    // }
+    router.push('/#Villa');
   };
 
   return (
-    <section className='rounded-lg bg-purple-200 px-4 py-6'>
-      <div className='container mx-auto flex flex-wrap items-center justify-evenly gap-2'>
+    <section className='rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl'>
+      <div className='container mx-auto flex flex-wrap items-center justify-evenly gap-10'>
         <div className='mb-4 w-full md:w-1/4'>
-          <Label>Room Type</Label>
+          <Label className='text-xl'>Villa Rooms</Label>
           <div className='relative'>
             <select
               value={roomTypeFilter}
               onChange={handleRoomTypeChange}
-              className='w-full rounded px-4 py-2 capitalize leading-tight focus:outline-none dark:bg-black'
+              className='flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1'
             >
               {/* set default value to all */}
               <option value='all' selected>
@@ -67,19 +74,18 @@ const Search: FC<Props> = ({
         </div>
 
         <div className='mb-4 w-full md:w-1/4'>
-          <Label className=''>Search</Label>
+          <Label className='text-xl'>Search</Label>
           <Input
             type='search'
             id='search'
-            placeholder='Search...'
-            className='w-full rounded px-4 py-3 leading-tight placeholder:text-black focus:outline-none dark:bg-black dark:placeholder:text-white'
+            placeholder='Villa name...'
             value={searchQuery}
             onChange={handleSearchQueryChange}
           />
         </div>
         <div className='mb-4 w-full md:mt-6 md:w-1/4'>
           <Button
-            size={'sm'}
+            size={'icon'}
             type='button'
             onClick={handleFilterClick}
             className='mx-auto w-full'

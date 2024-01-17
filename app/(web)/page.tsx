@@ -1,15 +1,39 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 // import StarsCanvas from './components/StarBackground';
-import { getFeaturedRoom } from '@/libs/apis';
-import HeroSection from '../components/scrollThroughWindow/HeroSection';
+// import './index.css';
+import Rooms from '@/app/(web)/rooms/page';
+import ImageParallax from '@/app/components/GuestImageScrollUpDown/imageParallax';
+import SkewScroll from '@/app/components/SkewScroll/SkewScroll';
+import Tittle from '@/app/components/Tittle/Tittle';
+import CardStackScroll from '@/app/components/cardStackScroll/cardStackScroll';
+import Contact from '@/app/components/contact/contact';
+import { Container } from '@/app/components/container';
+import Testimonials from '@/app/components/testimonials/testimonials';
+import TextScroll from '@/app/components/textScroll/textScroll';
+import HeroSection from '../components/HeroScrollThroughWindow/HeroSection';
 // import InfiniteCarousel from '../components/InfiniteCarousel/InfiniteCarousel';
 // import InfiniteX from '../components/InfiniteX/InfiniteX';
 // import VillaRoom from '../components/FeaturedRoom/FeaturedRoom';
 const Home = async () => {
-  const featuredRoom = await getFeaturedRoom();
-  console.log(featuredRoom);
   return (
     <main>
       <HeroSection />
+      <Container>
+        {/* add more content page on scroll bellow */}
+        <Tittle />
+        <SkewScroll />
+        <TextScroll />
+        {/* feature room, fetching data */}
+        {/* <VillaRoom {...{ featuredRoom }} /> */}
+        <CardStackScroll />
+        {/* <InfiniteX/> */}
+        <Rooms />
+        <ImageParallax />
+        <Testimonials />
+        <Contact />
+      </Container>
       {/* <InfiniteCarousel /> */}
       {/* <StarsCanvas /> */}
     </main>

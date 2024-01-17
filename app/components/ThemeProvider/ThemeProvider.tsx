@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/prefer-optional-chain */
 'use client';
 
 import { useEffect, useState } from 'react';

@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
 module.exports = {
   darkMode: ['class'],
   content: [
@@ -29,12 +31,17 @@ module.exports = {
       width: {
         'square-diagonal': (Math.sqrt(2) * 100).toFixed(2) + '%',
       },
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       colors: {
         backgroundHTML: '#0C1015',
         tertiary: {
           dark: '#F27405',
           light: '#F2C641',
-          primary: '#038C7F',
+          primary: '#BEB8AE',
           secondary: '#F2C641',
         },
         border: 'hsl(var(--border))',
@@ -116,10 +123,17 @@ module.exports = {
         marquee: {
           to: { transform: 'translateX(-50%)' },
         },
+        // background clip text
+        slowpan: {
+          '0%': { backgroundPosition: 'top left' },
+          '100%': { backgroundPosition: 'bottom right' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        //background clip text
+        slowpan: 'slowpan 30s alternate ease-in-out infinite',
         // Skew carousel
         'skew-scroll': 'skew-scroll 20s infinite linear ',
         // loading
@@ -130,5 +144,17 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') },
+      );
+    }),
+  ],
 };

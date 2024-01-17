@@ -26,11 +26,13 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     ".next/types/**/*.ts",
     "app/components/doubleImage/double/double.jsx",
     "app/components/doubleImage/doubleImage.jsx",
     "app/components/slider/ImageSlider.tsx",
-    "app/components/imageParallax/imageParallax.jsx"
+    "app/components/GuestImageScrollUpDown/imageParallax.jsx"
   ],
   "exclude": ["node_modules"]
 }

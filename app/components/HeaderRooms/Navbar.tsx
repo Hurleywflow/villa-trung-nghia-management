@@ -1,19 +1,15 @@
 'use client';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useContext } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
-import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
-import { Socials } from './constants';
 
+import { Button } from '@/components/ui/button';
 import ThemeContext from '@/context/themeContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const { darkTheme, setDarkTheme } = useContext(ThemeContext);
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const router = useRouter();
   return (
     <div className='fixed top-0 z-50 hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block'>
@@ -23,17 +19,17 @@ const Navbar = () => {
             router.push('/');
           }}
           // href='/'
-          className='flex h-auto w-auto flex-row items-center text-tertiary-dark '
+          className='flex h-auto w-auto flex-row items-center text-xl font-semibold text-tertiary-primary md:text-2xl '
         >
           <Image
             src='/NavLogo.png'
             alt='logo'
             width={70}
             height={70}
-            className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-cyan-600 hover:underline-offset-4'
+            className='cursor-pointer text-lg font-semibold text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
           />
 
-          <span className='ml-[10px] hidden cursor-pointer font-bold transition-all duration-100 hover:scale-105 md:block '>
+          <span className='ml-[10px] hidden cursor-pointer font-semibold text-slate-500 shadow-tertiary-primary transition-all  duration-100 text-shadow-sm hover:scale-105 md:block'>
             TrungNghia
           </span>
         </button>
@@ -44,7 +40,7 @@ const Navbar = () => {
               onClick={() => {
                 router.push('/');
               }}
-              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-cyan-600 hover:underline-offset-4'
+              className='cursor-pointer text-lg  text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
             >
               Home
             </button>
@@ -52,7 +48,7 @@ const Navbar = () => {
               onClick={() => {
                 router.push('/');
               }}
-              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-cyan-600 hover:underline-offset-4'
+              className='cursor-pointer text-lg  text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
               // onClick={() => {
               //   const el = document.getElementById('Villa');
               //   el?.scrollIntoView({ behavior: 'smooth' });
@@ -64,7 +60,7 @@ const Navbar = () => {
               onClick={() => {
                 router.push('/');
               }}
-              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-cyan-600 hover:underline-offset-4'
+              className='cursor-pointer text-lg  text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
               // onClick={() => {
               //   const el = document.getElementById('Services');
               //   el?.scrollIntoView({ behavior: 'smooth' });
@@ -76,7 +72,7 @@ const Navbar = () => {
               onClick={() => {
                 router.push('/');
               }}
-              className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-cyan-600 hover:underline-offset-4'
+              className='cursor-pointer text-lg  text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
               // onClick={() => {
               //   const el = document.getElementById('Contact');
               //   el?.scrollIntoView({ behavior: 'smooth' });
@@ -88,7 +84,12 @@ const Navbar = () => {
         </div>
 
         <div className='flex flex-row gap-5'>
-          {Socials.map((social) => (
+          <Link href='http://localhost:3000/studio'>
+            <Button size='sm' variant='link' className='rounded-full'>
+              Admin
+            </Button>{' '}
+          </Link>
+          {/* {Socials.map((social) => (
             <Avatar key={social.name}>
               <AvatarImage src={social.src} />
               <AvatarFallback>SM</AvatarFallback>
@@ -101,9 +102,9 @@ const Navbar = () => {
             //   width={24}
             //   height={24}
             // />
-          ))}
+          ))} */}
           {/* auth */}
-          <li className='flex items-center'>
+          {/* <li className='flex items-center'>
             {session?.user ? (
               <Link href={`/users/${session.user.id}`}>
                 {session.user.image ? (
@@ -125,9 +126,9 @@ const Navbar = () => {
                 <FaUserCircle className='cursor-pointer' />
               </Link>
             )}
-          </li>
+          </li> */}
           {/* Items theme */}
-          <div className='flex h-8 w-8 items-center justify-center rounded-full bg-zinc-500'>
+          {/* <div className='flex h-8 w-8 items-center justify-center rounded-full bg-zinc-500'>
             {darkTheme ? (
               <MdOutlineLightMode
                 className='cursor-pointer'
@@ -145,7 +146,7 @@ const Navbar = () => {
                 }}
               />
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

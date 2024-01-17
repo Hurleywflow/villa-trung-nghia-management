@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
@@ -17,8 +20,10 @@ import useSWR from 'swr';
 
 import RoomCard from '@/app/components/RoomCard/RoomCard';
 import Search from '@/app/components/Search/Search';
+import SectionHeading from '@/app/components/TextSectionHeading/SectionHeading';
 import { getRooms } from '@/libs/apis';
 import { Room } from '@/models/room';
+import { motion } from 'framer-motion';
 import LoadingSpinner from './loading';
 
 const Rooms = () => {
@@ -52,7 +57,7 @@ const Rooms = () => {
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
   //items per a page
-  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [postsPerPage, setPostsPerPage] = useState(12);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
 
@@ -86,13 +91,11 @@ const Rooms = () => {
   );
 
   return (
-    <section className='min-h-screen bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400'>
+    <section className='mt-[20dvh] min-h-screen'>
       {isClient ? (
-        <div
-          className='bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400'
-          id='Villa'
-        >
+        <div className=' ' id='Villa'>
           <div className='container mx-auto pt-10'>
+            <SectionHeading>Booking</SectionHeading>
             <Search
               roomTypeFilter={roomTypeFilter}
               searchQuery={searchQuery}
@@ -101,12 +104,24 @@ const Rooms = () => {
             />
           </div>
           {/* display all Vila cards */}
-          <div className='container mx-auto flex flex-row flex-wrap items-center justify-evenly'>
+          <div className='group container mx-auto flex flex-row flex-wrap items-center justify-evenly'>
             {/* {filteredRooms.map((room) => ( */}
-            {currentPosts.map((room: Room) => (
-              <div key={room._id}>
+            {currentPosts.map((room: Room, index: number) => (
+              // stagger animation for each card
+              <motion.div
+                key={room._id}
+                initial={{
+                  opacity: 0,
+                  translateX: -50,
+                  translateY: -50,
+                  scale: 0.3,
+                }}
+                animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
+                className='cursor-pointer hover:!blur-none group-hover:blur-sm'
+              >
                 <RoomCard room={room} />
-              </div>
+              </motion.div>
             ))}
           </div>
           {/* pagination */}

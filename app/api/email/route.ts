@@ -1,10 +1,12 @@
-import ContactFormEmailBlock from '@/emails/contact-form-email';
+import ContactFormEmailBlock from '@/emails/booking-form';
+import { getErrorMessage } from '@/libs/utils';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request): Promise<NextResponse> {
+  // destructuring the request body into variables
   const {
     code,
     villaname,
@@ -16,27 +18,14 @@ export async function POST(request: Request): Promise<NextResponse> {
     checkout,
     note,
   } = await request.json();
-  console.log(
-    code,
-    villaname,
-    guest,
-    username,
-    email,
-    phone,
-    checkin,
-    checkout,
-    note,
-  );
-
-  // if (!code || !villaname || !guest || !username || !email || !phone || !checkin || !checkout ||
-  //   !note) {
-  //   return Response.json({ error: 'Missing required fields' });
 
   try {
     const data = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
       to: ['hurleywflow@gmail.com'],
       subject: 'New message from your Villa Trung Nghia management',
+      reply_to: email,
+      // send data to react email (booking-form) component to render
       react: ContactFormEmailBlock({
         code,
         villaname,
@@ -64,7 +53,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     }
     return NextResponse.json(
       {
-        error: 'Internal server error.',
+        error: getErrorMessage(e),
       },
       {
         status: 500,

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 const LoadingSpinner = () => (
   <section className='bg-white dark:bg-gray-900'>
     <div className='container mx-auto animate-pulse px-6 py-10'>

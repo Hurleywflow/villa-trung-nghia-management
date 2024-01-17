@@ -1,45 +1,57 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 'use client';
-import { motion, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-const Card = ({ i, title, color, progress, range, targetScale }) => {
+const Card = ({ i, src, title, color, progress, range, targetScale }) => {
   const container = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: container,
-  //   offset: ['start end', 'start start'],
-  // });
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'start start'],
+  });
 
-  // const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
     <div
       ref={container}
-      className='sticky top-0 flex h-screen items-center justify-center odd:rotate-2 even:-rotate-2'
+      className='sticky top-0 flex h-screen items-center justify-center odd:rotate-1 even:-rotate-1'
     >
       <motion.div
         style={{
           backgroundColor: color,
-          scale,
+          // scale,
+          imageScale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className='-top-1/4; relative flex h-[50%] w-[70%] origin-top flex-col rounded-xl p-[50px] '
+        className='-top-1/4; relative flex h-[70%] w-[80%] origin-top flex-col rounded-xl shadow-2xl'
       >
-        <div className='h-full flex-row  items-center justify-center gap-5 md:flex'>
-          <div className='relative h-2/3 w-full overflow-hidden rounded-lg md:h-full md:w-2/3'>
+        <motion.div
+          className='h-full  items-center justify-center gap-5'
+          initial={{
+            opacity: 0.3,
+          }}
+          whileInView={{
+            opacity: 1,
+            transition: {
+              duration: 0.3,
+              delay: 0.1 + i * 0.1,
+            },
+          }}
+        >
+          <div className='relative h-full w-full overflow-hidden rounded-xl shadow-2xl'>
             <Image
-              src='/images/1.jpg'
+              src={src}
               alt={title}
               fill
-              objectFit='cover'
-              objectPosition='center'
+              sizes='(max-width: 400px) 100vw, 50vw'
             />
           </div>
-          <div className='h-1/3 w-full md:h-full md:w-1/3'>
-            Something Something
-          </div>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

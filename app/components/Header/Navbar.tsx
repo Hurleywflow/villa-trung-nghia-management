@@ -77,7 +77,7 @@ const Navbar = () => {
         </div>
 
         <div className='flex flex-row gap-5'>
-          <Link href='www.villadalat.online/studio' target='_blank'>
+          <Link href='/studio' target='_blank'>
             <Button size='sm' variant='link' className='rounded-full'>
               Admin
             </Button>{' '}

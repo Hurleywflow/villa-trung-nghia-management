@@ -32,7 +32,7 @@ const Links = () => {
 
   return (
     <motion.div
-      className='flex h-full w-full flex-col flex-wrap items-center justify-center gap-8 text-2xl'
+      className='flex h-full w-full flex-col flex-wrap items-center justify-center gap-8 text-2xl text-white'
       variants={variants}
     >
       {items.map((item) => (

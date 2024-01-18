@@ -46,7 +46,7 @@ const RoomCard: FC<Props> = (props) => {
             <div className='w-ful relative h-full rounded-lg bg-gray-50'>
               {/* <!-- Top Right --> */}
               {/* <!-- if want to move ribbon to center or move to edge, just change  w-36 --> */}
-              <div className='absolute -right-2 -top-2 z-50 aspect-square w-24 overflow-hidden rounded-sm'>
+              <div className='absolute -right-2 -top-2 z-40 aspect-square w-24 overflow-hidden rounded-sm'>
                 <div className='absolute left-0 top-0 h-2 w-2 bg-pink-500'></div>
                 <div className='absolute bottom-0 right-0 h-2 w-2 bg-pink-500'></div>
                 <Dialog open={open} onOpenChange={setOpen}>
@@ -124,7 +124,7 @@ const RoomCard: FC<Props> = (props) => {
               <div className='absolute bottom-0 left-0 right-0 top-0 z-50 rounded-lg backdrop-blur-sm'></div>
               {/* <!-- Top Right --> */}
               {/* <!-- if want to move ribbon to center or move to edge, just change  w-36 --> */}
-              <div className='absolute -right-2 -top-2 z-50 aspect-square w-24 overflow-hidden rounded-lg'>
+              <div className='absolute -right-2 -top-2 z-40 aspect-square w-24 overflow-hidden rounded-lg'>
                 <div className='absolute left-0 top-0 h-2 w-2 bg-amber-500'></div>
                 <div className='absolute bottom-0 right-0 h-2 w-2 bg-amber-500'></div>
                 <Link
@@ -196,7 +196,7 @@ const RoomCard: FC<Props> = (props) => {
             {/* <!-- Top Right --> */}
             {/* <!-- if want to move ribbon to center or move to edge, just change  w-36 --> */}
 
-            <div className='absolute -right-2 -top-2 z-50 aspect-square w-24 overflow-hidden rounded-sm'>
+            <div className='absolute -right-2 -top-2 z-40 aspect-square w-24 overflow-hidden rounded-sm'>
               <div className='absolute left-0 top-0 h-2 w-2 bg-pink-500'></div>
               <div className='absolute bottom-0 right-0 h-2 w-2 bg-pink-500'></div>
 
@@ -283,7 +283,7 @@ const RoomCard: FC<Props> = (props) => {
             {/* <!-- Top Right --> */}
             {/* <!-- if want to move ribbon to center or move to edge, just change  w-36 --> */}
 
-            <div className='absolute -right-2 -top-2 z-50 aspect-square w-24 overflow-hidden rounded-sm'>
+            <div className='absolute -right-2 -top-2 z-40 aspect-square w-24 overflow-hidden rounded-sm'>
               <div className='absolute left-0 top-0 h-2 w-2 bg-amber-500'></div>
               <div className='absolute bottom-0 right-0 h-2 w-2 bg-amber-500'></div>
               <Link

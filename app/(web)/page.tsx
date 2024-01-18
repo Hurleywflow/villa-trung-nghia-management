@@ -26,7 +26,7 @@ const Home = async () => {
         <SkewScroll />
         <TextScroll />
         <Rooms />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <CardStackScroll />
         <ImageParallax />
         <Contact />

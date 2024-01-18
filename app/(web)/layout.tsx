@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Toaster } from '@/components/ui/toaster';
 import type { Metadata } from 'next';
+import type { Viewport } from 'next';
 import Navbar from '../components/Header/Navbar';
 import Sidebar from '../components/Header/nav/sideBar/sidebar';
 import Toast from '../components/Toast/Toast';
@@ -16,6 +17,15 @@ export const metadata: Metadata = {
   verification: {
     google: '3008361373778677',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  // maximumScale: 1,
+  // userScalable: true,
+  // Also supported by less commonly used
+  // interactiveWidget: 'resizes-visual',
 };
 
 export default function RootLayout({

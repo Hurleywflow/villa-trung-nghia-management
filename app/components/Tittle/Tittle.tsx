@@ -12,19 +12,22 @@ const Tittle: FC<Props> = () => {
     offset: ['start end', 'end start'],
   });
 
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   return (
-    <section ref={container} className='mt-[10dvh]'>
+    <section
+      ref={container}
+      className='mt-[5dvh] flex max-w-full flex-col items-center justify-center'
+    >
       <motion.div
         style={{ x: x1 }}
-        className='block text-center text-8xl font-semibold text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
+        className=' max-w-fit text-center text-8xl font-semibold text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
       >
-        Villa <br />
+        Villa
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className=' block text-center text-8xl text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
+        className=' max-w-fit text-center text-8xl text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
       >
         TrungNghia
       </motion.div>

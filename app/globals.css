@@ -56,6 +56,10 @@
   background: linear-gradient(180deg, #111132, #0f172a);
 } */
 
+body {
+  overscroll-behavior: none;
+}
+
 .imageHTML {
   max-width: calc(230vw + 1670px);
   z-index: -9999;

@@ -28,7 +28,7 @@ export default function CardStackScroll() {
   });
 
   return (
-    <section id='Services' className='mt-[20dvh]'>
+    <section id='Services' className='mx-auto mt-[5dvh]'>
       <SectionHeading> dịch vụ BBQ </SectionHeading>
       <div ref={container} className='group relative '>
         {projects.map((project, i) => {

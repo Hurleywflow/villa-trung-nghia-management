@@ -20,22 +20,17 @@ const Home = async () => {
   return (
     <main>
       <HeroSection />
+      {/* add more content page on scroll bellow */}
       <Container>
-        {/* add more content page on scroll bellow */}
         <Tittle />
         <SkewScroll />
         <TextScroll />
-        {/* feature room, fetching data */}
-        {/* <VillaRoom {...{ featuredRoom }} /> */}
-        <CardStackScroll />
-        {/* <InfiniteX/> */}
         <Rooms />
-        <ImageParallax />
         <Testimonials />
+        <CardStackScroll />
+        <ImageParallax />
         <Contact />
       </Container>
-      {/* <InfiniteCarousel /> */}
-      {/* <StarsCanvas /> */}
     </main>
   );
 };

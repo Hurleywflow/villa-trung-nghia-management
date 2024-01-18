@@ -53,22 +53,22 @@ const Testimonials: FC<Props> = () => {
     offset: ['start end', 'end start'],
   });
 
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, 250]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, -250]);
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   return (
-    <section ref={container}>
-      <div className='mt-[20dvh]'></div>
+    <section ref={container} className='w-full overflow-x-hidden'>
+      <div className='mt-[5dvh]'></div>
 
       <SectionHeading>khách hàng đánh giá</SectionHeading>
       <motion.div
         style={{ x: x1 }}
-        className=' grid gap-6 text-center md:grid-cols-3 lg:gap-12'
+        className=' grid  gap-6 text-center md:grid-cols-3 lg:gap-12'
       >
         {marks.map((item, i) => {
           return (
             <div
               key={i}
-              className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'
+              className='mb-6 w-fit rounded-lg bg-white p-1 shadow dark:bg-gray-800 sm:inline-block'
             >
               <div className='flex items-start text-left'>
                 <div className='flex-shrink-0'>
@@ -170,7 +170,7 @@ const Testimonials: FC<Props> = () => {
           return (
             <div
               key={i}
-              className='mb-6 w-fit rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:inline-block'
+              className='mb-6 w-fit rounded-lg bg-white p-1 shadow dark:bg-gray-800 sm:inline-block'
             >
               <div className='flex items-start text-left'>
                 <div className='flex-shrink-0'>

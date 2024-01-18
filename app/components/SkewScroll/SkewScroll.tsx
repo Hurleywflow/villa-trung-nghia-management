@@ -25,7 +25,7 @@ function SkewScroll() {
   if (typeof data === 'undefined' && !isLoading)
     throw new Error('Cannot fetch data');
   return (
-    <section className='mx-auto mt-[20dvh]'>
+    <section className='mx-auto mt-[5dvh]'>
       <div className='max-w-screen flex h-[50vh] items-center justify-center '>
         <div className='relative h-full w-full max-w-screen-lg overflow-hidden'>
           {/* <!-- For some reason the white vignette effect don't work in this sandbox but if you uncomment the following lines in VSCode, they should work --> */}

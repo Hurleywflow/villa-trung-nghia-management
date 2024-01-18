@@ -70,7 +70,7 @@ const Contact: FC<Props> = () => {
     },
   ];
   return (
-    <section className='mt-[20dvh] py-14' id='Contact'>
+    <section className='mx-auto mt-[5dvh] py-14' id='Contact'>
       <SectionHeading> Liên hệ</SectionHeading>
       <div className='max-w-screen mx-auto px-4'>
         <div className='mx-auto flex max-w-lg flex-col items-center justify-between gap-5 md:max-w-none md:flex-row'>

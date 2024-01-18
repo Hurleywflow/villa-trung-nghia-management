@@ -58,17 +58,17 @@ export default function ImageParallax() {
   }, []);
 
   return (
-    <section className={styles.main}>
-      <div className='h-[20dvh]'></div>
+    <section className='mx-auto'>
+      <div className='h-[5dvh]'></div>
       <SectionHeading> HÌNH ẢNH KHÁCH THam quan </SectionHeading>
-      <div className='h-[10vh]'></div>
+      <div className='h-[dvh]'></div>
       <div ref={gallery} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
         <Column images={[images[6], images[7], images[8]]} y={y3} />
         <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
-      <div className='h-[20dvh]'></div>
+      <div className='h-[dvh]'></div>
     </section>
   );
 }

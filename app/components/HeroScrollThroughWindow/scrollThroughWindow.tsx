@@ -53,7 +53,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
 
   return (
     <section ref={ScrollRef} id='Home'>
-      <div ref={ref} className='relative z-10 h-[200vh] overflow-clip'>
+      <div ref={ref} className='relative z-10 h-[200dvh] overflow-clip'>
         <motion.div
           style={{ scale }}
           className='hero-background sticky left-0 top-0 grid h-screen origin-[50%_70%] gap-2 p-6 pt-12 [grid-template-rows:4fr_1fr] md:origin-[90%_40%] md:pt-20'
@@ -94,8 +94,8 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           </div>
         </motion.div>
       </div>
-      <div className='mt-[-200vh] h-[200vh] overflow-clip  pb-20'>
-        <div className='h-[200vh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900 pb-20'>
+      <div className='mt-[-200dvh] h-[200dvh] overflow-clip  pb-20'>
+        <div className='h-[200dvh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900 pb-20'>
           {/* add some animation here or component want to see through window */}
 
           <motion.span
@@ -169,10 +169,20 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           /> */}
             <Bghills />
           </motion.span>
-          <span></span>
         </div>
       </div>
       {/* add more content page on scroll bellow */}
+      {/* <Container>
+        <Tittle />
+        <SkewScroll />
+        <TextScroll />
+        <Rooms />
+        <Testimonials />
+        <CardStackScroll />
+        <ImageParallax />
+        <Contact />
+
+      </Container> */}
     </section>
   );
 };

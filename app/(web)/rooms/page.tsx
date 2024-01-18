@@ -91,10 +91,10 @@ const Rooms = () => {
   );
 
   return (
-    <section className='mt-[20dvh] min-h-screen'>
+    <section className='mx-auto mt-[5dvh] min-h-fit'>
       {isClient ? (
         <div className=' ' id='Villa'>
-          <div className='container mx-auto pt-10'>
+          <div className='container pt-10'>
             <SectionHeading>Booking</SectionHeading>
             <Search
               roomTypeFilter={roomTypeFilter}
@@ -104,7 +104,7 @@ const Rooms = () => {
             />
           </div>
           {/* display all Vila cards */}
-          <div className='group container mx-auto flex flex-row flex-wrap items-center justify-evenly'>
+          <div className='group container grid grid-cols-2 place-content-between gap-2 md:grid-cols-4 lg:grid-cols-6'>
             {/* {filteredRooms.map((room) => ( */}
             {currentPosts.map((room: Room, index: number) => (
               // stagger animation for each card
@@ -118,7 +118,8 @@ const Rooms = () => {
                 }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
-                className=' hover:!blur-none group-hover:blur-[0.2px]'
+                //! make all another cards are blur when hover a card
+                // className=' hover:!blur-none group-hover:blur-sm'
               >
                 <RoomCard room={room} />
               </motion.div>

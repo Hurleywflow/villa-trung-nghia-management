@@ -64,7 +64,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
     <section
       ref={ScrollRef}
       id='Home'
-      className='m-0 mx-auto box-border w-full p-0'
+      className='m-0 mx-auto box-border w-full p-0 overflow-x-clip'
     >
       <div ref={ref} className='relative z-10 h-[200vh] overflow-clip'>
         <motion.div

@@ -55,16 +55,22 @@
 #slug-detail {
   background: linear-gradient(180deg, #111132, #0f172a);
 } */
-html{
-  @apply bg-slate-100
+html {
+  @apply bg-slate-100;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   overscroll-behavior: none;
   overflow-x: hidden;
 }
-
 
 .hero-background {
   background: linear-gradient(

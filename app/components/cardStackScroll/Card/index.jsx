@@ -28,7 +28,7 @@ const Card = ({ i, src, title, color, progress, range, targetScale }) => {
           imageScale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className='-top-1/4; relative flex h-[70%] w-[80%] origin-top flex-col rounded-xl shadow-2xl'
+        className='-top-1/4; relative flex aspect-[9/16] w-[80%] origin-top flex-col rounded-xl shadow-2xl md:aspect-video'
       >
         <div
           className='h-full  items-center justify-center gap-5'
@@ -48,7 +48,8 @@ const Card = ({ i, src, title, color, progress, range, targetScale }) => {
               src={src}
               alt={title}
               fill
-              sizes='(max-width: 400px) 100vw, 50vw'
+              sizes='(max-width: 768px) 80vw'
+              className='object-cover object-center'
             />
           </div>
         </div>

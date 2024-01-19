@@ -13,7 +13,7 @@ export default function TextScroll() {
         <Paragraph paragraph={paragraph}/> */}
       {/* <div style={{ height: '30vh' }}></div> */}
       <SectionHeading> GIỚI THIỆU </SectionHeading>
-      <div className='flex h-full w-full items-center justify-center gap-10'>
+      <div className='flex h-full w-full items-center justify-center'>
         <Word paragraph={paragraph} />
         {/* <div className='w-full md:w-1/3'>
           <div className='relative mx-auto aspect-square h-full w-full'>

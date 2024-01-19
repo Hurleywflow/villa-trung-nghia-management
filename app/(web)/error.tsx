@@ -62,7 +62,7 @@ export default function Error({
             src='/images/components/illustration.svg'
             alt=''
             fill
-            sizes='(max-width: 200px) 100vw, 50vw'
+            sizes='(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 33vw'
           />
         </div>
       </div>

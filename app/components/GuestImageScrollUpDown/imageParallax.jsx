@@ -83,8 +83,10 @@ const Column = ({ images, y }) => {
               src={`/images/guests/${src}`}
               alt='image'
               fill
-              sizes='(max-width: 200px) 100vw, 50vw'
+              sizes='25vw'
+              className='object-cover object-center'
             />
+
           </div>
         );
       })}

@@ -8,10 +8,19 @@ import {
   useTransform,
 } from 'framer-motion';
 // import './index.css';
+import Rooms from '@/app/(web)/rooms/page';
 import Bghills from '@/app/components/ParallaxHills/bghills';
 import Image from 'next/image';
 import { FC, useRef } from 'react';
 import CountUpNumber from '../CountUpNumber/CountUpNumber';
+import ImageParallax from '../GuestImageScrollUpDown/imageParallax';
+import SkewScroll from '../SkewScroll/SkewScroll';
+import Tittle from '../Tittle/Tittle';
+import CardStackScroll from '../cardStackScroll/cardStackScroll';
+import Contact from '../contact/contact';
+import { Container } from '../container';
+import Testimonials from '../testimonials/testimonials';
+import TextScroll from '../textScroll/textScroll';
 
 type Props = {
   heading1: React.ReactNode;
@@ -52,7 +61,11 @@ const ScrollThroughWindow: FC<Props> = (props) => {
   const ScrollRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <section ref={ScrollRef} id='Home'>
+    <section
+      ref={ScrollRef}
+      id='Home'
+      className='m-0 mx-auto box-border w-full p-0'
+    >
       <div ref={ref} className='relative z-10 h-[200vh] overflow-clip'>
         <motion.div
           style={{ scale }}
@@ -94,8 +107,8 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           </div>
         </motion.div>
       </div>
-      <div className='mt-[-200vh] h-[200vh] overflow-clip  pb-20'>
-        <div className='h-[200vh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900 pb-20'>
+      <div className='mt-[-200vh] h-[200vh] overflow-clip '>
+        <div className='h-[200vh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900'>
           {/* add some animation here or component want to see through window */}
 
           <motion.span
@@ -107,7 +120,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
                 src='/images/parallax/stars.png'
                 alt='stars'
                 fill
-                sizes='(max-width: 100px) 100vw, 50vw'
+                sizes='83vw'
               />
             </div>
             <motion.div
@@ -125,7 +138,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
                 src='/images/parallax/planets.png'
                 alt='stars'
                 fill
-                sizes='(max-width: 100px) 100vw, 50vw'
+                sizes=' 33vw'
               />
             </motion.div>
             <motion.span
@@ -143,7 +156,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
                 src='/airplane.png'
                 alt='airplane'
                 fill
-                sizes='(max-width: 80px) 100vw, 50vw'
+                sizes='30vw'
                 className=' scale-[20%] md:scale-[30%]'
               />
             </motion.span>
@@ -172,7 +185,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
         </div>
       </div>
       {/* add more content page on scroll bellow */}
-      {/* <Container>
+      <Container>
         <Tittle />
         <SkewScroll />
         <TextScroll />
@@ -181,8 +194,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
         <CardStackScroll />
         <ImageParallax />
         <Contact />
-
-      </Container> */}
+      </Container>
     </section>
   );
 };

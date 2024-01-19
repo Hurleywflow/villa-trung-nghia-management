@@ -67,8 +67,8 @@ function SkewScroll() {
                       // width={500}
                       // height={500}
                       fill
-                      sizes='(max-width: 50px) 100vw, 50vw'
-                      className='img scale-animation '
+                      sizes='20vw'
+                      className='img scale-animation object-cover object-center'
                     />
                   </div>
                   <p className=' shadow-tertiary-primary text-shadow-sm'>

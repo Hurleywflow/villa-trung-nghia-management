@@ -94,7 +94,7 @@ const Rooms = () => {
     <section className='mx-auto mt-[5dvh] min-h-fit'>
       {isClient ? (
         <div className=' ' id='Villa'>
-          <div className='container pt-10'>
+          <div className='pt-10'>
             <SectionHeading>Booking</SectionHeading>
             <Search
               roomTypeFilter={roomTypeFilter}
@@ -104,7 +104,7 @@ const Rooms = () => {
             />
           </div>
           {/* display all Vila cards */}
-          <div className='group container grid grid-cols-2 place-content-between gap-2 md:grid-cols-4 lg:grid-cols-6'>
+          <div className='group grid grid-cols-2 place-content-evenly gap-3 md:gap-4 md:grid-cols-4 lg:grid-cols-5 p-0 m-4'>
             {/* {filteredRooms.map((room) => ( */}
             {currentPosts.map((room: Room, index: number) => (
               // stagger animation for each card
@@ -126,12 +126,15 @@ const Rooms = () => {
             ))}
           </div>
           {/* pagination */}
-          <PaginationSection
-            totalPosts={filterRooms.length}
-            postsPerPage={postsPerPage}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
+          <div className='block w-full mt-5 '>
+            <PaginationSection
+
+              totalPosts={filterRooms.length}
+              postsPerPage={postsPerPage}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          </div>
         </div>
       ) : (
         <LoadingSpinner />

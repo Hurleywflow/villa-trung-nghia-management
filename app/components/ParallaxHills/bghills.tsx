@@ -32,7 +32,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/hill1.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
       <motion.div
@@ -43,7 +43,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/hill2.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
       <motion.div
@@ -54,7 +54,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/hill3.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
       <motion.div
@@ -65,7 +65,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/hill4.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
       <motion.div
@@ -76,7 +76,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/hill5.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
       <motion.h1
@@ -94,7 +94,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/tree.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
       <motion.div
@@ -105,7 +105,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/leaf.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
       <motion.div
@@ -116,7 +116,7 @@ export default function Bghills(): JSX.Element {
           src='/images/parallax/plant.png'
           alt='hill1'
           fill
-          sizes='(max-width: 100px) 100vw, 50vw'
+          sizes='50vw'
         />
       </motion.div>
     </div>

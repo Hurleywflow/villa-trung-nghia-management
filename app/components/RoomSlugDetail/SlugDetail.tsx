@@ -53,10 +53,10 @@ function SlugDetail({ room }: SlugProps) {
                 // width={500}
                 // height={500}
                 fill
-                sizes='(max-width: 200px) 100vw, 50vw'
+                sizes='(max-width: 768px) 90vw, (max-width: 1200px) 80vw'
                 // Static images
                 // placeholder='blur'
-                className='img scale-animation rounded-lg '
+                className='img scale-animation rounded-lg object-cover object-center '
               />
             </div>
 
@@ -72,10 +72,10 @@ function SlugDetail({ room }: SlugProps) {
                   // width={500}
                   // height={500}
                   fill
-                  sizes='(max-width: 200px) 100vw, 50vw'
+                  sizes='30vw'
                   // Static images
                   // placeholder='blur'
-                  className='img scale-animation rounded-lg '
+                  className='img scale-animation rounded-lg object-cover object-center '
                 />
               </div>
             ))}
@@ -173,10 +173,10 @@ function SlugDetail({ room }: SlugProps) {
               // width={500}
               // height={500}
               fill
-              sizes='(max-width: 200px) 100vw, 50vw'
+              sizes='30vw'
               // Static images
               // placeholder='blur'
-              className='img scale-animation rounded-lg '
+              className='img scale-animation rounded-lg object-cover object-center '
             />
           </div>
 
@@ -192,10 +192,10 @@ function SlugDetail({ room }: SlugProps) {
                 // width={500}
                 // height={500}
                 fill
-                sizes='(max-width: 200px) 100vw, 50vw'
+                sizes='30vw'
                 // Static images
                 // placeholder='blur'
-                className='img scale-animation rounded-lg '
+                className='img scale-animation rounded-lg object-cover object-center '
               />
             </div>
           ))}

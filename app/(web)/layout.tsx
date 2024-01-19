@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
+export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  // maximumScale: 1,
-  // userScalable: true,
+  maximumScale: 1,
+  userScalable: 1,
   // Also supported by less commonly used
-  // interactiveWidget: 'resizes-visual',
+  interactiveWidget: 'resizes-visual',
 };
 
 export default function RootLayout({

@@ -23,8 +23,8 @@ const Socials = [
 function BottomBarBooking() {
   return (
     <motion.div
-      className='fixed bottom-0 z-[9999] flex h-7 w-full
-     flex-row items-center justify-center rounded-t-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-[1px] md:hidden'
+      className='fixed bottom-0 z-[9999] flex h-11 w-full
+     flex-row items-center justify-center rounded-t-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:hidden'
       // initial={{ opacity: 0 }}
       // animate={{ opacity: 1, transition: { duration: 0.5 } }}
       // whileInView={{ opacity: 1 }}
@@ -37,7 +37,7 @@ function BottomBarBooking() {
           target='_blank'
         >
           <motion.div
-            className='relative mx-auto aspect-square h-6 rounded-full '
+            className='relative mx-auto aspect-square h-10 rounded-full '
             whileTap={{ scale: 1.5 }}
             animate={{ transition: { duration: 0.2 } }}
           >

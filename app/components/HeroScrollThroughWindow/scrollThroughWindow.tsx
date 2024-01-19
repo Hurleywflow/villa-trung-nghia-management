@@ -126,7 +126,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
             <motion.div
               className='absolute -top-28 left-0 z-[1] h-full w-full'
               initial={{ opacity: 0, y: '50%', x: '20%' }}
-              whileInView={{ opacity: 1, y: '-30%', x: '-25%' }}
+              whileInView={{ opacity: 1, y: '-80%', x: '-25%' }}
               transition={{
                 duration: 8,
                 ease: 'easeInOut',
@@ -146,7 +146,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
               initial={{ opacity: 0, y: '-50%', x: '-100%' }}
               whileInView={{ opacity: 1, y: 0, x: '100%' }}
               transition={{
-                duration: 10,
+                duration: 7,
                 ease: 'easeInOut',
                 repeatType: 'loop',
                 repeat: Infinity,

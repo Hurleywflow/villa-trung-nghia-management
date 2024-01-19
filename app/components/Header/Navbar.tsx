@@ -2,9 +2,27 @@
 import Image from 'next/image';
 import { useContext } from 'react';
 
+import { Button } from '@/components/ui/button';
 import ThemeContext from '@/context/themeContext';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+
+const Socials = [
+  {
+    href: 'https://www.facebook.com/villadalattrungnghia/',
+    src: '/facebook.svg',
+    alt: 'Facebook',
+  },
+  {
+    href: 'https://zalo.me/0937655411',
+    src: '/zalo.svg',
+    alt: 'zalo',
+  },
+  {
+    href: 'tel:0937655411',
+    src: '/youtube.svg',
+    alt: 'Phone',
+  },
+];
 
 const Navbar = () => {
   const { darkTheme, setDarkTheme } = useContext(ThemeContext);
@@ -76,19 +94,24 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className='flex flex-row gap-5'>
+        <div className='flex flex-row items-center justify-center gap-5'>
+          {Socials.map((social) => (
+            <Link href={social.href} target='_blank' key={social.src}>
+              <div className='relative aspect-square w-8 rounded-full'>
+                <Image
+                  src={social.src}
+                  alt={social.alt}
+                  fill
+                  className='scale-animation img object-cover object-center'
+                />
+              </div>
+            </Link>
+          ))}
           <Link href='/studio' target='_blank'>
             <Button size='sm' variant='link' className='rounded-full'>
               Admin
             </Button>{' '}
           </Link>
-          {/* {Socials.map((social) => (
-            <Avatar key={social.name}>
-              <AvatarImage src={social.src} />
-              <AvatarFallback>SM</AvatarFallback>
-            </Avatar>
-
-          ))} */}
           {/* auth */}
 
           {/* <li className='flex items-center'>

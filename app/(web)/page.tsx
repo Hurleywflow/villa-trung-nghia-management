@@ -13,12 +13,15 @@
 // import Testimonials from '@/app/components/testimonials/testimonials';
 // import TextScroll from '@/app/components/textScroll/textScroll';
 import HeroSection from '../components/HeroScrollThroughWindow/HeroSection';
+import { Container } from '../components/container';
 
 const Home = async () => {
   return (
     <main>
       {/* add more content page on scroll bellow */}
-      <HeroSection />
+      <Container className='max-w-[133rem]'>
+        <HeroSection />
+      </Container>
       {/* <Container>
         <Tittle />
         <SkewScroll />

@@ -41,9 +41,9 @@ const Search: FC<Props> = ({
   };
 
   return (
-    <section className='rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl mx-4'>
+    <section className='mx-4 rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl'>
       <div className='container mx-auto flex flex-wrap items-center justify-evenly gap-2'>
-        <div className='w-full md:w-1/4'>
+        <div className='mb-4 w-full md:w-1/4'>
           <Label className='text-xl'>Villa Rooms</Label>
           <div className='relative'>
             <select

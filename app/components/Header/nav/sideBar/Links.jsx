@@ -37,15 +37,15 @@ const Links = () => {
     >
       {items.map((item) => (
         <motion.a
-          // href={`#${item}`}
+          href={`#${item}`}
           key={item}
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => {
-            const el = document.getElementById(`${item}`);
-            el?.scrollIntoView({ behavior: 'smooth' });
-          }}
+          // onClick={() => {
+          //   const el = document.getElementById(`${item}`);
+          //   el?.scrollIntoView({ behavior: 'smooth' });
+          // }}
           className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4'
         >
           {item}

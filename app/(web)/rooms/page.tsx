@@ -6,7 +6,8 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'framer-motion';
 
 import {
   Pagination,
@@ -25,6 +26,7 @@ import { getRooms } from '@/libs/apis';
 import { Room } from '@/models/room';
 import { motion } from 'framer-motion';
 import LoadingSpinner from './loading';
+import BottomBarBooking from '@/app/components/BottomBarBooking/BottomBarBooking';
 
 const Rooms = () => {
   const [roomTypeFilter, setRoomTypeFilter] = useState('');
@@ -90,8 +92,21 @@ const Rooms = () => {
     lastPostIndex,
   );
 
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+
+
   return (
-    <section className='mx-auto mt-[5dvh] min-h-fit'>
+    <section className='mx-auto mt-[5dvh] min-h-fit' ref={ref}>
+      <div
+        style={{
+          // transform: isInView ? 'none' : 'translateY(-50px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.2s ease-in-out',
+        }}
+      >
+        <BottomBarBooking />
+      </div>
       {isClient ? (
         <div className=' ' id='Villa'>
           <div className='pt-10'>
@@ -104,7 +119,7 @@ const Rooms = () => {
             />
           </div>
           {/* display all Vila cards */}
-          <div className='group grid grid-cols-2 place-content-evenly gap-3 md:gap-4 md:grid-cols-4 lg:grid-cols-5 p-0 m-4'>
+          <div className='group m-4 grid grid-cols-2 place-content-evenly gap-3 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-5'>
             {/* {filteredRooms.map((room) => ( */}
             {currentPosts.map((room: Room, index: number) => (
               // stagger animation for each card
@@ -126,9 +141,8 @@ const Rooms = () => {
             ))}
           </div>
           {/* pagination */}
-          <div className='block w-full mt-5 '>
+          <div className='mt-5 block w-full '>
             <PaginationSection
-
               totalPosts={filterRooms.length}
               postsPerPage={postsPerPage}
               currentPage={currentPage}

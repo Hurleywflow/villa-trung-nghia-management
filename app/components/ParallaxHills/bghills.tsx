@@ -13,9 +13,9 @@ export default function Bghills(): JSX.Element {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const x3 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const x4 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const x4 = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const x5 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const y5 = useTransform(scrollYProgress, [0, 1], [1400, 0]);
+  const y5 = useTransform(scrollYProgress, [0, 1], [1600, -400]);
   const xtree = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const xleaf = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const xplant = useTransform(scrollYProgress, [0, 1], [0, 0]);

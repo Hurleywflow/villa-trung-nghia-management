@@ -22,7 +22,7 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
   return (
     <section className=''>
       <div className='relative flex items-center justify-center'>
-        <div className='relative h-[40vh] w-[70vw] md:w-[80vw] lg:w-[70vw]'>
+        <div className='relative h-[40vh]  aspect-video'>
           <Image
             className='rounded-lg object-cover object-center md:h-[40vh]'
             src={urlFor(active).url()}

@@ -1,9 +1,9 @@
 export const heading1 = (
   <div className='z-50 flex h-full flex-col'>
     <h1
-      className=' mb-5 max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")]
+      className=' md:mb-5 max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")]
     bg-clip-text pb-5
-    text-3xl
+    text-[40px]
      font-semibold leading-[0.85]
      text-transparent md:my-auto md:text-6xl lg:text-9xl xl:text-[140px]'
     >

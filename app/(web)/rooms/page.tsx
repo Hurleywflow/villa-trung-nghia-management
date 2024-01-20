@@ -97,7 +97,7 @@ const Rooms = () => {
 
 
   return (
-    <section className='mx-auto mt-[5dvh] min-h-fit' ref={ref}>
+    <section className='mx-auto mt-[5dvh] min-h-fit'>
       <div
         style={{
           // transform: isInView ? 'none' : 'translateY(-50px)',
@@ -108,7 +108,7 @@ const Rooms = () => {
         <BottomBarBooking />
       </div>
       {isClient ? (
-        <div className=' ' id='Villa'>
+        <div className=' ' id='Villa' ref={ref}>
           <div className='pt-10'>
             <SectionHeading>Booking</SectionHeading>
             <Search

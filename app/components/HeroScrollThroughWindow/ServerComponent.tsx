@@ -3,7 +3,7 @@ export const heading1 = (
     <h1
       className=' md:mb-5 max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")]
     bg-clip-text pb-5
-    text-[40px]
+    text-[2.9rem]
      font-semibold leading-[0.85]
      text-transparent md:my-auto md:text-6xl lg:text-9xl xl:text-[140px]'
     >

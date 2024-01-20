@@ -69,7 +69,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
       <div ref={ref} className='relative z-10 h-[200vh] overflow-clip'>
         <motion.div
           style={{ scale }}
-          className='hero-background sticky left-0 top-0 grid h-screen origin-[50%_70%] gap-2 p-6 pt-12 [grid-template-rows:4fr_1fr] md:origin-[90%_40%] md:pt-20'
+          className='hero-background sticky left-0 top-0 grid h-[100dvh] origin-[50%_70%] gap-2 p-6 pt-12 [grid-template-rows:4fr_1fr] md:origin-[90%_40%] md:pt-20'
         >
           <div
             className='window-mask flex flex-col rounded-3xl
@@ -85,21 +85,21 @@ const ScrollThroughWindow: FC<Props> = (props) => {
               Early Access
             </a>
           </div> */}
-          <div className='mt-12 flex justify-evenly rounded-3xl bg-teal-500'>
+          <div className='mt-2 flex justify-evenly rounded-3xl bg-teal-500'>
             <div className='flex flex-col items-center justify-center gap-3'>
-              <p className='text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-5xl '>
+              <p className='text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-4xl '>
                 Room
               </p>
               <CountUpNumber duration={5000} endValue={890} />
             </div>
             <div className='flex flex-col items-center justify-center gap-3'>
-              <p className='text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-5xl '>
+              <p className='text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-4xl '>
                 Vila
               </p>
               <CountUpNumber duration={5000} endValue={99} />
             </div>
             <div className='flex flex-col items-center justify-center gap-3'>
-              <p className='text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-5xl '>
+              <p className='text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-4xl '>
                 Mini
               </p>
               <CountUpNumber duration={5000} endValue={10} />

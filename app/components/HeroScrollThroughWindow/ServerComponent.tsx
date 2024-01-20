@@ -3,9 +3,9 @@ export const heading1 = (
     <h1
       className=' mb-5 max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")]
     bg-clip-text pb-5
-    text-6xl
+    text-3xl
      font-semibold leading-[0.85]
-     text-transparent md:my-auto md:text-7xl lg:text-9xl xl:text-[140px]'
+     text-transparent md:my-auto md:text-6xl lg:text-9xl xl:text-[140px]'
     >
       Welcome to Villa Dalat <br /> Trung Nghia.
     </h1>

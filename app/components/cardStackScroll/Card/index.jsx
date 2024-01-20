@@ -19,19 +19,19 @@ const Card = ({ i, src, title, color, progress, range, targetScale }) => {
   return (
     <div
       ref={container}
-      className='sticky top-0 flex h-screen items-center justify-center odd:rotate-1 even:-rotate-1'
+      className='sticky top-0 flex h-screen items-center justify-center  odd:rotate-1  even:-rotate-1 '
     >
       <motion.div
         style={{
           backgroundColor: color,
-          // scale,
+          scale,
           imageScale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className='-top-1/4; relative flex aspect-[9/16] w-[80%] origin-top flex-col rounded-xl shadow-2xl md:aspect-video'
+        className='-top-1/4; relative flex aspect-[9/16] w-[80%] origin-top flex-col rounded-xl shadow-2xl  md:aspect-video '
       >
         <div
-          className='h-full  items-center justify-center gap-5'
+          className='h-full  items-center justify-center gap-5 rounded-lg ring-2 ring-offset-1  odd:ring-sky-400 odd:ring-offset-sky-400  even:ring-orange-400 even:ring-offset-orange-400'
           // initial={{
           //   opacity: 0.3,
           // }}
@@ -43,12 +43,12 @@ const Card = ({ i, src, title, color, progress, range, targetScale }) => {
           //   },
           // }}
         >
-          <div className='relative h-full w-full overflow-hidden rounded-xl shadow-2xl'>
+          <div className='relative h-full w-full overflow-hidden rounded-xl shadow-2xl '>
             <Image
               src={src}
               alt={title}
               fill
-              sizes='(max-width: 768px) 80vw'
+              sizes='80vw'
               className='object-cover object-center'
             />
           </div>

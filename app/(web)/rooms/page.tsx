@@ -132,7 +132,8 @@ const Rooms = () => {
                   scale: 0.3,
                 }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
+                transition={{ duration: 0.2, delay: 0.1 + index * 0.1 }}
+                whileTap={{ scale: 0.5 }}
                 //! make all another cards are blur when hover a card
                 // className=' hover:!blur-none group-hover:blur-sm'
               >

@@ -83,10 +83,9 @@ const Column = ({ images, y }) => {
               src={`/images/guests/${src}`}
               alt='image'
               fill
-              sizes='25vw'
+              sizes='50vw'
               className='object-cover object-center'
             />
-
           </div>
         );
       })}

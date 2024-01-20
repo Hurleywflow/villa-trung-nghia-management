@@ -66,13 +66,12 @@ function SlugDetail({ room }: SlugProps) {
                 key={index}
               >
                 <Image
-                  key={index}
                   alt={room.name}
                   src={urlFor(image).url()}
                   // width={500}
                   // height={500}
                   fill
-                  sizes='30vw'
+                  sizes='50vw'
                   // Static images
                   // placeholder='blur'
                   className='img scale-animation rounded-lg object-cover object-center '

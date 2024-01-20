@@ -6,6 +6,7 @@
   padding: 2vw;
   box-sizing: border-box;
   overflow: hidden;
+  scroll-behavior: smooth;
   .column {
     position: relative;
     height: 100%;
@@ -15,9 +16,9 @@
     flex-direction: column;
     gap: 2vw;
     .imageContainer {
+      position: relative;
       height: 100%;
       width: 100%;
-      position: relative;
       border-radius: 1vw;
       overflow: hidden;
       img {
@@ -38,6 +39,7 @@
     }
   }
 }
+
 .spacer {
   height: 100vh;
 }

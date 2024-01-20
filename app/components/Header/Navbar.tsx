@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { Button } from '@/components/ui/button';
 import ThemeContext from '@/context/themeContext';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Socials = [
   {
@@ -26,6 +27,7 @@ const Socials = [
 
 const Navbar = () => {
   const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+  const router = useRouter();
   return (
     <div className='fixed top-0 z-[9999] hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block'>
       <div className='m-auto flex h-full w-full flex-row items-center justify-between px-[10px]'>
@@ -54,42 +56,47 @@ const Navbar = () => {
         <div className=' mr-0 flex h-full w-[400px] flex-row items-center justify-between'>
           <div className='mr-[15px] flex h-auto w-full items-center justify-between rounded-full border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] text-gray-200'>
             <Link
+              scroll={true}
               href='/'
               className='cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
-              // onClick={() => {
-              //   const el = document.getElementById('Home');
-              //   el?.scrollIntoView({ behavior: 'smooth' });
-              // }}
+              onClick={() => {
+                const el = document.getElementById('Home');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Home
             </Link>
             <Link
-              href='#Villa'
+              scroll={true}
+              href='/#Villa'
               className='cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
-              // onClick={() => {
-              //   const el = document.getElementById('Villa');
-              //   el?.scrollIntoView({ behavior: 'smooth' });
-              // }}
+              onClick={ () => {
+                 router.push('/#Villa');
+                const el = document.getElementById('Villa');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Villa
             </Link>
             <Link
-              href='#Services'
+              scroll={true}
+              href='/#Services'
               className='cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
-              // onClick={() => {
-              //   const el = document.getElementById('Services');
-              //   el?.scrollIntoView({ behavior: 'smooth' });
-              // }}
+              onClick={() => {
+                const el = document.getElementById('Services');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Services
             </Link>
             <Link
-              href='#Contact'
+              scroll={true}
+              href='/#Contact'
               className='cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
-              // onClick={() => {
-              //   const el = document.getElementById('Contact');
-              //   el?.scrollIntoView({ behavior: 'smooth' });
-              // }}
+              onClick={() => {
+                const el = document.getElementById('Contact');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Contact
             </Link>

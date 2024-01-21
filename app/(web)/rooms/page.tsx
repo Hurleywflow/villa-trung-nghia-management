@@ -119,7 +119,7 @@ const Rooms = () => {
             />
           </div>
           {/* display all Vila cards */}
-          <div className='group m-4 grid grid-cols-2 place-content-evenly gap-3 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-5'>
+          <div className='group m-4 grid grid-cols-2 place-content-evenly gap-3 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-6'>
             {/* {filteredRooms.map((room) => ( */}
             {currentPosts.map((room: Room, index: number) => (
               // stagger animation for each card
@@ -133,7 +133,7 @@ const Rooms = () => {
                 }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1 }}
                 transition={{ duration: 0.2, delay: 0.1 + index * 0.1 }}
-                whileTap={{ scale: 0.5 }}
+                whileTap={{ opacity: 0.8 }}
                 //! make all another cards are blur when hover a card
                 // className=' hover:!blur-none group-hover:blur-sm'
               >

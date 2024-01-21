@@ -19,7 +19,7 @@ const Home = async () => {
   return (
     <main>
       {/* add more content page on scroll bellow */}
-      <Container className='max-w-[133rem]'>
+      <Container className='max-w-[140rem]'>
         <HeroSection />
       </Container>
       {/* <Container>

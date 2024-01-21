@@ -1,11 +1,11 @@
 export const heading1 = (
-  <div className='z-50 flex h-full flex-col'>
+  <div className='z-50 flex h-full flex-col justify-center items-center '>
     <h1
       className=' max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")] bg-clip-text
     pb-5 text-5xl
 font-semibold
      leading-[0.85] text-transparent
-     md:my-auto md:mb-5 md:text-6xl lg:text-9xl xl:text-[140px]'
+     md:my-auto md:mb-5 md:text-8xl lg:text-9xl xl:text-[13rem]'
     >
       Welcome to Villa Dalat <br /> Trung Nghia.
     </h1>

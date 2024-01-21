@@ -9,6 +9,7 @@ import {
 } from 'framer-motion';
 // import './index.css';
 import Rooms from '@/app/(web)/rooms/page';
+import HorizontalScrollCarousel from '@/app/components/HorizontalScrollImage/HorizontalScrollImage';
 import Bghills from '@/app/components/ParallaxHills/bghills';
 import Image from 'next/image';
 import { FC, useRef } from 'react';
@@ -64,7 +65,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
     <section
       ref={ScrollRef}
       id='Home'
-      className='m-0 mx-auto box-border w-full p-0 overflow-x-clip'
+      className='m-0 mx-auto box-border w-full overflow-x-clip p-0'
     >
       <div ref={ref} className='relative z-10 h-[200dvh] overflow-clip'>
         <motion.div
@@ -74,7 +75,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           <div
             className='window-mask flex flex-col rounded-3xl
           bg-gradient-to-tl from-purple-300 to-stone-400
-            py-12 px-4 md:flex-row md:p-14'
+            px-4 py-12 md:flex-row md:p-14'
           >
             {heading1}
             <div className='mx-auto -mb-7 mt-4 box-content aspect-[5/8] w-[150px] min-w-[150px] rounded-full border-[4px] border-gray-300 md:my-auto md:-mr-1 md:ml-auto md:w-[300px] md:min-w-[300px]' />
@@ -190,9 +191,12 @@ const ScrollThroughWindow: FC<Props> = (props) => {
         <SkewScroll />
         <TextScroll />
         <Rooms />
-        <Testimonials />
         <CardStackScroll />
+        <Testimonials />
         <ImageParallax />
+        <div className='md:hidden'>
+          <HorizontalScrollCarousel />
+        </div>
         <Contact />
       </Container>
     </section>

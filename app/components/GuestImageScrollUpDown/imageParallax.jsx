@@ -58,7 +58,7 @@ export default function ImageParallax() {
   }, []);
 
   return (
-    <section className='mx-auto'>
+    <section className='mx-auto hidden md:block'>
       <div className='h-[5dvh]'></div>
       <SectionHeading> HÌNH ẢNH KHÁCH THam quan </SectionHeading>
       <div className='h-[dvh]'></div>
@@ -83,7 +83,7 @@ const Column = ({ images, y }) => {
               src={`/images/guests/${src}`}
               alt='image'
               fill
-              sizes='50vw'
+              sizes='30vw'
               className='object-cover object-center'
             />
           </div>

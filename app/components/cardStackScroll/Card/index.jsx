@@ -31,7 +31,7 @@ const Card = ({ i, src, title, color, progress, range, targetScale }) => {
         className='-top-1/4; relative flex aspect-[9/16] w-[80%] origin-top flex-col rounded-xl shadow-2xl  md:aspect-video '
       >
         <div
-          className='h-full  items-center justify-center gap-5 rounded-lg ring-2 ring-offset-1  odd:ring-sky-400 odd:ring-offset-sky-400  even:ring-orange-400 even:ring-offset-orange-400'
+          className='h-full  items-center justify-center gap-5 rounded-lg ring-2  ring-tertiary-primary ring-offset-2 ring-offset-slate-200'
           // initial={{
           //   opacity: 0.3,
           // }}

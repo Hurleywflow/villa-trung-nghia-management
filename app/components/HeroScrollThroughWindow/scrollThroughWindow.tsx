@@ -66,7 +66,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
       id='Home'
       className='m-0 mx-auto box-border w-full p-0 overflow-x-clip'
     >
-      <div ref={ref} className='relative z-10 h-[200vh] overflow-clip'>
+      <div ref={ref} className='relative z-10 h-[200dvh] overflow-clip'>
         <motion.div
           style={{ scale }}
           className='hero-background sticky left-0 top-0 grid h-[100dvh] origin-[50%_70%] gap-2 p-6 pt-12 [grid-template-rows:4fr_1fr] md:origin-[90%_40%] md:pt-20'
@@ -74,7 +74,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           <div
             className='window-mask flex flex-col rounded-3xl
           bg-gradient-to-tl from-purple-300 to-stone-400
-            p-12 md:flex-row md:p-14'
+            py-12 px-4 md:flex-row md:p-14'
           >
             {heading1}
             <div className='mx-auto -mb-7 mt-4 box-content aspect-[5/8] w-[150px] min-w-[150px] rounded-full border-[4px] border-gray-300 md:my-auto md:-mr-1 md:ml-auto md:w-[300px] md:min-w-[300px]' />
@@ -107,13 +107,13 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           </div>
         </motion.div>
       </div>
-      <div className='mt-[-200vh] h-[200vh] overflow-clip '>
-        <div className='h-[200vh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900'>
+      <div className='mt-[-200dvh] h-[200dvh] overflow-clip '>
+        <div className='h-[200dvh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900'>
           {/* add some animation here or component want to see through window */}
 
           <motion.span
             style={{ x: imageXCalc }}
-            className='sticky top-1/2 mx-auto block aspect-video w-[1600px] max-w-[90%] overflow-hidden rounded-[60px] bg-gradient-to-t from-[#505064] to-[#111132]  shadow-2xl md:top-1/4'
+            className='sticky top-1/2 mx-auto block aspect-video w-[1600px] max-w-[96%] overflow-hidden rounded-[60px] bg-gradient-to-t from-[#505064] to-[#111132]  shadow-2xl md:top-1/4'
           >
             <div className='absolute left-0 top-0 z-[1] h-full w-full'>
               <Image
@@ -125,10 +125,10 @@ const ScrollThroughWindow: FC<Props> = (props) => {
             </div>
             <motion.div
               className='absolute -top-28 left-0 z-[1] h-full w-full'
-              initial={{ opacity: 0, y: '50%', x: '20%' }}
-              whileInView={{ opacity: 1, y: '-80%', x: '-25%' }}
+              initial={{ opacity: 0, y: '10%', x: '20%' }}
+              whileInView={{ opacity: 1, y: '-20%', x: '-70%' }}
               transition={{
-                duration: 8,
+                duration: 10,
                 ease: 'easeInOut',
                 repeatType: 'loop',
                 repeat: Infinity,
@@ -146,7 +146,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
               initial={{ opacity: 0, y: '-50%', x: '-100%' }}
               whileInView={{ opacity: 1, y: 0, x: '100%' }}
               transition={{
-                duration: 7,
+                duration: 10,
                 ease: 'easeInOut',
                 repeatType: 'loop',
                 repeat: Infinity,
@@ -157,7 +157,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
                 alt='airplane'
                 fill
                 sizes='100vw'
-                className=' scale-[20%] md:scale-[30%]'
+                className=' scale-[30%] md:scale-[40%]'
               />
             </motion.span>
             {/* <motion.h1

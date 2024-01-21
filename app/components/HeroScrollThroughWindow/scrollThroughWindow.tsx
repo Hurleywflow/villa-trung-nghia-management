@@ -75,7 +75,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           <div
             className='window-mask flex flex-col rounded-3xl
           bg-gradient-to-tl from-purple-300 to-stone-400
-            px-4 py-12 md:flex-row md:p-14'
+            px-2 py-12 md:flex-row md:p-14'
           >
             {heading1}
             <div className='mx-auto -mb-7 mt-4 box-content aspect-[5/8] w-[150px] min-w-[150px] rounded-full border-[4px] border-gray-300 md:my-auto md:-mr-1 md:ml-auto md:w-[300px] md:min-w-[300px]' />
@@ -108,8 +108,8 @@ const ScrollThroughWindow: FC<Props> = (props) => {
           </div>
         </motion.div>
       </div>
-      <div className='mt-[-200dvh] h-[200dvh] overflow-clip '>
-        <div className='h-[200dvh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900'>
+      <div className='mt-[-200vh] h-[200vh] overflow-clip '>
+        <div className='h-[200vh] overflow-clip bg-gradient-to-t from-[#f1f5f9] to-slate-900'>
           {/* add some animation here or component want to see through window */}
 
           <motion.span

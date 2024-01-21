@@ -8,8 +8,8 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x1 = useTransform(scrollYProgress, [0, 1], ['0%', '-100%']);
-  const x2 = useTransform(scrollYProgress, [1, 0], ['0%', '-100%']);
+  const x1 = useTransform(scrollYProgress, [0, 1], ['1%', '-100%']);
+  const x2 = useTransform(scrollYProgress, [1, 0], ['1%', '-100%']);
 
   return (
     <>
@@ -52,7 +52,7 @@ const Card = ({ card }: { card: CardType }) => {
   return (
     <div
       key={card.id}
-      className='group relative aspect-video w-[90dvw] overflow-hidden rounded-2xl bg-slate-100'
+      className='group relative aspect-video w-[80vw] overflow-hidden rounded-3xl bg-slate-100'
     >
       <div
         style={{
@@ -60,7 +60,7 @@ const Card = ({ card }: { card: CardType }) => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
-        className='rounded-2xl absolute inset-0 z-0 w-[100dvw] transition-transform duration-300 group-hover:scale-110'
+        className='rounded-3xl absolute inset-0 z-0 w-[90vw] transition-transform duration-300 group-hover:scale-110'
       ></div>
       {/* <div className='absolute inset-0 z-10 grid place-content-center'>
         <p className='bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg'>

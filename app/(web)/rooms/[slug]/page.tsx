@@ -55,10 +55,10 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 
   const { data: room, error, isLoading } = useSWR('/api/room', fetchRoom);
 
-  const slugNameVilla = room?.slug?.current;
-  if (slug !== slugNameVilla) {
-    return NotFound();
-  }
+  // const slugNameVilla = room?.slug?.current;
+  // if (slug !== slugNameVilla) {
+  //   return NotFound();
+  // }
 
   if (error) {
     throw new Error('Cannot fetch data');

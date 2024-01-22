@@ -50,19 +50,6 @@ export default function RootLayout({
         <Toaster />
       </body>
       {/* Google Analytics */}
-      {/* <Script
-        strategy='afterInteractive'
-         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-      />
-      <Script id='google-analytics' strategy='afterInteractive'>
-        {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${measurementId}');
-    `}
-      </Script> */}
       {/* <!-- Google tag (gtag.js) --> */}
       <Script
         strategy='afterInteractive'
@@ -71,10 +58,10 @@ export default function RootLayout({
       ></Script>
       <Script id='google-analytics' strategy='afterInteractive'>
         {` window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-  gtag('config', 'G-F2CXCHFN4L');`}
+          gtag('config', 'G-F2CXCHFN4L');`}
       </Script>
       {/* Google Analytics npm packages*/}
       {/* <GoogleAnalytics measurementId='G-XXXXXXXXXX' /> */}

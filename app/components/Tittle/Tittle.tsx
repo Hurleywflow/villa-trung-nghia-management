@@ -17,17 +17,17 @@ const Tittle: FC<Props> = () => {
   return (
     <section
       ref={container}
-      className='mt-[5dvh] flex max-w-full flex-col items-center justify-center'
+      className='mt-[5dvh] flex max-w-full flex-col items-center justify-center overflow-hidden p-3'
     >
       <motion.div
         style={{ x: x1 }}
-        className=' max-w-fit text-center text-8xl font-semibold text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
+        className=' max-w-fit text-center text-6xl font-semibold text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
       >
         Villa
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className=' max-w-fit text-center text-8xl text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
+        className=' max-w-fit text-center text-7xl text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]'
       >
         TrungNghia
       </motion.div>

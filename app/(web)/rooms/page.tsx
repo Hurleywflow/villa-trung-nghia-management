@@ -5,9 +5,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
+import { useInView } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { useInView } from 'framer-motion';
 
 import {
   Pagination,
@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/pagination';
 import useSWR from 'swr';
 
+import BottomBarBooking from '@/app/components/BottomBarBooking/BottomBarBooking';
 import RoomCard from '@/app/components/RoomCard/RoomCard';
 import Search from '@/app/components/Search/Search';
 import SectionHeading from '@/app/components/TextSectionHeading/SectionHeading';
@@ -26,7 +27,6 @@ import { getRooms } from '@/libs/apis';
 import { Room } from '@/models/room';
 import { motion } from 'framer-motion';
 import LoadingSpinner from './loading';
-import BottomBarBooking from '@/app/components/BottomBarBooking/BottomBarBooking';
 
 const Rooms = () => {
   const [roomTypeFilter, setRoomTypeFilter] = useState('');
@@ -59,7 +59,7 @@ const Rooms = () => {
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
   //items per a page
-  const [postsPerPage, setPostsPerPage] = useState(12);
+  const [postsPerPage, setPostsPerPage] = useState(36);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
 
@@ -92,20 +92,19 @@ const Rooms = () => {
     lastPostIndex,
   );
 
-    const ref = useRef(null);
-    const isInView = useInView(ref);
-
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   return (
-    <section className='ref={ref} mx-auto mt-[5dvh] min-h-fit' ref={ref}>
+    <section className='mx-auto mt-[5dvh] min-h-fit' ref={ref}>
       <div
         style={{
           // transform: isInView ? 'none' : 'translateY(-50px)',
           opacity: isInView ? 1 : 0,
-          transition: 'all 0.2s ease-in-out',
+          transition: 'all 0.3s ease-in-out',
         }}
       >
-        <BottomBarBooking />
+        {isInView ? <BottomBarBooking /> : null}
       </div>
       {isClient ? (
         <div className=' ' id='Villa'>
@@ -119,7 +118,7 @@ const Rooms = () => {
             />
           </div>
           {/* display all Vila cards */}
-          <div className='group m-4 grid grid-cols-2 place-content-evenly gap-3 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-6'>
+          <div className='group mx-1 my-5 grid grid-cols-2 place-content-evenly gap-2 p-0 md:grid-cols-4 md:gap-2 lg:grid-cols-6'>
             {/* {filteredRooms.map((room) => ( */}
             {currentPosts.map((room: Room, index: number) => (
               // stagger animation for each card
@@ -133,9 +132,9 @@ const Rooms = () => {
                 }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1 }}
                 transition={{ duration: 0.2, delay: 0.1 + index * 0.1 }}
-                whileTap={{ opacity: 0.8 }}
+                // whileTap={{ opacity: 0.8 }}
                 //! make all another cards are blur when hover a card
-                // className=' hover:!blur-none group-hover:blur-sm'
+                // className=' hover:!blur-none group-hover:blur-[1px]'
               >
                 <RoomCard room={room} />
               </motion.div>

@@ -2,11 +2,12 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Toaster } from '@/components/ui/toaster';
 import type { Metadata } from 'next';
-import type { Viewport } from 'next';
 import Navbar from '../components/Header/Navbar';
 import Sidebar from '../components/Header/nav/sideBar/sidebar';
 import Toast from '../components/Toast/Toast';
 import Footer from '../components/footer/footer';
+// import Script from 'next/script';
+// import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import '../globals.css';
 
 export const metadata: Metadata = {
@@ -40,7 +41,6 @@ export default function RootLayout({
         {/* <ThemeProvider> */}
         <Navbar />
         <Sidebar />
-        {/* <Header /> */}
         {children}
         <Footer />
         <Toast />
@@ -48,6 +48,21 @@ export default function RootLayout({
         {/* </NextAuthProvider> */}
         <Toaster />
       </body>
+      {/* Google Analytics */}
+      {/* <Script
+        strategy='afterInteractive'
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+      />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}');
+    `}
+      </Script> */}
+      {/* Google Analytics npm packages*/}
+      {/* <GoogleAnalytics measurementId='G-XXXXXXXXXX' /> */}
     </html>
   );
 }

@@ -23,15 +23,15 @@ export type Room = {
   code: string;
   coverImage: CoverImage;
   description: string;
-  dimension: string;
-  discount: number;
+  // dimension: string;
+  // discount: string;
   images: Image[];
   isBooked: boolean;
   isFeatured: boolean;
   name: string;
-  numberOfBeds: number;
+  // numberOfBeds: number;
   offeredAmenities: Amenity[];
-  price: number;
+  price: string;
   slug: Slug;
   specialNote: string;
   type: string;
@@ -46,5 +46,5 @@ export type CreateBookingDto = {
   adults: number;
   children: number;
   totalPrice: number;
-  discount: number;
+  // discount: number;
 };

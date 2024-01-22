@@ -24,7 +24,7 @@ function BottomBarBooking() {
   return (
     <motion.div
       className='fixed bottom-0 z-[9999] flex h-11 w-full
-     flex-row items-center justify-center rounded-t-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:hidden'
+     flex-row items-center justify-center rounded-t-2xl bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:hidden'
       // initial={{ opacity: 0 }}
       // animate={{ opacity: 1, transition: { duration: 0.5 } }}
       // whileInView={{ opacity: 1 }}

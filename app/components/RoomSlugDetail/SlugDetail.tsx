@@ -25,27 +25,43 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import { useInView } from 'framer-motion';
+import BottomBarBooking from '../BottomBarBooking/BottomBarBooking';
 
 interface SlugProps {
   room: Room;
 }
 
 function SlugDetail({ room }: SlugProps) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref);
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
     return (
-      <section className='px-4 py-6 sm:p-6 md:px-8 md:py-10'>
-        <div className='mx-auto grid max-w-6xl grid-cols-1 lg:max-w-7xl lg:grid-cols-2 lg:gap-x-20'>
-          <div className='relative col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 p-3 sm:row-start-2 sm:bg-none sm:p-0 lg:row-start-1'>
-            <h1 className='mt-1 text-lg font-semibold text-white sm:text-slate-900  md:text-2xl'>
-              {room.name.toUpperCase()}
-            </h1>
-            <p className='text-sm font-medium leading-4 text-white sm:text-slate-500 '>
+      <section className='px-4 py-6 sm:p-6 md:px-8 md:py-10' ref={ref}>
+        <div
+          style={{
+            // transform: isInView ? 'none' : 'translateY(-50px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.3s ease-in-out',
+          }}
+        >
+          {isInView ? <BottomBarBooking /> : null}
+        </div>
+        <div className=' grid max-w-6xl grid-cols-1 lg:max-w-7xl lg:grid-cols-2 lg:gap-x-20'>
+          <div className='relative col-start-1 row-start-1 flex flex-col-reverse rounded-lg  p-3 sm:row-start-2 sm:bg-none sm:p-0 lg:row-start-1'>
+            <p className='text-sm font-medium leading-4 text-tertiary-primary text-shadow-lg shadow-tertiary-primary '>
+             $: {room.price} VND
+            </p>
+            <p className='text-sm font-medium leading-4 text-tertiary-primary text-shadow-lg shadow-tertiary-primary '>
               {room.type === 'mini' ? 'Mini Vila' : `${room.type} Rooms`}
             </p>
+            <h1 className='mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl'>
+              {room.name.toUpperCase()}
+            </h1>
           </div>
-          <div className='col-start-1 col-end-3 row-start-1 grid gap-4 sm:mb-6 sm:grid-cols-4 lg:col-start-2 lg:row-span-6 lg:row-end-6 lg:mb-0 lg:gap-6'>
+          <div className='col-start-1 col-end-3 row-start-1 hidden gap-4 sm:mb-6 sm:grid-cols-4 md:grid lg:col-start-2 lg:row-span-6 lg:row-end-6 lg:mb-0 lg:gap-6'>
             <div className='relative h-60 w-full overflow-hidden rounded-lg sm:col-span-2 sm:h-52 lg:col-span-full'>
               <Image
                 alt={room.name}
@@ -113,8 +129,48 @@ function SlugDetail({ room }: SlugProps) {
                   key={amenity._key}
                   className='my-1 flex items-center md:my-0'
                 >
-                  <i className={`fa-solid ${amenity.icon}`}></i>
-                  <p className='ml-2 text-xs md:text-base'>{amenity.amenity}</p>
+                  <i>
+                    {amenity.icon === 'w' ? (
+                      <svg
+                        width='15px'
+                        height='15px'
+                        viewBox='0 -2 20 20'
+                        version='1.1'
+                        xmlns='http://www.w3.org/2000/svg'
+                        xmlnsXlink='http://www.w3.org/1999/xlink'
+                      >
+                        <title>wifi [#1018]</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g
+                          id='Page-1'
+                          stroke='none'
+                          stroke-width='1'
+                          fill='none'
+                          fill-rule='evenodd'
+                        >
+                          <g
+                            id='Dribbble-Light-Preview'
+                            transform='translate(-60.000000, -3681.000000)'
+                            fill='#000000'
+                          >
+                            <g
+                              id='icons'
+                              transform='translate(56.000000, 160.000000)'
+                            >
+                              <path
+                                d='M11.9795939,3535.00003 C11.9795939,3536.00002 12.8837256,3537 14,3537 C15.1162744,3537 16.0204061,3536.00002 16.0204061,3535.00003 C16.0204061,3532.00008 11.9795939,3532.00008 11.9795939,3535.00003 M9.71370846,3530.7571 L11.1431458,3532.17208 C12.7180523,3530.6121 15.2819477,3530.6121 16.8568542,3532.17208 L18.2862915,3530.7571 C15.9183756,3528.41413 12.0816244,3528.41413 9.71370846,3530.7571 M4,3525.10019 L5.42842711,3526.51516 C10.1551672,3521.83624 17.8448328,3521.83624 22.5715729,3526.51516 L24,3525.10019 C18.4772199,3519.63327 9.52278008,3519.63327 4,3525.10019 M21.1431458,3527.92914 L19.7147187,3529.34312 C16.5638953,3526.22417 11.4361047,3526.22417 8.28528134,3529.34312 L6.85685423,3527.92914 C10.8016971,3524.0242 17.1983029,3524.0242 21.1431458,3527.92914'
+                                id='wifi-[#1018]'
+                              ></path>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    ) : (
+                      ''
+                    )}
+                  </i>
+                  <p className='ml-2 text-xs'>{amenity.amenity}</p>
                 </div>
               ))}
             </div>
@@ -154,17 +210,29 @@ function SlugDetail({ room }: SlugProps) {
     );
   }
   return (
-    <section className='px-4 py-6 sm:p-6 md:px-8 md:py-10'>
-      <div className='mx-auto grid max-w-6xl grid-cols-1 lg:max-w-7xl lg:grid-cols-2 lg:gap-x-20'>
-        <div className='relative col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 p-3 sm:row-start-2 sm:bg-none sm:p-0 lg:row-start-1'>
-          <h1 className='mt-1 text-lg font-semibold text-white sm:text-slate-900  md:text-2xl'>
-            {room.name.toUpperCase()}
-          </h1>
-          <p className='text-sm font-medium leading-4 text-white sm:text-slate-500 '>
+    <section className='px-4 py-6 sm:p-6 md:px-8 md:py-10' ref={ref}>
+      <div
+        style={{
+          // transform: isInView ? 'none' : 'translateY(-50px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.3s ease-in-out',
+        }}
+      >
+        {isInView ? <BottomBarBooking /> : null}
+      </div>
+      <div className=' grid max-w-6xl grid-cols-1 lg:max-w-7xl lg:grid-cols-2 lg:gap-x-20'>
+        <div className='relative col-start-1 row-start-1 flex flex-col-reverse rounded-lg  p-3 sm:row-start-2 sm:bg-none sm:p-0 lg:row-start-1'>
+          <p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg  '>
+            $: {room.price} VND
+          </p>
+          <p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg  '>
             {room.type === 'mini' ? 'Mini Vila' : `${room.type} Rooms`}
           </p>
+          <h1 className='mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl'>
+            {room.name.toUpperCase()}
+          </h1>
         </div>
-        <div className='col-start-1 col-end-3 row-start-1 grid gap-4 sm:mb-6 sm:grid-cols-4 lg:col-start-2 lg:row-span-6 lg:row-end-6 lg:mb-0 lg:gap-6'>
+        <div className='col-start-1 col-end-3 row-start-1 hidden gap-4 sm:mb-6 sm:grid-cols-4 md:grid lg:col-start-2 lg:row-span-6 lg:row-end-6 lg:mb-0 lg:gap-6'>
           <div className='relative h-60 w-full overflow-hidden rounded-lg sm:col-span-2 sm:h-52 lg:col-span-full'>
             <Image
               alt={room.name}
@@ -233,9 +301,48 @@ function SlugDetail({ room }: SlugProps) {
                 key={amenity._key}
                 className='my-1 flex items-center md:my-0'
               >
-                <i className={`fa-solid ${amenity.icon}`}></i>
-
-                <p className='ml-2 text-xs md:text-base'>{amenity.amenity}</p>
+                <i>
+                  {amenity.icon === 'w' ? (
+                    <svg
+                      width='15px'
+                      height='15px'
+                      viewBox='0 -2 20 20'
+                      version='1.1'
+                      xmlns='http://www.w3.org/2000/svg'
+                      xmlnsXlink='http://www.w3.org/1999/xlink'
+                    >
+                      <title>wifi [#1018]</title>
+                      <desc>Created with Sketch.</desc>
+                      <defs></defs>
+                      <g
+                        id='Page-1'
+                        stroke='none'
+                        stroke-width='1'
+                        fill='none'
+                        fill-rule='evenodd'
+                      >
+                        <g
+                          id='Dribbble-Light-Preview'
+                          transform='translate(-60.000000, -3681.000000)'
+                          fill='#000000'
+                        >
+                          <g
+                            id='icons'
+                            transform='translate(56.000000, 160.000000)'
+                          >
+                            <path
+                              d='M11.9795939,3535.00003 C11.9795939,3536.00002 12.8837256,3537 14,3537 C15.1162744,3537 16.0204061,3536.00002 16.0204061,3535.00003 C16.0204061,3532.00008 11.9795939,3532.00008 11.9795939,3535.00003 M9.71370846,3530.7571 L11.1431458,3532.17208 C12.7180523,3530.6121 15.2819477,3530.6121 16.8568542,3532.17208 L18.2862915,3530.7571 C15.9183756,3528.41413 12.0816244,3528.41413 9.71370846,3530.7571 M4,3525.10019 L5.42842711,3526.51516 C10.1551672,3521.83624 17.8448328,3521.83624 22.5715729,3526.51516 L24,3525.10019 C18.4772199,3519.63327 9.52278008,3519.63327 4,3525.10019 M21.1431458,3527.92914 L19.7147187,3529.34312 C16.5638953,3526.22417 11.4361047,3526.22417 8.28528134,3529.34312 L6.85685423,3527.92914 C10.8016971,3524.0242 17.1983029,3524.0242 21.1431458,3527.92914'
+                              id='wifi-[#1018]'
+                            ></path>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  ) : (
+                    ''
+                  )}
+                </i>
+                <p className='ml-2 text-xs'>{amenity.amenity}</p>
               </div>
             ))}
           </div>

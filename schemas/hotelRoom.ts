@@ -59,17 +59,17 @@ const hotelRoom = {
     defineField({
       name: 'price',
       title: 'Price',
-      type: 'number',
+      type: 'string',
       // validation: (Rule) =>
       //   Rule.required().min(50).error("Minimum 50 Characters"),
     }),
-    defineField({
-      name: 'discount',
-      title: 'Discount',
-      type: 'number',
-      initialValue: 0,
-      validation: (Rule) => Rule.min(0),
-    }),
+    // defineField({
+    //   name: 'discount',
+    //   title: 'Discount',
+    //   type: 'string',
+    //   // initialValue: 0,
+    //   // validation: (Rule) => Rule.min(0),
+    // }),
     defineField({
       name: 'images',
       title: 'Images',
@@ -116,27 +116,27 @@ const hotelRoom = {
       type: 'text',
       validation: (Rule) => Rule.required(),
       initialValue:
-        'Check-in time is 12:00 PM, checkout time is 11:59 AM. If you leave behind any items, please contact the receptionist.',
+        'Check-in time is 14:00 PM, checkout time is 11:59 AM. If you leave behind any items, please contact the receptionist.',
     }),
-    defineField({
-      name: 'dimension',
-      title: 'Dimension',
-      type: 'string',
-      description: 'Dimension of the room, Single, Double, Triple, Public',
-    }),
-    defineField({
-      name: 'capacity',
-      title: 'Capacity',
-      type: 'string',
-      description: 'Capacity of the people',
-    }),
-    defineField({
-      name: 'numberOfBeds',
-      title: 'Number Of Beds',
-      type: 'number',
-      validation: (Rule) => Rule.min(1),
-      initialValue: 1,
-    }),
+    // defineField({
+    //   name: 'dimension',
+    //   title: 'Dimension',
+    //   type: 'string',
+    //   description: 'Dimension of the room, Single, Double, Triple, Public',
+    // }),
+    // defineField({
+    //   name: 'capacity',
+    //   title: 'Capacity',
+    //   type: 'string',
+    //   description: 'Capacity of the people',
+    // }),
+    // defineField({
+    //   name: 'numberOfBeds',
+    //   title: 'Number Of Beds',
+    //   type: 'number',
+    //   validation: (Rule) => Rule.min(1),
+    //   initialValue: 1,
+    // }),
     defineField({
       name: 'offeredAmenities',
       title: 'Offered Amenities',
@@ -163,12 +163,12 @@ const hotelRoom = {
       type: 'boolean',
       initialValue: false,
     }),
-    defineField({
-      name: 'reviews',
-      title: 'Reviews',
-      type: 'array',
-      of: [{ type: 'review' }],
-    }),
+    // defineField({
+    //   name: 'reviews',
+    //   title: 'Reviews',
+    //   type: 'array',
+    //   of: [{ type: 'review' }],
+    // }),
   ],
 };
 

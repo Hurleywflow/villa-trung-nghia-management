@@ -44,7 +44,7 @@ const Links = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.5 }}
           onClick={() => {
-            const el = document.getElementById(`/${item}`);
+            const el = document.getElementById(`${item}`);
             el?.scrollIntoView({ behavior: 'smooth' });
           }}
           className='cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4'

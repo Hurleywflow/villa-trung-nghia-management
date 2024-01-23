@@ -1,5 +1,5 @@
 export const heading1 = (
-  <div className='z-50 flex h-full flex-col justify-center items-center '>
+  <div className='z-50 flex h-full flex-col items-center justify-center '>
     <h1
       className=' max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")] bg-clip-text
     pb-5 text-6xl

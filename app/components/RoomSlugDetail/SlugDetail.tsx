@@ -51,10 +51,10 @@ function SlugDetail({ room }: SlugProps) {
         </div>
         <div className=' grid max-w-6xl grid-cols-1 lg:max-w-7xl lg:grid-cols-2 lg:gap-x-20'>
           <div className='relative col-start-1 row-start-1 flex flex-col-reverse rounded-lg  p-3 sm:row-start-2 sm:bg-none sm:p-0 lg:row-start-1'>
-            <p className='text-sm font-medium leading-4 text-tertiary-primary text-shadow-lg shadow-tertiary-primary '>
-             $: {room.price} VND
+            <p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg '>
+              $: {room.price} VND
             </p>
-            <p className='text-sm font-medium leading-4 text-tertiary-primary text-shadow-lg shadow-tertiary-primary '>
+            <p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg '>
               {room.type === 'mini' ? 'Mini Vila' : `${room.type} Rooms`}
             </p>
             <h1 className='mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl'>

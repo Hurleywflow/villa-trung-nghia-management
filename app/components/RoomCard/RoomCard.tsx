@@ -40,7 +40,7 @@ const RoomCard: FC<Props> = (props) => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
     return (
-      <section className='mx-auto body-font w-full   transition-all duration-100 hover:scale-[1.01]'>
+      <section className='body-font mx-auto w-full   transition-all duration-100 hover:scale-[1.01]'>
         {!isBooked ? (
           <div className='group  rounded-[calc(1rem-1px)] bg-gradient-to-b from-blue-300 to-pink-300 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-orange-400 hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 '>
             <div className='w-ful relative h-full rounded-lg bg-gray-50'>
@@ -76,7 +76,7 @@ const RoomCard: FC<Props> = (props) => {
                     // width={500}
                     // height={500}
                     fill
-                     sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw'
+                    sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw'
                     className='img scale-animation rounded-lg object-cover object-center'
                   />
                 </div>
@@ -93,9 +93,7 @@ const RoomCard: FC<Props> = (props) => {
                   <h2 className='title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm'>
                     $: {price} VND
                   </h2>
-                  <p className='line-clamp-3 text-[0.8rem]'>
-                    {description}
-                  </p>
+                  <p className='line-clamp-3 text-[0.8rem]'>{description}</p>
                   {/* <p className='pb-2 pt-2 line-clamp-3 text-[0.8rem]'>{description.slice(1, 100)}...</p> */}
                   <div className='flex flex-wrap items-center '>
                     <Link
@@ -145,7 +143,7 @@ const RoomCard: FC<Props> = (props) => {
                     // width={500}
                     // height={500}
                     fill
-                     sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw'
+                    sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw'
                     className='img scale-animation rounded-lg object-cover object-center'
                   />
                 </div>
@@ -160,15 +158,13 @@ const RoomCard: FC<Props> = (props) => {
                     Vila: {type === 'mini' ? 'Mini' : `${type} Room`}
                   </h2>
                   <h2 className='title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm'>
-                    $: { price} VND
+                    $: {price} VND
                   </h2>
-                  <p className='line-clamp-3 text-[0.8rem]'>
-                    {description}
-                  </p>
+                  <p className='line-clamp-3 text-[0.8rem]'>{description}</p>
                   {/* <p className='pb-2 pt-2 line-clamp-3 text-[0.8rem]'>{description.slice(1, 100)}...</p> */}
                   <div className='flex flex-wrap items-center '>
                     <Link
-                      className='scale-animation-small inline-flex items-center text-xs text-sky-500 shadow-tertiary-primary text-shadow-lg mb-0'
+                      className='scale-animation-small mb-0 inline-flex items-center text-xs text-sky-500 shadow-tertiary-primary text-shadow-lg'
                       href={`/rooms/${slug.current}`}
                     >
                       Xem chi tiet
@@ -293,12 +289,9 @@ const RoomCard: FC<Props> = (props) => {
             <div className='absolute -right-2 -top-2 z-40 aspect-square w-24 overflow-hidden rounded-sm'>
               <div className='absolute left-0 top-0 h-2 w-2 bg-amber-500'></div>
               <div className='absolute bottom-0 right-0 h-2 w-2 bg-amber-500'></div>
-              <Link
-                href='#'
-                className='absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 bg-amber-300 py-1.5 text-center text-sm font-semibold uppercase tracking-wider text-amber-800 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-yellow-300'
-              >
+              <div className='absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 bg-amber-300 py-1.5 text-center text-sm font-semibold uppercase tracking-wider text-amber-800 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-yellow-300'>
                 {isBooked ? 'Booked' : 'Book Now'}
-              </Link>
+              </div>
             </div>
 
             <Link href={`/rooms/${slug.current}`}>

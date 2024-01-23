@@ -70,8 +70,8 @@ const Navbar = () => {
               scroll={true}
               href='/#Villa'
               className='cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl'
-              onClick={ () => {
-                 router.push('/#Villa');
+              onClick={() => {
+                router.push('/#Villa');
                 const el = document.getElementById('Villa');
                 el?.scrollIntoView({ behavior: 'smooth' });
               }}

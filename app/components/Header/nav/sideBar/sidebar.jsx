@@ -35,12 +35,16 @@ const Sidebar = () => {
       animate={open ? 'open' : 'closed'}
     >
       <motion.div
-        className='fixed bottom-0 left-0 top-0 z-50 flex flex-col w-[min(100%,270px)] items-center justify-center bg-[#03001417] backdrop-blur-md '
+        className='fixed bottom-0 left-0 top-0 z-50 flex w-[min(100%,270px)] flex-col items-center justify-center bg-[#03001417] backdrop-blur-md '
         variants={variants}
       >
         <Links />
         <ToggleButton setOpen={setOpen} />
-        <Link href='/studio' target='_blank' className='flex items-center h-40 justify-center'>
+        <Link
+          href='/studio'
+          target='_blank'
+          className='flex h-40 items-center justify-center'
+        >
           <Button size='sm' variant='link' className='rounded-full'>
             Admin
           </Button>{' '}

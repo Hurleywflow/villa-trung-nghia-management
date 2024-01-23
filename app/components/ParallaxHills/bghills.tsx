@@ -28,56 +28,31 @@ export default function Bghills(): JSX.Element {
         style={{ y: y1 }}
         className='absolute left-0 top-0 z-[1] h-full w-full'
       >
-        <Image
-          src='/images/parallax/hill1.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/hill1.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
       <motion.div
         style={{ y: y2 }}
         className='absolute left-0 top-0 z-[2] h-full w-full'
       >
-        <Image
-          src='/images/parallax/hill2.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/hill2.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
       <motion.div
         style={{ x: x3 }}
         className='absolute left-0 top-0 z-[3] h-full w-full'
       >
-        <Image
-          src='/images/parallax/hill3.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/hill3.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
       <motion.div
         style={{ x: x4 }}
         className='absolute left-0 top-0 z-[4] h-full w-full'
       >
-        <Image
-          src='/images/parallax/hill4.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/hill4.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
       <motion.div
         style={{ x: x5 }}
         className='absolute left-0 top-0 z-[5] h-full w-full'
       >
-        <Image
-          src='/images/parallax/hill5.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/hill5.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
       <motion.h1
         style={{ y: y5 }}
@@ -90,34 +65,19 @@ export default function Bghills(): JSX.Element {
         style={{ x: xtree }}
         className='absolute left-0 top-0 z-[6] h-full w-full'
       >
-        <Image
-          src='/images/parallax/tree.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/tree.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
       <motion.div
         style={{ x: xleaf }}
         className='absolute left-0 top-0 z-[7] h-full w-full'
       >
-        <Image
-          src='/images/parallax/leaf.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/leaf.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
       <motion.div
         style={{ x: xplant }}
         className='absolute left-0 top-0 z-[8] h-full w-full'
       >
-        <Image
-          src='/images/parallax/plant.png'
-          alt='hill1'
-          fill
-          sizes='50vw'
-        />
+        <Image src='/images/parallax/plant.png' alt='hill1' fill sizes='50vw' />
       </motion.div>
     </div>
   );

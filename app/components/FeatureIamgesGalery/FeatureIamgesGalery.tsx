@@ -32,9 +32,9 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
           />
         </div>
       </div>
-      <div className='mx-auto my-3 w-full max-w-screen-xl px-14'>
+      <div className='mx-auto my-3 w-full max-w-screen-lg px-16 '>
         <Carousel
-          className='mx-auto w-full max-w-sm'
+          className='mx-auto w-full max-w-md'
           opts={{
             align: 'start',
             loop: true,

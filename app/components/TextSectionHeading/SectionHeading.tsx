@@ -10,18 +10,18 @@ const SectionHeading = ({ children }: { children: string }) => {
     spans.forEach((span) => {
       span.addEventListener('mouseenter', function (this: typeof span) {
         this.style.fontWeight = '900';
-        this.style.color = '#1e293b';
+        this.style.color = '#f5f5f4';
 
         const leftNeighbor = this.previousElementSibling as HTMLSpanElement;
         const rightNeighbor = this.nextElementSibling as HTMLSpanElement;
 
         if (leftNeighbor) {
           leftNeighbor.style.fontWeight = '500';
-          leftNeighbor.style.color = '#64748b';
+          leftNeighbor.style.color = '#d6d3d1';
         }
         if (rightNeighbor) {
           rightNeighbor.style.fontWeight = '500';
-          rightNeighbor.style.color = '#64748b';
+          rightNeighbor.style.color = '#d6d3d1';
         }
       });
 

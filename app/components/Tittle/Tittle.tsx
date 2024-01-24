@@ -17,7 +17,7 @@ const Tittle: FC<Props> = () => {
   return (
     <section
       ref={container}
-      className='mt-[5dvh] flex max-w-full flex-col items-center justify-center overflow-hidden p-3'
+      className='mt-[5dvh] pb-[5dvh] flex max-w-full flex-col items-center justify-center overflow-hidden'
     >
       <motion.div
         style={{ x: x1 }}

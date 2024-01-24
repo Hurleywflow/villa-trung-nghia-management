@@ -46,6 +46,7 @@ function SlugDetail({ room }: SlugProps) {
             opacity: isInView ? 1 : 0,
             transition: 'all 0.3s ease-in-out',
           }}
+          className='flex items-center justify-center'
         >
           {isInView ? <BottomBarBooking /> : null}
         </div>
@@ -217,6 +218,7 @@ function SlugDetail({ room }: SlugProps) {
           opacity: isInView ? 1 : 0,
           transition: 'all 0.3s ease-in-out',
         }}
+        className='flex items-center justify-center'
       >
         {isInView ? <BottomBarBooking /> : null}
       </div>

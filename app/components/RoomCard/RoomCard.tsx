@@ -27,6 +27,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import { cn } from '@/lib/utils';
 
 type Props = {
   room: Room;
@@ -36,6 +37,7 @@ const RoomCard: FC<Props> = (props) => {
   const {
     room: { coverImage, name, code, type, description, slug, isBooked, price },
   } = props;
+  const [snap, setSnap] = React.useState<number | string | null>('500px');
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
@@ -202,26 +204,39 @@ const RoomCard: FC<Props> = (props) => {
               <div className='absolute left-0 top-0 h-2 w-2 bg-pink-500'></div>
               <div className='absolute bottom-0 right-0 h-2 w-2 bg-pink-500'></div>
 
-              <Drawer open={open} onOpenChange={setOpen}>
+              <Drawer
+                open={open}
+                onOpenChange={setOpen}
+                snapPoints={['500px', '800px', 1]}
+                activeSnapPoint={snap}
+                setActiveSnapPoint={setSnap}
+              >
                 <DrawerTrigger asChild>
                   <div className='absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 cursor-pointer bg-pink-300 py-1.5 text-center text-sm font-semibold uppercase tracking-wider text-pink-800 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-sky-300'>
                     {isBooked ? 'Booked' : 'Book Now'}
                   </div>
                 </DrawerTrigger>
                 <DrawerContent>
-                  <DrawerHeader className='text-left'>
-                    <DrawerTitle>Booking</DrawerTitle>
-                    <DrawerDescription>
-                      When you are ready to book this Vila, please fill the form
-                      below.
-                    </DrawerDescription>
-                  </DrawerHeader>
-                  <ProfileForm className='px-4' />
-                  <DrawerFooter className='pt-2'>
-                    <DrawerClose asChild>
-                      <Button variant='outline'>Cancel</Button>
-                    </DrawerClose>
-                  </DrawerFooter>
+                  <div
+                    className={cn('', {
+                      'overflow-y-auto': snap === 1,
+                      'overflow-hidden': snap !== 1,
+                    })}
+                  >
+                    <DrawerHeader className='text-left'>
+                      <DrawerTitle>Booking</DrawerTitle>
+                      <DrawerDescription>
+                        When you are ready to book this Vila, please fill the
+                        form below.
+                      </DrawerDescription>
+                    </DrawerHeader>
+                    <ProfileForm className='px-4' />
+                    <DrawerFooter className='pt-2'>
+                      <DrawerClose asChild>
+                        <Button variant='outline'>Cancel</Button>
+                      </DrawerClose>
+                    </DrawerFooter>
+                  </div>
                 </DrawerContent>
               </Drawer>
             </div>

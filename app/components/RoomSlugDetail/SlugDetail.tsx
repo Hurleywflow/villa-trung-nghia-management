@@ -37,7 +37,7 @@ function SlugDetail({ room }: SlugProps) {
   const ref = React.useRef(null);
   const isInView = useInView(ref);
   const [open, setOpen] = React.useState(false);
-  const [snap, setSnap] = React.useState<number | string | null>(0.5);
+  const [snap, setSnap] = React.useState<number | string | null>(0.7);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
     return (
@@ -355,7 +355,8 @@ function SlugDetail({ room }: SlugProps) {
           <Drawer
             open={open}
             onOpenChange={setOpen}
-            snapPoints={[0.5, 0.8, 1]}
+            snapPoints={[0.7, 1]}
+            // snapPoints={[0.5, 0.8, 1]}
             activeSnapPoint={snap}
             setActiveSnapPoint={setSnap}
           >

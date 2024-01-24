@@ -25,6 +25,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import { cn } from '@/lib/utils';
 import { useInView } from 'framer-motion';
 import BottomBarBooking from '../BottomBarBooking/BottomBarBooking';
 
@@ -36,6 +37,7 @@ function SlugDetail({ room }: SlugProps) {
   const ref = React.useRef(null);
   const isInView = useInView(ref);
   const [open, setOpen] = React.useState(false);
+  const [snap, setSnap] = React.useState<number | string | null>(0.5);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
     return (
@@ -350,26 +352,39 @@ function SlugDetail({ room }: SlugProps) {
           </div>
         </div>
         <div className='col-start-1 row-start-3 mt-4 self-center sm:col-start-2 sm:row-span-2 sm:row-start-2 sm:mt-0 lg:col-start-1 lg:row-start-3 lg:row-end-4 lg:mt-6 '>
-          <Drawer open={open} onOpenChange={setOpen}>
+          <Drawer
+            open={open}
+            onOpenChange={setOpen}
+            snapPoints={[0.5, 0.8, 1]}
+            activeSnapPoint={snap}
+            setActiveSnapPoint={setSnap}
+          >
             <DrawerTrigger asChild>
               <Button type='button' size='lg'>
                 Booking Now
               </Button>
             </DrawerTrigger>
             <DrawerContent>
-              <DrawerHeader className='text-left'>
-                <DrawerTitle>Booking</DrawerTitle>
-                <DrawerDescription>
-                  When you are ready to book this Vila, please fill the form
-                  below.
-                </DrawerDescription>
-              </DrawerHeader>
-              <ProfileForm className='px-4' />
-              <DrawerFooter className='pt-2'>
-                <DrawerClose asChild>
-                  <Button variant='outline'>Cancel</Button>
-                </DrawerClose>
-              </DrawerFooter>
+              <div
+                className={cn('', {
+                  'overflow-y-auto': snap === 1,
+                  'overflow-hidden': snap !== 1,
+                })}
+              >
+                <DrawerHeader className='text-left'>
+                  <DrawerTitle>Booking</DrawerTitle>
+                  <DrawerDescription>
+                    When you are ready to book this Vila, please fill the form
+                    below.
+                  </DrawerDescription>
+                </DrawerHeader>
+                <ProfileForm className='px-4' />
+                <DrawerFooter className='pt-2'>
+                  <DrawerClose asChild>
+                    <Button variant='outline'>Cancel</Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </div>
             </DrawerContent>
           </Drawer>
           {/* <Link

@@ -37,7 +37,7 @@ const RoomCard: FC<Props> = (props) => {
   const {
     room: { coverImage, name, code, type, description, slug, isBooked, price },
   } = props;
-  const [snap, setSnap] = React.useState<number | string | null>('500px');
+  const [snap, setSnap] = React.useState<number | string | null>(0.5);
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   if (isDesktop) {
@@ -207,7 +207,7 @@ const RoomCard: FC<Props> = (props) => {
               <Drawer
                 open={open}
                 onOpenChange={setOpen}
-                snapPoints={['500px', '800px', 1]}
+                snapPoints={[0.5, 0.8, 1]}
                 activeSnapPoint={snap}
                 setActiveSnapPoint={setSnap}
               >

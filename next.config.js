@@ -3,23 +3,23 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  reactStrictMode: true,
+	reactStrictMode: true,
 
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-  },
-};
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'cdn.sanity.io',
+				port: '',
+				pathname: '/**',
+			},
+		],
+	},
+}
 
-const withVideos = require('next-videos');
+const withVideos = require('next-videos')
 
-module.exports = withVideos(nextConfig);
+module.exports = withVideos(nextConfig)
 // const nextConfig = {
 //   reactStrictMode: true,
 //   experimental: {

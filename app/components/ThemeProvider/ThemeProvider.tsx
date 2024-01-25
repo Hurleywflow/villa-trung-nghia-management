@@ -1,35 +1,35 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/prefer-optional-chain */
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import ThemeContext from '@/context/themeContext';
+import ThemeContext from '@/context/themeContext'
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const themeFromStorage: boolean =
-    typeof localStorage !== 'undefined' && localStorage.getItem('hotel-theme')
-      ? JSON.parse(localStorage.getItem('hotel-theme')!)
-      : false;
+	const themeFromStorage: boolean =
+		typeof localStorage !== 'undefined' && localStorage.getItem('hotel-theme')
+			? JSON.parse(localStorage.getItem('hotel-theme')!)
+			: false
 
-  const [darkTheme, setDarkTheme] = useState<boolean>(themeFromStorage);
-  const [renderComponent, setRenderComponent] = useState(false);
+	const [darkTheme, setDarkTheme] = useState<boolean>(themeFromStorage)
+	const [renderComponent, setRenderComponent] = useState(false)
 
-  useEffect(() => {
-    setRenderComponent(true);
-  }, []);
+	useEffect(() => {
+		setRenderComponent(true)
+	}, [])
 
-  if (!renderComponent) return <></>;
+	if (!renderComponent) return <></>
 
-  return (
-    <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
-      <div className={`${darkTheme ? 'dark' : ''} min-h-screen`}>
-        <div className='dark:bg-gradient-radial text-zinc-900 dark:text-zinc-200'>
-          {children}
-        </div>
-      </div>
-    </ThemeContext.Provider>
-  );
-};
+	return (
+		<ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
+			<div className={`${darkTheme ? 'dark' : ''} min-h-screen`}>
+				<div className="dark:bg-gradient-radial text-zinc-900 dark:text-zinc-200">
+					{children}
+				</div>
+			</div>
+		</ThemeContext.Provider>
+	)
+}
 
-export default ThemeProvider;
+export default ThemeProvider

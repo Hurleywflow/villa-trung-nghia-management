@@ -12,17 +12,18 @@
 // import { Container } from '@/app/components/container';
 // import Testimonials from '@/app/components/testimonials/testimonials';
 // import TextScroll from '@/app/components/textScroll/textScroll';
-import HeroSection from '../components/HeroScrollThroughWindow/HeroSection';
-import { Container } from '../components/container';
+import { Container } from '../components/container'
+import HeroSection from '../components/HeroScrollThroughWindow/HeroSection'
 
 const Home = async () => {
-  return (
-    <main>
-      {/* add more content page on scroll bellow */}
-      <Container className='max-w-[140rem]'>
-        <HeroSection />
-      </Container>
-      {/* <Container>
+
+	return (
+		<main>
+			{/* add more content page on scroll bellow */}
+			<Container className="max-w-[120rem]">
+				<HeroSection />
+			</Container>
+			{/* <Container>
         <Tittle />
         <SkewScroll />
         <TextScroll />
@@ -32,7 +33,7 @@ const Home = async () => {
         <ImageParallax />
         <Contact />
       </Container> */}
-    </main>
-  );
-};
-export default Home;
+		</main>
+	)
+}
+export default Home

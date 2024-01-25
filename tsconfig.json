@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
   "include": [
@@ -28,11 +34,16 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
+    ".eslintrc.js",
+    "**/.cjs",
+    "**/.json",
     ".next/types/**/*.ts",
     "app/components/doubleImage/double/double.jsx",
     "app/components/doubleImage/doubleImage.jsx",
     "app/components/slider/ImageSlider.tsx",
     "app/components/GuestImageScrollUpDown/imageParallax.jsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

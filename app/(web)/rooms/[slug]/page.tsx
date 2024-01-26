@@ -85,7 +85,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 				<meta property="og:description" content={room.description} />
 			</Head>
 			<Container>
-			<section className="mx-auto min-h-[100dvh] md:pt-20 flex items-center justify-center flex-col" id="slug-detail">
+			<section className="mx-auto min-h-[100svh] md:pt-20 flex items-center justify-center flex-col" id="slug-detail">
 				<FeaturedImageGallery photos={room.images} />
 				<SlugDetail room={room} />
 			</section>

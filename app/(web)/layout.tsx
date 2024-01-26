@@ -10,6 +10,7 @@ import Toast from '../components/Toast/Toast'
 // import Script from 'next/script';
 // import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import '../globals.css'
+import { TailwindIndicator } from '../components/tailwind-indicator/tailwind-indicator';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('http://localhost:3000'),
@@ -48,6 +49,7 @@ export default function RootLayout({
 				{/* </ThemeProvider> */}
 				{/* </NextAuthProvider> */}
 				<Toaster />
+				<TailwindIndicator />
 			</body>
 			{/* Google Analytics */}
 			{/* <!-- Google tag (gtag.js) --> */}

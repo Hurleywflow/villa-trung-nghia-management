@@ -14,29 +14,29 @@ const HorizontalScrollCarousel = () => {
 	return (
 		<>
 			<SectionHeading> HÌNH ẢNH KHÁCH THam quan </SectionHeading>
-			<section ref={targetRef} className="relative h-[300dvh] bg-slate-100">
-				<div className="sticky top-0 flex h-[24dvh] items-center overflow-hidden">
+			<section ref={targetRef} className="relative h-[300svh] bg-slate-100">
+				<div className="sticky top-0 flex h-[24svh] items-center overflow-hidden">
 					<motion.div style={{ x: x1 }} className="flex gap-4">
 						{cards.map(card => {
 							return <Card card={card} key={card.id} />
 						})}
 					</motion.div>
 				</div>
-				<div className="sticky top-[25dvh] flex h-[24dvh] items-center overflow-hidden">
+				<div className="sticky top-[25svh] flex h-[24svh] items-center overflow-hidden">
 					<motion.div style={{ x: x2 }} className="flex gap-4">
 						{cards.map(card => {
 							return <Card card={card} key={card.id} />
 						})}
 					</motion.div>
 				</div>
-				<div className="sticky top-[50dvh] flex h-[24dvh] items-center overflow-hidden">
+				<div className="sticky top-[50svh] flex h-[24svh] items-center overflow-hidden">
 					<motion.div style={{ x: x1 }} className="flex gap-4">
 						{cards.map(card => {
 							return <Card card={card} key={card.id} />
 						})}
 					</motion.div>
 				</div>
-				<div className="sticky top-[75dvh] flex h-[24dvh] items-center overflow-hidden">
+				<div className="sticky top-[75svh] flex h-[24svh] items-center overflow-hidden">
 					<motion.div style={{ x: x2 }} className="flex gap-4">
 						{cards.map(card => {
 							return <Card card={card} key={card.id} />

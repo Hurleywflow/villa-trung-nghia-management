@@ -191,7 +191,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
 			<form
 				onSubmit={form.handleSubmit(onSubmit)}
 				className={cn(
-					'grid h-[70dvh] items-start gap-4 overflow-y-auto',
+					'grid h-[70svh] items-start gap-4 overflow-y-auto',
 					className,
 				)}
 			>

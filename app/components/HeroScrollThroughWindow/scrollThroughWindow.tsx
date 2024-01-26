@@ -67,10 +67,10 @@ const ScrollThroughWindow: FC<Props> = props => {
 			id="Home"
 			className="m-0 mx-auto box-border w-full overflow-x-clip p-0"
 		>
-			<div ref={ref} className="relative z-10 h-[200dvh] overflow-clip">
+			<div ref={ref} className="relative z-10 h-[200svh] overflow-clip">
 				<motion.div
 					style={{ scale }}
-					className="hero-background sticky left-0 top-0 grid h-[100dvh] origin-[50%_70%] gap-2 p-6 pt-12 [grid-template-rows:4fr_1fr] md:origin-[90%_40%] md:pt-20"
+					className="hero-background sticky left-0 top-0 grid h-[100svh] origin-[50%_70%] gap-2 p-6 pt-12 [grid-template-rows:4fr_1fr] md:origin-[90%_40%] md:pt-20"
 				>
 					<div
 						className="window-mask flex flex-col rounded-3xl
@@ -108,8 +108,8 @@ const ScrollThroughWindow: FC<Props> = props => {
 					</div>
 				</motion.div>
 			</div>
-			<div className="mt-[-200dvh] h-[200dvh] overflow-clip ">
-				<div className="h-[200dvh] overflow-clip bg-gradient-to-t from-slate-100 to-sky-950">
+			<div className="mt-[-200svh] h-[200svh] overflow-clip ">
+				<div className="h-[200svh] overflow-clip bg-gradient-to-t from-slate-100 to-sky-950">
 					{/* add some animation here or component want to see through window */}
 
 					<motion.span

@@ -17,6 +17,7 @@ export const contentType = 'image/png'
 
 // Image generation
 export default async function Image({ params }: { params: { slug: string } }) {
+	// slug or id
 	const { slug } = params
 	try {
 		const product = await getRoom(slug)

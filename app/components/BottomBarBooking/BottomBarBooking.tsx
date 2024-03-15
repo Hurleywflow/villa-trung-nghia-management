@@ -5,21 +5,21 @@ import Link from 'next/link'
 
 const Socials = [
 	{
-		href: 'https://www.facebook.com/villadalattrungnghia/',
-		src: '/images/icon/f.svg',
-		alt: 'Facebook',
+		href: "https://m.facebook.com/villadalattrungnghia?mibextid=kFxxJD",
+		src: "/images/icon/f.svg",
+		alt: "Facebook",
 	},
 	{
-		href: 'https://zalo.me/0937655411',
-		src: '/images/icon/z.svg',
-		alt: 'zalo',
+		href: "https://zalo.me/0937655411",
+		src: "/images/icon/z.svg",
+		alt: "zalo",
 	},
 	{
-		href: 'tel:0937655411',
-		src: '/images/icon/p.svg',
-		alt: 'Phone',
+		href: "tel:0937655411",
+		src: "/images/icon/p.svg",
+		alt: "Phone",
 	},
-]
+];
 function BottomBarBooking() {
 	return (
 		<motion.div

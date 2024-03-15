@@ -1,13 +1,14 @@
 import { Toaster } from "@/components/ui/toaster";
+import type { Metadata } from "next";
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Script from "next/script";
 import Navbar from "../components/Header/Navbar";
 import Sidebar from "../components/Header/nav/sideBar/sidebar";
-import Toast from "../components/Toast/Toast";
 import Footer from "../components/footer/footer";
 import { TailwindIndicator } from "../components/tailwind-indicator/tailwind-indicator";
+const Toast = dynamic(async () => import("../components/Toast/Toast"));
 // import Script from 'next/script';
 // import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import "../globals.css";

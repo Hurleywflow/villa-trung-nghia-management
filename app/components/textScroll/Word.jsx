@@ -18,7 +18,8 @@ export default function Paragraph({ paragraph }) {
 				const start = i / words.length
 				const end = start + 1 / words.length
 				return (
-					<Word key={i} progress={scrollYProgress} range={[start, end]}>
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+<Word key={i} progress={scrollYProgress} range={[start, end]}>
 						{word}
 					</Word>
 				)

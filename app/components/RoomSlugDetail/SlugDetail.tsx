@@ -1,7 +1,4 @@
-import { useInView } from 'framer-motion'
-import Image from 'next/image'
-import * as React from 'react'
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 import {
 	Dialog,
 	DialogContent,
@@ -9,7 +6,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
-} from '@/components/ui/dialog'
+} from "@/components/ui/dialog";
 import {
 	Drawer,
 	DrawerClose,
@@ -19,26 +16,28 @@ import {
 	DrawerHeader,
 	DrawerTitle,
 	DrawerTrigger,
-} from '@/components/ui/drawer'
-import useMediaQuery from '@/hooks/useMediaQuery'
-import { cn } from '@/lib/utils'
-import { urlFor } from '@/libs/urlFor'
-import { type Room } from '@/models/room'
+} from "@/components/ui/drawer";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import { cn } from "@/lib/utils";
+import { urlFor } from "@/libs/urlFor";
+import type { Room } from "@/models/room";
+import { useInView } from "framer-motion";
+import Image from "next/image";
+import * as React from "react";
 
-import BottomBarBooking from '../BottomBarBooking/BottomBarBooking'
-import ProfileForm from '../FormBooking/Form'
-
+import BottomBarBooking from "../BottomBarBooking/BottomBarBooking";
+import ProfileForm from "../FormBooking/Form";
 
 interface SlugProps {
-	room: Room
+	room: Room;
 }
 
 function SlugDetail({ room }: SlugProps) {
-	const ref = React.useRef(null)
-	const isInView = useInView(ref)
-	const [open, setOpen] = React.useState(false)
-	const [snap, setSnap] = React.useState<number | string | null>(0.7)
-	const isDesktop = useMediaQuery('(min-width: 768px)')
+	const ref = React.useRef(null);
+	const isInView = useInView(ref);
+	const [open, setOpen] = React.useState(false);
+	const [snap, setSnap] = React.useState<number | string | null>(0.7);
+	const isDesktop = useMediaQuery("(min-width: 768px)");
 	if (isDesktop) {
 		return (
 			<section className="px-4 py-6 sm:p-6 md:px-8 md:py-10" ref={ref}>
@@ -46,7 +45,7 @@ function SlugDetail({ room }: SlugProps) {
 					style={{
 						// transform: isInView ? 'none' : 'translateY(-50px)',
 						opacity: isInView ? 1 : 0,
-						transition: 'all 0.3s ease-in-out',
+						transition: "all 0.3s ease-in-out",
 					}}
 					className="flex items-center justify-center"
 				>
@@ -58,7 +57,7 @@ function SlugDetail({ room }: SlugProps) {
 							$: {room.price} VND
 						</p>
 						<p className="text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg ">
-							{room.type === 'mini' ? 'Mini Vila' : `${room.type} Rooms`}
+							{room.type === "mini" ? "Mini Vila" : `${room.type} Rooms`}
 						</p>
 						<h1 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
 							{room.name.toUpperCase()}
@@ -127,13 +126,13 @@ function SlugDetail({ room }: SlugProps) {
 						</div>
 						{/* bed font awesome */}
 						<div className="grid grid-cols-2">
-							{room.offeredAmenities?.map(amenity => (
+							{room.offeredAmenities?.map((amenity) => (
 								<div
 									key={amenity._key}
 									className="my-1 flex items-center md:my-0"
 								>
 									<i>
-										{amenity.icon === 'w' ? (
+										{amenity.icon === "w" ? (
 											<svg
 												width="15px"
 												height="15px"
@@ -144,7 +143,7 @@ function SlugDetail({ room }: SlugProps) {
 											>
 												<title>wifi [#1018]</title>
 												<desc>Created with Sketch.</desc>
-												<defs></defs>
+												<defs />
 												<g
 													id="Page-1"
 													stroke="none"
@@ -164,13 +163,13 @@ function SlugDetail({ room }: SlugProps) {
 															<path
 																d="M11.9795939,3535.00003 C11.9795939,3536.00002 12.8837256,3537 14,3537 C15.1162744,3537 16.0204061,3536.00002 16.0204061,3535.00003 C16.0204061,3532.00008 11.9795939,3532.00008 11.9795939,3535.00003 M9.71370846,3530.7571 L11.1431458,3532.17208 C12.7180523,3530.6121 15.2819477,3530.6121 16.8568542,3532.17208 L18.2862915,3530.7571 C15.9183756,3528.41413 12.0816244,3528.41413 9.71370846,3530.7571 M4,3525.10019 L5.42842711,3526.51516 C10.1551672,3521.83624 17.8448328,3521.83624 22.5715729,3526.51516 L24,3525.10019 C18.4772199,3519.63327 9.52278008,3519.63327 4,3525.10019 M21.1431458,3527.92914 L19.7147187,3529.34312 C16.5638953,3526.22417 11.4361047,3526.22417 8.28528134,3529.34312 L6.85685423,3527.92914 C10.8016971,3524.0242 17.1983029,3524.0242 21.1431458,3527.92914"
 																id="wifi-[#1018]"
-															></path>
+															/>
 														</g>
 													</g>
 												</g>
 											</svg>
 										) : (
-											''
+											""
 										)}
 									</i>
 									<p className="ml-2 text-xs">{amenity.amenity}</p>
@@ -193,7 +192,7 @@ function SlugDetail({ room }: SlugProps) {
 										below.
 									</DialogDescription>
 								</DialogHeader>
-								<ProfileForm />
+								<ProfileForm className="px-4" />
 							</DialogContent>
 						</Dialog>
 						{/* <Link
@@ -205,12 +204,20 @@ function SlugDetail({ room }: SlugProps) {
             </Button>
           </Link> */}
 					</div>
-					<p className="col-start-1 mt-4 text-base leading-6  sm:col-span-2 lg:col-span-1 lg:row-start-4 lg:mt-6">
-						{room.description}
+					<p className="col-start-1 mt-4 text-base  leading-6  sm:col-span-2 lg:col-span-1 lg:row-start-4 lg:mt-6">
+						{room.description.split("\n").map((item, key) => {
+							return (
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								<span key={key}>
+									{item}
+									<br />
+								</span>
+							);
+						})}
 					</p>
 				</div>
 			</section>
-		)
+		);
 	}
 	return (
 		<section className="px-4 py-6 sm:p-6 md:px-8 md:py-10" ref={ref}>
@@ -218,7 +225,7 @@ function SlugDetail({ room }: SlugProps) {
 				style={{
 					// transform: isInView ? 'none' : 'translateY(-50px)',
 					opacity: isInView ? 1 : 0,
-					transition: 'all 0.3s ease-in-out',
+					transition: "all 0.3s ease-in-out",
 				}}
 				className="flex items-center justify-center"
 			>
@@ -230,7 +237,7 @@ function SlugDetail({ room }: SlugProps) {
 						$: {room.price} VND
 					</p>
 					<p className="text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg  ">
-						{room.type === 'mini' ? 'Mini Vila' : `${room.type} Rooms`}
+						{room.type === "mini" ? "Mini Vila" : `${room.type} Rooms`}
 					</p>
 					<h1 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
 						{room.name.toUpperCase()}
@@ -300,13 +307,13 @@ function SlugDetail({ room }: SlugProps) {
 					</div>
 					{/* bed font awesome */}
 					<div className="grid grid-cols-2">
-						{room.offeredAmenities?.map(amenity => (
+						{room.offeredAmenities?.map((amenity) => (
 							<div
 								key={amenity._key}
 								className="my-1 flex items-center md:my-0"
 							>
 								<i>
-									{amenity.icon === 'w' ? (
+									{amenity.icon === "w" ? (
 										<svg
 											width="15px"
 											height="15px"
@@ -343,7 +350,7 @@ function SlugDetail({ room }: SlugProps) {
 											</g>
 										</svg>
 									) : (
-										''
+										""
 									)}
 								</i>
 								<p className="ml-2 text-xs">{amenity.amenity}</p>
@@ -367,9 +374,9 @@ function SlugDetail({ room }: SlugProps) {
 						</DrawerTrigger>
 						<DrawerContent>
 							<div
-								className={cn('', {
-									'overflow-y-auto': snap === 1,
-									'overflow-hidden': snap !== 1,
+								className={cn("", {
+									"overflow-y-auto": snap === 1,
+									"overflow-hidden": snap !== 1,
 								})}
 							>
 								<DrawerHeader className="text-left">
@@ -398,11 +405,19 @@ function SlugDetail({ room }: SlugProps) {
           </Link> */}
 				</div>
 				<p className="col-start-1 mt-4 text-base leading-6  sm:col-span-2 lg:col-span-1 lg:row-start-4 lg:mt-6">
-					{room.description}
+					{room.description.split("\n").map((item, key) => {
+						return (
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							<span key={key}>
+								{item}
+								<br />
+							</span>
+						);
+					})}
 				</p>
 			</div>
 		</section>
-	)
+	);
 }
 
-export default SlugDetail
+export default SlugDetail;

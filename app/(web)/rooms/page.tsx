@@ -24,7 +24,7 @@ import {
 	PaginationPrevious,
 } from '@/components/ui/pagination';
 import { getRooms } from '@/libs/apis';
-import { type Room } from '@/models/room';
+import type { Room } from '@/models/room';
 import LoadingSpinner from './loading';
 
 const Rooms = () => {
@@ -51,6 +51,7 @@ const Rooms = () => {
 
 	// this is Next js specific code to check if the code is running on the client or server
 	const [isClient, setIsClient] = useState(false)
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		setIsClient(true)
 	}, [data])

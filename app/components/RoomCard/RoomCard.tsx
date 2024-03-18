@@ -62,8 +62,8 @@ const RoomCard: FC<Props> = (props) => {
 										<DialogHeader>
 											<DialogTitle>Booking</DialogTitle>
 											<DialogDescription>
-												When you are ready to book this Vila, please fill the
-												form below.
+												Khi bạn đã sẵn sàng đặt phòng biệt thự này, vui lòng
+												điền vào form dưới đây.
 											</DialogDescription>
 										</DialogHeader>
 										{/* form data */}
@@ -89,10 +89,11 @@ const RoomCard: FC<Props> = (props) => {
 										{name.slice(0, 20)}
 									</h1>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-										Ma So: {code}
+										Mã số: {code}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-										Vila: {type === "mini" ? "Mini" : `${type} Room`}
+										Vila:{" "}
+										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
 										$: {price} VND
@@ -166,10 +167,11 @@ const RoomCard: FC<Props> = (props) => {
 										{name.slice(0, 20)}
 									</h1>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-										Ma So: {code}
+										Mã số: {code}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-										Vila: {type === "mini" ? "Mini" : `${type} Room`}
+										Vila:{" "}
+										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
 										$: {price} VND
@@ -249,8 +251,8 @@ const RoomCard: FC<Props> = (props) => {
 										<DrawerHeader className="text-left">
 											<DrawerTitle>Booking</DrawerTitle>
 											<DrawerDescription>
-												When you are ready to book this Vila, please fill the
-												form below.
+												Khi bạn đã sẵn sàng đặt phòng biệt thự này, vui lòng
+												điền vào form dưới đây.
 											</DrawerDescription>
 										</DrawerHeader>
 										<ProfileForm className="px-4" />
@@ -283,10 +285,11 @@ const RoomCard: FC<Props> = (props) => {
 									{name.slice(0, 20)}
 								</h1>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-									Ma So: {code}
+									Mã số: {code}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-									Vila: {type === "mini" ? "Mini" : `${type} Room`}
+									Vila:{" "}
+									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
 									$: {price} VND
@@ -359,10 +362,11 @@ const RoomCard: FC<Props> = (props) => {
 									{name.slice(0, 20)}
 								</h1>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-									Ma So: {code}
+									Mã số: {code}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
-									Vila: {type === "mini" ? "Mini" : `${type} Room`}
+									Vila:{" "}
+									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-400 shadow-tertiary-primary text-shadow-sm">
 									$: {price} VND

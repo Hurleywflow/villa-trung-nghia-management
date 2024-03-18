@@ -57,7 +57,7 @@ function SlugDetail({ room }: SlugProps) {
 							$: {room.price} VND
 						</p>
 						<p className="text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg ">
-							{room.type === "mini" ? "Mini Vila" : `${room.type} Rooms`}
+							{room.type === "mini & 3" ? "Mini & 3 phòng" : `${room.type} phòng`}
 						</p>
 						<h1 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
 							{room.name.toUpperCase()}
@@ -188,8 +188,8 @@ function SlugDetail({ room }: SlugProps) {
 								<DialogHeader>
 									<DialogTitle>Booking</DialogTitle>
 									<DialogDescription>
-										When you are ready to book this Vila, please fill the form
-										below.
+										Khi bạn đã sẵn sàng đặt phòng biệt thự này, vui lòng
+										điền vào form dưới đây.
 									</DialogDescription>
 								</DialogHeader>
 								<ProfileForm className="px-4" />
@@ -237,7 +237,7 @@ function SlugDetail({ room }: SlugProps) {
 						$: {room.price} VND
 					</p>
 					<p className="text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg  ">
-						{room.type === "mini" ? "Mini Vila" : `${room.type} Rooms`}
+						{room.type === "mini & 3" ? "Mini & 3 phòng" : `${room.type} phòng`}
 					</p>
 					<h1 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
 						{room.name.toUpperCase()}

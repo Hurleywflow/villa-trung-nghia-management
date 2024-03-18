@@ -1,18 +1,16 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation'
-import { type ChangeEvent, type FC } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useRouter } from "next/navigation";
+import type { ChangeEvent, FC } from "react";
 
 type Props = {
-	roomTypeFilter: string
-	searchQuery: string
-	setRoomTypeFilter: (value: string) => void
-	setSearchQuery: (value: string) => void
-}
+	roomTypeFilter: string;
+	searchQuery: string;
+	setRoomTypeFilter: (value: string) => void;
+	setSearchQuery: (value: string) => void;
+};
 
 const Search: FC<Props> = ({
 	roomTypeFilter,
@@ -20,15 +18,15 @@ const Search: FC<Props> = ({
 	setRoomTypeFilter,
 	setSearchQuery,
 }): JSX.Element => {
-	const router = useRouter()
+	const router = useRouter();
 
 	const handleRoomTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
-		setRoomTypeFilter(event.target.value)
-	}
+		setRoomTypeFilter(event.target.value);
+	};
 
 	const handleSearchQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
-		setSearchQuery(event.target.value)
-	}
+		setSearchQuery(event.target.value);
+	};
 
 	//!  add the button search if need it
 	// const handleFilterClick = () => {
@@ -45,7 +43,7 @@ const Search: FC<Props> = ({
 		<section className="mx-4 rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl">
 			<div className="container mx-auto flex flex-wrap items-center justify-evenly gap-2">
 				<div className="mb-4 w-full md:w-2/5">
-					<Label className="text-xl">Villa Rooms</Label>
+					<Label className="text-xl">Loại Villa</Label>
 					<div className="relative">
 						<select
 							value={roomTypeFilter}
@@ -53,27 +51,21 @@ const Search: FC<Props> = ({
 							className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
 						>
 							{/* set default value to all */}
-							<option value={'all'}>All</option>
-							<option value="mini">Mini</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-							<option value="13">13</option>
-							<option value="14">14</option>
-							<option value="15">15</option>
+							<option value="all">Tất cả</option>
+							<option value="mini & 3">Mini & 3 phòng</option>
+							<option value="4">4 phòng</option>
+							<option value="5">5 phòng</option>
+							<option value="6">6 phòng</option>
+							<option value="7">7 phòng</option>
+							<option value="8">8 phòng</option>
+							<option value="9">9 phòng</option>
+							<option value="10 & higher">10 phòng trở lên</option>
 						</select>
 					</div>
 				</div>
 
 				<div className="mb-4 w-full md:w-2/5">
-					<Label className="text-xl">Search</Label>
+					<Label className="text-xl">Tìm kiếm</Label>
 					<Input
 						type="search"
 						id="search"
@@ -94,7 +86,7 @@ const Search: FC<Props> = ({
         </div> */}
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default Search
+export default Search;

@@ -231,7 +231,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="villaname"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Vila Name</FormLabel>
+							<FormLabel>Tên Villa</FormLabel>
 							<FormControl>
 								<Input placeholder="Vila DaLat" {...field} />
 							</FormControl>
@@ -244,7 +244,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="code"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Code</FormLabel>
+							<FormLabel>Mã số</FormLabel>
 							<FormControl>
 								<Input placeholder="5.1" {...field} />
 							</FormControl>
@@ -257,9 +257,9 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="guest"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Guest</FormLabel>
+							<FormLabel>Số lượng khách</FormLabel>
 							<FormControl>
-								<Input placeholder="Vila DaLat" {...field} />
+								<Input placeholder="Số lượng khách" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -270,7 +270,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="username"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>User Name</FormLabel>
+							<FormLabel>Tên người đặt phòng</FormLabel>
 							<FormControl>
 								<Input placeholder="Hurley Nguyen" {...field} />
 							</FormControl>
@@ -296,7 +296,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="phone"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Phone Number</FormLabel>
+							<FormLabel>Số điện thoại</FormLabel>
 							<FormControl>
 								<Input placeholder="1234567890" {...field} />
 							</FormControl>
@@ -309,7 +309,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="checkin"
 					render={({ field }) => (
 						<FormItem className="flex flex-col">
-							<FormLabel>CheckIn</FormLabel>
+							<FormLabel>Ngày đến</FormLabel>
 							<Popover>
 								<PopoverTrigger asChild>
 									<FormControl>
@@ -350,7 +350,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="checkout"
 					render={({ field }) => (
 						<FormItem className="flex flex-col">
-							<FormLabel>CheckOut</FormLabel>
+							<FormLabel>Ngày đi</FormLabel>
 							<Popover>
 								<PopoverTrigger asChild>
 									<FormControl>
@@ -391,10 +391,10 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="note"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Notes</FormLabel>
+							<FormLabel>Ghi chú</FormLabel>
 							<FormControl>
 								<Textarea
-									placeholder="Tell us more about your enquiry"
+									placeholder="Cho chúng tôi biết thêm về yêu cầu của bạn"
 									className="resize-none"
 									{...field}
 								/>

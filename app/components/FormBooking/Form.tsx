@@ -270,7 +270,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 					name="username"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Tên người đặt phòng</FormLabel>
+							<FormLabel>Tên người đặt</FormLabel>
 							<FormControl>
 								<Input placeholder="Hurley Nguyen" {...field} />
 							</FormControl>

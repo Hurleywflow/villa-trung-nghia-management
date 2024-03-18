@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-contradicting-classname */
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

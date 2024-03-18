@@ -89,19 +89,19 @@ const ScrollThroughWindow: FC<Props> = props => {
 					<div className="mt-2 flex justify-evenly rounded-3xl bg-teal-500">
 						<div className="flex flex-col items-center justify-center gap-3">
 							<p className="text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-4xl ">
-								Room
+								Rooms
 							</p>
 							<CountUpNumber duration={5000} endValue={890} />
 						</div>
 						<div className="flex flex-col items-center justify-center gap-3">
 							<p className="text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-4xl ">
-								Vila
+								Villa
 							</p>
 							<CountUpNumber duration={5000} endValue={99} />
 						</div>
 						<div className="flex flex-col items-center justify-center gap-3">
 							<p className="text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-4xl ">
-								Mini
+								Mini Villa
 							</p>
 							<CountUpNumber duration={5000} endValue={10} />
 						</div>

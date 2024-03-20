@@ -53,8 +53,8 @@ const Testimonials: FC<Props> = () => {
 		offset: ["start end", "end start"],
 	});
 
-	const x1 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-	const x2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+	const x1 = useTransform(scrollYProgress, [0, 1], [100, 0]);
+	const x2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 	return (
 		<section ref={container} className="w-full overflow-x-hidden">
 			<div className="mt-[5dvh]"></div>

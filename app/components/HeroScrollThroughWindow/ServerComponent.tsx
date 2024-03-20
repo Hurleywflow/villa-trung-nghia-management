@@ -10,8 +10,8 @@ font-semibold
 			Welcome to Villa Dalat <br /> Trung Nghia.
 		</h1>
 		<p className="text-lg text-slate-900 shadow-slate-500 text-shadow-lg md:text-3xl">
-			Tận hưởng không gian thoải mái thư giãn, nghỉ ngơi cùng người thân, bạn
-			bè, đồng nghiệp <br /> tại hệ thống cho thuê biệt thự Trung Nghĩa.
+			Tận hưởng không gian thoải mái thư giãn, nghỉ ngơi cùng người thân, bạn bè
+			và đồng nghiệp tại hệ thống cho thuê biệt thự Trung Nghĩa.
 		</p>
 	</div>
-)
+);

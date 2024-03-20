@@ -259,7 +259,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 						<FormItem>
 							<FormLabel>Số lượng khách</FormLabel>
 							<FormControl>
-								<Input placeholder="Số lượng khách" {...field} />
+								<Input placeholder="20 " {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -298,7 +298,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 						<FormItem>
 							<FormLabel>Số điện thoại</FormLabel>
 							<FormControl>
-								<Input placeholder="1234567890" {...field} />
+								<Input placeholder="0123456789" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -394,7 +394,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 							<FormLabel>Ghi chú</FormLabel>
 							<FormControl>
 								<Textarea
-									placeholder="Cho chúng tôi biết thêm về yêu cầu của bạn"
+									placeholder="Hãy cho chúng tôi biết thêm về yêu cầu của bạn..."
 									className="resize-none"
 									{...field}
 								/>

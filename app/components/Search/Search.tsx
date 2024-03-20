@@ -69,7 +69,7 @@ const Search: FC<Props> = ({
 					<Input
 						type="search"
 						id="search"
-						placeholder="Villa name..."
+						placeholder="Tên Villa cần tìm..."
 						value={searchQuery}
 						onChange={handleSearchQueryChange}
 					/>

@@ -1,17 +1,14 @@
 "use client";
-
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 import type { ChangeEvent, FC } from "react";
-
 type Props = {
 	roomTypeFilter: string;
 	searchQuery: string;
 	setRoomTypeFilter: (value: string) => void;
 	setSearchQuery: (value: string) => void;
 };
-
 const Search: FC<Props> = ({
 	roomTypeFilter,
 	searchQuery,
@@ -19,26 +16,21 @@ const Search: FC<Props> = ({
 	setSearchQuery,
 }): JSX.Element => {
 	const router = useRouter();
-
 	const handleRoomTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
 		setRoomTypeFilter(event.target.value);
 	};
-
 	const handleSearchQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setSearchQuery(event.target.value);
 	};
-
 	//!  add the button search if need it
 	// const handleFilterClick = () => {
 	//   // router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
-
 	//   // automatic clear search query when user click search button
 	//   // if (event.target.value.length === 0) {
 	//   //   setSearchQuery('');
 	//   // }
 	//   router.push('/#Villa');
 	// };
-
 	return (
 		<section className="mx-4 rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl">
 			<div className="container mx-auto flex flex-wrap items-center justify-evenly gap-2">
@@ -63,7 +55,6 @@ const Search: FC<Props> = ({
 						</select>
 					</div>
 				</div>
-
 				<div className="mb-4 w-full md:w-2/5">
 					<Label className="text-xl">Tìm kiếm</Label>
 					<Input
@@ -88,5 +79,4 @@ const Search: FC<Props> = ({
 		</section>
 	);
 };
-
 export default Search;

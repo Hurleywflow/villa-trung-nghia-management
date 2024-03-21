@@ -1,25 +1,23 @@
+const MillionLint = require('@million/lint');
 /* eslint-disable @typescript-eslint/no-var-requires */
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-	reactStrictMode: true,
-
-	images: {
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'cdn.sanity.io',
-				port: '',
-				pathname: '/**',
-			},
-		],
-	},
-}
-
-const withVideos = require('next-videos')
-
-module.exports = withVideos(nextConfig)
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'cdn.sanity.io',
+      port: '',
+      pathname: '/**'
+    }]
+  }
+};
+const withVideos = require('next-videos');
+module.exports = MillionLint.next({
+  rsc: true
+})(withVideos(nextConfig));
 // const nextConfig = {
 //   reactStrictMode: true,
 //   experimental: {

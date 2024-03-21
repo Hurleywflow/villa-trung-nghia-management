@@ -29,6 +29,7 @@
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",
     "@hookform/resolvers": "^3.3.3",
+    "@million/lint": "^0.0.73",
     "@neoconfetti/react": "^0.1.1",
     "@plaiceholder/next": "^3.0.0",
     "@radix-ui/react-avatar": "^1.0.4",

@@ -28,7 +28,7 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
 						src={urlFor(active).url()}
 						alt=""
 						fill
-						sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 80vw"
+						sizes="(max-width: 768px) 300px, (max-width: 1024px) 800px, 900px"
 					/>
 				</div>
 			</div>
@@ -36,12 +36,13 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
 				<Carousel
 					className="mx-auto w-full max-w-md"
 					opts={{
-						align: 'start',
+						align: "start",
 						loop: true,
 					}}
 				>
 					<CarouselContent className="-ml-1">
 						{photos.map((photo, index) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							<CarouselItem key={index} className="basis-1/2 pl-5 md:basis-1/3">
 								<div className="p-0">
 									<Card>
@@ -55,9 +56,9 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
 													src={urlFor(photo).url()}
 													alt={photo._key}
 													fill
-													sizes="(max-width: 50px) 100vw, 50vw"
+													sizes="(max-width: 768px) 100px, (max-width: 1200px) 150px, 200px"
 													onClick={() => {
-														setActive(photo)
+														setActive(photo);
 													}}
 													className="overflow-hidden rounded-lg object-cover object-center"
 												/>
@@ -73,5 +74,5 @@ export const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({
 				</Carousel>
 			</div>
 		</section>
-	)
+	);
 }

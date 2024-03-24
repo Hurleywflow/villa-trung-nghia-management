@@ -1,11 +1,10 @@
-'use client'
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import Links from './Links'
-import ToggleButton from './toggleButton'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+'use client';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { useState } from 'react';
+import Links from './Links';
+import ToggleButton from './toggleButton';
 
 const variants = {
 	open: {
@@ -26,26 +25,26 @@ const variants = {
 			damping: 40,
 		},
 	},
-}
+};
 const Sidebar = () => {
-	const [open, setOpen] = useState(false)
+	const [open, setOpen] = useState(false);
 	return (
 		<motion.div
-			className="flex flex-col items-center justify-center md:hidden"
+			className='flex flex-col items-center justify-center md:hidden'
 			animate={open ? 'open' : 'closed'}
 		>
 			<motion.div
-				className="fixed bottom-0 left-0 top-0 z-50 flex w-[min(100%,270px)] flex-col items-center justify-center bg-[#03001417] backdrop-blur-md "
+				className='fixed bottom-0 left-0 top-0 z-50 flex w-[min(100%,380px)] flex-col items-center justify-center bg-[#03001417] backdrop-blur-md '
 				variants={variants}
 			>
 				<Links />
 				<ToggleButton setOpen={setOpen} />
 				<Link
-					href="/studio"
-					target="_blank"
-					className="flex h-40 items-center justify-center"
+					href='/studio'
+					target='_blank'
+					className='flex h-40 items-center justify-center'
 				>
-					<Button size="sm" variant="link" className="rounded-full">
+					<Button size='sm' variant='link' className='rounded-full'>
 						Admin
 					</Button>{' '}
 				</Link>
@@ -59,6 +58,6 @@ const Sidebar = () => {
     		<ToggleButton setOpen={setOpen} />
     	</motion.div> */}
 		</motion.div>
-	)
-}
-export default Sidebar
+	);
+};
+export default Sidebar;

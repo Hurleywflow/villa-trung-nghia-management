@@ -45,6 +45,7 @@ module.exports = {
     // },
 		extend: {
 			width: {
+				// biome-ignore lint/style/useTemplate: <explanation>
 				'square-diagonal': (Math.sqrt(2) * 100).toFixed(2) + '%',
 			},
 			textShadow: {
@@ -163,7 +164,7 @@ module.exports = {
 	plugins: [
 		require('tailwindcss-animate'),
 		// require('@tailwindcss/line-clamp'),
-		plugin(function ({ matchUtilities, theme }) {
+		plugin(({ matchUtilities, theme }) => {
 			matchUtilities(
 				{
 					'text-shadow': value => ({

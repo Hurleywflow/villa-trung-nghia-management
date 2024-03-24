@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client'
+'use client';
 
 import { motion, useInView } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
@@ -28,75 +28,75 @@ import type { Room } from '@/models/room';
 import LoadingSpinner from './loading';
 
 const Rooms = () => {
-	const [roomTypeFilter, setRoomTypeFilter] = useState('')
-	const [searchQuery, setSearchQuery] = useState('')
-	const searchParams = useSearchParams()
+	const [roomTypeFilter, setRoomTypeFilter] = useState('');
+	const [searchQuery, setSearchQuery] = useState('');
+	const searchParams = useSearchParams();
 
 	useEffect(() => {
-		const searchQuery = searchParams.get('searchQuery')
-		const roomType = searchParams.get('roomType')
+		const searchQuery = searchParams.get('searchQuery');
+		const roomType = searchParams.get('roomType');
 
-		if (roomType) setRoomTypeFilter(roomType)
-		if (searchQuery) setSearchQuery(searchQuery)
-	}, [searchParams])
+		if (roomType) setRoomTypeFilter(roomType);
+		if (searchQuery) setSearchQuery(searchQuery);
+	}, [searchParams]);
 
 	async function fetchData() {
-		return getRooms()
+		return getRooms();
 	}
 
-	const { data, error, isLoading } = useSWR('get/hotelRooms', fetchData)
-	if (error) throw new Error('Cannot fetch data')
+	const { data, error, isLoading } = useSWR('get/hotelRooms', fetchData);
+	if (error) throw new Error('Cannot fetch data');
 	if (typeof data === 'undefined' && !isLoading)
-		throw new Error('Cannot fetch data')
+		throw new Error('Cannot fetch data');
 
 	// this is Next js specific code to check if the code is running on the client or server
-	const [isClient, setIsClient] = useState(false)
+	const [isClient, setIsClient] = useState(false);
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		setIsClient(true)
-	}, [data])
+		setIsClient(true);
+	}, [data]);
 
 	// pagination
-	const [currentPage, setCurrentPage] = useState(1)
+	const [currentPage, setCurrentPage] = useState(1);
 	//items per a page
-	const [postsPerPage, setPostsPerPage] = useState(36)
-	const lastPostIndex = currentPage * postsPerPage
-	const firstPostIndex = lastPostIndex - postsPerPage
+	const [postsPerPage, setPostsPerPage] = useState(36);
+	const lastPostIndex = currentPage * postsPerPage;
+	const firstPostIndex = lastPostIndex - postsPerPage;
 
 	// Filter the rooms function
 	const filterRooms = (rooms: Room[]) => {
-		return rooms.filter(room => {
+		return rooms.filter((room) => {
 			// Apply room type filter
 			if (
 				roomTypeFilter &&
 				roomTypeFilter.toLowerCase() !== 'all' &&
 				room.type.toLowerCase() !== roomTypeFilter.toLowerCase()
 			) {
-				return false
+				return false;
 			}
 			//   Apply search query filter
 			if (
 				searchQuery &&
 				!room.name.toLowerCase().includes(searchQuery.toLowerCase())
 			) {
-				return false
+				return false;
 			}
 
-			return true
-		})
-	}
-	const filteredRooms = filterRooms(data ?? [])
+			return true;
+		});
+	};
+	const filteredRooms = filterRooms(data ?? []);
 	// const filteredRooms = filterRooms(data || []);
 	const currentPosts = filterRooms(data ?? []).slice(
 		firstPostIndex,
 		lastPostIndex,
-	)
+	);
 
-	const ref = useRef(null)
-	const isInView = useInView(ref)
+	const ref = useRef(null);
+	const isInView = useInView(ref);
 
 	return (
-		<section className="mx-auto mt-[5dvh] min-h-fit" ref={ref}>
+		<section className='mx-auto mt-[5dvh] min-h-fit' ref={ref}>
 			<div
 				style={{
 					// transform: isInView ? 'none' : 'translateY(-50px)',
@@ -107,8 +107,8 @@ const Rooms = () => {
 				{isInView ? <BottomBarBooking /> : null}
 			</div>
 			{isClient ? (
-				<div className=" " id="Villa">
-					<div className="pt-10">
+				<div className=' ' id='Villa'>
+					<div className='pt-10'>
 						<SectionHeading>Booking</SectionHeading>
 						<Search
 							roomTypeFilter={roomTypeFilter}
@@ -118,7 +118,7 @@ const Rooms = () => {
 						/>
 					</div>
 					{/* display all Vila cards */}
-					<div className="group mx-1 my-5 grid grid-cols-2 place-content-evenly gap-4 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-6">
+					<div className='group mx-1 my-5 grid grid-cols-2 place-content-evenly gap-4 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-6'>
 						{/* {filteredRooms.map((room) => ( */}
 						{currentPosts.map((room: Room, index: number) => (
 							// stagger animation for each card
@@ -141,7 +141,7 @@ const Rooms = () => {
 						))}
 					</div>
 					{/* pagination */}
-					<div className="mt-5 block w-full ">
+					<div className='mt-5 block w-full '>
 						<PaginationSection
 							totalPosts={filterRooms.length}
 							postsPerPage={postsPerPage}
@@ -154,10 +154,10 @@ const Rooms = () => {
 				<LoadingSpinner />
 			)}
 		</section>
-	)
-}
+	);
+};
 
-export default Rooms
+export default Rooms;
 
 function PaginationSection({
 	totalPosts,
@@ -165,26 +165,27 @@ function PaginationSection({
 	currentPage,
 	setCurrentPage,
 }: {
-	totalPosts: any
-	postsPerPage: any
-	currentPage: any
-	setCurrentPage: any
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	totalPosts: any;
+	postsPerPage: any;
+	currentPage: any;
+	setCurrentPage: any;
 }) {
-	const pages = []
+	const pages = [];
 	for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-		pages.push(i)
+		pages.push(i);
 	}
 	const handleNextPage = () => {
 		if (currentPage < pages.length) {
-			setCurrentPage(currentPage + 1)
+			setCurrentPage(currentPage + 1);
 		}
-	}
+	};
 
 	const handlePrevPage = () => {
 		if (currentPage > 1) {
-			setCurrentPage(currentPage - 1)
+			setCurrentPage(currentPage - 1);
 		}
-	}
+	};
 	return (
 		<div>
 			<Pagination>
@@ -212,5 +213,5 @@ function PaginationSection({
 				</PaginationContent>
 			</Pagination>
 		</div>
-	)
+	);
 }

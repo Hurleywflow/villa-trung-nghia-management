@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-	width: "device-width",
 	initialScale: 1,
 	maximumScale: 1,
-	// userScalable: 1,
+	userScalable: 'no',
+	width: "device-width",
 	// Also supported by less commonly used
 	// interactiveWidget: 'resizes-visual',
 };

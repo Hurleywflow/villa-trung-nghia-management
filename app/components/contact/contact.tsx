@@ -1,81 +1,86 @@
+import Image from 'next/image';
 /* eslint-disable @typescript-eslint/ban-types */
-import { type FC } from 'react'
-import SectionHeading from '../TextSectionHeading/SectionHeading'
+import type { FC } from 'react';
+import SectionHeading from '../TextSectionHeading/SectionHeading';
 
-type Props = {}
+type Props = {};
 
 const Contact: FC<Props> = () => {
 	const contactMethods = [
 		{
 			iconEmail: (
 				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
+					xmlns='http://www.w3.org/2000/svg'
+					fill='none'
+					viewBox='0 0 24 24'
 					strokeWidth={1.5}
-					stroke="currentColor"
-					className="h-6 w-6"
+					stroke='currentColor'
+					className='h-6 w-6'
 				>
+					<title>wifi [#1018]</title>
 					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						d='M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75'
 					/>
 				</svg>
 			),
-			email: 'trung@villadalattrungnghia.com',
+			email: 'trungnguyenzx@gmail.com',
 		},
 		{
 			iconPhone: (
 				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
+					xmlns='http://www.w3.org/2000/svg'
+					fill='none'
+					viewBox='0 0 24 24'
 					strokeWidth={1.5}
-					stroke="currentColor"
-					className="h-6 w-6"
+					stroke='currentColor'
+					className='h-6 w-6'
 				>
+					<title>wifi [#1018]</title>
 					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						d='M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z'
 					/>
 				</svg>
 			),
-			phone: '0937655411',
+			phone: '0937 655 411',
 		},
 		{
 			icon: (
 				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
+					xmlns='http://www.w3.org/2000/svg'
+					fill='none'
+					viewBox='0 0 24 24'
 					strokeWidth={1.5}
-					stroke="currentColor"
-					className="h-6 w-6"
+					stroke='currentColor'
+					className='h-6 w-6'
 				>
+					<title>wifi [#1018]</title>
+
 					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						d='M15 10.5a3 3 0 11-6 0 3 3 0 016 0z'
 					/>
 					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						d='M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z'
 					/>
 				</svg>
 			),
-			contact: 'Dalat, Lam Dong, Vietnam',
+			contact: '8 khe sanh, phường 10 Đà Lạt, Lâm Đồng Province, Vietnam',
 		},
-	]
+	];
 	return (
-		<section className="mx-auto mt-[5dvh] py-14" id="Contact">
+		<section className='mx-auto mt-[5dvh] py-14' id='Contact'>
 			<SectionHeading> Liên hệ</SectionHeading>
-			<div className="max-w-screen mx-auto px-4">
-				<div className="mx-auto flex max-w-lg flex-col items-center justify-between gap-5 md:max-w-none md:flex-row">
-					<div className="w-full space-y-3 md:w-1/2">
-						<h3 className="text-3xl font-semibold sm:text-4xl">
+			<div className='max-w-screen mx-auto px-4'>
+				<div className='mx-auto flex max-w-lg flex-col items-center justify-between gap-5 md:max-w-none md:flex-row'>
+					<div className='w-full space-y-3 md:w-1/2'>
+						<h3 className='text-3xl font-semibold sm:text-4xl'>
 							Hãy cho chúng tôi biết chúng tôi có thể giúp gì được cho bạn.
 						</h3>
 						<p>
@@ -84,14 +89,14 @@ const Contact: FC<Props> = () => {
 							liên hệ của chúng tôi dưới đây.
 						</p>
 						<div>
-							<ul className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-6">
+							<ul className='mt-6 flex flex-wrap items-center gap-x-10 gap-y-6'>
 								{contactMethods.map((item, idx) => (
 									<li
 										key={idx}
-										className="flex items-center gap-x-3 hover:text-pink-500"
+										className='flex items-center gap-x-3 hover:text-pink-500'
 									>
-										<i className="flex-none text-gray-400">{item.iconEmail}</i>
-										<a href="mailto:trung@villadalattrungnghia.com">
+										<i className='flex-none text-gray-400'>{item.iconEmail}</i>
+										<a href='mailto:trung@villadalattrungnghia.com'>
 											{item.email}
 										</a>
 									</li>
@@ -99,19 +104,19 @@ const Contact: FC<Props> = () => {
 								{contactMethods.map((item, idx) => (
 									<li
 										key={idx}
-										className="flex items-center gap-x-3 hover:text-pink-500"
+										className='flex items-center gap-x-3 hover:text-pink-500'
 									>
-										<i className="flex-none text-gray-400">{item.iconPhone}</i>
-										<a href="tel:0937655411">{item.phone}</a>
+										<i className='flex-none text-gray-400'>{item.iconPhone}</i>
+										<a href='tel:0937655411'>{item.phone}</a>
 									</li>
 								))}
 								{contactMethods.map((item, idx) => (
 									<li
 										key={idx}
-										className="flex items-center gap-x-3 hover:text-pink-500"
+										className='flex items-center gap-x-3 hover:text-pink-500'
 									>
-										<i className="flex-none text-gray-400">{item.icon}</i>
-										<a href="https://maps.app.goo.gl/Q6JMVjAGm1PkB46d9">
+										<i className='flex-none text-gray-400'>{item.icon}</i>
+										<a href='https://maps.app.goo.gl/Q6JMVjAGm1PkB46d9'>
 											{item.contact}
 										</a>
 									</li>
@@ -119,20 +124,19 @@ const Contact: FC<Props> = () => {
 							</ul>
 						</div>
 					</div>
-					<div className="h-60 w-full md:w-1/2">
+					<div className='w-full md:w-1/2'>
 						{/* add Map to this section  */}
-						<div className="h-full w-full overflow-hidden rounded-lg">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10603.108133844817!2d108.4364131272505!3d11.943559923882278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112df8d23d02f%3A0x4658191097c20334!2sXuan%20Huong%20Lake!5e0!3m2!1sen!2sau!4v1705224701683!5m2!1sen!2sau"
-								width="100%"
-								height="100%"
-								style={{ border: 0 }}
-								// allowFullScreen=''
-								loading="lazy"
-								referrerPolicy="no-referrer-when-downgrade"
-								sandbox="allow-forms allow-popups allow-same-origin allow-scripts"
-								title="map"
-								aria-hidden="false"
+						<div className='relative aspect-video size-full overflow-hidden rounded-lg'>
+							<Image
+								alt='pizza'
+								// width={500}
+								// height={500}
+								className='object-cover object-center transition-all duration-300 ease-in-out hover:scale-125'
+								fill
+								sizes='(max-width: 768px) 100vw, 30vw'
+								src='/contact.webp'
+								// Static images
+								// placeholder='blur'
 							/>
 						</div>
 						{/* <iframe
@@ -151,6 +155,6 @@ const Contact: FC<Props> = () => {
 				</div>
 			</div>
 		</section>
-	)
-}
-export default Contact
+	);
+};
+export default Contact;

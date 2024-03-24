@@ -132,6 +132,7 @@ const ScrollThroughWindow: FC<Props> = props => {
 								duration: 10,
 								ease: 'easeInOut',
 								repeatType: 'loop',
+								// biome-ignore lint/style/useNumberNamespace: <explanation>
 								repeat: Infinity,
 							}}
 						>
@@ -150,11 +151,12 @@ const ScrollThroughWindow: FC<Props> = props => {
 								duration: 10,
 								ease: 'easeInOut',
 								repeatType: 'loop',
+								// biome-ignore lint/style/useNumberNamespace: <explanation>
 								repeat: Infinity,
 							}}
 						>
 							<Image
-								src="/airplane.png"
+								src="/airplane.webp"
 								alt="airplane"
 								fill
 								sizes="100vw"

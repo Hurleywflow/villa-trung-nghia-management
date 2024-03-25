@@ -95,9 +95,6 @@ import {
 import Image from 'next/image';
 
 const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
-	const plugin = React.useRef(
-		Autoplay({ delay: 5000, stopOnInteraction: true }),
-	);
 	const [api, setApi] = React.useState<CarouselApi>();
 	const [current, setCurrent] = React.useState(0);
 	const [count, setCount] = React.useState(0);
@@ -115,6 +112,9 @@ const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
 			setCurrent(api.selectedScrollSnap() + 1);
 		});
 	}, [api]);
+	const plugin = React.useRef(
+		Autoplay({ delay: 5000, stopOnInteraction: true }),
+	);
 
 	return (
 		<div>
@@ -143,7 +143,7 @@ const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
 											alt={photo._key}
 											className='object-cover object-center hover:scale-125 transition-all duration-300 ease-in-out '
 											fill
-											sizes='(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 90vw, (max-width: 1536px) 90vw, 70vw'
+											sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, (max-width: 1280px) 80vw, (max-width: 1536px) 80vw, 70vw'
 											// Static images
 											// placeholder='blur'
 										/>

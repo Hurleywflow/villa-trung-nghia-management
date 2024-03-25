@@ -33,7 +33,7 @@ interface SlugProps {
 	room: Room;
 }
 
-function SlugDetail({ room }: SlugProps) {
+function SlugDetail({ room }: Readonly<SlugProps>) {
 	const MemoizedBottomBarBooking = React.memo(BottomBarBooking);
 	const ref = React.useRef(null);
 	const isInView = useInView(ref);
@@ -82,7 +82,6 @@ function SlugDetail({ room }: SlugProps) {
 								sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 15vw'
 								// Static images
 								// placeholder='blur'
-								loading='lazy'
 								className='img scale-animation rounded-lg object-cover object-center '
 							/>
 						</div>
@@ -264,7 +263,6 @@ function SlugDetail({ room }: SlugProps) {
 							sizes='30vw'
 							// Static images
 							// placeholder='blur'
-							loading='lazy'
 							className='img scale-animation rounded-lg object-cover object-center '
 						/>
 					</div>

@@ -96,9 +96,7 @@ const Contact: FC<Props> = () => {
 										className='flex items-center gap-x-3 hover:text-pink-500'
 									>
 										<i className='flex-none text-gray-400'>{item.iconEmail}</i>
-										<a href='mailto:trung@villadalattrungnghia.com'>
-											{item.email}
-										</a>
+										<a href='mailto:trungnguyenzx@gmail.com'>{item.email}</a>
 									</li>
 								))}
 								{contactMethods.map((item, idx) => (

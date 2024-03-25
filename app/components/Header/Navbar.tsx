@@ -29,7 +29,7 @@ const Navbar = () => {
 	const { darkTheme, setDarkTheme } = useContext(ThemeContext)
 	const router = useRouter()
 	return (
-		<div className="fixed top-0 z-[9999] hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block">
+		<div className="fixed top-0 z-[9999] hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-md md:block">
 			<div className="m-auto flex h-full w-full flex-row items-center justify-between px-[10px]">
 				<Link
 					className="flex h-auto w-auto flex-row items-center text-xl font-bold text-tertiary-primary md:text-2xl"

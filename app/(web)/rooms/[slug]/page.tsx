@@ -2,10 +2,9 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 'use client';
 
-import Head from 'next/head';
-// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 import { basename } from 'path';
-import { useRef } from 'react';
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
+import Head from 'next/head';
 import useSWR from 'swr';
 
 import FeaturedImageGallery from '@/app/components/FeatureIamgesGalery/FeatureIamgesGalery';
@@ -43,8 +42,6 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 		params: { slug },
 	} = props;
 
-	const ref = useRef(null);
-
 	const fetchRoom = async () => {
 		try {
 			return await getRoom(slug);
@@ -61,20 +58,18 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 	//   return NotFound();
 	// }
 
-	if (error) {
-		throw new Error('Cannot fetch data');
+	if (isLoading) {
+		return <LoadingSpinner />;
+	}
+	if (!room) {
+		return <LoadingSpinner />;
 	}
 
 	if (!room && !isLoading) {
 		throw new Error('Cannot fetch data');
 	}
-
-	if (!room) {
-		return <LoadingSpinner />;
-	}
-
-	if (isLoading) {
-		return <LoadingSpinner />;
+	if (error) {
+		throw new Error('Cannot fetch data');
 	}
 
 	return (

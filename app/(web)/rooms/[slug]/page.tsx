@@ -2,17 +2,31 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 'use client';
 
+import dynamic from 'next/dynamic';
 import { basename } from 'path';
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 import Head from 'next/head';
 import useSWR from 'swr';
 
-import FeaturedImageGallery from '@/app/components/FeatureIamgesGalery/FeatureIamgesGalery';
-import SlugDetail from '@/app/components/RoomSlugDetail/SlugDetail';
 import { Container } from '@/app/components/container';
 import { getRoom } from '@/libs/apis';
 import { generateMetadata } from './generateMetadata';
 import LoadingSpinner from './loading';
+const FeaturedImageGallery = dynamic(
+	async () =>
+		(await import('@/app/components/FeatureIamgesGalery/FeatureIamgesGalery'))
+			.default,
+	{
+		ssr: true,
+	},
+);
+const SlugDetail = dynamic(
+	async () =>
+		(await import('@/app/components/RoomSlugDetail/SlugDetail')).default,
+	{
+		ssr: true,
+	},
+);
 
 // use basename to get pathname slug
 function getValidSlug() {
@@ -85,7 +99,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 					className='mx-auto md:pt-20 flex items-center justify-center flex-col'
 					id='slug-detail'
 				>
-					<FeaturedImageGallery photos={room.images} />
+					<FeaturedImageGallery photos={room.images} isLoading={isLoading} />
 					<SlugDetail room={room} />
 				</section>
 			</Container>

@@ -1,6 +1,6 @@
 // import { CreateReviewDto, Review } from "./../models/review";
 
-import { type Room } from '@/models/room'
+import type { Room } from '@/models/room'
 import sanityClient from './sanity'
 import * as queries from './sanityQueries'
 // import { Booking } from "@/models/booking";
@@ -9,42 +9,42 @@ import * as queries from './sanityQueries'
 
 // room detail
 export async function getFeaturedRoom() {
-	const result = await sanityClient.fetch<Room>(
-		queries.getFeaturedRoomQuery,
-		{},
-		// { cache: "no-cache" },
-		{
-			next: { revalidate: 0 },
-		},
-	)
+  const result = await sanityClient.fetch<Room>(
+    queries.getFeaturedRoomQuery,
+    {},
+    // { cache: "no-cache" },
+    {
+      next: { revalidate: 60 }, // revalidate at most every minute
+    },
+  )
 
-	return result
+  return result
 }
 
 // list of the rooms
 export async function getRooms() {
-	const result = await sanityClient.fetch<Room[]>(
-		queries.getRoomsQuery,
-		{},
-		// { cache: "no-cache" },
-		{
-			next: { revalidate: 0 },
-		},
-	)
-	return result
+  const result = await sanityClient.fetch<Room[]>(
+    queries.getRoomsQuery,
+    {},
+    // { cache: "no-cache" },
+    {
+      next: { revalidate: 60 }, // revalidate at most every minute
+    },
+  )
+  return result
 }
 
 export async function getRoom(slug: string) {
-	const result = await sanityClient.fetch<Room>(
-		queries.getRoom,
-		{ slug },
-		// { cache: "no-cache" },
-		{
-			next: { revalidate: 0 },
-		},
-	)
+  const result = await sanityClient.fetch<Room>(
+    queries.getRoom,
+    { slug },
+    // { cache: "no-cache" },
+    {
+      next: { revalidate: 60 }, // revalidate at most every minute
+    },
+  )
 
-	return result
+  return result
 }
 
 // export const createBooking = async ({

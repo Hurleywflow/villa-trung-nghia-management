@@ -33,7 +33,7 @@ function BottomBarBooking() {
 				<Link
 					href={social.href}
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-					key={index}
+					key={index + 1}
 					className='w-1/3 flex-auto cursor-pointer'
 					target='_blank'
 				>

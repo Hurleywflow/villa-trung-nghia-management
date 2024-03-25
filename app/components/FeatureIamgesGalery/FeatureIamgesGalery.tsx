@@ -83,6 +83,7 @@ import type { FC } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import * as React from 'react';
 
+import LoadingSpinner from '@/app/(web)/rooms/[slug]/loading';
 import { Card, CardContent } from '@/components/ui/card';
 import {
 	Carousel,
@@ -94,7 +95,10 @@ import {
 } from '@/components/ui/carousel';
 import Image from 'next/image';
 
-const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
+const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
+	photos,
+	isLoading,
+}) => {
 	const [api, setApi] = React.useState<CarouselApi>();
 	const [current, setCurrent] = React.useState(0);
 	const [count, setCount] = React.useState(0);
@@ -131,23 +135,26 @@ const FeaturedImageGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
 			>
 				<CarouselContent>
 					{photos.map((photo, index) => (
-						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-						<CarouselItem key={index}>
+						<CarouselItem key={photo._key}>
 							<div className='p-1'>
 								<Card>
-									<CardContent className=' relative flex aspect-video w-full  items-center justify-center p-6 rounded-lg overflow-hidden'>
-										{/* <span className='text-4xl font-semibold'>{index + 1}</span> */}
-										<Image
-											key={photo._key}
-											src={urlFor(photo).url()}
-											alt={photo._key}
-											className='object-cover object-center hover:scale-125 transition-all duration-300 ease-in-out '
-											fill
-											sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, (max-width: 1280px) 80vw, (max-width: 1536px) 80vw, 70vw'
-											// Static images
-											// placeholder='blur'
-										/>
-									</CardContent>
+									{isLoading ? (
+										<LoadingSpinner />
+									) : (
+										<CardContent className=' relative flex aspect-video w-full  items-center justify-center p-6 rounded-lg overflow-hidden'>
+											{/* <span className='text-4xl font-semibold'>{index + 1}</span> */}
+											<Image
+												key={photo._key}
+												src={urlFor(photo).url()}
+												alt={`Can not be found ${photo._key}`}
+												className='object-cover object-center hover:scale-125 transition-all duration-300 ease-in-out '
+												fill
+												sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, (max-width: 1280px) 80vw, (max-width: 1536px) 80vw, 60vw'
+												// Static images
+												// placeholder='blur'
+											/>
+										</CardContent>
+									)}
 								</Card>
 							</div>
 						</CarouselItem>

@@ -39,6 +39,9 @@ const RoomCard: FC<Props> = (props) => {
 	} = props;
 	const [snap, setSnap] = React.useState<number | string | null>(0.7);
 	const [open, setOpen] = React.useState(false);
+		const handleOpenChange = React.useCallback((open: boolean) => {
+			setOpen(open);
+		}, []);
 
 	const isDesktop = useMediaQuery('(min-width: 768px)');
 	if (isDesktop) {
@@ -52,7 +55,7 @@ const RoomCard: FC<Props> = (props) => {
 							<div className='absolute -right-2 -top-2 z-40 aspect-square w-24 overflow-hidden rounded-sm'>
 								<div className='absolute left-0 top-0 h-2 w-2 bg-orange-800' />
 								<div className='absolute bottom-0 right-0 h-2 w-2 bg-orange-800' />
-								<Dialog open={open} onOpenChange={setOpen}>
+								<Dialog open={open} onOpenChange={handleOpenChange}>
 									<DialogTrigger asChild>
 										<div className='absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 cursor-pointer bg-primary py-1.5  text-center text-sm font-semibold uppercase tracking-wider text-slate-200 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-tertiary-primary hover:text-white'>
 											{isBooked ? 'Booked' : 'Book Now'}
@@ -159,7 +162,7 @@ const RoomCard: FC<Props> = (props) => {
 										// width={500}
 										// height={500}
 										fill
-										sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw'
+										sizes='240px'
 										className='img scale-animation rounded-lg object-cover object-center'
 									/>
 								</div>
@@ -199,11 +202,12 @@ const RoomCard: FC<Props> = (props) => {
 												className='ml-2 h-4 w-4'
 												viewBox='0 0 24 24'
 												stroke='currentColor'
-												stroke-width='2'
+												strokeWidth='2'
 												fill='none'
-												stroke-linecap='round'
-												stroke-linejoin='round'
+												strokeLinecap='round'
+												strokeLinejoin='round'
 											>
+												<title>wifi [#1018]</title>
 												<path d='M5 12h14'></path>
 												<path d='M12 5l7 7-7 7'></path>
 											</svg>
@@ -231,7 +235,7 @@ const RoomCard: FC<Props> = (props) => {
 
 							<Drawer
 								open={open}
-								onOpenChange={setOpen}
+								onOpenChange={handleOpenChange}
 								snapPoints={[0.7, 1]}
 								// snapPoints={[0.5, 0.8, 1]}
 								activeSnapPoint={snap}
@@ -275,7 +279,7 @@ const RoomCard: FC<Props> = (props) => {
 									// width={500}
 									// height={500}
 									fill
-									sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw'
+									sizes='240px'
 									// placeholder='blur'
 									className='img scale-animation rounded-lg object-cover object-center'
 								/>

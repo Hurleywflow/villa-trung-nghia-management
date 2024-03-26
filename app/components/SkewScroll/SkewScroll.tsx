@@ -51,7 +51,6 @@ function SkewScroll() {
 										| Iterable<ReactNode>
 										| ReactPortal
 										| PromiseLikeOfReactNode
-										| Iterable<ReactNode>
 										| null
 										| undefined;
 								},
@@ -70,7 +69,7 @@ function SkewScroll() {
 											// width={500}
 											// height={500}
 											fill
-											sizes='20vw'
+											sizes='50px'
 											className='img scale-animation object-cover object-center'
 										/>
 									</div>

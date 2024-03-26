@@ -149,7 +149,7 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 												alt={`Can not be found ${photo._key}`}
 												className='object-cover object-center hover:scale-125 transition-all duration-300 ease-in-out '
 												fill
-												sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, (max-width: 1280px) 80vw, (max-width: 1536px) 80vw, 60vw'
+												sizes='(max-width: 640px) 420px, (max-width: 768px) 720px, (max-width: 1024px) 800px, (max-width: 1280px) 900px, (max-width: 1536px) 1024px, (max-width: 2000px) 1280px, (max-width: 2560px) 1500px, 1500px'
 												// Static images
 												// placeholder='blur'
 											/>

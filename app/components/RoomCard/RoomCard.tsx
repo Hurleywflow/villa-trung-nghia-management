@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 import * as React from 'react';
+import { Suspense } from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -23,11 +24,13 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from '@/components/ui/drawer';
+import { Skeleton } from '@/components/ui/skeleton';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { urlFor } from '@/libs/urlFor';
 import type { Room } from '@/models/room';
 import ProfileForm from '../FormBooking/Form';
+import LoadingImage from '../loading-image/LoadingImage';
 
 type Props = {
 	room: Room;
@@ -39,9 +42,9 @@ const RoomCard: FC<Props> = (props) => {
 	} = props;
 	const [snap, setSnap] = React.useState<number | string | null>(0.7);
 	const [open, setOpen] = React.useState(false);
-		const handleOpenChange = React.useCallback((open: boolean) => {
-			setOpen(open);
-		}, []);
+	const handleOpenChange = React.useCallback((open: boolean) => {
+		setOpen(open);
+	}, []);
 
 	const isDesktop = useMediaQuery('(min-width: 768px)');
 	if (isDesktop) {
@@ -77,7 +80,7 @@ const RoomCard: FC<Props> = (props) => {
 
 							<Link href={`/rooms/${slug.current}`}>
 								<div className='relative mx-auto aspect-video w-full overflow-hidden'>
-									<Image
+									{/* <Image
 										alt='villa'
 										src={urlFor(coverImage).url()}
 										// width={500}
@@ -85,7 +88,29 @@ const RoomCard: FC<Props> = (props) => {
 										fill
 										sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw'
 										className='img scale-animation rounded-lg object-cover object-center'
-									/>
+									/> */}
+									<Suspense
+										fallback={
+											<div className='w-full h-full bg-background flex items-center justify-center flex-col space-y-3'>
+												<Skeleton className='aspect-video w-[200px] rounded-xl' />
+												<div className='space-y-2'>
+													<Skeleton className='h-2 w-[150px]' />
+												</div>
+												{/* <p className='text-center text-2xl text-tertiary-primary tracking-wider animate-pulse '>
+													Loading...
+												</p> */}
+											</div>
+										}
+									>
+										<LoadingImage
+											alt='villa'
+											src={urlFor(coverImage).url()}
+											// width={500}
+											// height={500}
+											sizes='280px'
+											className='img scale-animation rounded-lg object-cover object-center'
+										/>
+									</Suspense>
 								</div>
 								<div className='p-1'>
 									<h1 className='title-font text-md mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg'>

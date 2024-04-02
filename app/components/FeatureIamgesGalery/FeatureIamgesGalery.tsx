@@ -4,6 +4,7 @@
 import { urlFor } from '@/libs/urlFor';
 import type { Image as ImageType } from '@/models/room';
 import type { FC } from 'react';
+import { Suspense } from 'react';
 
 // import { Card, CardContent } from '@/components/ui/card';
 // import {
@@ -87,13 +88,14 @@ import LoadingSpinner from '@/app/(web)/rooms/[slug]/loading';
 import { Card, CardContent } from '@/components/ui/card';
 import {
 	Carousel,
+	type CarouselApi,
 	CarouselContent,
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-	type CarouselApi,
 } from '@/components/ui/carousel';
-import Image from 'next/image';
+import { Skeleton } from '@/components/ui/skeleton';
+import LoadingImage from '../loading-image/LoadingImage';
 
 const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 	photos,
@@ -143,7 +145,29 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 									) : (
 										<CardContent className=' relative flex aspect-video w-full  items-center justify-center p-6 rounded-lg overflow-hidden'>
 											{/* <span className='text-4xl font-semibold'>{index + 1}</span> */}
-											<Image
+											<Suspense
+												fallback={
+													<div className='w-full h-full bg-background flex items-center justify-center flex-col space-y-3'>
+														<Skeleton className='aspect-video w-[380px] rounded-xl' />
+														<div className='space-y-2'>
+															<Skeleton className='h-4 w-[250px]' />
+															<Skeleton className='h-4 w-[200px]' />
+														</div>
+														{/* <p className='text-center text-2xl text-tertiary-primary tracking-wider animate-pulse '>
+															Loading...
+														</p> */}
+													</div>
+												}
+											>
+												<LoadingImage
+													key={photo._key}
+													src={urlFor(photo).url()}
+													alt={`Can not be found ${photo._key}`}
+													className='object-cover object-center hover:scale-125 transition-all duration-300 ease-in-out '
+													sizes='(max-width:320px) 300px, (max-width:375px) 350px, (max-width:480px) 450px, (max-width:640px)600px, (max-width:768px) 720px, (max-width:1024px) 900px, (max-width:1280px) 1200px, 1280px'
+												/>
+											</Suspense>
+											{/* <Image
 												key={photo._key}
 												src={urlFor(photo).url()}
 												alt={`Can not be found ${photo._key}`}
@@ -152,7 +176,7 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 												sizes='(max-width: 640px) 420px, (max-width: 768px) 720px, (max-width: 1024px) 800px, (max-width: 1280px) 900px, (max-width: 1536px) 1024px, (max-width: 2000px) 1280px, (max-width: 2560px) 1500px, 1500px'
 												// Static images
 												// placeholder='blur'
-											/>
+											/> */}
 										</CardContent>
 									)}
 								</Card>

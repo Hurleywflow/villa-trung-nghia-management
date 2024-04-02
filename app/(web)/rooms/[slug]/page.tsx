@@ -8,6 +8,7 @@ import { basename } from 'path';
 import Head from 'next/head';
 import useSWR from 'swr';
 
+import SlugDetail from '@/app/components/RoomSlugDetail/SlugDetail';
 import { Container } from '@/app/components/container';
 import { getRoom } from '@/libs/apis';
 import { generateMetadata } from './generateMetadata';
@@ -16,13 +17,6 @@ const FeaturedImageGallery = dynamic(
 	async () =>
 		(await import('@/app/components/FeatureIamgesGalery/FeatureIamgesGalery'))
 			.default,
-	{
-		ssr: true,
-	},
-);
-const SlugDetail = dynamic(
-	async () =>
-		(await import('@/app/components/RoomSlugDetail/SlugDetail')).default,
 	{
 		ssr: true,
 	},
@@ -99,8 +93,10 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 					className='mx-auto md:pt-20 flex items-center justify-center flex-col'
 					id='slug-detail'
 				>
-					<FeaturedImageGallery photos={room.images} isLoading={isLoading} />
-					<SlugDetail room={room} />
+					{room && (
+						<FeaturedImageGallery photos={room.images} isLoading={isLoading} />
+					)}
+					{room && <SlugDetail room={room} />}
 				</section>
 			</Container>
 		</>

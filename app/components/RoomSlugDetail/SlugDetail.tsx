@@ -28,6 +28,7 @@ import * as React from 'react';
 
 import BottomBarBooking from '../BottomBarBooking/BottomBarBooking';
 import ProfileForm from '../FormBooking/Form';
+import LoadingImage from '../loading-image/LoadingImage';
 
 interface SlugProps {
 	room: Room;
@@ -73,7 +74,7 @@ function SlugDetail({ room }: Readonly<SlugProps>) {
 					</div>
 					<div className='col-start-1 col-end-3 row-start-1 hidden gap-4 sm:mb-6 sm:grid-cols-4 md:grid lg:col-start-2 lg:row-span-6 lg:row-end-6 lg:mb-0 lg:gap-6'>
 						<div className='relative h-60 w-full overflow-hidden rounded-lg sm:col-span-2 sm:h-52 lg:col-span-full'>
-							<Image
+							{/* <Image
 								alt={room.name}
 								src={urlFor(room.coverImage).url()}
 								// width={500}
@@ -83,26 +84,72 @@ function SlugDetail({ room }: Readonly<SlugProps>) {
 								// Static images
 								// placeholder='blur'
 								className='img scale-animation rounded-lg object-cover object-center '
-							/>
-						</div>
-
-						{room.images.map((image, index) => (
-							<div
-								className='relative hidden h-52 w-full overflow-hidden rounded-lg sm:col-span-2 sm:block md:col-span-1 lg:col-span-2 lg:row-start-2 lg:h-32'
-								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-								key={index}
+							/> */}
+							<React.Suspense
+								fallback={
+									<div className='w-full h-full bg-background flex items-center justify-center'>
+										<p className='text-center text-2xl text-tertiary-primary tracking-wider animate-pulse '>
+											Loading...
+										</p>
+									</div>
+								}
 							>
-								<Image
+								<LoadingImage
 									alt={room.name}
-									src={urlFor(image).url()}
+									src={urlFor(room.coverImage).url()}
 									// width={500}
 									// height={500}
-									fill
-									sizes='50vw'
+									sizes='250px'
 									// Static images
 									// placeholder='blur'
 									className='img scale-animation rounded-lg object-cover object-center '
 								/>
+							</React.Suspense>
+						</div>
+
+						{room.images.map((image, index) => (
+							// <div
+							// 	className='relative hidden h-52 w-full overflow-hidden rounded-lg sm:col-span-2 sm:block md:col-span-1 lg:col-span-2 lg:row-start-2 lg:h-32'
+							// 	// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							// 	key={index}
+							// >
+							// 	<Image
+							// 		alt={room.name}
+							// 		src={urlFor(image).url()}
+							// 		// width={500}
+							// 		// height={500}
+							// 		fill
+							// 		sizes='100px'
+							// 		// Static images
+							// 		// placeholder='blur'
+							// 		className='img scale-animation rounded-lg object-cover object-center '
+							// 	/>
+							// </div>
+							<div
+								className='relative hidden h-52 w-full overflow-hidden rounded-lg sm:col-span-2 sm:block md:col-span-1 lg:col-span-2 lg:row-start-2 lg:h-32'
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								key={index + 1}
+							>
+								<React.Suspense
+									fallback={
+										<div className='w-full h-full bg-background flex items-center justify-center'>
+											<p className='text-center text-2xl text-tertiary-primary tracking-wider animate-pulse '>
+												Loading...
+											</p>
+										</div>
+									}
+								>
+									<LoadingImage
+										alt={room.name}
+										src={urlFor(image).url()}
+										// width={500}
+										// height={500}
+										sizes='150px'
+										// Static images
+										// placeholder='blur'
+										className='img scale-animation rounded-lg object-cover object-center '
+									/>
+								</React.Suspense>
 							</div>
 						))}
 					</div>

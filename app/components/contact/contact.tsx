@@ -1,6 +1,7 @@
+import { Skeleton } from '@/components/ui/skeleton';
 import Image from 'next/image';
 /* eslint-disable @typescript-eslint/ban-types */
-import type { FC } from 'react';
+import { type FC, Suspense } from 'react';
 import SectionHeading from '../TextSectionHeading/SectionHeading';
 
 type Props = {};
@@ -125,17 +126,32 @@ const Contact: FC<Props> = () => {
 					<div className='w-full md:w-1/2'>
 						{/* add Map to this section  */}
 						<div className='relative aspect-video size-full overflow-hidden rounded-lg'>
-							<Image
-								alt='pizza'
-								// width={500}
-								// height={500}
-								className='object-cover object-center transition-all duration-300 ease-in-out hover:scale-125'
-								fill
-								sizes='(max-width: 768px) 100vw, 30vw'
-								src='/contact.webp'
-								// Static images
-								// placeholder='blur'
-							/>
+							<Suspense
+								fallback={
+									<div className='w-full h-full bg-background flex items-center justify-center flex-col space-y-3'>
+										<Skeleton className='aspect-video w-[380px] rounded-xl' />
+										<div className='space-y-2'>
+											<Skeleton className='h-4 w-[250px]' />
+											<Skeleton className='h-4 w-[200px]' />
+										</div>
+										{/* <p className='text-center text-2xl text-tertiary-primary tracking-wider animate-pulse '>
+															Loading...
+														</p> */}
+									</div>
+								}
+							>
+								<Image
+									alt='pizza'
+									// width={500}
+									// height={500}
+									className='object-cover object-center transition-all duration-300 ease-in-out hover:scale-125'
+									fill
+									sizes='(max-width: 768px) 100vw, 30vw'
+									src='/contact.webp'
+									// Static images
+									// placeholder='blur'
+								/>
+							</Suspense>
 						</div>
 						{/* <iframe
               width='100%'
@@ -153,6 +169,7 @@ const Contact: FC<Props> = () => {
 				</div>
 			</div>
 		</section>
+		
 	);
 };
 export default Contact;

@@ -3,7 +3,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { type FC, useRef } from 'react'
 
-type Props = {}
+// biome-ignore lint/complexity/noBannedTypes: <explanation>
+type Props = {
+
+}
 
 const Tittle: FC<Props> = () => {
 	const container = useRef(null)

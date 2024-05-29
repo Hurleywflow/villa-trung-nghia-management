@@ -33,7 +33,7 @@ function SkewScroll() {
 					<div className='pointer-events-none absolute -bottom-1 z-10 h-20 w-full bg-gradient-to-t from-slate-100 to-transparent' />
 					<div className='pointer-events-none absolute -left-1 z-10 h-full w-20 bg-gradient-to-r from-slate-100 to-transparent' />
 					<div className='pointer-events-none absolute -right-1 z-10 h-full w-20 bg-gradient-to-l from-slate-100 to-transparent' />
-					<div className='mx-auto grid h-[200px] w-[300px] animate-skew-scroll grid-cols-1 gap-3 hover:[animation-play-state:paused] sm:w-[500px] sm:grid-cols-2'>
+					<div className='mx-auto grid h-[200px] w-[300px] animate-skew-scroll grid-cols-2 gap-3 hover:[animation-play-state:paused] sm:w-[500px] md:grid-cols-3'>
 						{/* <!-- These are all the same components - if you're using React, you can use a map to iterate through all of them --> */}
 						{/* map over the data and render a component for each item --> */}
 						{data?.map(
@@ -69,7 +69,7 @@ function SkewScroll() {
 											// width={500}
 											// height={500}
 											fill
-											sizes='50px'
+											sizes='80px'
 											className='img scale-animation object-cover object-center'
 										/>
 									</div>

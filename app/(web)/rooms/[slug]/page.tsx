@@ -3,6 +3,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 import { basename } from 'path';
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 import Head from 'next/head';

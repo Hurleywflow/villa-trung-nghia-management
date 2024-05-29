@@ -143,7 +143,7 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 									{isLoading ? (
 										<LoadingSpinner />
 									) : (
-										<CardContent className=' relative flex aspect-video w-full  items-center justify-center p-6 rounded-lg overflow-hidden'>
+										<CardContent className=' relative flex aspect-square md:aspect-video w-full  items-center justify-center p-6 rounded-lg overflow-hidden'>
 											{/* <span className='text-4xl font-semibold'>{index + 1}</span> */}
 											<Suspense
 												fallback={

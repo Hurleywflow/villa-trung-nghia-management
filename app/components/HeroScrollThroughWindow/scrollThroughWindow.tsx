@@ -114,7 +114,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
 
 					<motion.span
 						style={{ x: imageXCalc }}
-						className='sticky top-1/2 mx-auto block aspect-[3/4] md:aspect-video w-[1600px] max-w-[96%] overflow-hidden rounded-[60px] bg-gradient-to-t from-[#505064] to-[#111132]  shadow-2xl md:top-1/4'
+						className='sticky top-1/2 mx-auto block aspect-square md:aspect-video w-[1600px] max-w-[96%] overflow-hidden rounded-[60px] bg-gradient-to-t from-[#505064] to-[#111132]  shadow-2xl md:top-1/4'
 					>
 						<div className='absolute left-0 top-0 z-[1] h-full w-full'>
 							<Image

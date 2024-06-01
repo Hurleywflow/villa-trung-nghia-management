@@ -4,15 +4,15 @@ import Rooms from '@/app/(web)/rooms/page';
 import HorizontalScrollCarousel from '@/app/components/HorizontalScrollImage/HorizontalScrollImage';
 import Bghills from '@/app/components/ParallaxHills/bghills';
 import {
+	type MotionValue,
 	motion,
 	useMotionTemplate,
 	useScroll,
 	useSpring,
 	useTransform,
-	type MotionValue,
 } from 'framer-motion';
 import Image from 'next/image';
-import { useRef, type FC } from 'react';
+import { type FC, Suspense, useRef } from 'react';
 import CountUpNumber from '../CountUpNumber/CountUpNumber';
 import ImageParallax from '../GuestImageScrollUpDown/imageParallax';
 import SkewScroll from '../SkewScroll/SkewScroll';
@@ -20,6 +20,7 @@ import Tittle from '../Tittle/Tittle';
 import CardStackScroll from '../cardStackScroll/cardStackScroll';
 import Contact from '../contact/contact';
 import { Container } from '../container';
+import Loading from '../loading/Loading';
 import Testimonials from '../testimonials/testimonials';
 import TextScroll from '../textScroll/textScroll';
 
@@ -189,20 +190,38 @@ const ScrollThroughWindow: FC<Props> = (props) => {
 			</div>
 			{/* add more content page on scroll bellow */}
 			<Container>
-				<Tittle />
-				<SkewScroll />
-				{/* Intro section */}
-				<TextScroll />
-				<Rooms />
-				{/* BBQ Images */}
-				<CardStackScroll />
-				{/* our customer  */}
-				<Testimonials />
-				<ImageParallax />
+				<Suspense fallback={<Loading className='' />}>
+					<Tittle />
+				</Suspense>
+				<Suspense fallback={<Loading className='' />}>
+					<SkewScroll />
+				</Suspense>
+				<Suspense fallback={<Loading className='' />}>
+					{/* Intro section */}
+					<TextScroll />
+				</Suspense>
+				<Suspense fallback={<Loading className='' />}>
+					<Rooms />
+				</Suspense>
+				<Suspense fallback={<Loading className='' />}>
+					{/* BBQ Images */}
+					<CardStackScroll />
+				</Suspense>
+				<Suspense fallback={<Loading className='' />}>
+					{/* our customer  */}
+					<Testimonials />
+				</Suspense>
+				<Suspense fallback={<Loading className='' />}>
+					<ImageParallax />
+				</Suspense>
 				<div className='md:hidden'>
-					<HorizontalScrollCarousel />
+					<Suspense fallback={<Loading className='' />}>
+						<HorizontalScrollCarousel />
+					</Suspense>
 				</div>
-				<Contact />
+				<Suspense fallback={<Loading className='' />}>
+					<Contact />
+				</Suspense>
 			</Container>
 		</section>
 	);

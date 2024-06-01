@@ -14,6 +14,8 @@ import { Container } from '@/app/components/container';
 import { getRoom } from '@/libs/apis';
 import { generateMetadata } from './generateMetadata';
 import LoadingSpinner from './loading';
+import { Suspense } from 'react';
+import Loading from '@/app/components/loading/Loading';
 const FeaturedImageGallery = dynamic(
 	async () =>
 		(await import('@/app/components/FeatureIamgesGalery/FeatureIamgesGalery'))
@@ -95,7 +97,16 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 					id='slug-detail'
 				>
 					{room && (
-						<FeaturedImageGallery photos={room.images} isLoading={isLoading} />
+						<Suspense
+							fallback={
+								<Loading className='w-screen max-w-screen-2xl overflow-hidden md:w-[90vw] aspect-square md:aspect-video' />
+							}
+						>
+							<FeaturedImageGallery
+								photos={room.images}
+								isLoading={isLoading}
+							/>
+						</Suspense>
 					)}
 					{room && <SlugDetail room={room} />}
 				</section>

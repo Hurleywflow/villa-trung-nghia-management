@@ -147,7 +147,7 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 											{/* <span className='text-4xl font-semibold'>{index + 1}</span> */}
 											<Suspense
 												fallback={
-													<div className='w-full h-full bg-background flex items-center justify-center flex-col space-y-3'>
+													<div className='aspect-square md:aspect-video w-full bg-background flex items-center justify-center flex-col space-y-3'>
 														<Skeleton className='aspect-video w-[380px] rounded-xl' />
 														<div className='space-y-2'>
 															<Skeleton className='h-4 w-[250px]' />

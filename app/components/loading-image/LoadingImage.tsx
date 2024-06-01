@@ -9,8 +9,8 @@ interface Props {
 }
 
 const LoadingImage = async ({ alt, src, sizes, className }: Props) => {
-	const random = Math.floor(Math.random() * 10);
-	await new Promise((resolve) => setTimeout(resolve, random));
+	// const random = Math.floor(Math.random() * 10);
+	// await new Promise((resolve) => setTimeout(resolve, random));
 	return (
 		// <div className='relative aspect-video size-full overflow-hidden'>
 		<Image

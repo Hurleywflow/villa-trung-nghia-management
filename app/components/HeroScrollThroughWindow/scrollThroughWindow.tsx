@@ -191,9 +191,12 @@ const ScrollThroughWindow: FC<Props> = (props) => {
 			<Container>
 				<Tittle />
 				<SkewScroll />
+				{/* Intro section */}
 				<TextScroll />
 				<Rooms />
+				{/* BBQ Images */}
 				<CardStackScroll />
+				{/* our customer  */}
 				<Testimonials />
 				<ImageParallax />
 				<div className='md:hidden'>

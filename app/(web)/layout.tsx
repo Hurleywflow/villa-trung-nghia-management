@@ -39,7 +39,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className="bg-slate-100 text-slate-600 ">
+		<html lang="en" className="bg-slate-100 text-slate-600 h-full">
 			<body className="!scroll-smooth  bg-slate-100 text-slate-600 ">
 				{/* <NextAuthProvider> */}
 				{/* <ThemeProvider> */}

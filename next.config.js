@@ -4,15 +4,18 @@ const MillionLint = require('@million/lint');
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [{
-      protocol: 'https',
-      hostname: 'cdn.sanity.io',
-      port: '',
-      pathname: '/**'
-    }]
-  }
+	reactStrictMode: true,
+	images: {
+		unoptimized: true,
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'cdn.sanity.io',
+				port: '',
+				pathname: '/**',
+			},
+		],
+	},
 };
 const withVideos = require('next-videos');
 module.exports = MillionLint.next({

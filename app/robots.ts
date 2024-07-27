@@ -2,12 +2,24 @@ import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
 	return {
-		rules: {
-			userAgent: '*',
-			allow: '/',
-			// not allow to show in google
-			disallow: '/studio',
-		},
-		sitemap: 'https://yourdomainname/sitemap.xml',
+		rules: [
+			{
+				userAgent: '*',
+				allow: '/',
+			},
+			{
+				userAgent: '*',
+				allow: 'https://www.villadalat.online/rooms',
+			},
+			{
+				userAgent: '*',
+				allow: 'https://www.villadalat.online/rooms/*',
+			},
+			{
+				userAgent: '*',
+				disallow: '/studio',
+			},
+		],
+		sitemap: 'https://www.villadalat.online/sitemap.xml',
 	};
 }

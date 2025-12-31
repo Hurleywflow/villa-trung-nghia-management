@@ -1,8 +1,3 @@
-const MillionLint = require('@million/lint');
-/* eslint-disable @typescript-eslint/no-var-requires */
-/**
- * @type {import('next').NextConfig}
- */
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
@@ -18,9 +13,9 @@ const nextConfig = {
 	},
 };
 const withVideos = require('next-videos');
-module.exports = MillionLint.next({
-  rsc: true
-})(withVideos(nextConfig));
+// module.exports = MillionLint.next({
+//   rsc: true
+// })(withVideos(nextConfig));
 // const nextConfig = {
 //   reactStrictMode: true,
 //   experimental: {
@@ -52,4 +47,4 @@ module.exports = MillionLint.next({
 
 // const withVideos = require('next-videos');
 
-// module.exports = withVideos(nextConfig);
+module.exports = withVideos(nextConfig);

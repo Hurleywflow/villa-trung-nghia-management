@@ -8,10 +8,10 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: './tsconfig.json',
-		extraFileExtensions: ['.cjs'],
 	},
 	plugins: ['@typescript-eslint'],
 	root: true,
+	ignorePatterns: ['*.json'],
 	rules: {
 		'@typescript-eslint/no-explicit-any': 'warn',
 		'@typescript-eslint/no-var-requires': 'warn',

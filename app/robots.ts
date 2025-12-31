@@ -9,17 +9,17 @@ export default function robots(): MetadataRoute.Robots {
 			},
 			{
 				userAgent: '*',
-				allow: 'https://www.villadalat.online/rooms',
+				allow: 'https://www.villadalat.org/rooms',
 			},
 			{
 				userAgent: '*',
-				allow: 'https://www.villadalat.online/rooms/*',
+				allow: 'https://www.villadalat.org/rooms/*',
 			},
 			{
 				userAgent: '*',
 				disallow: '/studio',
 			},
 		],
-		sitemap: 'https://www.villadalat.online/sitemap.xml',
+		sitemap: 'https://www.villadalat.org/sitemap.xml',
 	};
 }

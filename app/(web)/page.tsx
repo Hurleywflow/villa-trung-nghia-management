@@ -12,19 +12,19 @@
 // import { Container } from '@/app/components/container';
 // import Testimonials from '@/app/components/testimonials/testimonials';
 // import TextScroll from '@/app/components/textScroll/textScroll';
-// import { Suspense } from 'react';
+import { Suspense } from 'react';
 import HeroSection from '../components/HeroScrollThroughWindow/HeroSection';
 import { Container } from '../components/container';
-// import Loading from '../components/loading/Loading';
+import Loading from '../components/loading/Loading';
 
 const Home = async () => {
 	return (
 		<main>
 			{/* add more content page on scroll bellow */}
 			<Container className='max-w-[120rem]'>
-				{/* <Suspense fallback={<Loading className='' />}> */}
+				<Suspense fallback={<Loading className='' />}>
 					<HeroSection />
-				{/* </Suspense> */}
+				</Suspense>
 			</Container>
 			{/* <Container>
         <Tittle />

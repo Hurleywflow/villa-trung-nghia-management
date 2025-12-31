@@ -1,18 +1,15 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
-    "indentStyle": "tab",
+    "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 80,
     "lineEnding": "lf",
     "ignore": [".next/**", "node_modules/**"]
   },
-  "javascript": {
+  "javascript ": {
     "formatter": {
       "arrowParentheses": "always",
       "quoteStyle": "single",

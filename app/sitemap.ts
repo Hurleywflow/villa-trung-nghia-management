@@ -2,7 +2,7 @@
 import { getRooms } from '@/libs/apis'
 
 export default async function sitemap() {
-	const baseURL = 'https://www.villadalat.online';
+	const baseURL = 'https://www.villadalat.org';
 	// get all rooms
 	const rooms = await getRooms()
 	console.log(rooms)
@@ -12,7 +12,7 @@ export default async function sitemap() {
 			return {
 				url: `${baseURL}/rooms/${room.slug}`,
 				lastModified: new Date(),
-				changeFrequency: 'yearly',
+				changeFrequency: 'monthly',
 				priority: 1,
 			}
 		}) ?? []
@@ -21,7 +21,7 @@ export default async function sitemap() {
 		{
 			url: baseURL,
 			lastModified: new Date(),
-			changeFrequency: 'yearly',
+			changeFrequency: 'monthly',
 			priority: 1,
 		},
 		...routesURL,

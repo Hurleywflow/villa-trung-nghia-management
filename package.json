@@ -9,7 +9,7 @@
     "project": "/users/hurleynguyen/documents/workplace/freeland/villa-trung-nghia-management/tsconfig.json",
     "extraFileExtensions": [
       ".js",
-      ".json"
+      ".json"                                 
     ]
   },
   "scripts": {

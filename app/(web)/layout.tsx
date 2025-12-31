@@ -18,8 +18,8 @@ const Sidebar = dynamic(
 import "../globals.css";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("http://localhost:3000"),
-	title: "Villa Đà Lạt | Trung Nghia| Hotel | Home stay",
+	metadataBase: new URL("https://www.villadalat.org"),
+	title: "Villa Đà Lạt | Villa Dalat | Hotel | Home stay",
 	description:
 		"Villa Trung Nghĩa ở Đà Lạt cung cấp hơn 100 căn biệt thự sang trọng với giá cả hợp lý, view đẹp và vị trí thuận tiện ngay trung tâm thành phố. Các biệt thự mới toanh được trang bị đầy đủ tiện nghi gồm 4-15 phòng ngủ. Không gian rộng rãi với sân vườn, bãi đỗ xe an toàn và khu vực BBQ ngoài trời lý tưởng để tổ chức tiệc. Villa Trung Nghĩa phù hợp cho các nhóm gia đình, bạn bè, trẻ em vui chơi, tổ chức team building, đám cưới, đám hỏi, lễ kỷ niệm, hội nghị.",
 };

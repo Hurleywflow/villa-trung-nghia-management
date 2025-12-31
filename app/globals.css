@@ -56,7 +56,7 @@
 
 
 html {
-	@apply bg-slate-100;
+	background-color: #f1f5f9; /* Tailwind's bg-slate-100 */
 }
 
 *,

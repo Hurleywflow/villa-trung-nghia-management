@@ -12,6 +12,7 @@ const nextConfig = {
 		],
 	},
 };
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const withVideos = require('next-videos');
 // module.exports = MillionLint.next({
 //   rsc: true

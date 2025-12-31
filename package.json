@@ -1,6 +1,9 @@
 {
   "name": "villa-trung-nghia-management",
   "version": "0.1.0",
+  "engines": {
+    "node": "24.x"
+  },
   "private": true,
   "parserOptions": {
     "project": "/users/hurleynguyen/documents/workplace/freeland/villa-trung-nghia-management/tsconfig.json",

@@ -76,7 +76,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
 					<div
 						className='window-mask flex flex-col rounded-3xl
           bg-gradient-to-tl from-purple-300 to-stone-400
-            px-2 py-12 md:flex-row md:p-14'
+            px-2 py-12 md:flex-row md:p-14 h-[90svh]'
 					>
 						{heading1}
 						<div className='mx-auto -mb-7 mt-4 box-content aspect-[5/8] w-[150px] min-w-[150px] rounded-full border-[4px] border-gray-300 md:my-auto md:-mr-1 md:ml-auto md:w-[300px] md:min-w-[300px]' />
@@ -87,7 +87,8 @@ const ScrollThroughWindow: FC<Props> = (props) => {
               Early Access
             </a>
           </div> */}
-					<div className='mt-2 flex justify-evenly rounded-3xl bg-teal-500'>
+					{/* count up number room, villa, mini villa */}
+					{/* <div className='mt-2 flex justify-evenly rounded-3xl bg-teal-500'>
 						<div className='flex flex-col items-center justify-center gap-3'>
 							<p className='text-center text-xl text-tertiary-primary shadow-slate-500 text-shadow-lg md:text-4xl '>
 								Rooms
@@ -106,7 +107,7 @@ const ScrollThroughWindow: FC<Props> = (props) => {
 							</p>
 							<CountUpNumber duration={5000} endValue={10} />
 						</div>
-					</div>
+					</div> */}
 				</motion.div>
 			</div>
 			<div className='mt-[-200svh] h-[200svh] overflow-clip '>

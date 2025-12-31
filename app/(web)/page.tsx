@@ -26,7 +26,7 @@ const Home = async () => {
 					<HeroSection />
 				</Suspense>
 			</Container>
-			{/* <Container>
+			{/* <Container>``
         <Tittle />
         <SkewScroll />
         <TextScroll />

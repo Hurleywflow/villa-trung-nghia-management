@@ -7,7 +7,7 @@ import Rooms from '@/app/(web)/rooms/page';
 import ImageParallax from '@/app/components/GuestImageScrollUpDown/imageParallax';
 // import SkewScroll from '@/app/components/SkewScroll/SkewScroll';
 import Tittle from '@/app/components/Tittle/Tittle';
-import CardStackScroll from '@/app/components/cardStackScroll/cardStackScroll';
+// import CardStackScroll from '@/app/components/cardStackScroll/cardStackScroll';
 import Contact from '@/app/components/contact/contact';
 // import { Container } from '@/app/components/container';
 import Testimonials from '@/app/components/testimonials/testimonials';
@@ -36,7 +36,7 @@ const Home = async () => {
         {/* <TextScroll /> */}
         <Rooms />
         <Testimonials />
-        <CardStackScroll />
+        {/* <CardStackScroll /> */}
         <ImageParallax />
         <Contact />
       </Container>

@@ -10,7 +10,7 @@ import { ImagesSlider } from "./ImagesSlider";
 
 function Hero(): JSX.Element {
 	const _pathname = usePathname();
-	const images = ["/images/hotel/hero-1.jpeg", "/images/hotel/hero-2.jpg"];
+	const images = ["/images/hotel/hero-1.jpeg", "/images/hotel/hero-2.jpeg"];
 	return (
 		<div className=" relative flex h-screen max-h-[1280px] w-full flex-col items-center justify-center">
 			<ImagesSlider className="relative z-20 h-screen w-full" images={images}>
@@ -51,7 +51,7 @@ function Hero(): JSX.Element {
 							thân, bạn bè và đồng nghiệp tại hệ thống cho thuê biệt thự sang
 							trọng tại Đà Lạt.
 						</p>
-						<Link href="/#feedback">
+						<Link href="https://www.google.com/maps/place/Villa+TN+1/@11.9374824,108.4595964,17z/data=!4m18!1m9!3m8!1s0x3171130065c3b52d:0x3f7ac0b02dc3a62a!2sVilla+TN+1!8m2!3d11.9374824!4d108.4595964!9m1!1b1!16s%2Fg%2F11x6q0jk9g!3m7!1s0x3171130065c3b52d:0x3f7ac0b02dc3a62a!8m2!3d11.9374824!4d108.4595964!9m1!1b1!16s%2Fg%2F11x6q0jk9g!18m1!1e1?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
 							<Button className="flex items-center gap-5" variant="ghost">
 								<AvatarCirclesDemo /> <span>⭐⭐⭐⭐⭐</span>
 							</Button>

@@ -46,12 +46,15 @@ function Hero(): JSX.Element {
 					</MotionDiv>
 					<div className="relative flex w-fit flex-col items-center justify-center gap-2 rounded-[0.4rem] bg-background/50 p-2 md:p-5 md:gap-10 md:mb-5 lg:mb-10">
 						<BorderBeam size={250} duration={12} delay={9} />
-						<p className="text-lg text-slate-900 shadow-slate-500 text-shadow-lg md:text-3xl">
+						<p className="text-lg text-stone-100 shadow-slate-500 text-shadow-lg md:text-3xl">
 							Tận hưởng không gian thoải mái thư giãn, nghỉ ngơi cùng người
 							thân, bạn bè và đồng nghiệp tại hệ thống cho thuê biệt thự sang
 							trọng tại Đà Lạt.
 						</p>
-						<Link href="https://www.google.com/maps/place/Villa+TN+1/@11.9374824,108.4595964,17z/data=!4m18!1m9!3m8!1s0x3171130065c3b52d:0x3f7ac0b02dc3a62a!2sVilla+TN+1!8m2!3d11.9374824!4d108.4595964!9m1!1b1!16s%2Fg%2F11x6q0jk9g!3m7!1s0x3171130065c3b52d:0x3f7ac0b02dc3a62a!8m2!3d11.9374824!4d108.4595964!9m1!1b1!16s%2Fg%2F11x6q0jk9g!18m1!1e1?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+						<Link
+							href="https://www.google.com/maps/place/Villa+TN+1/@11.9374824,108.4595964,17z/data=!4m18!1m9!3m8!1s0x3171130065c3b52d:0x3f7ac0b02dc3a62a!2sVilla+TN+1!8m2!3d11.9374824!4d108.4595964!9m1!1b1!16s%2Fg%2F11x6q0jk9g!3m7!1s0x3171130065c3b52d:0x3f7ac0b02dc3a62a!8m2!3d11.9374824!4d108.4595964!9m1!1b1!16s%2Fg%2F11x6q0jk9g!18m1!1e1?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+							target="_blank"
+						>
 							<Button className="flex items-center gap-5" variant="ghost">
 								<AvatarCirclesDemo /> <span>⭐⭐⭐⭐⭐</span>
 							</Button>

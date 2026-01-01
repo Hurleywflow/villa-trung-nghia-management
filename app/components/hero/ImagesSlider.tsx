@@ -1,7 +1,7 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export const ImagesSlider = ({
 	images,
@@ -136,7 +136,7 @@ export const ImagesSlider = ({
 				perspective: "1000px",
 			}}
 		>
-			<div className='absolute inset-0 z-10 flex h-screen w-full items-center justify-center bg-black/40' />
+			<div className="absolute inset-0 z-10 flex h-screen w-full items-center justify-center bg-black/40" />
 			{areImagesLoaded && children}
 			{areImagesLoaded && overlay && (
 				//* add overlay class to the parent div
@@ -151,14 +151,14 @@ export const ImagesSlider = ({
 					<motion.img
 						key={currentIndex}
 						src={loadedImages[currentIndex]}
-						initial='initial'
-						animate='visible'
-						alt='SliderImage'
+						initial="initial"
+						animate="visible"
+						alt="SliderImage"
 						exit={direction === "up" ? "upExit" : "downExit"}
 						variants={slideVariants}
 						// hero section images need to be eager loaded
-						loading='eager'
-						className='image absolute inset-0 size-full object-cover object-center'
+						loading="eager"
+						className="image absolute inset-0 h-screen w-full object-cover object-center"
 					/>
 				</AnimatePresence>
 			)}

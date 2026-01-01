@@ -72,7 +72,7 @@ const Contact: FC<Props> = () => {
 					/>
 				</svg>
 			),
-			contact: '8 khe sanh, phường 10 Đà Lạt, Lâm Đồng Province, Vietnam',
+			contact: '11 khe sanh, phường Xuân Hương, Đà Lạt, Lâm Đồng.',
 		},
 	];
 	return (
@@ -82,11 +82,10 @@ const Contact: FC<Props> = () => {
 				<div className='mx-auto flex max-w-lg flex-col items-center justify-between gap-5 md:max-w-none md:flex-row'>
 					<div className='w-full space-y-3 md:w-1/2'>
 						<h3 className='text-3xl font-semibold sm:text-4xl'>
-							Hãy cho chúng tôi biết chúng tôi có thể giúp gì được cho bạn.
+							Có thể giúp gì cho bạn?
 						</h3>
 						<p>
-							Chúng tôi ở đây để trợ giúp và trả lời bất kỳ câu hỏi nào bạn có
-							thể có. Chúng tôi rất mong nhận được phản hồi từ bạn! Thông tin
+							Chúng tôi hỗ trợ và trả lời bất kỳ thắc mắc nào. rất mong nhận được phản hồi từ bạn! Thông tin
 							liên hệ của chúng tôi dưới đây.
 						</p>
 						<div>
@@ -147,7 +146,7 @@ const Contact: FC<Props> = () => {
 									className='object-cover object-center transition-all duration-300 ease-in-out hover:scale-125'
 									fill
 									sizes='(max-width: 768px) 100vw, 30vw'
-									src='/contact.webp'
+									src='/contact.jpg'
 									// Static images
 									// placeholder='blur'
 								/>
@@ -169,7 +168,7 @@ const Contact: FC<Props> = () => {
 				</div>
 			</div>
 		</section>
-		
+
 	);
 };
 export default Contact;

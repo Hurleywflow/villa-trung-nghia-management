@@ -32,7 +32,7 @@ const Tittle: FC<Props> = () => {
 				style={{ x: x2 }}
 				className=" max-w-fit text-center text-7xl text-tertiary-primary shadow-tertiary-primary drop-shadow-2xl text-shadow-lg md:text-[180px]"
 			>
-				TrungNghia
+				Trung Nghĩa
 			</motion.div>
 		</section>
 	)

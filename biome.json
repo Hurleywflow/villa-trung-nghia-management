@@ -21,17 +21,20 @@
       "bracketSameLine": false
     }
   },
+  "typescript": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 80,
+      "lineEnding": "lf",
+      "ignore": [".next/**", "node_modules/**"]
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true
     },
     "ignore": [".next/**", "node_modules/**"]
-  },
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
   }
 }

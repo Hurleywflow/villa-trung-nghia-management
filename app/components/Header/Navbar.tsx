@@ -1,11 +1,11 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { useContext } from 'react'
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
 
-import { Button } from '@/components/ui/button'
-import ThemeContext from '@/context/themeContext'
+import { Button } from "@/components/ui/button";
+import ThemeContext from "@/context/themeContext";
 
 const Socials = [
 	{
@@ -26,8 +26,8 @@ const Socials = [
 ];
 
 const Navbar = () => {
-	const { darkTheme, setDarkTheme } = useContext(ThemeContext)
-	const router = useRouter()
+	const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+	const router = useRouter();
 	return (
 		<div className="fixed top-0 z-[9999] hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-md md:block">
 			<div className="m-auto flex h-full w-full flex-row items-center justify-between px-[10px]">
@@ -48,7 +48,7 @@ const Navbar = () => {
 						className="aspect-square w-10 cursor-pointer rounded-full object-cover object-center text-lg font-bold text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4 md:text-xl"
 					/>
 
-					<span className="ml-[10px] hidden cursor-pointer font-semibold shadow-tertiary-primary transition-all  duration-100 text-shadow-sm hover:scale-105 md:block ">
+					<span className="ml-[10px] hidden cursor-pointer font-medium shadow-tertiary-primary transition-all  duration-100 text-shadow-sm hover:scale-105 md:block text-orange-300 ">
 						TrungNghia
 					</span>
 				</Link>
@@ -60,8 +60,8 @@ const Navbar = () => {
 							href="/"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							onClick={() => {
-								const el = document.getElementById('Home')
-								el?.scrollIntoView({ behavior: 'smooth' })
+								const el = document.getElementById("Home");
+								el?.scrollIntoView({ behavior: "smooth" });
 							}}
 						>
 							Home
@@ -71,9 +71,9 @@ const Navbar = () => {
 							href="/#Villa"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							onClick={() => {
-								router.push('/#Villa')
-								const el = document.getElementById('Villa')
-								el?.scrollIntoView({ behavior: 'smooth' })
+								router.push("/#Villa");
+								const el = document.getElementById("Villa");
+								el?.scrollIntoView({ behavior: "smooth" });
 							}}
 						>
 							Villa
@@ -83,8 +83,8 @@ const Navbar = () => {
 							href="/#Services"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							onClick={() => {
-								const el = document.getElementById('Services')
-								el?.scrollIntoView({ behavior: 'smooth' })
+								const el = document.getElementById("Services");
+								el?.scrollIntoView({ behavior: "smooth" });
 							}}
 						>
 							Services
@@ -94,8 +94,8 @@ const Navbar = () => {
 							href="/#Contact"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							onClick={() => {
-								const el = document.getElementById('Contact')
-								el?.scrollIntoView({ behavior: 'smooth' })
+								const el = document.getElementById("Contact");
+								el?.scrollIntoView({ behavior: "smooth" });
 							}}
 						>
 							Contact
@@ -104,7 +104,7 @@ const Navbar = () => {
 				</div>
 
 				<div className="flex flex-row items-center justify-center gap-2">
-					{Socials.map(social => (
+					{Socials.map((social) => (
 						<Link href={social.href} target="_blank" key={social.src}>
 							<div className="relative aspect-square w-8 cursor-pointer rounded-full transition-all duration-100 hover:scale-105">
 								<Image
@@ -119,7 +119,7 @@ const Navbar = () => {
 					<Link href="/studio" target="_blank">
 						<Button size="sm" variant="link" className="rounded-full">
 							Admin
-						</Button>{' '}
+						</Button>{" "}
 					</Link>
 					{/* auth */}
 
@@ -169,7 +169,7 @@ const Navbar = () => {
 				</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Navbar
+export default Navbar;

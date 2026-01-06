@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { MotionDiv } from "@/lib/framer";
 import AvatarCirclesDemo from "../avatar-circles/AvatarCirclesDemo";
 import { BorderBeam } from "../magicui/boderBeam/BorderBeam";
+import Tittle from "../Tittle/Tittle";
 import { ImagesSlider } from "./ImagesSlider";
 
 function Hero(): JSX.Element {
@@ -24,18 +25,18 @@ function Hero(): JSX.Element {
 						}}
 					>
 						<h1
-							className=' max-w-[12ch] animate-slowpan bg-[url("/phenix.webp")] bg-clip-text
-    pb-5 text-8xl
+							className=' max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")] bg-clip-text
+    pb-5 text-6xl
      leading-[0.85] text-transparent font-medium
-     md:my-auto md:text-12xl xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'
+     md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'
 						>
 							Xin chào!
 						</h1>
 					</MotionDiv>
 					{/* border beam */}
-					<div className="relative flex w-fit flex-col items-center justify-center gap-2 rounded-[0.4rem] bg-background/50 p-2 md:p-5 md:gap-10 md:mb-5 lg:mb-10">
+					<div className="relative flex w-fit flex-col items-center justify-center gap-2 rounded-[0.4rem] bg-background/80 p-2 md:p-5 md:gap-10 md:mb-5 lg:mb-10">
 						<BorderBeam size={250} duration={12} delay={9} />
-						<p className="text-2xl text-zinc-900 shadow-zinc-500 text-shadow-lg md:text-3xl">
+						<p className="text-xl text-zinc-900 shadow-zinc-500 text-shadow-lg md:text-2xl lg:text-3xl">
 							Tận hưởng không gian thoải mái thư giãn, nghỉ ngơi cùng người
 							thân, bạn bè và đồng nghiệp tại hệ thống cho thuê biệt thự sang
 							trọng tại Đà Lạt.
@@ -51,6 +52,7 @@ function Hero(): JSX.Element {
 					</div>
 				</MotionDiv>
 			</ImagesSlider>
+			<Tittle />
 		</div>
 	);
 }

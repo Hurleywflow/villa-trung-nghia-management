@@ -49,9 +49,9 @@ const Search: FC<Props> = ({
 							<option value="5">5 phòng</option>
 							<option value="6">6 phòng</option>
 							<option value="7">7 phòng</option>
-							<option value="8">8 phòng</option>
-							<option value="9">9 phòng</option>
-							<option value="10 & higher">10 phòng trở lên</option>
+							<option value="8">8 phòng trở lên</option>
+							<option value="9">Homestay</option>
+							{/* <option value="10 & higher">10 phòng trở lên</option> */}
 						</select>
 					</div>
 				</div>

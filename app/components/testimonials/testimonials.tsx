@@ -2,7 +2,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef, type FC } from "react";
+import { type FC, useRef } from "react";
 import SectionHeading from "../TextSectionHeading/SectionHeading";
 
 type Props = {};

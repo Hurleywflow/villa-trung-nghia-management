@@ -89,7 +89,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="bg-slate-100 text-slate-600 h-full">
 
-			<body suppressHydrationWarning={true} className="scroll-smooth bg-slate-100 text-slate-600">
+			<body suppressHydrationWarning={true} className="scroll-smooth bg-slate-100 text-slate-600 overflow-x-clip">
 				<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />

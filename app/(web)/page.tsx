@@ -3,20 +3,23 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 // import StarsCanvas from './components/StarBackground';
 // import './index.css';
-import Rooms from '@/app/(web)/rooms/page';
-import ImageParallax from '@/app/components/GuestImageScrollUpDown/imageParallax';
-// import SkewScroll from '@/app/components/SkewScroll/SkewScroll';
-import Tittle from '@/app/components/Tittle/Tittle';
-// import CardStackScroll from '@/app/components/cardStackScroll/cardStackScroll';
-import Contact from '@/app/components/contact/contact';
-// import { Container } from '@/app/components/container';
-import Testimonials from '@/app/components/testimonials/testimonials';
+
 // import TextScroll from '@/app/components/textScroll/textScroll';
-import { Suspense } from 'react';
+import { Suspense } from "react";
+import Rooms from "@/app/(web)/rooms/page";
+// import CardStackScroll from '@/app/components/cardStackScroll/cardStackScroll';
+import Contact from "@/app/components/contact/contact";
+import ImageParallax from "@/app/components/GuestImageScrollUpDown/imageParallax";
+// import SkewScroll from '@/app/components/SkewScroll/SkewScroll';
+import Tittle1 from "@/app/components/Tittle/Tittle1";
+// import { Container } from '@/app/components/container';
+import Testimonials from "@/app/components/testimonials/testimonials";
 // import HeroSection from '../components/HeroScrollThroughWindow/HeroSection';
-import { Container } from '../components/container';
-import Loading from '../components/loading/Loading';
-import Hero from '../components/hero/Hero';
+import { Container } from "../components/container";
+import Hero from "../components/hero/Hero";
+import Loading from "../components/loading/Loading";
+
+// import FeedBack from '../components/feedback/FeedBack';
 
 const Home = async () => {
 	return (
@@ -28,18 +31,19 @@ const Home = async () => {
 				</Suspense>
 			</Container> */}
 			<Container>
-				<Suspense fallback={<Loading className='' />}>
-				<Hero />
+				<Suspense fallback={<Loading className="" />}>
+					<Hero />
 				</Suspense>
-        <Tittle />
-        {/* <SkewScroll /> */}
-        {/* <TextScroll /> */}
-        <Rooms />
-        <Testimonials />
-        {/* <CardStackScroll /> */}
-        <ImageParallax />
-        <Contact />
-      </Container>
+				<Tittle1 />
+				{/* <SkewScroll /> */}
+				{/* <TextScroll /> */}
+				<Rooms />
+				<Testimonials />
+				{/* <FeedBack /> */}
+				{/* <CardStackScroll /> */}
+				<ImageParallax />
+				<Contact />
+			</Container>
 		</main>
 	);
 };

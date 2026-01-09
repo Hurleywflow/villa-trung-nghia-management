@@ -107,6 +107,74 @@ export default function RootLayout({
 				<Toaster />
 				<TailwindIndicator />
 			</body>
+				<Script id='schema-localBusiness' type='application/ld+json'>
+				{`{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Villa Đà Lạt",
+    "description": "Villa Đà Lạt là một trong những villa đẹp nhất tại Đà Lạt. Nó có view đẹp, sân vườn, bãi đỗ xe an toàn và khu vực BBQ ngoài trời lý tưởng để tổ chức tiệc.",
+    "url": "https://www.villadalat.org",
+    "image": "https://www.villadalat.org",
+		"logo": "https://www.villadalat.org/favicon-96x96.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": " Phường 11, Thành phố Đà Lạt",
+      "postalCode": "670000",
+      "addressLocality": "Đà Lạt",
+      "addressRegion": "Lâm Đồng",
+      "addressCountry": "Vietnam"
+    },
+    "telephone": "+84 934 353 636",
+    "email": "hurleywflow@gmail.com",
+		"priceRange": "From $25 <i>USD</i> to $9,990 <i>USD</i>",
+    "openingHoursSpecification": [ {
+		"@type": "OpeningHoursSpecification",
+		"dayOfWeek": [
+		"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+		],
+		"opens": "00:00",
+		"closes": "12:00"
+		},
+		{
+		"@type": "OpeningHoursSpecification",
+		"dayOfWeek": [
+		"Saturday",
+		"Sunday" ],
+		"opens": "11:00",
+		"closes": "15:00"
+		}],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "5",
+      "ratingCount": "6",
+			"url": "https://www.villadalat.org/testimonials"
+    }
+  }`}
+			</Script>
+			<Script id='schema-Organization' type='application/ld+json'>
+				{`{
+    "@context": "https://schema.org",
+		"@type": "Organization",
+    "name": "Villa Đà Lạt",
+    "description": 'Villa Đà Lạt là một trong những villa đẹp nhất tại Đà Lạt. Nó có view đẹp, sân vườn, bãi đỗ xe an toàn và khu vực BBQ ngoài trời lý tưởng để tổ chức tiệc.',
+    "url": "https://www.villadalat.org",
+    "image": "https://www.villadalat.org",
+		"logo": "https://www.villadalat.org/favicon-96x96.png",
+		"founder": {
+			"@type": "Person",
+			"name": "Hurley Nguyen",
+			"email": "hurleywflow@gmail.com",
+			"sameAs": [
+			"https://www.villadalat.org",
+			"https://www.linkedin.com/in/hurley-nguyen-477346228/",
+			"https://github.com/hurleywflow",
+			"https://x.com/netcodedev?s=21&t=aUbW-oRjhH8rILkUMppVEA:http://twitter.com/https%3A//x.com/netcodedev%3Fs=21&t=aUbW-oRjhH8rILkUMppVEA"
+		]
+	}
+  }`}
+			</Script>
 			{/* Google Analytics */}
 			{/* <!-- Google tag (gtag.js) --> */}
 			<Script

@@ -78,7 +78,7 @@ const Navbar = () => {
 						>
 							Villa
 						</Link>
-						<Link
+						{/* <Link
 							scroll={true}
 							href="/#Services"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
@@ -88,7 +88,7 @@ const Navbar = () => {
 							}}
 						>
 							Services
-						</Link>
+						</Link> */}
 						<Link
 							scroll={true}
 							href="/#Contact"

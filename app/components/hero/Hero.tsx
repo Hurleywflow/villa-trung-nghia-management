@@ -25,7 +25,7 @@ function Hero(): JSX.Element {
 						}}
 					>
 						<h1
-							className=' max-w-[12ch] animate-slowpan bg-[url("/phenix.jpeg")] bg-clip-text
+							className=' max-w-[12ch] animate-slowpan bg-[url("/contact.jpg")] bg-clip-text
     pb-5 text-6xl
      leading-[0.85] text-transparent font-medium
      md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'

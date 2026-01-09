@@ -18,33 +18,49 @@ import Testimonials from "@/app/components/testimonials/testimonials";
 import { Container } from "../components/container";
 import Hero from "../components/hero/Hero";
 import Loading from "../components/loading/Loading";
+import HorizontalScrollCarousel from '../components/HorizontalScrollImage/HorizontalScrollImage';
+import MapContact from '../components/map/MapContact';
 
 // import FeedBack from '../components/feedback/FeedBack';
 
 const Home = async () => {
 	return (
-		<main>
-			{/* add more content page on scroll bellow */}
-			{/* <Container className='max-w-[120rem]'>
+		< >
+			<header className="overflow-x-clip">
+				<Container>
+					<Suspense fallback={<Loading className="" />}>
+						<Hero />
+					</Suspense>
+				</Container>
+			</header>
+			<main className="overflow-x-clip">
+				{/* add more content page on scroll bellow */}
+				{/* <Container className='max-w-[120rem]'>
 				<Suspense fallback={<Loading className='' />}>
 					<HeroSection />
 				</Suspense>
 			</Container> */}
-			<Container>
-				<Suspense fallback={<Loading className="" />}>
+				<Container>
+					{/* <Suspense fallback={<Loading className="" />}>
 					<Hero />
-				</Suspense>
-				<Tittle1 />
-				{/* <SkewScroll /> */}
-				{/* <TextScroll /> */}
-				<Rooms />
-				<Testimonials />
-				{/* <FeedBack /> */}
-				{/* <CardStackScroll /> */}
-				<ImageParallax />
-				<Contact />
-			</Container>
-		</main>
+				</Suspense> */}
+					<Tittle1 />
+					{/* <SkewScroll /> */}
+					{/* <TextScroll /> */}
+					<Rooms />
+					<Testimonials />
+					{/* <FeedBack /> */}
+					{/* <CardStackScroll /> */}
+					<ImageParallax />
+					<div className='md:hidden'>
+					<HorizontalScrollCarousel />
+					</div>
+					<Contact />
+					<MapContact />
+
+				</Container>
+			</main>
+		</>
 	);
 };
 export default Home;

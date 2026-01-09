@@ -56,7 +56,7 @@ const Navbar = () => {
 						>
 							Villa
 						</button>
-						<button
+						{/* <button
 							onClick={() => {
 								router.push('/')
 							}}
@@ -67,7 +67,7 @@ const Navbar = () => {
 							// }}
 						>
 							Services
-						</button>
+						</button> */}
 						<button
 							onClick={() => {
 								router.push('/')

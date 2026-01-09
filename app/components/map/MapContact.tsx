@@ -24,7 +24,7 @@ function MapContact(): JSX.Element {
 						}
 					>
 						<Image
-							src='/Images/map/map.jpeg'
+							src='/images/map/map1.jpeg'
 							alt='address'
 							fill
 							className='object-cover object-center'

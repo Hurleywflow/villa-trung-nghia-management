@@ -57,7 +57,6 @@ const Home = async () => {
 					</div>
 					<Contact />
 					<MapContact />
-
 				</Container>
 			</main>
 		</>

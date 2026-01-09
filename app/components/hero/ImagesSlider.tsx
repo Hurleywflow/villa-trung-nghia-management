@@ -136,7 +136,8 @@ export const ImagesSlider = ({
 				perspective: "1000px",
 			}}
 		>
-			<div className="absolute inset-0 z-10 flex h-screen w-full items-center justify-center bg-black/20" />
+			<div className="absolute inset-0 z-10 flex h-screen w-full items-center justify-center" />
+			{/* <div className="absolute inset-0 z-10 flex h-screen w-full items-center justify-center bg-black/20" /> */}
 			{areImagesLoaded && children}
 			{areImagesLoaded && overlay && (
 				//* add overlay class to the parent div

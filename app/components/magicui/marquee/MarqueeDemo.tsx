@@ -9,15 +9,15 @@ type CardType = {
 	id: string;
 };
 const testimonials: CardType[] = [
-	{ id: "rv1", src: "/Images/review/1.png" },
-	{ id: "rv2", src: "/Images/review/2.png" },
-	{ id: "rv3", src: "/Images/review/3.png" },
-	{ id: "rv4", src: "/Images/review/4.png" },
-	{ id: "rv5", src: "/Images/review/5.png" },
-	{ id: "rv6", src: "/Images/review/6.png" },
-	{ id: "rv7", src: "/Images/review/7.png" },
-	{ id: "rv8", src: "/Images/review/8.png" },
-	{ id: "rv9", src: "/Images/review/9.png" },
+	{ id: "rv1", src: "/images/feedback/1.jpeg" },
+	{ id: "rv2", src: "/images/feedback/2.jpeg" },
+	{ id: "rv3", src: "/images/feedback/3.jpeg" },
+	{ id: "rv4", src: "/images/feedback/4.jpeg" },
+	{ id: "rv5", src: "/images/feedback/5.jpeg" },
+	{ id: "rv6", src: "/images/feedback/6.jpeg" },
+	{ id: "rv7", src: "/images/feedback/7.jpeg" },
+	{ id: "rv8", src: "/images/feedback/8.jpeg" },
+	{ id: "rv9", src: "/images/feedback/9.jpeg" },
 ];
 
 // const firstRow = testimonials.slice(0, testimonials.length / 2);
@@ -30,7 +30,7 @@ const secondRow = reversedTestimonials;
 
 const ReviewCard = ({ src }: { src: CardType["src"] }): JSX.Element => {
 	return (
-		<Card className="relative h-52 w-[350px] max-w-full cursor-pointer overflow-hidden bg-[#252326] md:w-[450px]">
+		<Card className="relative h-52 w-[350px] max-w-full cursor-pointer overflow-hidden bg-background md:w-[450px]">
 			<CardContent className="">
 				<Suspense
 					fallback={
@@ -63,7 +63,7 @@ const MarqueeDemo = (): JSX.Element => {
 					<ReviewCard key={review.id} {...review} />
 				))}
 			</Marquee>
-			<div className=" w-full border-t-4 border-dashed border-border" />
+			<div className=" w-full border-t-4 border-dashed border-border border-stone-300" />
 			<Marquee reverse pauseOnHover className="[--duration:140s]">
 				{secondRow.map((review) => (
 					<ReviewCard key={review.id} {...review} />

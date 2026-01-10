@@ -13,7 +13,7 @@ import ImageParallax from "@/app/components/GuestImageScrollUpDown/imageParallax
 // import SkewScroll from '@/app/components/SkewScroll/SkewScroll';
 import Tittle1 from "@/app/components/Tittle/Tittle1";
 // import { Container } from '@/app/components/container';
-import Testimonials from "@/app/components/testimonials/testimonials";
+// import Testimonials from "@/app/components/testimonials/testimonials";
 // import HeroSection from '../components/HeroScrollThroughWindow/HeroSection';
 import { Container } from "../components/container";
 import Hero from "../components/hero/Hero";
@@ -21,7 +21,7 @@ import Loading from "../components/loading/Loading";
 import HorizontalScrollCarousel from '../components/HorizontalScrollImage/HorizontalScrollImage';
 import MapContact from '../components/map/MapContact';
 
-// import FeedBack from '../components/feedback/FeedBack';
+import FeedBack from '../components/feedback/FeedBack';
 
 const Home = async () => {
 	return (
@@ -48,10 +48,10 @@ const Home = async () => {
 					{/* <SkewScroll /> */}
 					{/* <TextScroll /> */}
 					<Rooms />
-					<Testimonials />
-					{/* <FeedBack /> */}
+					{/* <Testimonials /> */}
 					{/* <CardStackScroll /> */}
 					<ImageParallax />
+					<FeedBack />
 					<div className='md:hidden'>
 					<HorizontalScrollCarousel />
 					</div>

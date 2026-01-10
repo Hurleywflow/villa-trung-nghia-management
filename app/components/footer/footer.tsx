@@ -33,6 +33,11 @@ const Footer = (): JSX.Element => {
 					</Button>
 				</Link>
 			</p>
+			<Link href="https://www.agoda.com/villa-da-lat-tn1/hotel/dalat-vn.html?cid=1844104&ds=bkp7dksCVu7179H5" target="_blank">
+				</Link>
+			<Link href="https://www.booking.com/Share-0kLk7P" target="_blank">
+				</Link>
+
 		</footer>
 	);
 };

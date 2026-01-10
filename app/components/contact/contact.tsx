@@ -78,7 +78,7 @@ const Contact: FC<Props> = () => {
 	return (
 		<section className="mx-auto mt-[5dvh] py-14" id="Contact">
 			<SectionHeading> Liên hệ</SectionHeading>
-			<div className="max-w-screen mx-auto px-4">
+			<div className="max-w-screen px-1">
 				<div className="mx-auto flex max-w-lg flex-col items-center justify-between gap-5 md:max-w-none md:flex-row">
 					<div className="w-full space-y-3 md:w-1/2">
 						<h3 className="text-3xl font-semibold sm:text-4xl">

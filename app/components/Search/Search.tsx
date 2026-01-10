@@ -32,7 +32,7 @@ const Search: FC<Props> = ({
 	//   router.push('/#Villa');
 	// };
 	return (
-		<section className="mx-4 rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl">
+		<section className="mx-1 rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl">
 			<div className="container mx-auto flex flex-wrap items-center justify-evenly gap-2">
 				<div className="mb-4 w-full md:w-2/5">
 					<Label className="text-xl">Loại Villa</Label>

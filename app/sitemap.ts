@@ -12,7 +12,7 @@ export default async function sitemap() {
 			return {
 				url: `${baseURL}/rooms/${room.slug}`,
 				lastModified: new Date(),
-				changeFrequency: 'monthly',
+				changeFrequency: 'daily',
 				priority: 1,
 			}
 		}) ?? []
@@ -21,8 +21,8 @@ export default async function sitemap() {
 		{
 			url: baseURL,
 			lastModified: new Date(),
-			changeFrequency: 'monthly',
-			priority: 1,
+			changeFrequency: 'daily',
+			priority: 2,
 		},
 		...routesURL,
 	]

@@ -13,7 +13,7 @@ function Hero(): JSX.Element {
 	const _pathname = usePathname();
 	const images = ["/images/hotel/hero-1.jpeg", "/images/hotel/hero-2.jpeg"];
 	return (
-		<div className=" relative flex h-screen max-h-[1280px] w-full flex-col items-center justify-center">
+		<div className=" relative flex h-screen max-h-[1280px] w-full flex-col items-center justify-center" id='Home'>
 			<ImagesSlider className="relative z-20 h-screen w-full" images={images}>
 				<MotionDiv className="absolute bottom-0 z-10 flex size-fit flex-col items-center justify-center gap-2 p-2 md:gap-5">
 					<MotionDiv
@@ -25,8 +25,7 @@ function Hero(): JSX.Element {
 						}}
 					>
 						<h1
-							className=' max-w-[12ch] animate-slowpan bg-[url("/text1.jpeg")] bg-clip-text pb-5 text-6xl leading-[0.85] text-transparent font-medium md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'
-						>
+							className=' max-w-[12ch] animate-slowpan bg-[url("/text3.jpeg")] bg-clip-text pb-5 text-8xl leading-[0.85] text-transparent font-medium md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'>
 							Xin chào!
 						</h1>
 					</MotionDiv>

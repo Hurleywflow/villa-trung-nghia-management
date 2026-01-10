@@ -119,7 +119,8 @@ const Rooms = () => {
 						/>
 					</div>
 					{/* display all Vila cards */}
-					<div className="group mx-1 my-5 grid grid-cols-2 place-content-evenly gap-4 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-6">
+					<div className="group mx-1 my-5 grid grid-cols-2 place-content-evenly gap-2 p-0 md:grid-cols-4 md:gap-3 lg:grid-cols-6">
+					{/* <div className="group mx-1 my-5 grid grid-cols-2 place-content-evenly gap-4 p-0 md:grid-cols-4 md:gap-4 lg:grid-cols-6"> */}
 						{/* {filteredRooms.map((room) => ( */}
 						{currentPosts.map((room: Room, index: number) => (
 							// stagger animation for each card

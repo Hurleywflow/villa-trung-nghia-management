@@ -51,10 +51,10 @@ const Home = async () => {
 					{/* <Testimonials /> */}
 					{/* <CardStackScroll /> */}
 					<ImageParallax />
-					<FeedBack />
 					<div className='md:hidden'>
 					<HorizontalScrollCarousel />
 					</div>
+					<FeedBack />
 					<Contact />
 					<MapContact />
 				</Container>

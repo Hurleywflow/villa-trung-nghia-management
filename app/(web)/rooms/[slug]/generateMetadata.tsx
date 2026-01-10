@@ -21,10 +21,10 @@ export async function generateMetadata(slugName: string): Promise<Metadata> {
 			description: product.description,
 			alternates: {
 				canonical: `/rooms/${product.slug}`,
-				languages: {
-					en: `/en/rooms/${product.slug}`,
-					vi: `/vi/rooms/${product.slug}`,
-				},
+				// languages: {
+				// 	en: `/en/rooms/${product.slug}`,
+				// 	vi: `/vi/rooms/${product.slug}`,
+				// },
 			},
 			twitter: {
 				card: 'summary_large_image',

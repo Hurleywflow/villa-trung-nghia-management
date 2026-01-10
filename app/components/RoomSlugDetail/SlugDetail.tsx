@@ -60,13 +60,17 @@ function SlugDetail({ room }: Readonly<SlugProps>) {
 				</div>
 				<div className=' grid max-w-6xl grid-cols-1 lg:max-w-7xl lg:grid-cols-2 lg:gap-x-20'>
 					<div className='relative col-start-1 row-start-1 flex flex-col-reverse rounded-lg  p-3 sm:row-start-2 sm:bg-none sm:p-0 lg:row-start-1'>
-						<p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg '>
+						<p className='text-sm font-medium leading-4 text-gray-600 shadow-tertiary-primary text-shadow-lg '>
 							$: {room.price} VND
 						</p>
-						<p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg '>
-							{room.type === 'mini & 3'
-								? 'Mini & 3 phòng'
-								: `${room.type} phòng`}
+						<p className='text-sm font-medium leading-4 text-gray-600 shadow-tertiary-primary text-shadow-lg '>
+							{/* if room.type === homestay that means it's room.type */}
+							{room.type === '9'
+								? 'Homestay'
+								: room.type === 'mini & 3'
+								? 'Villa: Mini & 3 Phòng'
+								: `Villa: ${room.type} Phòng`}
+
 						</p>
 						<h1 className='mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl'>
 							{room.name.toUpperCase()}
@@ -289,11 +293,15 @@ function SlugDetail({ room }: Readonly<SlugProps>) {
 			</div>
 			<div className=' grid max-w-6xl grid-cols-1 lg:max-w-7xl lg:grid-cols-2 lg:gap-x-20'>
 				<div className='relative col-start-1 row-start-1 flex flex-col-reverse rounded-lg  p-3 sm:row-start-2 sm:bg-none sm:p-0 lg:row-start-1'>
-					<p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg  '>
+					<p className='text-sm font-medium leading-4 text-gray-600 shadow-tertiary-primary text-shadow-lg  '>
 						$: {room.price} VND
 					</p>
-					<p className='text-sm font-medium leading-4 text-tertiary-primary shadow-tertiary-primary text-shadow-lg  '>
-						{room.type === 'mini & 3' ? 'Mini & 3 phòng' : `${room.type} phòng`}
+					<p className='text-sm font-medium leading-4 text-gray-600 shadow-tertiary-primary text-shadow-lg  '>
+						{room.type === '9'
+								? 'Homestay'
+								: room.type === 'mini & 3'
+								? 'Villa: Mini & 3 Phòng'
+								: `Villa: ${room.type} Phòng`}
 					</p>
 					<h1 className='mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl'>
 						{room.name.toUpperCase()}

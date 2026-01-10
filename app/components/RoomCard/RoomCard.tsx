@@ -120,8 +120,14 @@ const RoomCard: FC<Props> = (props) => {
 										Mã số: {code}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
-										Vila:{" "}
-										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
+										{/* Vila:{" "}
+										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
+										{type === "9"
+											? 'Homestay'
+											: type === "mini & 3"
+											? 'Vila: Mini & 3 Phòng'
+											: `Vila: ${type} Phòng`}
+
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										$: {price} VND
@@ -199,8 +205,13 @@ const RoomCard: FC<Props> = (props) => {
 										Mã số: {code}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
-										Vila:{" "}
-										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
+										{/* Vila:{" "}
+										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
+										{type === "9"
+											? 'Homestay'
+											: type === "mini & 3"
+											? 'Vila: Mini & 3 Phòng'
+											: `Vila: ${type} Phòng`}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										$: {price} VND
@@ -318,8 +329,13 @@ const RoomCard: FC<Props> = (props) => {
 									Mã số: {code}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
-									Vila:{" "}
-									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
+									{/* Vila:{" "}
+									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
+									{type === "9"
+											? 'Homestay'
+											: type === "mini & 3"
+											? 'Vila: Mini & 3 Phòng'
+											: `Vila: ${type} Phòng`}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 									$: {price} VND
@@ -395,8 +411,13 @@ const RoomCard: FC<Props> = (props) => {
 									Mã số: {code}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
-									Vila:{" "}
-									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`}
+									{/* Vila:{" "}
+									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
+									{type === "9"
+											? 'Homestay'
+											: type === "mini & 3"
+											? 'Vila: Mini & 3 Phòng'
+											: `Vila: ${type} Phòng`}
 								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 									$: {price} VND

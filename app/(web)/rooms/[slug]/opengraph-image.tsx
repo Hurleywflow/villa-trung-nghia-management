@@ -55,7 +55,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
 				fonts: [
 					{
 						name: 'Inter',
-						data: new Uint8Array(),
+						data: Buffer.from([]), // Change Uint8Array to Buffer
+						// data: new Uint8Array(),
 						style: 'normal',
 						weight: 400,
 					},

@@ -14,7 +14,7 @@ const HorizontalScrollCarousel = () => {
 
 	return (
 		<>
-			<SectionHeading> HÌNH ẢNH KHÁCH THAM QUAN </SectionHeading>
+			<SectionHeading> KHÁCH THAM QUAN </SectionHeading>
 			<section ref={targetRef} className='relative h-[500svh] bg-slate-100'>
 				<div className='sticky top-0 flex h-[24svh] items-center overflow-hidden'>
 					<motion.div style={{ x: x1 }} className='flex gap-4'>

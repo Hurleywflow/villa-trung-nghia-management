@@ -6,7 +6,7 @@ import SectionHeading from '../TextSectionHeading/SectionHeading';
 function FeedBack() {
 	return (
 		<div className="mt-[5dvh]">
-		<SectionHeading>khách hàng đánh giá</SectionHeading>
+		<SectionHeading>đánh giá</SectionHeading>
 		<Card className='flex w-full flex-col items-center justify-center gap-10 py-2 bg-inherit'>
 			{/* <ShineBorderBasicDemo /> */}
 			<MarqueeDemo />

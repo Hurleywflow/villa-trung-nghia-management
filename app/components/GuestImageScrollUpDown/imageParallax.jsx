@@ -60,7 +60,7 @@ export default function ImageParallax() {
 	return (
 		<section className='mx-auto hidden md:block'>
 			<div className='h-[5dvh]'></div>
-			<SectionHeading> HÌNH ẢNH KHÁCH THam quan </SectionHeading>
+			<SectionHeading> KHÁCH THam quan </SectionHeading>
 			<div className='h-[svh]'></div>
 			<div ref={gallery} className={styles.gallery}>
 				<Column images={[images[0], images[1], images[2]]} y={y} />

@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 function MapContact(): JSX.Element {
 	return (
-		<Card className='relative mx-1 h-28 w-full overflow-hidden'>
+		<Card className='relative mx-auto h-28 w-full overflow-hidden'>
 			<address>
 				<Link
 					href='https://maps.app.goo.gl/rXLjDijNYfvs7koE8'

@@ -16,6 +16,7 @@ import { generateMetadata } from './generateMetadata';
 import LoadingSpinner from './loading';
 import { Suspense } from 'react';
 import Loading from '@/app/components/loading/Loading';
+
 const FeaturedImageGallery = dynamic(
 	async () =>
 		(await import('@/app/components/FeatureIamgesGalery/FeatureIamgesGalery'))

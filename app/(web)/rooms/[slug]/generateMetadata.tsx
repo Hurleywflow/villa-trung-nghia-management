@@ -17,14 +17,10 @@ export async function generateMetadata(slugName: string): Promise<Metadata> {
 		}
 
 		return {
-			title: product.name,
+			title: `Villa in Dalat - ${product.name.replace(/-/g, ' ')}`,
 			description: product.description,
 			alternates: {
-				canonical: `/rooms/${product.slug}`,
-				// languages: {
-				// 	en: `/en/rooms/${product.slug}`,
-				// 	vi: `/vi/rooms/${product.slug}`,
-				// },
+				canonical: `/rooms/${product.slug}`, // Resolves to https://www.villadalat.org/rooms/[slug]
 			},
 			twitter: {
 				card: 'summary_large_image',
@@ -42,3 +38,5 @@ export async function generateMetadata(slugName: string): Promise<Metadata> {
 		}
 	}
 }
+
+

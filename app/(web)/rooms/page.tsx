@@ -27,6 +27,7 @@ import { getRooms } from "@/libs/apis";
 import type { Room } from "@/models/room";
 import LoadingSpinner from "./loading";
 
+
 const Rooms = () => {
 	const [roomTypeFilter, setRoomTypeFilter] = useState("");
 	const [searchQuery, setSearchQuery] = useState("");

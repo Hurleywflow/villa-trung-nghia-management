@@ -36,7 +36,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
       disallow: [
-				'/studio',
+				// '/studio',
         '/admin/',    // Prevents crawling your dashboard or login areas
         '/api/',      // Prevents crawling your internal API routes
         '/private/',  // Any other folders not meant for the public

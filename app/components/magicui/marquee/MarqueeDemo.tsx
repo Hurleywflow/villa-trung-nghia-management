@@ -1,37 +1,37 @@
-import { Suspense } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
-import LoadingImage from "../../loading-image/LoadingImage";
-import Marquee from "./Marquee";
+import { Suspense } from 'react'
+import { Card, CardContent } from '@/components/ui/card'
+import { Skeleton } from '@/components/ui/skeleton'
+import LoadingImage from '../../loading-image/LoadingImage'
+import Marquee from './Marquee'
 
 type CardType = {
-	src: string;
-	id: string;
-};
+	src: string
+	id: string
+}
 const testimonials: CardType[] = [
-	{ id: "rv1", src: "/images/feedback/1.jpeg" },
-	{ id: "rv2", src: "/images/feedback/2.jpeg" },
-	{ id: "rv3", src: "/images/feedback/3.jpeg" },
-	{ id: "rv4", src: "/images/feedback/4.jpeg" },
-	{ id: "rv5", src: "/images/feedback/5.jpeg" },
-	{ id: "rv6", src: "/images/feedback/6.jpeg" },
-	{ id: "rv7", src: "/images/feedback/7.jpeg" },
-	{ id: "rv8", src: "/images/feedback/8.jpeg" },
-	{ id: "rv9", src: "/images/feedback/9.jpeg" },
-];
+	{ id: 'rv1', src: '/images/feedback/1.jpeg' },
+	{ id: 'rv2', src: '/images/feedback/2.jpeg' },
+	{ id: 'rv3', src: '/images/feedback/3.jpeg' },
+	{ id: 'rv4', src: '/images/feedback/4.jpeg' },
+	{ id: 'rv5', src: '/images/feedback/5.jpeg' },
+	{ id: 'rv6', src: '/images/feedback/6.jpeg' },
+	{ id: 'rv7', src: '/images/feedback/7.jpeg' },
+	{ id: 'rv8', src: '/images/feedback/8.jpeg' },
+	{ id: 'rv9', src: '/images/feedback/9.jpeg' },
+]
 
 // const firstRow = testimonials.slice(0, testimonials.length / 2);
 // const secondRow = testimonials.slice(testimonials.length / 2);
-const firstRow = testimonials;
+const firstRow = testimonials
 
 // Refactored solution
-const reversedTestimonials = [...testimonials];
-const secondRow = reversedTestimonials;
+const reversedTestimonials = [...testimonials]
+const secondRow = reversedTestimonials
 
-const ReviewCard = ({ src }: { src: CardType["src"] }): JSX.Element => {
+const ReviewCard = ({ src }: { src: CardType['src'] }): JSX.Element => {
 	return (
 		<Card className="relative h-40 md:h-44 w-[350px] max-w-full cursor-pointer overflow-hidden bg-background md:w-[450px]">
-		{/* <Card className="relative h-52 w-[350px] max-w-full cursor-pointer overflow-hidden bg-background md:w-[450px]"> */}
+			{/* <Card className="relative h-52 w-[350px] max-w-full cursor-pointer overflow-hidden bg-background md:w-[450px]"> */}
 			<CardContent className="">
 				<Suspense
 					fallback={
@@ -53,8 +53,8 @@ const ReviewCard = ({ src }: { src: CardType["src"] }): JSX.Element => {
 				</Suspense>
 			</CardContent>
 		</Card>
-	);
-};
+	)
+}
 
 const MarqueeDemo = (): JSX.Element => {
 	return (
@@ -73,7 +73,7 @@ const MarqueeDemo = (): JSX.Element => {
 			<div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-card md:w-20" />
 			<div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-card md:w-20" />
 		</div>
-	);
-};
+	)
+}
 
-export default MarqueeDemo;
+export default MarqueeDemo

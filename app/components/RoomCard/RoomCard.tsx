@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import Link from "next/link";
-import type { FC } from "react";
-import * as React from "react";
-import { Suspense } from "react";
+import Link from 'next/link'
+import type { FC } from 'react'
+import * as React from 'react'
+import { Suspense } from 'react'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
 	Dialog,
 	DialogContent,
@@ -13,7 +13,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog'
 import {
 	Drawer,
 	DrawerClose,
@@ -23,30 +23,30 @@ import {
 	DrawerHeader,
 	DrawerTitle,
 	DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Skeleton } from "@/components/ui/skeleton";
-import useMediaQuery from "@/hooks/useMediaQuery";
-import { cn } from "@/lib/utils";
-import { urlFor } from "@/libs/urlFor";
-import type { Room } from "@/models/room";
-import ProfileForm from "../FormBooking/Form";
-import LoadingImage from "../loading-image/LoadingImage";
+} from '@/components/ui/drawer'
+import { Skeleton } from '@/components/ui/skeleton'
+import useMediaQuery from '@/hooks/useMediaQuery'
+import { cn } from '@/lib/utils'
+import { urlFor } from '@/libs/urlFor'
+import type { Room } from '@/models/room'
+import ProfileForm from '../FormBooking/Form'
+import LoadingImage from '../loading-image/LoadingImage'
 
 type Props = {
-	room: Room;
-};
+	room: Room
+}
 
 const RoomCard: FC<Props> = (props) => {
 	const {
 		room: { coverImage, name, code, type, description, slug, isBooked, price },
-	} = props;
-	const [snap, setSnap] = React.useState<number | string | null>(0.7);
-	const [open, setOpen] = React.useState(false);
+	} = props
+	const [snap, setSnap] = React.useState<number | string | null>(0.7)
+	const [open, setOpen] = React.useState(false)
 	const handleOpenChange = React.useCallback((open: boolean) => {
-		setOpen(open);
-	}, []);
+		setOpen(open)
+	}, [])
 
-	const isDesktop = useMediaQuery("(min-width: 768px)");
+	const isDesktop = useMediaQuery('(min-width: 768px)')
 	if (isDesktop) {
 		return (
 			<section className="body-font mx-auto w-full   transition-all duration-100 hover:scale-[1.01]">
@@ -61,7 +61,7 @@ const RoomCard: FC<Props> = (props) => {
 								<Dialog open={open} onOpenChange={handleOpenChange}>
 									<DialogTrigger asChild>
 										<div className="absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 cursor-pointer bg-primary py-1.5  text-center text-sm font-semibold uppercase tracking-wider text-slate-200 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-tertiary-primary hover:text-white">
-											{isBooked ? "Booked" : "Book Now"}
+											{isBooked ? 'Booked' : 'Book Now'}
 										</div>
 									</DialogTrigger>
 									<DialogContent className="sm:max-w-[425px]">
@@ -122,25 +122,24 @@ const RoomCard: FC<Props> = (props) => {
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										{/* Vila:{" "}
 										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
-										{type === "9"
+										{type === '9'
 											? 'Homestay'
-											: type === "mini & 3"
-											? 'Vila: Mini & 3 Phòng'
-											: `Vila: ${type} Phòng`}
-
+											: type === 'mini & 3'
+												? 'Vila: Mini & 3 Phòng'
+												: `Vila: ${type} Phòng`}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										$: {price} VND
 									</h2>
 									<p className="line-clamp-3 text-[0.8rem]">
-										{description.split("\n").map((item, key) => {
+										{description.split('\n').map((item, key) => {
 											return (
 												// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 												<span key={key}>
 													{item}
 													<br />
 												</span>
-											);
+											)
 										})}
 									</p>
 									{/* <p className='pb-2 pt-2 line-clamp-3 text-[0.8rem]'>{description.slice(1, 100)}...</p> */}
@@ -182,7 +181,7 @@ const RoomCard: FC<Props> = (props) => {
 									// href='#'
 									className="absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 bg-amber-300 py-1.5 text-center text-sm font-semibold uppercase tracking-wider text-amber-800 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-yellow-300"
 								>
-									{isBooked ? "Booked" : "Book Now"}
+									{isBooked ? 'Booked' : 'Book Now'}
 								</div>
 							</div>
 							<Link href={`/rooms/${slug.current}`}>
@@ -207,24 +206,24 @@ const RoomCard: FC<Props> = (props) => {
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										{/* Vila:{" "}
 										{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
-										{type === "9"
+										{type === '9'
 											? 'Homestay'
-											: type === "mini & 3"
-											? 'Vila: Mini & 3 Phòng'
-											: `Vila: ${type} Phòng`}
+											: type === 'mini & 3'
+												? 'Vila: Mini & 3 Phòng'
+												: `Vila: ${type} Phòng`}
 									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										$: {price} VND
 									</h2>
 									<p className="line-clamp-3 text-[0.8rem]">
-										{description.split("\n").map((item, key) => {
+										{description.split('\n').map((item, key) => {
 											return (
 												// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 												<span key={key}>
 													{item}
 													<br />
 												</span>
-											);
+											)
 										})}
 									</p>
 									{/* <p className='pb-2 pt-2 line-clamp-3 text-[0.8rem]'>{description.slice(1, 100)}...</p> */}
@@ -255,7 +254,7 @@ const RoomCard: FC<Props> = (props) => {
 					</div>
 				)}
 			</section>
-		);
+		)
 	}
 	return (
 		<section className="body-font mx-auto w-full  text-gray-600 transition-all duration-100 hover:scale-[1.01]">
@@ -279,14 +278,14 @@ const RoomCard: FC<Props> = (props) => {
 							>
 								<DrawerTrigger asChild>
 									<div className="absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 cursor-pointer bg-primary py-1.5 text-center text-sm font-semibold uppercase tracking-wider text-slate-200 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-tertiary-primary">
-										{isBooked ? "Booked" : "Book Now"}
+										{isBooked ? 'Booked' : 'Book Now'}
 									</div>
 								</DrawerTrigger>
 								<DrawerContent>
 									<div
-										className={cn("", {
-											"overflow-y-auto": snap === 1,
-											"overflow-hidden": snap !== 1,
+										className={cn('', {
+											'overflow-y-auto': snap === 1,
+											'overflow-hidden': snap !== 1,
 										})}
 									>
 										<DrawerHeader className="text-left">
@@ -331,9 +330,9 @@ const RoomCard: FC<Props> = (props) => {
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 									{/* Vila:{" "}
 									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
-									{type === "9"
-											? 'Homestay'
-											: type === "mini & 3"
+									{type === '9'
+										? 'Homestay'
+										: type === 'mini & 3'
 											? 'Vila: Mini & 3 Phòng'
 											: `Vila: ${type} Phòng`}
 								</h2>
@@ -341,14 +340,14 @@ const RoomCard: FC<Props> = (props) => {
 									$: {price} VND
 								</h2>
 								<p className="line-clamp-3  text-[0.8rem]">
-									{description.split("\n").map((item, key) => {
+									{description.split('\n').map((item, key) => {
 										return (
 											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 											<span key={key}>
 												{item}
 												<br />
 											</span>
-										);
+										)
 									})}
 								</p>
 								{/* <p className='pb-2 pt-2 line-clamp-3 text-[0.8rem]'>{description.slice(1, 100)}...</p> */}
@@ -387,7 +386,7 @@ const RoomCard: FC<Props> = (props) => {
 							<div className="absolute left-0 top-0 h-2 w-2 bg-amber-500"></div>
 							<div className="absolute bottom-0 right-0 h-2 w-2 bg-amber-500"></div>
 							<div className="absolute bottom-0 right-0 block w-square-diagonal origin-bottom-right rotate-45 bg-amber-300 py-1.5 text-center text-sm font-semibold uppercase tracking-wider text-amber-800 shadow-sm shadow-tertiary-primary text-shadow-lg hover:bg-yellow-300">
-								{isBooked ? "Booked" : "Book Now"}
+								{isBooked ? 'Booked' : 'Book Now'}
 							</div>
 						</div>
 
@@ -413,9 +412,9 @@ const RoomCard: FC<Props> = (props) => {
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 									{/* Vila:{" "}
 									{type === "mini & 3" ? "Mini & 3 phòng" : `${type} phòng`} */}
-									{type === "9"
-											? 'Homestay'
-											: type === "mini & 3"
+									{type === '9'
+										? 'Homestay'
+										: type === 'mini & 3'
 											? 'Vila: Mini & 3 Phòng'
 											: `Vila: ${type} Phòng`}
 								</h2>
@@ -423,14 +422,14 @@ const RoomCard: FC<Props> = (props) => {
 									$: {price} VND
 								</h2>
 								<p className="line-clamp-3 text-[0.8rem]">
-									{description.split("\n").map((item, key) => {
+									{description.split('\n').map((item, key) => {
 										return (
 											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 											<span key={key}>
 												{item}
 												<br />
 											</span>
-										);
+										)
 									})}
 								</p>
 								{/* <p className='pb-2 pt-2 line-clamp-3 text-[0.8rem]'>{description.slice(1, 100)}...</p> */}
@@ -460,7 +459,7 @@ const RoomCard: FC<Props> = (props) => {
 				</div>
 			)}
 		</section>
-	);
-};
+	)
+}
 
-export default RoomCard;
+export default RoomCard

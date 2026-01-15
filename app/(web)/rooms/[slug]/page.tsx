@@ -1,21 +1,20 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-'use client';
+'use client'
 
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
-import { basename } from 'path';
+import Head from 'next/head'
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
-import Head from 'next/head';
-import useSWR from 'swr';
-
-import SlugDetail from '@/app/components/RoomSlugDetail/SlugDetail';
-import { Container } from '@/app/components/container';
-import { getRoom } from '@/libs/apis';
-import { generateMetadata } from './generateMetadata';
-import LoadingSpinner from './loading';
-import { Suspense } from 'react';
-import Loading from '@/app/components/loading/Loading';
+import { basename } from 'path'
+import { Suspense } from 'react'
+import useSWR from 'swr'
+import { Container } from '@/app/components/container'
+import Loading from '@/app/components/loading/Loading'
+import SlugDetail from '@/app/components/RoomSlugDetail/SlugDetail'
+import { getRoom } from '@/libs/apis'
+import { generateMetadata } from './generateMetadata'
+import LoadingSpinner from './loading'
 
 const FeaturedImageGallery = dynamic(
 	async () =>
@@ -24,46 +23,46 @@ const FeaturedImageGallery = dynamic(
 	{
 		ssr: true,
 	},
-);
+)
 
 // use basename to get pathname slug
 function getValidSlug() {
 	try {
-		const slug = basename(window.location.pathname);
+		const slug = basename(window.location.pathname)
 		if (!slug) {
-			throw new Error('Invalid slug');
+			throw new Error('Invalid slug')
 		}
-		return slug;
+		return slug
 	} catch (error) {
-		console.error(error);
-		return null;
+		console.error(error)
+		return null
 	}
 }
 
 try {
-	const slugName = getValidSlug();
+	const slugName = getValidSlug()
 	if (slugName) {
-		generateMetadata(slugName);
+		generateMetadata(slugName)
 	}
 } catch (error) {
-	console.error(error);
+	console.error(error)
 }
 
 const RoomDetails = (props: { params: { slug: string } }) => {
 	const {
 		params: { slug },
-	} = props;
+	} = props
 
 	const fetchRoom = async () => {
 		try {
-			return await getRoom(slug);
+			return await getRoom(slug)
 		} catch (error) {
-			console.error(error);
-			return null;
+			console.error(error)
+			return null
 		}
-	};
+	}
 
-	const { data: room, error, isLoading } = useSWR('/api/room', fetchRoom);
+	const { data: room, error, isLoading } = useSWR('/api/room', fetchRoom)
 
 	// const slugNameVilla = room?.slug?.current;
 	// if (slug !== slugNameVilla) {
@@ -71,36 +70,36 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 	// }
 
 	if (isLoading) {
-		return <LoadingSpinner />;
+		return <LoadingSpinner />
 	}
 	if (!room) {
-		return <LoadingSpinner />;
+		return <LoadingSpinner />
 	}
 
 	if (!room && !isLoading) {
-		throw new Error('Cannot fetch data');
+		throw new Error('Cannot fetch data')
 	}
 	if (error) {
-		throw new Error('Cannot fetch data');
+		throw new Error('Cannot fetch data')
 	}
 
 	return (
 		<>
 			<Head>
 				<title>Detail Villa</title>
-				<meta name='description' content={room.description} />
-				<meta property='og:title' content={room.name} />
-				<meta property='og:description' content={room.description} />
+				<meta name="description" content={room.description} />
+				<meta property="og:title" content={room.name} />
+				<meta property="og:description" content={room.description} />
 			</Head>
 			<Container>
 				<section
-					className='mx-auto md:pt-20 flex items-center justify-center flex-col'
-					id='slug-detail'
+					className="mx-auto md:pt-20 flex items-center justify-center flex-col"
+					id="slug-detail"
 				>
 					{room && (
 						<Suspense
 							fallback={
-								<Loading className='w-screen max-w-screen-2xl overflow-hidden md:w-[90vw] aspect-square md:aspect-video' />
+								<Loading className="w-screen max-w-screen-2xl overflow-hidden md:w-[90vw] aspect-square md:aspect-video" />
 							}
 						>
 							<FeaturedImageGallery
@@ -113,7 +112,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 				</section>
 			</Container>
 		</>
-	);
-};
+	)
+}
 
-export default RoomDetails;
+export default RoomDetails

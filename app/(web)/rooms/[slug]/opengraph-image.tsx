@@ -27,26 +27,24 @@ export default async function Image({ params }: { params: { slug: string } }) {
 		}
 
 		return new ImageResponse(
-			(
-				<div tw="relative flex w-full h-full items-center justify-center">
-					{/* Background */}
-					<div tw="absolute flex inset-0">
-						<img
-							tw="flex flex-1"
-							src={product?.coverImage + '&w=1200&h=630&auto=format&q=75'}
-							alt={product?.name}
-						/>
-						{/* Overlay */}
-						<div tw="absolute flex inset-0 bg-black bg-opacity-50 z-10" />
-					</div>
-					<div tw="flex flex-col text-neutral-50">
-						{/* Title */}
-						<div tw="text-7xl font-bold">{product?.name}</div>
-						{/* Tags */}
-						<div tw="flex mt-6 flex-wrap space-x-10 items-center text-4xl text-neutral-50"></div>
-					</div>
+			<div tw="relative flex w-full h-full items-center justify-center">
+				{/* Background */}
+				<div tw="absolute flex inset-0">
+					<img
+						tw="flex flex-1"
+						src={product?.coverImage + '&w=1200&h=630&auto=format&q=75'}
+						alt={product?.name}
+					/>
+					{/* Overlay */}
+					<div tw="absolute flex inset-0 bg-black bg-opacity-50 z-10" />
 				</div>
-			),
+				<div tw="flex flex-col text-neutral-50">
+					{/* Title */}
+					<div tw="text-7xl font-bold">{product?.name}</div>
+					{/* Tags */}
+					<div tw="flex mt-6 flex-wrap space-x-10 items-center text-4xl text-neutral-50"></div>
+				</div>
+			</div>,
 			// ImageResponse options
 			{
 				// For convenience, we can re-use the exported opengraph-image

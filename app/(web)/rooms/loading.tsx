@@ -77,6 +77,6 @@ const LoadingSpinner = () => (
 			</div>
 		</div>
 	</section>
-);
+)
 
-export default LoadingSpinner;
+export default LoadingSpinner

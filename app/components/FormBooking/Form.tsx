@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // 'use client'
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Confetti } from "@neoconfetti/react";
-import { useRouter } from "next/navigation";
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Confetti } from '@neoconfetti/react'
+import { format } from 'date-fns'
+import { Calendar as CalendarIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 // import { redirect, useRouter } from 'next/navigation'
-import { useForm } from "react-hook-form";
-import * as z from "zod";
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { Button } from '@/components/ui/button'
+import { Calendar } from '@/components/ui/calendar'
 
 import {
 	Form,
@@ -20,68 +19,68 @@ import {
 	FormItem,
 	FormLabel,
 	FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import {
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
-} from "@/components/ui/popover";
-import { Textarea } from "@/components/ui/textarea";
-import { ToastAction } from "@/components/ui/toast";
-import { toast } from "@/components/ui/use-toast";
-import { cn } from "@/lib/utils";
-import FormSubmitButton from "../formStatusButton/FormSubmitButton";
+} from '@/components/ui/popover'
+import { Textarea } from '@/components/ui/textarea'
+import { ToastAction } from '@/components/ui/toast'
+import { toast } from '@/components/ui/use-toast'
+import { cn } from '@/lib/utils'
+import FormSubmitButton from '../formStatusButton/FormSubmitButton'
 
 // write a regex to validation the phone number
-const phoneRegex = /^\d{10,13}$/;
+const phoneRegex = /^\d{10,13}$/
 
 const FormSchema = z.object({
 	code: z.string().min(1, {
-		message: "Room code must be at least 1 character.",
+		message: 'Room code must be at least 1 character.',
 	}),
 	villaname: z.string().min(2, {
-		message: "Vila name must be at least 2 characters.",
+		message: 'Vila name must be at least 2 characters.',
 	}),
 	guest: z.string().min(1, {
-		message: "Guest must be at least 1 digits.",
+		message: 'Guest must be at least 1 digits.',
 	}),
 	username: z.string().min(2, {
-		message: "Username must be at least 2 characters.",
+		message: 'Username must be at least 2 characters.',
 	}),
 	email: z.string().email({
-		message: "Invalid email address.",
+		message: 'Invalid email address.',
 	}),
 	phone: z.string().refine((value) => phoneRegex.test(value), {
-		message: "Phone number is not valid.",
+		message: 'Phone number is not valid.',
 	}),
 	checkin: z.date({
-		required_error: "A date of check in is required.",
+		required_error: 'A date of check in is required.',
 	}),
 	checkout: z.date({
-		required_error: "A date of check out is required.",
+		required_error: 'A date of check out is required.',
 	}),
 	note: z.string().max(500, {
-		message: "Message must not be longer than 500 characters.",
+		message: 'Message must not be longer than 500 characters.',
 	}),
-});
+})
 
-function ProfileForm({ className }: React.ComponentProps<"form">) {
+function ProfileForm({ className }: React.ComponentProps<'form'>) {
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
 		defaultValues: {
-			code: "",
-			villaname: "",
-			guest: "",
-			username: "",
-			email: "",
-			phone: "",
+			code: '',
+			villaname: '',
+			guest: '',
+			username: '',
+			email: '',
+			phone: '',
 			checkin: new Date(),
 			checkout: new Date(),
-			note: "",
+			note: '',
 		},
-	});
-	const router = useRouter();
+	})
+	const router = useRouter()
 
 	//! filter input value to get result on searching
 	// async function filterJobs(formData: FormData) {
@@ -144,39 +143,39 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 		//   // const hotelRoomSlug = room.slug.current;
 		// };
 		interface FormData {
-			checkin: Date;
-			checkout: Date;
+			checkin: Date
+			checkout: Date
 		}
 
 		function validateDates(data: FormData): void {
 			if (!(data.checkin instanceof Date) || !(data.checkout instanceof Date)) {
-				throw new Error("Checkin and checkout must be valid Date objects");
+				throw new Error('Checkin and checkout must be valid Date objects')
 			}
 
 			if (!data.checkin || !data.checkout) {
-				throw new Error("Please provide checkin and checkout dates");
+				throw new Error('Please provide checkin and checkout dates')
 			}
 
 			if (data.checkin >= data.checkout) {
-				throw new Error("Checkin date must be before checkout date");
+				throw new Error('Checkin date must be before checkout date')
 			}
 		}
 
 		function showDateError(error: string): void {
 			toast({
-				variant: "destructive",
-				title: "Uh oh! Something went wrong.",
+				variant: 'destructive',
+				title: 'Uh oh! Something went wrong.',
 				description: error,
 				action: <ToastAction altText="Try again">Try again</ToastAction>,
-			});
+			})
 		}
 
 		try {
-			validateDates(data);
+			validateDates(data)
 			// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 		} catch (error: any) {
-			showDateError(error.message);
-			return;
+			showDateError(error.message)
+			return
 		}
 
 		// const calculateNights = (checkin: Date, checkout: Date) => {
@@ -186,28 +185,28 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 
 		// post data to resend api
 		try {
-			await fetch("/api/email", {
-				method: "POST",
+			await fetch('/api/email', {
+				method: 'POST',
 				body: JSON.stringify(data),
-			});
+			})
 		} catch (error) {
-			throw new Error("Error sending email");
+			throw new Error('Error sending email')
 		}
 
 		toast({
-			title: "You submitted the following values:",
+			title: 'You submitted the following values:',
 			description: (
 				<pre className="mt-2 flex w-[340px] items-center justify-center rounded-md bg-slate-700 p-4">
 					<span className="mx-auto text-center">{data && <Confetti />}</span>
 					<code className="text-white">{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			),
-		});
+		})
 
 		// reset to default value of the from, closed dialog or drawer and redirect to home page
-		form.reset();
-		await new Promise((resolve) => setTimeout(resolve, 3000));
-		router.push("/");
+		form.reset()
+		await new Promise((resolve) => setTimeout(resolve, 3000))
+		router.push('/')
 	}
 
 	return (
@@ -222,7 +221,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 			<form
 				onSubmit={form.handleSubmit(onSubmit)}
 				className={cn(
-					"grid h-[70svh] items-start gap-4 overflow-y-scroll",
+					'grid h-[70svh] items-start gap-4 overflow-y-scroll',
 					className,
 				)}
 			>
@@ -314,14 +313,14 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 								<PopoverTrigger asChild>
 									<FormControl>
 										<Button
-											variant={"outline"}
+											variant={'outline'}
 											className={cn(
-												"w-[240px] pl-3 text-left font-normal",
-												!field.value && "text-muted-foreground",
+												'w-[240px] pl-3 text-left font-normal',
+												!field.value && 'text-muted-foreground',
 											)}
 										>
 											{field.value ? (
-												format(field.value, "PPP")
+												format(field.value, 'PPP')
 											) : (
 												<span>Pick a date</span>
 											)}
@@ -335,7 +334,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 										selected={field.value}
 										onSelect={field.onChange}
 										disabled={(date) =>
-											date < new Date() || date < new Date("1900-01-01")
+											date < new Date() || date < new Date('1900-01-01')
 										}
 										// initialFocus
 									/>
@@ -355,14 +354,14 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 								<PopoverTrigger asChild>
 									<FormControl>
 										<Button
-											variant={"outline"}
+											variant={'outline'}
 											className={cn(
-												"w-[240px] pl-3 text-left font-normal",
-												!field.value && "text-muted-foreground",
+												'w-[240px] pl-3 text-left font-normal',
+												!field.value && 'text-muted-foreground',
 											)}
 										>
 											{field.value ? (
-												format(field.value, "PPP")
+												format(field.value, 'PPP')
 											) : (
 												<span>Pick a date</span>
 											)}
@@ -376,7 +375,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 										selected={field.value}
 										onSelect={field.onChange}
 										disabled={(date) =>
-											date < new Date() || date < new Date("1900-01-01")
+											date < new Date() || date < new Date('1900-01-01')
 										}
 										// initialFocus
 									/>
@@ -407,7 +406,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
 				<FormSubmitButton className="">Submit</FormSubmitButton>
 			</form>
 		</Form>
-	);
+	)
 }
 
-export default ProfileForm;
+export default ProfileForm

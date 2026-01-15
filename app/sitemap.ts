@@ -28,34 +28,33 @@
 // 	]
 // }
 
-
+import type { MetadataRoute } from 'next'
 // app/sitemap.ts
 import { getRooms } from '@/libs/apis'
-import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseURL = 'https://www.villadalat.org';
+	const baseURL = 'https://www.villadalat.org'
 
-    // 1. Fetch rooms and handle potential null/undefined
-    const rooms = await getRooms() || [];
+	// 1. Fetch rooms and handle potential null/undefined
+	const rooms = (await getRooms()) || []
 
-    // 2. Map dynamic room URLs
-    const roomUrls = rooms.map((room: { slug: any }) => ({
-        // Ensure this matches your folder structure: '/room/' or '/rooms/'
-        url: `${baseURL}/rooms/${room.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8, // Room pages are important, but usually secondary to the homepage
-    }));
+	// 2. Map dynamic room URLs
+	const roomUrls = rooms.map((room: { slug: any }) => ({
+		// Ensure this matches your folder structure: '/room/' or '/rooms/'
+		url: `${baseURL}/rooms/${room.slug}`,
+		lastModified: new Date(),
+		changeFrequency: 'weekly' as const,
+		priority: 0.8, // Room pages are important, but usually secondary to the homepage
+	}))
 
-    // 3. Return combined routes
-    return [
-        {
-            url: baseURL,
-            lastModified: new Date(),
-            changeFrequency: 'yearly' as const,
-            priority: 1.0, // Highest priority for the homepage
-        },
-        ...roomUrls,
-    ];
+	// 3. Return combined routes
+	return [
+		{
+			url: baseURL,
+			lastModified: new Date(),
+			changeFrequency: 'yearly' as const,
+			priority: 1.0, // Highest priority for the homepage
+		},
+		...roomUrls,
+	]
 }

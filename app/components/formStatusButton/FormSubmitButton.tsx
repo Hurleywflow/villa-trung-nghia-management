@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { useFormStatus } from "react-dom";
-import LoadingButton from "./LoadingButton";
+import { useFormStatus } from 'react-dom'
+import LoadingButton from './LoadingButton'
 
 export default function FormSubmitButton(
-  props: React.ButtonHTMLAttributes<HTMLButtonElement>,
+	props: React.ButtonHTMLAttributes<HTMLButtonElement>,
 ) {
-  const { pending } = useFormStatus();
+	const { pending } = useFormStatus()
 
-  return <LoadingButton {...props} type="submit" pending={pending} />;
+	return <LoadingButton {...props} type="submit" pending={pending} />
 }

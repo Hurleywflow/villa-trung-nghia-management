@@ -1,27 +1,28 @@
-"use client";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useRouter } from "next/navigation";
-import type { ChangeEvent, FC } from "react";
+'use client'
+import { useRouter } from 'next/navigation'
+import type { ChangeEvent, FC } from 'react'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+
 type Props = {
-	roomTypeFilter: string;
-	searchQuery: string;
-	setRoomTypeFilter: (value: string) => void;
-	setSearchQuery: (value: string) => void;
-};
+	roomTypeFilter: string
+	searchQuery: string
+	setRoomTypeFilter: (value: string) => void
+	setSearchQuery: (value: string) => void
+}
 const Search: FC<Props> = ({
 	roomTypeFilter,
 	searchQuery,
 	setRoomTypeFilter,
 	setSearchQuery,
 }): JSX.Element => {
-	const router = useRouter();
+	const router = useRouter()
 	const handleRoomTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
-		setRoomTypeFilter(event.target.value);
-	};
+		setRoomTypeFilter(event.target.value)
+	}
 	const handleSearchQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
-		setSearchQuery(event.target.value);
-	};
+		setSearchQuery(event.target.value)
+	}
 	//!  add the button search if need it
 	// const handleFilterClick = () => {
 	//   // router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
@@ -77,6 +78,6 @@ const Search: FC<Props> = ({
         </div> */}
 			</div>
 		</section>
-	);
-};
-export default Search;
+	)
+}
+export default Search

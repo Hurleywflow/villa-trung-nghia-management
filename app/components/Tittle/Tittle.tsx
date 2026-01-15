@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/ban-types */
-"use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { type FC, useRef } from "react";
+'use client'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { type FC, useRef } from 'react'
 
 // biome-ignore lint/complexity/noBannedTypes: <explanation>
-type Props = {};
+type Props = {}
 
 const Tittle: FC<Props> = () => {
-	const container = useRef(null);
+	const container = useRef(null)
 	const { scrollYProgress } = useScroll({
 		target: container,
-		offset: ["start end", "end start"],
-	});
+		offset: ['start end', 'end start'],
+	})
 
-	const x1 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-	const x2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+	const x1 = useTransform(scrollYProgress, [0, 1], [0, 100])
+	const x2 = useTransform(scrollYProgress, [0, 1], [0, -100])
 	return (
 		<section
 			ref={container}
@@ -34,6 +34,6 @@ const Tittle: FC<Props> = () => {
 				Trung Nghĩa
 			</motion.div>
 		</section>
-	);
-};
-export default Tittle;
+	)
+}
+export default Tittle

@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+/** biome-ignore-all lint/a11y/useValidAnchor: <explanation> */
+import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 const variants = {
 	open: {
@@ -16,7 +17,7 @@ const variants = {
 			staggerDirection: -1,
 		},
 	},
-};
+}
 const itemVariants = {
 	open: {
 		y: 0,
@@ -26,12 +27,13 @@ const itemVariants = {
 		y: 50,
 		opacity: 0,
 	},
-};
+}
 
 const Links = () => {
-	const items = ["Home", "Villa", "Contact"];
+	const items = ['Home', 'Villa', 'Contact']
 	// const items = ["Home", "Villa", "Services", "Contact"];
-	const router = useRouter();
+	const router = useRouter()
+	const baseUrl = "https://www.villadalat.org"
 
 	return (
 		<motion.div
@@ -46,7 +48,7 @@ const Links = () => {
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
 					onClick={() => {
-						router.push("/");
+						router.push(`${baseUrl}/#${item}`)
 					}}
 					className="cursor-pointer decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-violet-600 hover:underline-offset-4"
 				>
@@ -54,7 +56,7 @@ const Links = () => {
 				</motion.a>
 			))}
 		</motion.div>
-	);
-};
+	)
+}
 
-export default Links;
+export default Links

@@ -1,0 +1,175 @@
+[
+  {
+    "key": "ctrl+backspace",
+    "command": "deleteWordRight"
+  },
+  {
+    "command": "deleteWordLeft",
+    "key": "cmd+backspace",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "up",
+    "command": "cursorMove",
+    "args": {
+      "to": "down",
+      "by": "line",
+      "value": 3
+    },
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "down",
+    "command": "cursorMove",
+    "args": {
+      "to": "up",
+      "by": "line",
+      "value": 3
+    },
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "github.publish",
+    "key": "alt+p"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+d",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "editor.emmet.action.balanceIn"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "editor.emmet.action.balanceOut"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.emmet.action.matchTag"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "editor.emmet.action.removeTag"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "editor.emmet.action.updateTag"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "shift+space",
+    "command": "expandLineSelection"
+  },
+  {
+    "key": "ctrl+alt+.",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+,",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl ctrl",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl ctrl",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+p",
+    "command": "github.publish"
+  },
+  {
+    "key": "ctrl+shift+'",
+    "command": "extension.selectBackTick",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "extension.selectCurlyBrackets",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "extension.selectEitherQuote",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+9",
+    "command": "extension.selectParenthesis",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "extension.selectSquareBrackets",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+2",
+    "command": "quokka.makeQuokkaFromExistingFile",
+    "when": "!quokka.isLiveShareClient && !terminalFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "remove-empty-lines.inDocument"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl ctrl",
+    "command": "typescript.goToSourceDefinition"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "cursorTop",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+cmd+k",
+    "command": "cursorBottom",
+    "when": "textInputFocus"
+  }
+]

@@ -1,8 +1,8 @@
 function TailwindIndicator() {
 	//TODO: changing NODE_ENV to false will show the tailwind indicator
-	const NODE_ENV = true;
+	const NODE_ENV = true
 	if (NODE_ENV) {
-		return null;
+		return null
 	} else {
 		return (
 			<div className="font-mono fixed bottom-1 left-1 z-50 flex h-6 w-6 items-center justify-center rounded-full bg-orange-500 p-3 text-xs text-white">
@@ -13,8 +13,8 @@ function TailwindIndicator() {
 				<div className="hidden xl:block 2xl:hidden">xl</div>
 				<div className="hidden 2xl:block">2xl</div>
 			</div>
-		);
+		)
 	}
 }
 
-export default TailwindIndicator;
+export default TailwindIndicator

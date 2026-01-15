@@ -1,8 +1,11 @@
+/** biome-ignore-all lint/a11y/useButtonType: <explanation> */
+/** biome-ignore-all lint/a11y/noSvgWithoutTitle: <explanation> */
 import { motion } from 'framer-motion'
+
 const ToggleButton = ({ setOpen }) => {
 	return (
 		<button
-			onClick={() => setOpen(prev => !prev)}
+			onClick={() => setOpen((prev) => !prev)}
 			className="fixed left-[25px] top-[25px] z-50 flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full border-none bg-transparent outline-none transition-all duration-0 ease-linear hover:scale-110 focus:scale-110 active:scale-105"
 		>
 			<svg width="23" height="23" viewBox="0 0 23 23" className="">

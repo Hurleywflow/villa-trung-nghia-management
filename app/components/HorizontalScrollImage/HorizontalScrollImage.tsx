@@ -1,59 +1,59 @@
-"use client"
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import SectionHeading from '../TextSectionHeading/SectionHeading';
+'use client'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+import SectionHeading from '../TextSectionHeading/SectionHeading'
 
 const HorizontalScrollCarousel = () => {
-	const targetRef = useRef<HTMLDivElement | null>(null);
+	const targetRef = useRef<HTMLDivElement | null>(null)
 	const { scrollYProgress } = useScroll({
 		target: targetRef,
-	});
+	})
 
-	const x1 = useTransform(scrollYProgress, [0, 1], ['1%', '-100%']);
-	const x2 = useTransform(scrollYProgress, [1, 0], ['1%', '-100%']);
+	const x1 = useTransform(scrollYProgress, [0, 1], ['1%', '-100%'])
+	const x2 = useTransform(scrollYProgress, [1, 0], ['1%', '-100%'])
 
 	return (
 		<>
 			<SectionHeading> KHÁCH THAM QUAN </SectionHeading>
-			<section ref={targetRef} className='relative h-[500svh] bg-slate-100'>
-				<div className='sticky top-0 flex h-[24svh] items-center overflow-hidden'>
-					<motion.div style={{ x: x1 }} className='flex gap-4'>
+			<section ref={targetRef} className="relative h-[500svh] bg-slate-100">
+				<div className="sticky top-0 flex h-[24svh] items-center overflow-hidden">
+					<motion.div style={{ x: x1 }} className="flex gap-4">
 						{cards.map((card) => {
-							return <Card card={card} key={card.id} />;
+							return <Card card={card} key={card.id} />
 						})}
 					</motion.div>
 				</div>
-				<div className='sticky top-[25svh] flex h-[24svh] items-center overflow-hidden'>
-					<motion.div style={{ x: x2 }} className='flex gap-4'>
+				<div className="sticky top-[25svh] flex h-[24svh] items-center overflow-hidden">
+					<motion.div style={{ x: x2 }} className="flex gap-4">
 						{cards.map((card) => {
-							return <Card card={card} key={card.id} />;
+							return <Card card={card} key={card.id} />
 						})}
 					</motion.div>
 				</div>
-				<div className='sticky top-[50svh] flex h-[24svh] items-center overflow-hidden'>
-					<motion.div style={{ x: x1 }} className='flex gap-4'>
+				<div className="sticky top-[50svh] flex h-[24svh] items-center overflow-hidden">
+					<motion.div style={{ x: x1 }} className="flex gap-4">
 						{cards.map((card) => {
-							return <Card card={card} key={card.id} />;
+							return <Card card={card} key={card.id} />
 						})}
 					</motion.div>
 				</div>
-				<div className='sticky top-[75svh] flex h-[24svh] items-center overflow-hidden'>
-					<motion.div style={{ x: x2 }} className='flex gap-4'>
+				<div className="sticky top-[75svh] flex h-[24svh] items-center overflow-hidden">
+					<motion.div style={{ x: x2 }} className="flex gap-4">
 						{cards.map((card) => {
-							return <Card card={card} key={card.id} />;
+							return <Card card={card} key={card.id} />
 						})}
 					</motion.div>
 				</div>
 			</section>
 		</>
-	);
-};
+	)
+}
 
 const Card = ({ card }: { card: CardType }) => {
 	return (
 		<div
 			key={card.id}
-			className='group relative aspect-video w-[75dvw] overflow-hidden rounded-3xl bg-slate-100'
+			className="group relative aspect-video w-[75dvw] overflow-hidden rounded-3xl bg-slate-100"
 		>
 			<div
 				style={{
@@ -61,7 +61,7 @@ const Card = ({ card }: { card: CardType }) => {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}
-				className='absolute inset-0 z-0 w-[90vw] rounded-3xl transition-transform duration-300 group-hover:scale-110'
+				className="absolute inset-0 z-0 w-[90vw] rounded-3xl transition-transform duration-300 group-hover:scale-110"
 			/>
 			{/* <div className='absolute inset-0 z-10 grid place-content-center'>
         <p className='bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg'>
@@ -69,16 +69,16 @@ const Card = ({ card }: { card: CardType }) => {
         </p>
       </div> */}
 		</div>
-	);
-};
+	)
+}
 
-export default HorizontalScrollCarousel;
+export default HorizontalScrollCarousel
 
 type CardType = {
-	url: string;
-	title?: string;
-	id: number;
-};
+	url: string
+	title?: string
+	id: number
+}
 
 const cards: CardType[] = [
 	// {
@@ -146,4 +146,4 @@ const cards: CardType[] = [
 	//   title: 'Title 13',
 	//   id: 13,
 	// },
-];
+]

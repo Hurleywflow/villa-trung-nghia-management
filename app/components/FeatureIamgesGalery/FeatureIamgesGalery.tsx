@@ -1,10 +1,11 @@
 // import { motion } from 'framer-motion';
 // import Image from 'next/image';
 // import * as React from 'react';
-import { urlFor } from '@/libs/urlFor';
-import type { Image as ImageType } from '@/models/room';
-import type { FC } from 'react';
-import { Suspense } from 'react';
+
+import type { FC } from 'react'
+import { Suspense } from 'react'
+import { urlFor } from '@/libs/urlFor'
+import type { Image as ImageType } from '@/models/room'
 
 // import { Card, CardContent } from '@/components/ui/card';
 // import {
@@ -81,11 +82,11 @@ import { Suspense } from 'react';
 // };
 
 /* eslint-disable import/no-extraneous-dependencies */
-import Autoplay from 'embla-carousel-autoplay';
-import * as React from 'react';
+import Autoplay from 'embla-carousel-autoplay'
+import * as React from 'react'
 
-import LoadingSpinner from '@/app/(web)/rooms/[slug]/loading';
-import { Card, CardContent } from '@/components/ui/card';
+import LoadingSpinner from '@/app/(web)/rooms/[slug]/loading'
+import { Card, CardContent } from '@/components/ui/card'
 import {
 	Carousel,
 	type CarouselApi,
@@ -93,39 +94,39 @@ import {
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-} from '@/components/ui/carousel';
-import { Skeleton } from '@/components/ui/skeleton';
-import LoadingImage from '../loading-image/LoadingImage';
+} from '@/components/ui/carousel'
+import { Skeleton } from '@/components/ui/skeleton'
+import LoadingImage from '../loading-image/LoadingImage'
 
 const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 	photos,
 	isLoading,
 }) => {
-	const [api, setApi] = React.useState<CarouselApi>();
-	const [current, setCurrent] = React.useState(0);
-	const [count, setCount] = React.useState(0);
+	const [api, setApi] = React.useState<CarouselApi>()
+	const [current, setCurrent] = React.useState(0)
+	const [count, setCount] = React.useState(0)
 
 	React.useEffect(() => {
 		if (!api) {
-			return;
+			return
 		}
 
-		setCount(api.scrollSnapList().length);
-		setCurrent(api.selectedScrollSnap() + 1);
+		setCount(api.scrollSnapList().length)
+		setCurrent(api.selectedScrollSnap() + 1)
 
 		api.on('select', () => {
 			// console.log('current');
-			setCurrent(api.selectedScrollSnap() + 1);
-		});
-	}, [api]);
+			setCurrent(api.selectedScrollSnap() + 1)
+		})
+	}, [api])
 	const plugin = React.useRef(
 		Autoplay({ delay: 5000, stopOnInteraction: true }),
-	);
+	)
 
 	return (
 		<div>
 			<Carousel
-				className='w-screen max-w-screen-2xl overflow-hidden md:w-[90vw] lg:overflow-visible'
+				className="w-screen max-w-screen-2xl overflow-hidden md:w-[90vw] lg:overflow-visible"
 				onMouseEnter={plugin.current.stop}
 				onMouseLeave={plugin.current.reset}
 				opts={{
@@ -138,20 +139,20 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 				<CarouselContent>
 					{photos.map((photo, index) => (
 						<CarouselItem key={photo._key}>
-							<div className='p-1'>
+							<div className="p-1">
 								<Card>
 									{isLoading ? (
 										<LoadingSpinner />
 									) : (
-										<CardContent className=' relative flex aspect-square md:aspect-video w-full  items-center justify-center p-6 rounded-lg overflow-hidden'>
+										<CardContent className=" relative flex aspect-square md:aspect-video w-full  items-center justify-center p-6 rounded-lg overflow-hidden">
 											{/* <span className='text-4xl font-semibold'>{index + 1}</span> */}
 											<Suspense
 												fallback={
-													<div className='aspect-square md:aspect-video w-full bg-background flex items-center justify-center flex-col space-y-3'>
-														<Skeleton className='aspect-video w-[380px] rounded-xl' />
-														<div className='space-y-2'>
-															<Skeleton className='h-4 w-[250px]' />
-															<Skeleton className='h-4 w-[200px]' />
+													<div className="aspect-square md:aspect-video w-full bg-background flex items-center justify-center flex-col space-y-3">
+														<Skeleton className="aspect-video w-[380px] rounded-xl" />
+														<div className="space-y-2">
+															<Skeleton className="h-4 w-[250px]" />
+															<Skeleton className="h-4 w-[200px]" />
 														</div>
 														{/* <p className='text-center text-2xl text-tertiary-primary tracking-wider animate-pulse '>
 															Loading...
@@ -163,8 +164,8 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 													key={photo._key}
 													src={urlFor(photo).url()}
 													alt={`Can not be found ${photo._key}`}
-													className='object-cover object-center hover:scale-125 transition-all duration-300 ease-in-out '
-													sizes='(max-width:320px) 300px, (max-width:375px) 350px, (max-width:480px) 450px, (max-width:640px)600px, (max-width:768px) 720px, (max-width:1024px) 900px, (max-width:1280px) 1200px, 1280px'
+													className="object-cover object-center hover:scale-125 transition-all duration-300 ease-in-out "
+													sizes="(max-width:320px) 300px, (max-width:375px) 350px, (max-width:480px) 450px, (max-width:640px)600px, (max-width:768px) 720px, (max-width:1024px) 900px, (max-width:1280px) 1200px, 1280px"
 												/>
 											</Suspense>
 											{/* <Image
@@ -187,11 +188,11 @@ const FeaturedImageGallery: FC<{ photos: ImageType[]; isLoading: boolean }> = ({
 				<CarouselPrevious />
 				<CarouselNext />
 			</Carousel>
-			<div className='py-2 text-center text-sm text-muted-foreground'>
+			<div className="py-2 text-center text-sm text-muted-foreground">
 				Image {current} of {count}
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default FeaturedImageGallery;
+export default FeaturedImageGallery

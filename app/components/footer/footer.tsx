@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 /* eslint-disable react/react-in-jsx-scope */
 const Footer = (): JSX.Element => {
-	const year = new Date().getFullYear();
+	const year = new Date().getFullYear()
 	return (
 		<footer className="p-0 relative m-0 w-full bg-slate-200 pt-2 text-center text-slate-950 dark:bg-foreground dark:text-slate-100">
 			{/* <div className='absolute inset-0 bg-[radial-gradient(40%_128px_at_50%_0%,theme(backgroundColor.white/10%),transparent)]' />
@@ -33,12 +33,12 @@ const Footer = (): JSX.Element => {
 					</Button>
 				</Link>
 			</p>
-			<Link href="https://www.agoda.com/villa-da-lat-tn1/hotel/dalat-vn.html?cid=1844104&ds=bkp7dksCVu7179H5" target="_blank">
-				</Link>
-			<Link href="https://www.booking.com/Share-0kLk7P" target="_blank">
-				</Link>
-
+			<Link
+				href="https://www.agoda.com/villa-da-lat-tn1/hotel/dalat-vn.html?cid=1844104&ds=bkp7dksCVu7179H5"
+				target="_blank"
+			></Link>
+			<Link href="https://www.booking.com/Share-0kLk7P" target="_blank"></Link>
 		</footer>
-	);
-};
-export default Footer;
+	)
+}
+export default Footer

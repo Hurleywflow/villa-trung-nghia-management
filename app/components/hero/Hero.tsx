@@ -1,19 +1,22 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+'use client'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 // import { H1, H6 } from "@/components/cc/text-utils/TextUtils";
-import { Button } from "@/components/ui/button";
-import { MotionDiv } from "@/lib/framer";
-import AvatarCirclesDemo from "../avatar-circles/AvatarCirclesDemo";
-import { BorderBeam } from "../magicui/boderBeam/BorderBeam";
-import Tittle from "../Tittle/Tittle";
-import { ImagesSlider } from "./ImagesSlider";
+import { Button } from '@/components/ui/button'
+import { MotionDiv } from '@/lib/framer'
+import AvatarCirclesDemo from '../avatar-circles/AvatarCirclesDemo'
+import { BorderBeam } from '../magicui/boderBeam/BorderBeam'
+import Tittle from '../Tittle/Tittle'
+import { ImagesSlider } from './ImagesSlider'
 
 function Hero(): JSX.Element {
-	const _pathname = usePathname();
-	const images = ["/images/hotel/hero-1.jpeg", "/images/hotel/hero-2.jpeg"];
+	const _pathname = usePathname()
+	const images = ['/images/hotel/hero-1.jpeg', '/images/hotel/hero-2.jpeg']
 	return (
-		<div className=" relative flex h-screen max-h-[1280px] w-full flex-col items-center justify-center" id='Home'>
+		<div
+			className=" relative flex h-screen max-h-[1280px] w-full flex-col items-center justify-center"
+			id="Home"
+		>
 			<ImagesSlider className="relative z-20 h-screen w-full" images={images}>
 				<MotionDiv className="absolute bottom-0 z-10 flex size-fit flex-col items-center justify-center gap-2 p-2 md:gap-5">
 					<MotionDiv
@@ -21,11 +24,10 @@ function Hero(): JSX.Element {
 						whileInView={{ opacity: 1, y: 0, scale: 1 }}
 						transition={{
 							duration: 0.7,
-							ease: "easeInOut",
+							ease: 'easeInOut',
 						}}
 					>
-						<h1
-							className=' max-w-[12ch] animate-slowpan bg-[url("/text3.jpeg")] bg-clip-text pb-5 text-8xl leading-[0.85] text-transparent font-medium md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'>
+						<h1 className=' max-w-[12ch] animate-slowpan bg-[url("/text3.jpeg")] bg-clip-text pb-5 text-8xl leading-[0.85] text-transparent font-medium md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'>
 							Xin chào!
 						</h1>
 					</MotionDiv>
@@ -50,6 +52,6 @@ function Hero(): JSX.Element {
 			</ImagesSlider>
 			<Tittle />
 		</div>
-	);
+	)
 }
-export default Hero;
+export default Hero

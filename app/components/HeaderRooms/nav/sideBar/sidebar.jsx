@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Links from './Links'
 import ToggleButton from './toggleButton'
+
 const variants = {
 	open: {
 		clipPath: 'circle(2000px at 50px 50px)',

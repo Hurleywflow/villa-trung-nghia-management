@@ -24,24 +24,23 @@
 // 	};
 // }
 
-
 //ap/robots.txt
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseURL = 'https://www.villadalat.org';
+	const baseURL = 'https://www.villadalat.org'
 
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: [
+	return {
+		rules: {
+			userAgent: '*',
+			allow: '/',
+			disallow: [
 				// '/studio',
-        '/admin/',    // Prevents crawling your dashboard or login areas
-        '/api/',      // Prevents crawling your internal API routes
-        '/private/',  // Any other folders not meant for the public
-      ],
-    },
-    sitemap: `${baseURL}/sitemap.xml`,
-  };
+				'/admin/', // Prevents crawling your dashboard or login areas
+				'/api/', // Prevents crawling your internal API routes
+				'/private/', // Any other folders not meant for the public
+			],
+		},
+		sitemap: `${baseURL}/sitemap.xml`,
+	}
 }

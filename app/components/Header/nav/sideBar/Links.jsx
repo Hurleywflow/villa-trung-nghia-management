@@ -36,7 +36,7 @@ const Links = () => {
 			className="flex h-full w-full flex-col flex-wrap items-center justify-center gap-8 text-2xl text-white"
 			variants={variants}
 		>
-			{items.map(item => (
+			{items.map((item) => (
 				<motion.a
 					href={`/#${item}`}
 					scroll={true}

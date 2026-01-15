@@ -1,11 +1,11 @@
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
+import Image from 'next/image'
+import { cn } from '@/lib/utils'
 
 interface Props {
-	alt: string;
-	src: string;
-	sizes?: string;
-	className?: string;
+	alt: string
+	src: string
+	sizes?: string
+	className?: string
 }
 
 const LoadingImage = async ({ alt, src, sizes, className }: Props) => {
@@ -27,7 +27,7 @@ const LoadingImage = async ({ alt, src, sizes, className }: Props) => {
 			src={src}
 		/>
 		// </div>
-	);
-};
+	)
+}
 
-export default LoadingImage;
+export default LoadingImage

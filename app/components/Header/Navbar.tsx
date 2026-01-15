@@ -1,33 +1,33 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useContext } from "react";
+'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useContext } from 'react'
 
-import { Button } from "@/components/ui/button";
-import ThemeContext from "@/context/themeContext";
+import { Button } from '@/components/ui/button'
+import ThemeContext from '@/context/themeContext'
 
 const Socials = [
 	{
-		href: "https://m.facebook.com/villadalattrungnghia?mibextid=kFxxJD",
-		src: "/images/icon/f.svg",
-		alt: "Facebook",
+		href: 'https://m.facebook.com/villadalattrungnghia?mibextid=kFxxJD',
+		src: '/images/icon/f.svg',
+		alt: 'Facebook',
 	},
 	{
-		href: "https://zalo.me/0937655411",
-		src: "/images/icon/z.svg",
-		alt: "zalo",
+		href: 'https://zalo.me/0937655411',
+		src: '/images/icon/z.svg',
+		alt: 'zalo',
 	},
 	{
-		href: "tel:0937655411",
-		src: "/images/icon/p.svg",
-		alt: "Phone",
+		href: 'tel:0937655411',
+		src: '/images/icon/p.svg',
+		alt: 'Phone',
 	},
-];
+]
 
 const Navbar = () => {
-	const { darkTheme, setDarkTheme } = useContext(ThemeContext);
-	const router = useRouter();
+	const { darkTheme, setDarkTheme } = useContext(ThemeContext)
+	const router = useRouter()
 	return (
 		<div className="fixed top-0 z-[9999] hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-md md:block">
 			<div className="m-auto flex h-full w-full flex-row items-center justify-between px-[10px]">
@@ -60,8 +60,8 @@ const Navbar = () => {
 							href="/"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							onClick={() => {
-								const el = document.getElementById("Home");
-								el?.scrollIntoView({ behavior: "smooth" });
+								const el = document.getElementById('Home')
+								el?.scrollIntoView({ behavior: 'smooth' })
 							}}
 						>
 							Home
@@ -71,9 +71,9 @@ const Navbar = () => {
 							href="/#Villa"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							onClick={() => {
-								router.push("/#Villa");
-								const el = document.getElementById("Villa");
-								el?.scrollIntoView({ behavior: "smooth" });
+								router.push('/#Villa')
+								const el = document.getElementById('Villa')
+								el?.scrollIntoView({ behavior: 'smooth' })
 							}}
 						>
 							Villa
@@ -94,8 +94,8 @@ const Navbar = () => {
 							href="/#Contact"
 							className="cursor-pointer text-lg text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							onClick={() => {
-								const el = document.getElementById("Contact");
-								el?.scrollIntoView({ behavior: "smooth" });
+								const el = document.getElementById('Contact')
+								el?.scrollIntoView({ behavior: 'smooth' })
 							}}
 						>
 							Contact
@@ -119,7 +119,7 @@ const Navbar = () => {
 					<Link href="/studio" target="_blank">
 						<Button size="sm" variant="link" className="rounded-full">
 							Admin
-						</Button>{" "}
+						</Button>{' '}
 					</Link>
 					{/* auth */}
 
@@ -169,7 +169,7 @@ const Navbar = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Navbar;
+export default Navbar

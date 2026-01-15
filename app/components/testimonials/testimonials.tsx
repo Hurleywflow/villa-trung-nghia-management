@@ -1,60 +1,60 @@
 /* eslint-disable @typescript-eslint/ban-types */
-"use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import { type FC, useRef } from "react";
-import SectionHeading from "../TextSectionHeading/SectionHeading";
+'use client'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import Image from 'next/image'
+import { type FC, useRef } from 'react'
+import SectionHeading from '../TextSectionHeading/SectionHeading'
 
-type Props = {};
+type Props = {}
 const marks = [
 	{
-		name: "Lan Ngọc",
+		name: 'Lan Ngọc',
 		description:
-			"Villa có vị trí nằm ngay trung tâm, không gian yên tĩnh, đẹp. 1 nơi rất đáng đến để trãi nghiệm, sẽ quay lại lắn sau khi.",
-		img: "something",
+			'Villa có vị trí nằm ngay trung tâm, không gian yên tĩnh, đẹp. 1 nơi rất đáng đến để trãi nghiệm, sẽ quay lại lắn sau khi.',
+		img: 'something',
 	},
 	{
-		name: "Hoang Mai",
+		name: 'Hoang Mai',
 		description:
-			"Phòng sạch sẽ, đủ trang thiết bị và nước nóng. Nhân viên thân thiện dễ thương, giúp đỡ nhiệt tình Vị trí đẹp, thuận tiện...",
+			'Phòng sạch sẽ, đủ trang thiết bị và nước nóng. Nhân viên thân thiện dễ thương, giúp đỡ nhiệt tình Vị trí đẹp, thuận tiện...',
 	},
 	{
-		name: "Philippe",
+		name: 'Philippe',
 		description:
-			"Good value for money, host Vicky was very nice. Over all very supportive",
-		img: "something",
+			'Good value for money, host Vicky was very nice. Over all very supportive',
+		img: 'something',
 	},
-];
+]
 const markss = [
 	{
-		name: "Thiên Hòa",
+		name: 'Thiên Hòa',
 		description:
-			"Chúng tôi thường xuyên di Đà Lạt và chọn Trung Nghĩa là điểm nghỉ ngơi.",
-		img: "something",
+			'Chúng tôi thường xuyên di Đà Lạt và chọn Trung Nghĩa là điểm nghỉ ngơi.',
+		img: 'something',
 	},
 	{
-		name: "Claudia",
+		name: 'Claudia',
 		description:
-			"We loved our stay here!! Such a cute property with such warm and friendly staff. Breakfast was superb!  They cleaned our room so nicely each day.",
-		img: "something",
+			'We loved our stay here!! Such a cute property with such warm and friendly staff. Breakfast was superb!  They cleaned our room so nicely each day.',
+		img: 'something',
 	},
 	{
-		name: "Trúc Thịnh",
+		name: 'Trúc Thịnh',
 		description:
 			'Tôi đã sử dụn "Chỗ nghỉ rất sang trọng, lịch sự, chuyên nghiệp và chu đáo. Mọi thứ đều tiện nghi và hoàn hảo.',
-		img: "something",
+		img: 'something',
 	},
-];
+]
 
 const Testimonials: FC<Props> = () => {
-	const container = useRef(null);
+	const container = useRef(null)
 	const { scrollYProgress } = useScroll({
 		target: container,
-		offset: ["start end", "end start"],
-	});
+		offset: ['start end', 'end start'],
+	})
 
-	const x1 = useTransform(scrollYProgress, [0, 1], [100, 0]);
-	const x2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+	const x1 = useTransform(scrollYProgress, [0, 1], [100, 0])
+	const x2 = useTransform(scrollYProgress, [0, 1], [-100, 0])
 	return (
 		<section ref={container} className="w-full overflow-x-hidden">
 			<div className="mt-[5dvh]"></div>
@@ -153,21 +153,21 @@ const Testimonials: FC<Props> = () => {
 									</div>
 									<div className="mt-3">
 										<p className="mt-1 max-w-xs dark:text-white">
-											{item.description.split("\n").map((item, key) => {
+											{item.description.split('\n').map((item, key) => {
 												return (
 													// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 													<span key={key}>
 														{item}
 														<br />
 													</span>
-												);
+												)
 											})}
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-					);
+					)
 				})}
 			</motion.div>
 			<motion.div
@@ -263,24 +263,24 @@ const Testimonials: FC<Props> = () => {
 									</div>
 									<div className="mt-3">
 										<p className="mt-1 max-w-xs dark:text-white">
-											{item.description.split("\n").map((item, key) => {
+											{item.description.split('\n').map((item, key) => {
 												return (
 													// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 													<span key={key}>
 														{item}
 														<br />
 													</span>
-												);
+												)
 											})}
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-					);
+					)
 				})}
 			</motion.div>
 		</section>
-	);
-};
-export default Testimonials;
+	)
+}
+export default Testimonials

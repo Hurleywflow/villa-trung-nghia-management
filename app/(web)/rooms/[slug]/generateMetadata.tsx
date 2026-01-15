@@ -1,4 +1,4 @@
-import { type Metadata } from 'next'
+import type { Metadata } from 'next'
 import { getRoom } from '@/libs/apis'
 
 export async function generateMetadata(slugName: string): Promise<Metadata> {
@@ -38,5 +38,3 @@ export async function generateMetadata(slugName: string): Promise<Metadata> {
 		}
 	}
 }
-
-

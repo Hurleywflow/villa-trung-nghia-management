@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/a11y/useButtonType: <explanation> */
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,12 +12,14 @@ const Navbar = () => {
 	const { darkTheme, setDarkTheme } = useContext(ThemeContext)
 	// const { data: session } = useSession();
 	const router = useRouter()
+ const baseUrl = "https://www.villadalat.org"
 	return (
 		<div className="fixed top-0 z-50 hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block">
 			<div className="m-auto flex h-full w-full flex-row items-center justify-between px-[10px]">
-				<button
+				{/** biome-ignore lint/a11y/useButtonType: <explanation> */}
+<button
 					onClick={() => {
-						router.push('/')
+						router.push(baseUrl)
 					}}
 					// href='/'
 					className="flex h-auto w-auto flex-row items-center text-xl font-semibold text-tertiary-primary md:text-2xl "
@@ -38,7 +41,7 @@ const Navbar = () => {
 					<div className="mr-[15px] flex h-auto w-full items-center justify-between rounded-full border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] text-gray-200">
 						<button
 							onClick={() => {
-								router.push('/')
+								router.push(baseUrl)
 							}}
 							className="cursor-pointer text-lg  text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 						>
@@ -46,7 +49,7 @@ const Navbar = () => {
 						</button>
 						<button
 							onClick={() => {
-								router.push('/')
+								router.push(`${baseUrl}/#Villa`)
 							}}
 							className="cursor-pointer text-lg  text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							// onClick={() => {
@@ -70,7 +73,7 @@ const Navbar = () => {
 						</button> */}
 						<button
 							onClick={() => {
-								router.push('/')
+								router.push(`${baseUrl}/#Contact`)
 							}}
 							className="cursor-pointer text-lg  text-tertiary-primary decoration-2 transition-all duration-100 hover:scale-105 hover:underline hover:decoration-orange-400 hover:underline-offset-4 md:text-xl"
 							// onClick={() => {
@@ -84,7 +87,7 @@ const Navbar = () => {
 				</div>
 
 				<div className="flex flex-row gap-5">
-					<Link href="/studio" target="_blank">
+					<Link href={`${baseUrl}/studio`} target="_blank">
 						<Button size="sm" variant="link" className="rounded-full">
 							Admin
 						</Button>{' '}

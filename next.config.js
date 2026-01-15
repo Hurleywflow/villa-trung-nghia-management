@@ -11,9 +11,9 @@ const nextConfig = {
 			},
 		],
 	},
-};
+}
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withVideos = require('next-videos');
+const withVideos = require('next-videos')
 // module.exports = MillionLint.next({
 //   rsc: true
 // })(withVideos(nextConfig));
@@ -48,4 +48,4 @@ const withVideos = require('next-videos');
 
 // const withVideos = require('next-videos');
 
-module.exports = withVideos(nextConfig);
+module.exports = withVideos(nextConfig)

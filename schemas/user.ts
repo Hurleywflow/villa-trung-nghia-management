@@ -11,7 +11,7 @@ const user = {
 			type: 'boolean',
 			description: 'Check if the user is admin',
 			initialValue: false,
-			validation: Rule => Rule.required(),
+			validation: (Rule) => Rule.required(),
 			//   readOnly: true,
 			//   hidden: true,
 		}),
@@ -21,7 +21,7 @@ const user = {
 			type: 'string',
 			description: 'Name of the user',
 			readOnly: true,
-			validation: Rule => Rule.required(),
+			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'image',

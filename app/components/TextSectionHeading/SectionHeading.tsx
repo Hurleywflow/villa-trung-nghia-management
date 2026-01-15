@@ -1,68 +1,68 @@
-"use client";
-import { useEffect } from "react";
+'use client'
+import { useEffect } from 'react'
 
 const SectionHeading = ({ children }: { children: string }) => {
 	useEffect(() => {
 		const spans = document.querySelectorAll(
-			".hover-text span",
-		) as NodeListOf<HTMLSpanElement>;
+			'.hover-text span',
+		) as NodeListOf<HTMLSpanElement>
 
 		// biome-ignore lint/complexity/noForEach: <explanation>
 		spans.forEach((span) => {
-			span.addEventListener("mouseenter", function (this: typeof span) {
-				this.style.fontWeight = "900";
-				this.style.color = "#f5f5f4";
+			span.addEventListener('mouseenter', function (this: typeof span) {
+				this.style.fontWeight = '900'
+				this.style.color = '#f5f5f4'
 
-				const leftNeighbor = this.previousElementSibling as HTMLSpanElement;
-				const rightNeighbor = this.nextElementSibling as HTMLSpanElement;
+				const leftNeighbor = this.previousElementSibling as HTMLSpanElement
+				const rightNeighbor = this.nextElementSibling as HTMLSpanElement
 
 				if (leftNeighbor) {
-					leftNeighbor.style.fontWeight = "500";
-					leftNeighbor.style.color = "#d6d3d1";
+					leftNeighbor.style.fontWeight = '500'
+					leftNeighbor.style.color = '#d6d3d1'
 				}
 				if (rightNeighbor) {
-					rightNeighbor.style.fontWeight = "500";
-					rightNeighbor.style.color = "#d6d3d1";
+					rightNeighbor.style.fontWeight = '500'
+					rightNeighbor.style.color = '#d6d3d1'
 				}
-			});
+			})
 
-			span.addEventListener("mouseleave", function (this: typeof span) {
-				this.style.fontWeight = "400";
+			span.addEventListener('mouseleave', function (this: typeof span) {
+				this.style.fontWeight = '400'
 				// this.style.fontWeight = '100';
-				this.style.color = "#BEB8AE";
+				this.style.color = '#BEB8AE'
 
-				const leftNeighbor = this.previousElementSibling as HTMLSpanElement;
-				const rightNeighbor = this.nextElementSibling as HTMLSpanElement;
+				const leftNeighbor = this.previousElementSibling as HTMLSpanElement
+				const rightNeighbor = this.nextElementSibling as HTMLSpanElement
 
 				if (leftNeighbor) {
-					leftNeighbor.style.fontWeight = "400";
+					leftNeighbor.style.fontWeight = '400'
 					// leftNeighbor.style.fontWeight = '100';
-					leftNeighbor.style.color = "#BEB8AE";
+					leftNeighbor.style.color = '#BEB8AE'
 				}
 
 				if (rightNeighbor) {
-					rightNeighbor.style.fontWeight = "400";
+					rightNeighbor.style.fontWeight = '400'
 					// rightNeighbor.style.fontWeight = '100';
-					rightNeighbor.style.color = "#BEB8AE";
+					rightNeighbor.style.color = '#BEB8AE'
 				}
-			});
-		});
-	}, []);
+			})
+		})
+	}, [])
 
 	return (
 		<h2 className="hover-text bg-gradient-to-tr from-red-950  to-tertiary-primary bg-clip-text p-10 text-center text-3xl font-medium uppercase  text-transparent shadow-tertiary-primary text-shadow-lg md:text-5xl">
 			<Text>{children}</Text>
 		</h2>
-	);
-};
+	)
+}
 
 const Text = ({ children }: { children: string }) => {
 	return (
 		<>
-			{children.split("").map((child, idx) => (
+			{children.split('').map((child, idx) => (
 				<span
 					style={{
-						transition: "0.35s font-weight, 0.35s color",
+						transition: '0.35s font-weight, 0.35s color',
 					}}
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					key={idx}
@@ -71,10 +71,10 @@ const Text = ({ children }: { children: string }) => {
 				</span>
 			))}
 		</>
-	);
-};
+	)
+}
 
-export default SectionHeading;
+export default SectionHeading
 
 // // import { useInView } from 'framer-motion';
 // import React from 'react';

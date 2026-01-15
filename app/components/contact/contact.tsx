@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from 'next/image'
 /* eslint-disable @typescript-eslint/ban-types */
-import { type FC, Suspense } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import SectionHeading from "../TextSectionHeading/SectionHeading";
+import { type FC, Suspense } from 'react'
+import { Skeleton } from '@/components/ui/skeleton'
+import SectionHeading from '../TextSectionHeading/SectionHeading'
 
-type Props = {};
+type Props = {}
 
 const Contact: FC<Props> = () => {
 	const contactMethods = [
@@ -26,7 +26,7 @@ const Contact: FC<Props> = () => {
 					/>
 				</svg>
 			),
-			email: "trungnguyenzx@gmail.com",
+			email: 'trungnguyenzx@gmail.com',
 		},
 		{
 			iconPhone: (
@@ -46,7 +46,7 @@ const Contact: FC<Props> = () => {
 					/>
 				</svg>
 			),
-			phone: "0937 655 411",
+			phone: '0937 655 411',
 		},
 		{
 			icon: (
@@ -72,9 +72,9 @@ const Contact: FC<Props> = () => {
 					/>
 				</svg>
 			),
-			contact: "Hẻm 11/5 Khe Sanh, Phường 10, Đà Lạt, Lâm Đồng 66000, Vietnam",
+			contact: 'Hẻm 11/5 Khe Sanh, Phường 10, Đà Lạt, Lâm Đồng 66000, Vietnam',
 		},
-	];
+	]
 	return (
 		<section className="mx-auto mt-[5dvh] py-14" id="Contact">
 			<SectionHeading> Liên hệ</SectionHeading>
@@ -114,7 +114,11 @@ const Contact: FC<Props> = () => {
 										className="flex items-center gap-x-3 hover:text-pink-500"
 									>
 										<i className="flex-none text-gray-400">{item.icon}</i>
-										<a href="https://maps.app.goo.gl/kZhrRsqXco1CC1Bv7" target="_blank">
+										<a
+											href="https://maps.app.goo.gl/kZhrRsqXco1CC1Bv7"
+											target="_blank"
+											rel="noopener"
+										>
 											{item.contact}
 										</a>
 									</li>
@@ -168,6 +172,6 @@ const Contact: FC<Props> = () => {
 				</div>
 			</div>
 		</section>
-	);
-};
-export default Contact;
+	)
+}
+export default Contact

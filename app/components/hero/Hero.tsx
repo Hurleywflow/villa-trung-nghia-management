@@ -35,8 +35,8 @@ function Hero(): JSX.Element {
 					<div className="relative flex w-fit flex-col items-center justify-center gap-2 rounded-[0.4rem] bg-background/80 p-2 md:p-5 md:gap-10 md:mb-5 lg:mb-10">
 						<BorderBeam size={250} duration={12} delay={9} />
 						<p className="text-xl text-zinc-900 shadow-zinc-500 text-shadow-lg md:text-2xl lg:text-3xl">
-							Tận hưởng không gian thoải mái thư giãn, nghỉ ngơi cùng người
-							thân, bạn bè và đồng nghiệp tại hệ thống cho thuê biệt thự sang
+							Tận hưởng không gian thư giãn cùng người
+							thân và bạn bè với hệ thống cho thuê biệt thự sang
 							trọng tại Đà Lạt.
 						</p>
 						<Link

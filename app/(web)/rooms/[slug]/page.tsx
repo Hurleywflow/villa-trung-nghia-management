@@ -5,8 +5,7 @@
 import dynamic from 'next/dynamic'
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 import Head from 'next/head'
-// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
-import { basename } from 'path'
+import { usePathname } from 'next/navigation'
 import { Suspense } from 'react'
 import useSWR from 'swr'
 import { Container } from '@/app/components/container'
@@ -25,33 +24,19 @@ const FeaturedImageGallery = dynamic(
 	},
 )
 
-// use basename to get pathname slug
-function getValidSlug() {
-	try {
-		const slug = basename(window.location.pathname)
-		if (!slug) {
-			throw new Error('Invalid slug')
-		}
-		return slug
-	} catch (error) {
-		console.error(error)
-		return null
-	}
-}
-
-try {
-	const slugName = getValidSlug()
-	if (slugName) {
-		generateMetadata(slugName)
-	}
-} catch (error) {
-	console.error(error)
-}
-
 const RoomDetails = (props: { params: { slug: string } }) => {
 	const {
 		params: { slug },
 	} = props
+
+	const pathname = usePathname()
+
+	// Extract slug from pathname (equivalent to basename)
+	const getValidSlug = () => {
+		if (!pathname) return null
+		const segments = pathname.split('/').filter(Boolean)
+		return segments[segments.length - 1] || null
+	}
 
 	const fetchRoom = async () => {
 		try {
@@ -63,6 +48,21 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 	}
 
 	const { data: room, error, isLoading } = useSWR('/api/room', fetchRoom)
+
+	const slugName = getValidSlug()
+
+	if (slugName) {
+		generateMetadata(slugName) // Generate metadata for the current slug
+	}
+	// if slugName is null or undefined, return null
+	if (!slugName) return null
+	console.log(slugName)
+
+	// const slugName = getValidSlug()
+	// if (slugName && room?.slug?.current) {
+	// 	generateMetadata(room.slug.current)
+	// }
+	console.log(room?.slug?.current)
 
 	// const slugNameVilla = room?.slug?.current;
 	// if (slug !== slugNameVilla) {

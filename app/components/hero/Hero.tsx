@@ -14,11 +14,11 @@ function Hero(): JSX.Element {
 	const images = ['/images/hotel/hero-1.jpeg', '/images/hotel/hero-2.jpeg']
 	return (
 		<div
-			className=" relative flex h-screen max-h-[1280px] w-full flex-col items-center justify-center"
+			className=" relative flex h-screen w-full flex-col items-center justify-center"
 			id="Home"
 		>
-			<ImagesSlider className="relative z-20 h-screen w-full" images={images}>
-				<MotionDiv className="absolute bottom-0 z-10 flex size-fit flex-col items-center justify-center gap-2 p-2 md:gap-5">
+			<ImagesSlider className="relative z-10 h-full w-full" images={images}>
+				<MotionDiv className="absolute bottom-0 z-20 flex size-fit flex-col items-center justify-center gap-2 p-2 md:gap-5">
 					<MotionDiv
 						initial={{ opacity: 0.7, y: 40, scale: 0.9 }}
 						whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -27,12 +27,12 @@ function Hero(): JSX.Element {
 							ease: 'easeInOut',
 						}}
 					>
-						<h1 className=' max-w-[12ch] animate-slowpan bg-[url("/text1.jpeg")] bg-clip-text pb-5 text-8xl leading-[0.85] text-transparent font-medium md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'>
+						<h1 className='z-20 max-w-[12ch] animate-slowpan bg-[url("/text1.jpeg")] bg-clip-text pb-5 text-8xl leading-[0.85] text-transparent font-medium md:my-auto md:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] 4xl:text-[17rem]'>
 							Xin chào!
 						</h1>
 					</MotionDiv>
 					{/* border beam */}
-					<div className="relative flex w-fit flex-col items-center justify-center gap-2 rounded-[0.4rem] bg-background/80 p-2 md:p-5 md:gap-10 md:mb-5 lg:mb-10">
+					<div className="relative z-20 flex w-fit flex-col items-center justify-center gap-2 rounded-[0.4rem] bg-background/80 p-2 md:p-5 md:gap-10 md:mb-5 lg:mb-10">
 						<BorderBeam size={200} duration={12} delay={9} />
 						<p className="text-xl text-zinc-900 shadow-zinc-500 text-shadow-lg md:text-2xl lg:text-3xl">
 							Tận hưởng không gian thư giãn cùng người thân và bạn bè với hệ

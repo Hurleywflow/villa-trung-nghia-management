@@ -12,12 +12,12 @@ const Navbar = () => {
 	const { darkTheme, setDarkTheme } = useContext(ThemeContext)
 	// const { data: session } = useSession();
 	const router = useRouter()
- const baseUrl = "https://www.villadalat.org"
+	const baseUrl = 'https://villadalat.org'
 	return (
 		<div className="fixed top-0 z-50 hidden h-[65px] w-full bg-[#03001417] px-10 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-sm md:block">
 			<div className="m-auto flex h-full w-full flex-row items-center justify-between px-[10px]">
 				{/** biome-ignore lint/a11y/useButtonType: <explanation> */}
-<button
+				<button
 					onClick={() => {
 						router.push(baseUrl)
 					}}

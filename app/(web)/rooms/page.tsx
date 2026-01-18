@@ -26,7 +26,11 @@ import {
 import { getRooms } from '@/libs/apis'
 import type { Room } from '@/models/room'
 import LoadingSpinner from './loading'
+// import { Award } from 'lucide-react';
 
+async function fetchData() {
+	return await getRooms()
+}
 const Rooms = () => {
 	const [roomTypeFilter, setRoomTypeFilter] = useState('')
 	const [searchQuery, setSearchQuery] = useState('')
@@ -40,9 +44,6 @@ const Rooms = () => {
 		if (searchQuery) setSearchQuery(searchQuery)
 	}, [searchParams])
 
-	async function fetchData() {
-		return getRooms()
-	}
 
 	const { data, error, isLoading } = useSWR('get/hotelRooms', fetchData)
 	if (error) throw new Error('Cannot fetch data')

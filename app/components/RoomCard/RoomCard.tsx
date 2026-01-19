@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/a11y/noSvgWithoutTitle: <explanation> */
 import Image from 'next/image'
 
 import Link from 'next/link'
@@ -113,9 +114,9 @@ const RoomCard: FC<Props> = (props) => {
 									</Suspense>
 								</div>
 								<div className="p-1">
-									<h1 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
+									<h2 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
 										{name.slice(0, 40)}
-									</h1>
+									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										Mã số: {code}
 									</h2>
@@ -197,9 +198,9 @@ const RoomCard: FC<Props> = (props) => {
 									/>
 								</div>
 								<div className="p-1">
-									<h1 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
+									<h2 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
 										{name.slice(0, 40)}
-									</h1>
+									</h2>
 									<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 										Mã số: {code}
 									</h2>
@@ -321,9 +322,9 @@ const RoomCard: FC<Props> = (props) => {
 								{/* <DynamicBlur src={urlFor(coverImage).url()} /> */}
 							</div>
 							<div className="p-1">
-								<h1 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
+								<h2 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
 									{name.slice(0, 40)}
-								</h1>
+								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 									Mã số: {code}
 								</h2>
@@ -403,9 +404,9 @@ const RoomCard: FC<Props> = (props) => {
 								/>
 							</div>
 							<div className="p-1">
-								<h1 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
+								<h2 className="title-font  mb-1 font-medium text-gray-900 shadow-tertiary-primary text-shadow-lg">
 									{name.slice(0, 40)}
-								</h1>
+								</h2>
 								<h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-600 shadow-tertiary-primary text-shadow-sm">
 									Mã số: {code}
 								</h2>

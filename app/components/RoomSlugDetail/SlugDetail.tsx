@@ -71,9 +71,9 @@ function SlugDetail({ room }: Readonly<SlugProps>) {
 									? 'Villa: Mini & 3 Phòng'
 									: `Villa: ${room.type} Phòng`}
 						</p>
-						<h1 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
+						<h2 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
 							{room.name.toUpperCase()}
-						</h1>
+						</h2>
 					</div>
 					<div className="col-start-1 col-end-3 row-start-1 hidden gap-4 sm:mb-6 sm:grid-cols-4 md:grid lg:col-start-2 lg:row-span-6 lg:row-end-6 lg:mb-0 lg:gap-6">
 						<div className="relative h-60 w-full overflow-hidden rounded-lg sm:col-span-2 sm:h-52 lg:col-span-full">
@@ -302,9 +302,9 @@ function SlugDetail({ room }: Readonly<SlugProps>) {
 								? 'Villa: Mini & 3 Phòng'
 								: `Villa: ${room.type} Phòng`}
 					</p>
-					<h1 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
+					<h2 className="mt-1 text-lg font-semibold text-slate-900 shadow-tertiary-primary text-shadow-lg  md:text-2xl">
 						{room.name.toUpperCase()}
-					</h1>
+					</h2>
 				</div>
 				<div className="col-start-1 col-end-3 row-start-1 hidden gap-4 sm:mb-6 sm:grid-cols-4 md:grid lg:col-start-2 lg:row-span-6 lg:row-end-6 lg:mb-0 lg:gap-6">
 					<div className="relative h-60 w-full overflow-hidden rounded-lg sm:col-span-2 sm:h-52 lg:col-span-full">

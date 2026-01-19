@@ -232,7 +232,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
 						<FormItem>
 							<FormLabel>Tên Villa</FormLabel>
 							<FormControl>
-								<Input placeholder="Vila DaLat" {...field} />
+								<Input placeholder="Villa DaLat" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

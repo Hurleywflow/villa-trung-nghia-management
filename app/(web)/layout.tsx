@@ -93,7 +93,7 @@ export default function RootLayout({
 		<html lang="en" className="bg-slate-100 text-slate-600 h-full">
 			<body
 				suppressHydrationWarning={true}
-				className="scroll-smooth bg-slate-100 text-slate-600 overflow-x-clip"
+				className=" bg-slate-100 text-slate-600 overflow-x-clip"
 			>
 				<link
 					rel="icon"

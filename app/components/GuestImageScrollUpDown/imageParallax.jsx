@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 'use client'
 import Lenis from '@studio-freight/lenis'
 import { motion, useScroll, useTransform } from 'framer-motion'
@@ -31,6 +32,7 @@ export default function ImageParallax() {
 		offset: ['start end', 'end start'],
 	})
 	const { height } = dimension
+
 	const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
 	const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
 	const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
@@ -58,17 +60,17 @@ export default function ImageParallax() {
 	}, [])
 
 	return (
-		<section className="mx-auto hidden md:block">
+		<section className="mx-auto hidden md:block ">
 			<div className="h-[5dvh]"></div>
 			<SectionHeading> KHÁCH THam quan </SectionHeading>
-			<div className="h-[svh]"></div>
+			{/* <div className="h-[svh]"></div> */}
 			<div ref={gallery} className={styles.gallery}>
 				<Column images={[images[0], images[1], images[2]]} y={y} />
 				<Column images={[images[3], images[4], images[5]]} y={y2} />
 				<Column images={[images[6], images[7], images[8]]} y={y3} />
 				<Column images={[images[9], images[10], images[11]]} y={y4} />
 			</div>
-			<div className="h-[svh]"></div>
+			{/* <div className="h-[svh]"></div> */}
 		</section>
 	)
 }

@@ -7,7 +7,7 @@ function FeedBack() {
 	return (
 		<div className="mt-[5dvh]">
 			<SectionHeading>đánh giá</SectionHeading>
-			<Card className="flex w-full flex-col items-center justify-center gap-10 py-2 bg-inherit">
+			<Card className="flex w-full flex-col items-center justify-center gap-10 py-2 bg-inherit overflow-hidden">
 				{/* <ShineBorderBasicDemo /> */}
 				<MarqueeDemo />
 			</Card>

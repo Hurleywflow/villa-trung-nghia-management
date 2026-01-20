@@ -10,7 +10,7 @@ export const Container = ({
 	return (
 		<div
 			className={classNames(
-				'm-0 mx-auto box-border w-full max-w-[120rem] p-0',
+				'm-0 mx-auto box-border w-full max-w-[90rem] p-0',
 				className,
 			)}
 		>

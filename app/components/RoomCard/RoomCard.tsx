@@ -52,7 +52,7 @@ const RoomCard: FC<Props> = (props) => {
 		return (
 			<section className="body-font mx-auto w-full   transition-all duration-100 hover:scale-[1.01]">
 				{!isBooked ? (
-					<div className="group  rounded-[calc(1rem-1px)] bg-gradient-to-b from-blue-300 to-pink-300 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
+					<div className="group  rounded-[calc(1rem-1px)] bg-gradient-to-b from-orange-400 to-green-500 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
 						<div className="w-ful relative h-full rounded-lg bg-gray-50">
 							{/* <!-- Top Right --> */}
 							{/* <!-- if want to move ribbon to center or move to edge, just change  w-36 --> */}
@@ -170,7 +170,7 @@ const RoomCard: FC<Props> = (props) => {
 						</div>
 					</div>
 				) : (
-					<div className=" rounded-[calc(1rem-1px)] bg-gradient-to-b from-blue-300 to-pink-300 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
+					<div className=" rounded-[calc(1rem-1px)] bg-gradient-to-b from-orange-400 to-green-500 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
 						<div className="w-ful relative h-full rounded-lg bg-gray-50">
 							<div className="absolute bottom-0 left-0 right-0 top-0 z-40 rounded-lg backdrop-blur-sm"></div>
 							{/* <!-- Top Right --> */}
@@ -260,7 +260,7 @@ const RoomCard: FC<Props> = (props) => {
 	return (
 		<section className="body-font mx-auto w-full  text-gray-600 transition-all duration-100 hover:scale-[1.01]">
 			{!isBooked ? (
-				<div className="  rounded-[calc(1rem-1px)] bg-gradient-to-b from-blue-300 to-pink-300 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
+				<div className="  rounded-[calc(1rem-1px)] bg-gradient-to-b from-orange-400 to-green-500 p-[2px] shadow-2xl hover:from-pink-300 hover:to-blue-300 hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
 					<div className="w-ful relative h-full rounded-lg bg-gray-50">
 						{/* <!-- Top Right --> */}
 						{/* <!-- if want to move ribbon to center or move to edge, just change  w-36 --> */}
@@ -377,7 +377,7 @@ const RoomCard: FC<Props> = (props) => {
 					</div>
 				</div>
 			) : (
-				<div className="  rounded-[calc(1rem-1px)] bg-gradient-to-b from-blue-300 to-pink-300 p-[2px]  shadow-2xl hover:from-pink-300 hover:to-blue-300  hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
+				<div className="  rounded-[calc(1rem-1px)] bg-gradient-to-b from-orange-400 to-green-500 p-[2px]  shadow-2xl hover:from-pink-300 hover:to-blue-300  hover:ring hover:ring-tertiary-primary hover:ring-offset-2 dark:from-blue-800 dark:to-purple-800 ">
 					<div className="w-ful relative h-full rounded-lg bg-gray-50">
 						<div className="absolute bottom-0 left-0 right-0 top-0 z-40 rounded-lg backdrop-blur-sm"></div>
 						{/* <!-- Top Right --> */}

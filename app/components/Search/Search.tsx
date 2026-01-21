@@ -4,6 +4,7 @@ import type { ChangeEvent, FC } from 'react'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { BorderBeam } from '../magicui/boderBeam/BorderBeam';
 
 type Props = {
 	roomTypeFilter: string
@@ -36,7 +37,8 @@ const Search: FC<Props> = ({
 	return (
 		<section className="z-20">
 			{/* <section className="mx-1 rounded-lg bg-tertiary-primary px-4 py-6 shadow-2xl"> */}
-			<Card className="py-4 bg-[#03001417] shadow-lg shadow-[#2A0E61]/50 backdrop-blur-3xl">
+			<Card className="py-4 relative bg-[#03001417] shadow-lg shadow-[#2A0E61]/50 backdrop-blur-3xl">
+				<BorderBeam size={200} duration={12} delay={9} />
 				<div className="container mx-auto flex flex-wrap items-center justify-evenly gap-2">
 					<div className="mb-4 w-full md:w-2/5">
 						<Label className="text-xl">Loại Villa</Label>

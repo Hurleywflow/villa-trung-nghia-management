@@ -30,7 +30,7 @@ const secondRow = reversedTestimonials
 
 const ReviewCard = ({ src }: { src: CardType['src'] }): JSX.Element => {
 	return (
-		<Card className="relative h-40 md:h-44 w-[350px] max-w-full cursor-pointer overflow-hidden bg-background md:w-[450px]">
+		<Card className="relative aspect-video w-[350px] cursor-pointer overflow-hidden bg-background md:w-[450px]">
 			{/* <Card className="relative h-52 w-[350px] max-w-full cursor-pointer overflow-hidden bg-background md:w-[450px]"> */}
 			<CardContent className="">
 				<Suspense
@@ -58,7 +58,7 @@ const ReviewCard = ({ src }: { src: CardType['src'] }): JSX.Element => {
 
 const MarqueeDemo = (): JSX.Element => {
 	return (
-		<div className="relative flex size-full flex-col items-center justify-center gap-2 overflow-hidden border-border p-2">
+		<Card className="relative flex flex-col gap-2 overflow-hidden w-full bg-slate-600">
 			<Marquee pauseOnHover className="[--duration:140s]">
 				{firstRow.map((review) => (
 					<ReviewCard key={review.id} {...review} />
@@ -72,7 +72,7 @@ const MarqueeDemo = (): JSX.Element => {
 			</Marquee>
 			<div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-card md:w-20" />
 			<div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-card md:w-20" />
-		</div>
+		</Card>
 	)
 }
 

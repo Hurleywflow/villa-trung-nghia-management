@@ -142,6 +142,9 @@ module.exports = {
 				marquee: {
 					to: { transform: 'translateX(-50%)' },
 				},
+				marqueehori: {
+					to: { transform: 'translateY(-50%)' },
+				},
 				// background clip text
 				slowpan: {
 					'0%': { backgroundPosition: 'top left' },
@@ -175,6 +178,7 @@ module.exports = {
 				'loader-infinite': 'loader-infinite 2s ease-in-out infinite',
 				'loader-stretch': 'loader-stretch 3s ease-in-out infinite',
 				marquee: 'marquee var(--duration, 30s) linear infinite',
+				marqueehori: 'marqueehori var(--duration, 30s) linear infinite',
 				// Text skimmer
 				shimmer: 'shimmer 8s infinite',
 				// Border beam

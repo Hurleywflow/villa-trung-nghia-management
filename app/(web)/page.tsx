@@ -9,7 +9,6 @@ import { Suspense } from 'react'
 import Rooms from '@/app/(web)/rooms/page'
 // import CardStackScroll from '@/app/components/cardStackScroll/cardStackScroll';
 import Contact from '@/app/components/contact/contact'
-import ImageParallax from '@/app/components/GuestImageScrollUpDown/imageParallax'
 // import SkewScroll from '@/app/components/SkewScroll/SkewScroll';
 import Tittle1 from '@/app/components/Tittle/Tittle1'
 // import { Container } from '@/app/components/container';
@@ -17,6 +16,7 @@ import Tittle1 from '@/app/components/Tittle/Tittle1'
 // import HeroSection from '../components/HeroScrollThroughWindow/HeroSection';
 import { Container } from '../components/container'
 import FeedBack from '../components/feedback/FeedBack'
+import GuestsImages from '../components/GuestImageScrollUpDown/GuestsImages'
 import HorizontalScrollCarousel from '../components/HorizontalScrollImage/HorizontalScrollImage'
 import Hero from '../components/hero/Hero'
 import Loading from '../components/loading/Loading'
@@ -49,7 +49,8 @@ const Home = async () => {
 					<Rooms />
 					{/* <Testimonials /> */}
 					{/* <CardStackScroll /> */}
-					<ImageParallax />
+					{/* <ImageParallax /> */}
+					<GuestsImages />
 					<div className="md:hidden">
 						<HorizontalScrollCarousel />
 					</div>

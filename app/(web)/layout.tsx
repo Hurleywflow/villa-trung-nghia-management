@@ -19,7 +19,7 @@ const Sidebar = dynamic(
 import '../globals.css'
 export const metadata: Metadata = {
 	// Replace with your actual domain
-	metadataBase: new URL('https://villadalat.org'),
+	metadataBase: new URL('https://www.villadalat.org'),
 	alternates: {
 		canonical: '/',
 	},
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 	referrer: 'origin-when-cross-origin',
 	authors: [
 		{ name: 'Hurley' },
-		{ name: 'Nguyen', url: 'https://villadalat.org' },
+		{ name: 'Nguyen', url: 'https://www.villadalat.org' },
 	],
 	creator: 'Hurley Nguyen',
 	publisher: 'Hurley Nguyen',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 		description:
 			'Villa Đà Lạt là một trong những villa đẹp nhất tại Đà Lạt. Nó có view đẹp, sân vườn, bãi đỗ xe an toàn và khu vực BBQ ngoài trời lý tưởng để tổ chức tiệc.',
 		type: 'website',
-		url: 'https://villadalat.org',
+		url: 'https://www.villadalat.org',
 		siteName: 'Villa Đà Lạt',
 		images: [
 			{

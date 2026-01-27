@@ -2,7 +2,7 @@
 // import { getRooms } from '@/libs/apis'
 
 // export default async function sitemap() {
-// 	const baseURL = 'https://villadalat.org';
+// 	const baseURL = 'https://www.villadalat.org';
 // 	// get all rooms
 // 	const rooms = await getRooms()
 // 	console.log(rooms)
@@ -34,7 +34,7 @@ import { getRooms } from '@/libs/apis'
 import type { Room } from '@/models/room'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const baseURL = 'https://villadalat.org'
+	const baseURL = 'https://www.villadalat.org'
 
 	// 1. Fetch rooms and handle potential null/undefined
 	const rooms = await getRooms()

@@ -33,7 +33,7 @@ const Links = () => {
 	const items = ['Home', 'Villa', 'Contact']
 	// const items = ["Home", "Villa", "Services", "Contact"];
 	const router = useRouter()
-	const baseUrl = 'https://villadalat.org'
+	const baseUrl = 'https://www.villadalat.org'
 
 	return (
 		<motion.div

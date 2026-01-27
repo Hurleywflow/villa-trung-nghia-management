@@ -60,7 +60,7 @@ const ReviewCard = ({ src }: { src: CardType['src'] }): JSX.Element => {
 
 const MarqueeDemoHorizontal = (): JSX.Element => {
 	return (
-		<Card className="relative flex aspect-square w-full flex-row gap-0 overflow-hidden bg-slate-600">
+		<Card className="relative flex aspect-square w-full flex-row gap-0 overflow-hidden bg-gray-400">
 			<MarqueeHorizontal pauseOnHover className="[--duration:80s] w-full">
 				{firstRow.map((review) => (
 					<ReviewCard key={review.id} {...review} />

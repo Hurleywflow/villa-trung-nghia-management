@@ -9,18 +9,18 @@
 // 			},
 // 			{
 // 				userAgent: '*',
-// 				allow: 'https://villadalat.org/rooms',
+// 				allow: 'https://www.villadalat.org/rooms',
 // 			},
 // 			{
 // 				userAgent: '*',
-// 				allow: 'https://villadalat.org/rooms/*',
+// 				allow: 'https://www.villadalat.org/rooms/*',
 // 			},
 // 			{
 // 				userAgent: '*',
 // 				disallow: '/studio',
 // 			},
 // 		],
-// 		sitemap: 'https://villadalat.org/sitemap.xml',
+// 		sitemap: 'https://www.villadalat.org/sitemap.xml',
 // 	};
 // }
 
@@ -28,7 +28,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-	const baseURL = 'https://villadalat.org'
+	const baseURL = 'https://www.villadalat.org'
 
 	return {
 		rules: {
